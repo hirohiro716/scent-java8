@@ -25,11 +25,6 @@ import java.util.List;
 public class RudeArray implements Cloneable, Serializable {
 
     /**
-     * シリアルバージョンUID
-     */
-    private static final long serialVersionUID = -1692187503079204210L;
-
-    /**
      * 値の型
      * @author hiro
      */
@@ -80,25 +75,16 @@ public class RudeArray implements Cloneable, Serializable {
         SQL_TIME
     }
 
-    // 値型の保持用
-    private HashMap<Object, ValueType> valueTypes = new HashMap<>();
+    /**
+     * シリアルバージョンUID
+     */
+    private static final long serialVersionUID = -1692187503079204210L;
 
     /**
-     * 予め設定してあるキーに対するデータ型を取得する.
-     * @param key キー
-     * @return ValueType
+     * コンストラクタ
      */
-    public ValueType getValueType(Object key) {
-        return this.valueTypes.get(key);
-    }
-
-    /**
-     * getメソッドを使用した際に自動的に値を変換させるためにデータ型を指定する.
-     * @param key キー
-     * @param valueType データ型
-     */
-    public void setValueType(Object key, ValueType valueType) {
-        this.valueTypes.put(key, valueType);
+    public RudeArray() {
+        this.baseArray = new LinkedHashMap<>();
     }
 
     // 値の保持用
@@ -131,11 +117,25 @@ public class RudeArray implements Cloneable, Serializable {
         }
     }
 
+    // 型の保持用
+    private HashMap<Object, ValueType> valueTypes = new HashMap<>();
+
     /**
-     * コンストラクタ
+     * 予め設定してあるキーに対するデータ型を取得する.
+     * @param key キー
+     * @return ValueType
      */
-    public RudeArray() {
-        this.baseArray = new LinkedHashMap<>();
+    public ValueType getValueType(Object key) {
+        return this.valueTypes.get(key);
+    }
+
+    /**
+     * getメソッドを使用した際に自動的に値を変換させるためにデータ型を指定する.
+     * @param key キー
+     * @param valueType データ型
+     */
+    public void setValueType(Object key, ValueType valueType) {
+        this.valueTypes.put(key, valueType);
     }
 
     private int autoKey = 0;
