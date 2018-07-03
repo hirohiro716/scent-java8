@@ -138,6 +138,15 @@ public class RudeArray implements Cloneable, Serializable {
         this.valueTypes.put(key, valueType);
     }
 
+    /**
+     * キーを指定して値をセットする.
+     * @param key キー
+     * @param value 値
+     */
+    public void put(Object key, Object value) {
+        this.baseArray.put(key, value);
+    }
+
     private int autoKey = 0;
 
     /**
@@ -156,19 +165,10 @@ public class RudeArray implements Cloneable, Serializable {
     }
 
     /**
-     * キーを指定して値をセットする.
-     * @param key キー
-     * @param value 値
-     */
-    public void put(Object key, Object value) {
-        this.baseArray.put(key, value);
-    }
-
-    /**
-     * Object[]を一括入力する.
+     * Object配列をキーを指定せずにセットする. キーは0以上の自動採番.
      * @param values 追加する値配列
      */
-    public void putMultiple(Object[] values) {
+    public void addMultiple(Object[] values) {
         if (values != null) {
             for (Object o : values) {
                 this.add(o);
@@ -573,7 +573,7 @@ public class RudeArray implements Cloneable, Serializable {
      * @param key キー
      * @return 値 存在しない場合や型が違った場合はnullを返す.
      */
-    public RudeArray getDynamicTypeArray(Object key) {
+    public RudeArray getRudeArray(Object key) {
         try {
             return (RudeArray) this.baseArray.get(key);
         } catch (Exception exception) {
@@ -631,6 +631,7 @@ public class RudeArray implements Cloneable, Serializable {
      * 保持しているすべての値を消去する.
      */
     public void clear() {
+        this.autoKey = 0;
         this.baseArray.clear();
     }
 
