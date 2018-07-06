@@ -32,7 +32,6 @@ public class StringValidator {
         BLANK("が空欄です。"),
         INTEGER("に数字以外の文字列が含まれています。"),
         DECIMAL("に数字と少数点以外の文字列が含まれています。"),
-        TELEPHONE_NUMBER("が不正です。"),
         LENGTH(join("は", ERROR_MESSAGE_ARGUMENT, "桁である必要があります。")),
         MAX_LENGTH(join("の文字数がオーバーしています。", ERROR_MESSAGE_ARGUMENT, "文字まで入力できます。")),
         MIN_LENGTH(join("の文字数が足りません。", ERROR_MESSAGE_ARGUMENT, "文字必要です。")),
@@ -40,6 +39,7 @@ public class StringValidator {
         MAX_VALUE(join("は最大で「", ERROR_MESSAGE_ARGUMENT, "」まで入力できます。")),
         MIN_VALUE(join("は「", ERROR_MESSAGE_ARGUMENT, "」以上である必要があります。")),
         DATETIME("が不正です。"),
+        TELEPHONE_NUMBER("が不正です。"),
         REGEX("が不正です。"),
         REGEX_REVERSE("が不正です。"),
         ;
@@ -102,13 +102,6 @@ public class StringValidator {
     }
 
     /**
-     * 文字列の電話番号有効性チェックを予約する.
-     */
-    public void addTelephoneNumberCheck() {
-        this.params.put(Pattern.TELEPHONE_NUMBER, null);
-    }
-
-    /**
      * 文字列の文字数チェックを予約する.
      * @param length 決定文字数
      */
@@ -160,6 +153,13 @@ public class StringValidator {
      */
     public void addDatetimeCheck() {
         this.params.put(Pattern.DATETIME, null);
+    }
+
+    /**
+     * 文字列の電話番号有効性チェックを予約する.
+     */
+    public void addTelephoneNumberCheck() {
+        this.params.put(Pattern.TELEPHONE_NUMBER, null);
     }
 
     /**
