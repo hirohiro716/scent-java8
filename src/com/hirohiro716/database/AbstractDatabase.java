@@ -804,7 +804,7 @@ public abstract class AbstractDatabase implements Closeable {
             builder.append(hashMap.get(key));
             builder.append("' ");
         }
-        builder.append("END ");
+        builder.append("END");
         return builder.toString();
     }
 
@@ -830,7 +830,7 @@ public abstract class AbstractDatabase implements Closeable {
             builder.append(hashMap.get(key));
             builder.append("' ");
         }
-        builder.append("END ");
+        builder.append("END");
         return builder.toString();
     }
 
