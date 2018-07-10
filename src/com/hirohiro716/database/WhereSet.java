@@ -207,7 +207,7 @@ public class WhereSet implements Cloneable {
     }
 
     /**
-     * createParameterClause()で作成したWhere句に対するパラメータを生成する.
+     * buildParameterClauseメソッドで作成したWhere句に対するパラメータを生成する.
      * @return パラメータ
      */
     public Object[] buildParameters() {
