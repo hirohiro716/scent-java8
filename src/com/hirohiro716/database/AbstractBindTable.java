@@ -85,7 +85,7 @@ public abstract class AbstractBindTable {
     
     /**
      * 編集・更新・削除に使用するレコード特定用のWhereSetを取得する.
-     * @return 
+     * @return whereSet
      */
     protected WhereSet getWhereSet() {
         return this.whereSet;
