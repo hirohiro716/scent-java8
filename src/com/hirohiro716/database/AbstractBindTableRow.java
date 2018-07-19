@@ -91,7 +91,7 @@ public abstract class AbstractBindTableRow extends AbstractBindTable {
     }
     
     /**
-     * 編集中のレコードを物理削除する.
+     * レコードを物理削除する.
      * @throws SQLException
      * @throws DataNotFoundException
      */
