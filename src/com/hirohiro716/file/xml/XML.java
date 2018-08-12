@@ -245,7 +245,7 @@ public class XML {
     /**
      * XMLの内容を取り込む.
      * @param source XML内容
-     * @param encoding 文字コード（UTF-8 / Shift-JISなど）
+     * @param encoding 文字コード（UTF-8/Shift-JISなど）
      * @throws IOException
      * @throws SAXException
      */
