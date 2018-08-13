@@ -4,5 +4,7 @@
 	<classpathentry kind="src" path="test"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="lib" path="libs/javax.mail.jar"/>
+	<classpathentry kind="lib" path="libs/zxing/core-3.3.4-20180529.153305-1.jar"/>
+	<classpathentry kind="lib" path="libs/zxing/javase-3.3.4-20180529.153314-1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
