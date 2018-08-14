@@ -746,7 +746,10 @@ public class RudeArray implements Cloneable, Serializable {
             } else {
                 firstDone = true;
             }
-            stringBuilder.append(this.baseArray.get(iterator.next()));
+            Object value = this.baseArray.get(iterator.next());
+            if (value != null) {
+                stringBuilder.append(value);
+            }
         }
         return stringBuilder.toString();
     }
