@@ -5,8 +5,10 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.OutputStreamWriter;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.nio.charset.Charset;
 import java.security.CodeSource;
 import java.security.ProtectionDomain;
 
@@ -416,6 +418,30 @@ public class FileHelper {
             }
             outputStream.flush();
         }
+    }
+    
+    /**
+     * テキストファイルを作成する.
+     * @param contents 内容
+     * @param file ファイルオブジェクト
+     * @param charset 文字セット
+     * @throws IOException
+     */
+    public static void createTextFile(String contents, File file, Charset charset) throws IOException {
+        try (OutputStreamWriter writer = new OutputStreamWriter(new FileOutputStream(file), charset)) {
+            writer.write(contents);
+            writer.flush();
+        }
+    }
+
+    /**
+     * テキストファイルをデフォルトの文字セットを使用して作成する.
+     * @param contents 内容
+     * @param file ファイルオブジェクト
+     * @throws IOException
+     */
+    public static void createTextFile(String contents, File file) throws IOException {
+        createTextFile(contents, file, Charset.defaultCharset());;
     }
 
 }
