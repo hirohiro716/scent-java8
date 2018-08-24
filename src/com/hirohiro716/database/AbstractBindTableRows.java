@@ -2,6 +2,7 @@ package com.hirohiro716.database;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
 import com.hirohiro716.RudeArray;
 
@@ -19,13 +20,13 @@ public abstract class AbstractBindTableRows extends AbstractBindTable {
         super(database);
     }
 
-    private ArrayList<RudeArray> rows = new ArrayList<>();
+    private List<RudeArray> rows = new ArrayList<>();
     
     /**
      * 編集中の全レコードの連想配列を取得する.
      * @return 全レコードの連想配列
      */
-    public ArrayList<RudeArray> getRows() {
+    public List<RudeArray> getRows() {
         return this.rows;
     }
     
@@ -33,7 +34,7 @@ public abstract class AbstractBindTableRows extends AbstractBindTable {
      * 連想配列を編集中の全レコードとしてセットする.
      * @param rows 全レコードの連想配列
      */
-    public void setRows(ArrayList<RudeArray> rows) {
+    public void setRows(List<RudeArray> rows) {
         this.rows = rows;
     }
     
