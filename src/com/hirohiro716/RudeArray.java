@@ -828,9 +828,11 @@ public class RudeArray implements Cloneable, Serializable {
      * @param sortKey 基準値が含まれるRudeArray内のキー
      * @return 並び替え後の新規ArrayList
      */
-    public static ArrayList<RudeArray> sortAsc(ArrayList<RudeArray> source, String sortKey) {
-        @SuppressWarnings("unchecked")
-        ArrayList<RudeArray> result = (ArrayList<RudeArray>) source.clone();
+    public static ArrayList<RudeArray> sortAsc(List<RudeArray> source, String sortKey) {
+        ArrayList<RudeArray> result = new ArrayList<>();
+        for (RudeArray array: source) {
+            result.add(array);
+        }
         Collections.sort(result, new RudeArrayComparatorAsc(sortKey));
         return result;
     }
@@ -841,9 +843,11 @@ public class RudeArray implements Cloneable, Serializable {
      * @param sortKey 基準値が含まれるRudeArray内のキー
      * @return 並び替え後の新規ArrayList
      */
-    public static ArrayList<RudeArray> sortDesc(ArrayList<RudeArray> source, String sortKey) {
-        @SuppressWarnings("unchecked")
-        ArrayList<RudeArray> result = (ArrayList<RudeArray>) source.clone();
+    public static ArrayList<RudeArray> sortDesc(List<RudeArray> source, String sortKey) {
+        ArrayList<RudeArray> result = new ArrayList<>();
+        for (RudeArray array: source) {
+            result.add(array);
+        }
         Collections.sort(result, new RudeArrayComparatorDesc(sortKey));
         return result;
     }
