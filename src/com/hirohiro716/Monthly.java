@@ -86,9 +86,7 @@ public class Monthly {
      * @throws SQLException 
      */
     public Monthly(BaseDay baseDay, int cutoffDay, int year, int month) {
-        this.baseDay = baseDay;
-        this.cutoffDay = cutoffDay;
-        this.applyMonth(year, month);
+        this.applyMonth(baseDay, cutoffDay, year, month);
     }
     
     /**
@@ -99,9 +97,7 @@ public class Monthly {
      * @throws SQLException
      */
     public Monthly(BaseDay baseDay, int cutoffDay, Date date) {
-        this.baseDay = baseDay;
-        this.cutoffDay = cutoffDay;
-        this.applyDate(date);
+        this.applyDate(baseDay, cutoffDay, date);
     }
 
     private BaseDay baseDay;
@@ -110,10 +106,14 @@ public class Monthly {
     
     /**
      * その月の開始日と終了日を計算して適用する.
+     * @param baseDay 月度の決定基準
+     * @param cutoffDay 締め日（1〜28）28を超える場合は末締め扱い
      * @param year 年
      * @param month 月度
      */
-    private void applyMonth(int year, int month) {
+    protected void applyMonth(BaseDay baseDay, int cutoffDay, int year, int month) {
+        this.baseDay = baseDay;
+        this.cutoffDay = cutoffDay;
         Date defaultDate = new Date(0);
         Datetime startDate = new Datetime(defaultDate);
         Datetime endDate = new Datetime(defaultDate);
@@ -155,25 +155,27 @@ public class Monthly {
     
     /**
      * Dateから月度を特定する.
+     * @param baseDay 月度の決定基準
+     * @param cutoffDay 締め日（1〜28）28を超える場合は末締め扱い
      * @param date 対象日
      */
-    private void applyDate(Date date) {
+    protected void applyDate(BaseDay baseDay, int cutoffDay, Date date) {
         Datetime datetime = new Datetime(date);
         datetime.modifyHour(0);
         datetime.modifyMinute(0);
         datetime.modifySecond(0);
         Datetime temporaryDatetime = new Datetime(date);
-        this.applyMonth(temporaryDatetime.toYear(), temporaryDatetime.toMonth());
+        this.applyMonth(baseDay, cutoffDay, temporaryDatetime.toYear(), temporaryDatetime.toMonth());
         if (this.startDatetime.getDate().getTime() <= datetime.getDate().getTime() && this.endDatetime.getDate().getTime() >= datetime.getDate().getTime()) {
             return;
         }
         temporaryDatetime.addMonth(-1);
-        this.applyMonth(temporaryDatetime.toYear(), temporaryDatetime.toMonth());
+        this.applyMonth(baseDay, cutoffDay, temporaryDatetime.toYear(), temporaryDatetime.toMonth());
         if (this.startDatetime.getDate().getTime() <= datetime.getDate().getTime() && this.endDatetime.getDate().getTime() >= datetime.getDate().getTime()) {
             return;
         }
         temporaryDatetime.addMonth(2);
-        this.applyMonth(temporaryDatetime.toYear(), temporaryDatetime.toMonth());
+        this.applyMonth(baseDay, cutoffDay, temporaryDatetime.toYear(), temporaryDatetime.toMonth());
         if (this.startDatetime.getDate().getTime() <= datetime.getDate().getTime() && this.endDatetime.getDate().getTime() >= datetime.getDate().getTime()) {
             return;
         }
