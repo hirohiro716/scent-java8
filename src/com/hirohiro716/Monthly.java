@@ -76,113 +76,44 @@ public class Monthly {
         }
 
     }
-
+    
+    private BaseDay baseDay = BaseDay.MONTHLY_DAYS_END;
+    
     /**
-     * コンストラクタ.
-     * @param baseDay 月度の決定基準
-     * @param cutoffDay 締め日（1〜28）28を超える場合は末締め扱い
-     * @param year 年
-     * @param month 月度
-     * @throws SQLException 
+     * 月度の決定基準定数を取得する.
+     * @return BaseDay
      */
-    public Monthly(BaseDay baseDay, int cutoffDay, int year, int month) {
-        this.applyMonth(baseDay, cutoffDay, year, month);
+    public BaseDay getBaseDay() {
+        return this.baseDay;
     }
     
     /**
-     * コンストラクタ.
-     * @param baseDay 月度の決定基準
-     * @param cutoffDay 締め日（1〜28）28を超える場合は末締め扱い
-     * @param date 対象日
-     * @throws SQLException
+     * 月度の決定基準定数をセットする.
+     * @param baseDay
      */
-    public Monthly(BaseDay baseDay, int cutoffDay, Date date) {
-        this.applyDate(baseDay, cutoffDay, date);
-    }
-
-    private BaseDay baseDay;
-    
-    private int cutoffDay;
-    
-    /**
-     * その月の開始日と終了日を計算して適用する.
-     * @param baseDay 月度の決定基準
-     * @param cutoffDay 締め日（1〜28）28を超える場合は末締め扱い
-     * @param year 年
-     * @param month 月度
-     */
-    protected void applyMonth(BaseDay baseDay, int cutoffDay, int year, int month) {
+    public void setBaseDay(BaseDay baseDay) {
         this.baseDay = baseDay;
-        this.cutoffDay = cutoffDay;
-        Date defaultDate = new Date(0);
-        Datetime startDate = new Datetime(defaultDate);
-        Datetime endDate = new Datetime(defaultDate);
-        if (this.cutoffDay > 28) {
-            startDate.modifyYear(year);
-            startDate.modifyMonth(month);
-            startDate.modifyDay(1);
-            endDate.setDate(startDate.getDate());
-            endDate.addDay(-1);
-        } else {
-            switch (this.baseDay) {
-            case MONTHLY_DAYS_START:
-                startDate.modifyYear(year);
-                startDate.modifyMonth(month);
-                startDate.modifyDay(this.cutoffDay);
-                startDate.addDay(1);
-                endDate.modifyYear(year);
-                endDate.modifyMonth(month);
-                endDate.modifyDay(this.cutoffDay);
-                endDate.addMonth(1);
-                break;
-            case MONTHLY_DAYS_END:
-                startDate.modifyYear(year);
-                startDate.modifyMonth(month);
-                startDate.modifyDay(this.cutoffDay);
-                startDate.addMonth(-1);
-                startDate.addDay(1);
-                endDate.modifyYear(year);
-                endDate.modifyMonth(month);
-                endDate.modifyDay(this.cutoffDay);
-                break;
-            }
-        }
-        this.year = year;
-        this.month = month;
-        this.startDatetime = startDate;
-        this.endDatetime = endDate;
+    }
+    
+    private int cutoffDay = 31;
+    
+    /**
+     * 締め日を取得する.
+     * @return 締め日（1〜28）28を超える場合は末締め扱い
+     */
+    public int getCutoffDay() {
+        return this.cutoffDay;
     }
     
     /**
-     * Dateから月度を特定する.
-     * @param baseDay 月度の決定基準
+     * 締め日をセットする.
      * @param cutoffDay 締め日（1〜28）28を超える場合は末締め扱い
-     * @param date 対象日
      */
-    protected void applyDate(BaseDay baseDay, int cutoffDay, Date date) {
-        Datetime datetime = new Datetime(date);
-        datetime.modifyHour(0);
-        datetime.modifyMinute(0);
-        datetime.modifySecond(0);
-        Datetime temporaryDatetime = new Datetime(date);
-        this.applyMonth(baseDay, cutoffDay, temporaryDatetime.toYear(), temporaryDatetime.toMonth());
-        if (this.startDatetime.getDate().getTime() <= datetime.getDate().getTime() && this.endDatetime.getDate().getTime() >= datetime.getDate().getTime()) {
-            return;
-        }
-        temporaryDatetime.addMonth(-1);
-        this.applyMonth(baseDay, cutoffDay, temporaryDatetime.toYear(), temporaryDatetime.toMonth());
-        if (this.startDatetime.getDate().getTime() <= datetime.getDate().getTime() && this.endDatetime.getDate().getTime() >= datetime.getDate().getTime()) {
-            return;
-        }
-        temporaryDatetime.addMonth(2);
-        this.applyMonth(baseDay, cutoffDay, temporaryDatetime.toYear(), temporaryDatetime.toMonth());
-        if (this.startDatetime.getDate().getTime() <= datetime.getDate().getTime() && this.endDatetime.getDate().getTime() >= datetime.getDate().getTime()) {
-            return;
-        }
-        throw new IllegalArgumentException("月度を特定することができませんでした。");
+    public void setCutoffDay(int cutoffDay) {
+        this.cutoffDay = cutoffDay;
     }
     
-    private int year;
+    private int year = 1970;
     
     /**
      * 年を取得する.
@@ -192,7 +123,15 @@ public class Monthly {
         return this.year;
     }
     
-    private int month;
+    /**
+     * 年をセットする.
+     * @param year 西暦
+     */
+    public void setYear(int year) {
+        this.year = year;
+    }
+    
+    private int month = 1;
     
     /**
      * 月を取得する.
@@ -202,13 +141,24 @@ public class Monthly {
         return this.month;
     }
     
-    private Datetime startDatetime;
+    /**
+     * 月をセットする.
+     * @param month 1〜12
+     */
+    public void setMonth(int month) {
+        this.month = month;
+    }
+    
+    private Datetime startDatetime = null;
     
     /**
      * 開始日を取得する.
      * @return 開始日
      */
     public Datetime getStartDatetime() {
+        if (this.startDatetime == null) {
+            this.caclulateStartAndEndDate();
+        }
         return this.startDatetime;
     }
     
@@ -219,8 +169,98 @@ public class Monthly {
      * @return 終了日
      */
     public Datetime getEndDatetime() {
+        if (this.endDatetime == null) {
+            this.caclulateStartAndEndDate();
+        }
         return this.endDatetime;
     }
+
+    /**
+     * その月の開始日と終了日を計算して適用する.
+     */
+    private void caclulateStartAndEndDate() {
+        Date defaultDate = new Date(0);
+        Datetime startDate = new Datetime(defaultDate);
+        Datetime endDate = new Datetime(defaultDate);
+        if (this.cutoffDay > 28) {
+            startDate.modifyYear(this.year);
+            startDate.modifyMonth(this.month);
+            startDate.modifyDay(1);
+            endDate.setDate(startDate.getDate());
+            endDate.addDay(-1);
+        } else {
+            switch (this.baseDay) {
+            case MONTHLY_DAYS_START:
+                startDate.modifyYear(this.year);
+                startDate.modifyMonth(this.month);
+                startDate.modifyDay(this.cutoffDay);
+                startDate.addDay(1);
+                endDate.modifyYear(this.year);
+                endDate.modifyMonth(this.month);
+                endDate.modifyDay(this.cutoffDay);
+                endDate.addMonth(1);
+                break;
+            case MONTHLY_DAYS_END:
+                startDate.modifyYear(this.year);
+                startDate.modifyMonth(this.month);
+                startDate.modifyDay(this.cutoffDay);
+                startDate.addMonth(-1);
+                startDate.addDay(1);
+                endDate.modifyYear(this.year);
+                endDate.modifyMonth(this.month);
+                endDate.modifyDay(this.cutoffDay);
+                break;
+            }
+        }
+        this.startDatetime = startDate;
+        this.endDatetime = endDate;
+    }
     
+    /**
+     * 月度インスタンスを生成する.
+     * @param baseDay 月度の決定基準
+     * @param cutoffDay 締め日（1〜28）28を超える場合は末締め扱い
+     * @param year 年
+     * @param month 月度
+     * @return Monthly
+     */
+    public static Monthly create(BaseDay baseDay, int cutoffDay, int year, int month) {
+        Monthly monthly = new Monthly();
+        monthly.setBaseDay(baseDay);
+        monthly.setCutoffDay(cutoffDay);
+        monthly.setYear(year);
+        monthly.setMonth(month);
+        return monthly;
+    }
+    
+    /**
+     * Dateから月度を特定する.
+     * @param baseDay 月度の決定基準
+     * @param cutoffDay 締め日（1〜28）28を超える場合は末締め扱い
+     * @param date 対象日
+     * @return Monthly
+     */
+    public static Monthly findMonthlyFromOneDay(BaseDay baseDay, int cutoffDay, Date date) {
+        Datetime datetime = new Datetime(date);
+        datetime.modifyHour(0);
+        datetime.modifyMinute(0);
+        datetime.modifySecond(0);
+        Datetime temporaryDatetime = new Datetime(date);
+        Monthly monthly = create(baseDay, cutoffDay, temporaryDatetime.toYear(), temporaryDatetime.toMonth());
+        if (monthly.getStartDatetime().getDate().getTime() <= datetime.getDate().getTime() && monthly.getEndDatetime().getDate().getTime() >= datetime.getDate().getTime()) {
+            return monthly;
+        }
+        temporaryDatetime.addMonth(-1);
+        monthly = create(baseDay, cutoffDay, temporaryDatetime.toYear(), temporaryDatetime.toMonth());
+        if (monthly.getStartDatetime().getDate().getTime() <= datetime.getDate().getTime() && monthly.getEndDatetime().getDate().getTime() >= datetime.getDate().getTime()) {
+            return monthly;
+        }
+        temporaryDatetime.addMonth(2);
+        monthly = create(baseDay, cutoffDay, temporaryDatetime.toYear(), temporaryDatetime.toMonth());
+        if (monthly.getStartDatetime().getDate().getTime() <= datetime.getDate().getTime() && monthly.getEndDatetime().getDate().getTime() >= datetime.getDate().getTime()) {
+            return monthly;
+        }
+        throw new IllegalArgumentException("月度を特定することができませんでした。");
+    }
     
 }
