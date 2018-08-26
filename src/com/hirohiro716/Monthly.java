@@ -262,5 +262,17 @@ public class Monthly {
         }
         throw new IllegalArgumentException("月度を特定することができませんでした。");
     }
+
+    /**
+     * すべての月の連想配列を取得する.
+     * @return LinkedHashMap
+     */
+    public static LinkedHashMap<Integer, String> createLinkedHashMap() {
+        LinkedHashMap<Integer, String> hashMap = new LinkedHashMap<>();
+        for (int i = 1; i <= 12; i++) {
+            hashMap.put(i, i + "月");
+        }
+        return hashMap;
+    }
     
 }
