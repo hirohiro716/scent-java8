@@ -179,9 +179,9 @@ public class Monthly {
      * その月の開始日と終了日を計算して適用する.
      */
     private void caclulateStartAndEndDate() {
-        Date defaultDate = new Date(0);
-        Datetime startDate = new Datetime(defaultDate);
-        Datetime endDate = new Datetime(defaultDate);
+        Datetime defaultDate = new Datetime("1971-01-01 00:00:00");
+        Datetime startDate = new Datetime(defaultDate.getDate());
+        Datetime endDate = new Datetime(defaultDate.getDate());
         if (this.cutoffDay > 28) {
             startDate.modifyYear(this.year);
             startDate.modifyMonth(this.month);
@@ -245,7 +245,7 @@ public class Monthly {
         datetime.modifyHour(0);
         datetime.modifyMinute(0);
         datetime.modifySecond(0);
-        Datetime temporaryDatetime = new Datetime(date);
+        Datetime temporaryDatetime = new Datetime(datetime.getDate());
         Monthly monthly = create(baseDay, cutoffDay, temporaryDatetime.toYear(), temporaryDatetime.toMonth());
         if (monthly.getStartDatetime().getDate().getTime() <= datetime.getDate().getTime() && monthly.getEndDatetime().getDate().getTime() >= datetime.getDate().getTime()) {
             return monthly;
