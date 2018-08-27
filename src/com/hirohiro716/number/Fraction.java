@@ -86,7 +86,7 @@ public enum Fraction {
     /**
      * 数値から端数処理を取得する.
      * @param value 端数処理を表す数値
-     * @return FractionType
+     * @return Fraction
      */
     public static Fraction find(Integer value) {
         for (Fraction type: Fraction.values()) {
