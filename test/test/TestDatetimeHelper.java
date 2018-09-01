@@ -1,6 +1,6 @@
 package test;
 
-import com.hirohiro716.Datetime;
+import com.hirohiro716.datetime.Datetime;
 
 @SuppressWarnings({ "all"})
 public class TestDatetimeHelper {

@@ -5,7 +5,7 @@ import static com.hirohiro716.StringConverter.join;
 import java.util.Date;
 
 import com.hirohiro716.StringConverter;
-import com.hirohiro716.Datetime;
+import com.hirohiro716.datetime.Datetime;
 import com.hirohiro716.RudeArray;
 
 /**

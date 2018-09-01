@@ -1,4 +1,4 @@
-package com.hirohiro716;
+package com.hirohiro716.datetime;
 
 import java.util.Date;
 import java.util.LinkedHashMap;

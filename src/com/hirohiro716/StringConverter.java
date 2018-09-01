@@ -7,6 +7,8 @@ import java.util.Date;
 import javax.crypto.Cipher;
 import javax.crypto.spec.SecretKeySpec;
 
+import com.hirohiro716.datetime.Datetime;
+
 /**
  * 値を変換するクラス.
  * @author hiro

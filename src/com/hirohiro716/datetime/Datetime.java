@@ -1,4 +1,4 @@
-package com.hirohiro716;
+package com.hirohiro716.datetime;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

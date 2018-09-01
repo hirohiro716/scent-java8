@@ -18,7 +18,7 @@ import java.util.Iterator;
 import java.sql.Date;
 
 import com.hirohiro716.StringConverter;
-import com.hirohiro716.Datetime;
+import com.hirohiro716.datetime.Datetime;
 import com.hirohiro716.RudeArray;
 
 /**
