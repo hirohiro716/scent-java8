@@ -1,6 +1,8 @@
 package com.hirohiro716;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * 配列操作に関するクラス.
@@ -23,6 +25,16 @@ public class ArrayHelper {
             }
         }
         return merged.toArray(arrays[0]);
+    }
+    
+    /**
+     * 配列をListに変換する.
+     * @param <T>
+     * @param array 配列
+     * @return Listオブジェクト
+     */
+    public static <T> List<T> createListFromArray(T[] array) {
+        return new ArrayList<>(Arrays.asList(array));
     }
     
 }
