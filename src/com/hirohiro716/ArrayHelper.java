@@ -2,6 +2,8 @@ package com.hirohiro716;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 /**
@@ -35,6 +37,44 @@ public class ArrayHelper {
      */
     public static <T> List<T> createListFromArray(T[] array) {
         return new ArrayList<>(Arrays.asList(array));
+    }
+    
+    /**
+     * 数値の配列をソートする.
+     * @param <T> Numberを継承した数値型
+     * @param array 数値の配列
+     * @param isReverseOrder 降順かどうか
+     */
+    public static <T extends Number> void sort(T[] array, boolean isReverseOrder) {
+        Comparator<T> comparator = new Comparator<T>() {
+            @Override
+            public int compare(T o1, T o2) {
+                if (o1 == null && o2 == null) {
+                    return 0;
+                }
+                if (o1 == null || o1.doubleValue() < o2.doubleValue()) {
+                    return -1;
+                }
+                if (o2 == null || o1.doubleValue() > o2.doubleValue()) {
+                    return 1;
+                }
+                return 0;
+            }
+        };
+        if (isReverseOrder) {
+            Arrays.sort(array, Collections.reverseOrder(comparator));
+        } else {
+            Arrays.sort(array, comparator);
+        }
+    }
+
+    /**
+     * 数値の配列を昇順でソートする.
+     * @param <T> Numberを継承した数値型
+     * @param array 数値の配列
+     */
+    public static <T extends Number> void sort(T[] array) {
+        sort(array, false);
     }
     
 }

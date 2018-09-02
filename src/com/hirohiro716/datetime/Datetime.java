@@ -395,4 +395,42 @@ public class Datetime {
         return null;
     }
 
+    /**
+     * 期間を表すクラス.
+     * @author hiro
+     */
+    public static class Span {
+        
+        /**
+         * コンストラクタ.
+         * @param startDatetime
+         * @param endDatetime
+         */
+        public Span(Datetime startDatetime, Datetime endDatetime) {
+            this.startDatetime = startDatetime;
+            this.endDatetime =  endDatetime;
+        }
+        
+        Datetime startDatetime;
+        
+        /**
+         * 期間の開始日時を取得する.
+         * @return Datetime
+         */
+        public Datetime getStartDatetime() {
+            return this.startDatetime;
+        }
+        
+        Datetime endDatetime;
+        
+        /**
+         * 期間の終了日時を取得する.
+         * @return Datetime
+         */
+        public Datetime getEndDatetime() {
+            return this.endDatetime;
+        }
+        
+    }
+    
 }
