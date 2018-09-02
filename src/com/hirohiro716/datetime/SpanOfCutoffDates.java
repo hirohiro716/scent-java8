@@ -19,7 +19,7 @@ public class SpanOfCutoffDates {
      * @param endLimitDate 求める期間を制限する上限
      * @param cutoffDates 締め日
      */
-    public SpanOfCutoffDates(Date startLimitDate, Date endLimitDate, int... cutoffDates) {
+    public SpanOfCutoffDates(Date startLimitDate, Date endLimitDate, Integer... cutoffDates) {
         if (cutoffDates.length == 0) {
             throw new IllegalArgumentException();
         }
