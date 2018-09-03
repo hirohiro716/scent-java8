@@ -212,6 +212,9 @@ public class FiscalMonth {
                 break;
             }
         }
+        endDate.modifyHour(23);
+        endDate.modifyMinute(59);
+        endDate.modifySecond(59);
         this.startDatetime = startDate;
         this.endDatetime = endDate;
     }
