@@ -4,10 +4,10 @@ import java.util.Date;
 import java.util.LinkedHashMap;
 
 /**
- * 月度のクラス.
+ * 会計月のクラス.
  * @author hiro
  */
-public class Monthly {
+public class FiscalMonth {
     
     /**
      * 月度の決定基準.
@@ -224,8 +224,8 @@ public class Monthly {
      * @param month 月度
      * @return Monthly
      */
-    public static Monthly create(BaseDay baseDay, int cutoffDay, int year, int month) {
-        Monthly monthly = new Monthly();
+    public static FiscalMonth create(BaseDay baseDay, int cutoffDay, int year, int month) {
+        FiscalMonth monthly = new FiscalMonth();
         monthly.setBaseDay(baseDay);
         monthly.setCutoffDay(cutoffDay);
         monthly.setYear(year);
@@ -240,13 +240,13 @@ public class Monthly {
      * @param date 対象日
      * @return Monthly
      */
-    public static Monthly findMonthlyFromOneDay(BaseDay baseDay, int cutoffDay, Date date) {
+    public static FiscalMonth findMonthlyFromOneDay(BaseDay baseDay, int cutoffDay, Date date) {
         Datetime datetime = new Datetime(date);
         datetime.modifyHour(0);
         datetime.modifyMinute(0);
         datetime.modifySecond(0);
         Datetime temporaryDatetime = new Datetime(datetime.getDate());
-        Monthly monthly = create(baseDay, cutoffDay, temporaryDatetime.toYear(), temporaryDatetime.toMonth());
+        FiscalMonth monthly = create(baseDay, cutoffDay, temporaryDatetime.toYear(), temporaryDatetime.toMonth());
         if (monthly.getStartDatetime().getDate().getTime() <= datetime.getDate().getTime() && monthly.getEndDatetime().getDate().getTime() >= datetime.getDate().getTime()) {
             return monthly;
         }
