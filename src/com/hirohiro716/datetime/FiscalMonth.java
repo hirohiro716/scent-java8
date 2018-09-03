@@ -4,7 +4,7 @@ import java.util.Date;
 import java.util.LinkedHashMap;
 
 /**
- * 会計月のクラス.
+ * 会計月度のクラス.
  * @author hiro
  */
 public class FiscalMonth {
