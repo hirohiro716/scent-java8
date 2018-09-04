@@ -1,7 +1,5 @@
 package com.hirohiro716.database;
 
-import com.hirohiro716.RudeArray;
-
 /**
  * データベースカラムや設定名などの項目を表すインターフェース.
  * @author hiro
@@ -28,12 +26,6 @@ public interface InterfaceColumn {
      */
     public String getFullPhysicalName();
 
-    /**
-     * 対象データに初期値をセットする.
-     * @param row 対象データ
-     */
-    public void setDefaultValue(RudeArray row);
-    
     /**
      * 項目の初期値を取得する.
      * @return 初期値
