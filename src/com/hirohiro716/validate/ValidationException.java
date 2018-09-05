@@ -22,7 +22,7 @@ public class ValidationException extends Exception {
     /**
      * 指定された詳細メッセージおよび原因を使用して新規例外を構築する. causeと関連付けられた詳細メッセージがこの例外の詳細メッセージに自動的に統合されることはない.
      * @param message 詳細メッセージ（あとでThrowable.getMessage()メソッドで取得できるように保存される）
-     * @param cause 原因(あとでThrowable.getCause()メソッドで取得できるように保存される)（null値が許可されており原因が存在しないか不明であることを示す）
+     * @param cause 原因（あとでThrowable.getCause()メソッドで取得できるように保存される）（null値が許可されており原因が存在しないか不明であることを示す）
      */
     public ValidationException(String message, Throwable cause) {
         super(message, cause);
