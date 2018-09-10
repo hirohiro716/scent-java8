@@ -58,6 +58,7 @@ public abstract class AbstractBindTable {
             T instance = table.getConstructor(database).newInstance(db);
             return instance.getTableName();
         } catch (Exception exception) {
+            exception.printStackTrace();
             return null;
         }
     }
