@@ -39,16 +39,7 @@ public class SpanOfCutoffDates {
      * @param cutoffDates 締め日
      */
     public SpanOfCutoffDates(Date startLimitDate, Date endLimitDate, List<Integer> cutoffDates) {
-        if (cutoffDates.size() == 0) {
-            throw new IllegalArgumentException();
-        }
-        this.startLimitDate = startLimitDate;
-        this.endLimitDate = endLimitDate;
-        for (Integer cutoffDate: cutoffDates) {
-            this.addCutoffDate(cutoffDate);
-        }
-        this.sortCutoffDates();
-        this.calculateSpans();
+        this(startLimitDate, endLimitDate, cutoffDates.toArray(new Integer[] {}));
     }
     
     private Date startLimitDate;
