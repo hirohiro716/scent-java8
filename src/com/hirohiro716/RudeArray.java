@@ -83,7 +83,7 @@ public class RudeArray implements Cloneable, Serializable {
     private static final long serialVersionUID = -1692187503079204210L;
 
     /**
-     * コンストラクタ
+     * コンストラクタ.
      */
     public RudeArray() {
         this.baseArray = new LinkedHashMap<>();

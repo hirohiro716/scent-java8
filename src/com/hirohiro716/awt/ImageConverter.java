@@ -20,13 +20,13 @@ import com.hirohiro716.file.FileHelper.FileExtension;
 public class ImageConverter extends ByteConverter {
 
     /**
-     * コンストラクタ
+     * コンストラクタ.
      */
     public ImageConverter() {
     }
 
     /**
-     * コンストラクタ
+     * コンストラクタ.
      * @param image
      * @param fileExtension
      */
@@ -35,7 +35,7 @@ public class ImageConverter extends ByteConverter {
     }
 
     /**
-     * コンストラクタ
+     * コンストラクタ.
      * @param file
      */
     public ImageConverter(File file) {
@@ -43,7 +43,7 @@ public class ImageConverter extends ByteConverter {
     }
 
     /**
-     * コンストラクタ
+     * コンストラクタ.
      * @param fileLocation
      */
     public ImageConverter(String fileLocation) {

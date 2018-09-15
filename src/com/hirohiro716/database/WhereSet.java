@@ -297,7 +297,7 @@ public class WhereSet implements Cloneable {
     public static class Where implements Cloneable {
 
         /**
-         * コンストラクタ
+         * コンストラクタ.
          * @param column カラム名
          * @param comparison 比較演算子
          * @param values 比較値

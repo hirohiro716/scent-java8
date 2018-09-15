@@ -57,7 +57,7 @@ public class StringValidator {
     }
 
     /**
-     * コンストラクタ
+     * コンストラクタ.
      */
     public StringValidator() {
     }

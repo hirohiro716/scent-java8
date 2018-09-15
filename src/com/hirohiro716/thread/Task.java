@@ -12,7 +12,7 @@ import java.util.concurrent.FutureTask;
 public class Task<T> {
 
     /**
-     * コンストラクタ
+     * コンストラクタ.
      * @param callable
      */
     public Task(Callable<T> callable) {

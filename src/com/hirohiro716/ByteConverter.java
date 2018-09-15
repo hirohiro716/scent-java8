@@ -21,7 +21,7 @@ public class ByteConverter {
     private byte[] bytes;
 
     /**
-     * コンストラクタ
+     * コンストラクタ.
      */
     public ByteConverter() {
     }
