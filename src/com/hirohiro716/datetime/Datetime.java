@@ -361,27 +361,27 @@ public class Datetime {
      */
     public static Date stringToDate(String dateString) {
         // yyyy/MM/dd
-        if (dateString.matches("^[0-9]{4}/[0-1]{1}[1-9]{1}/[0-3]{1}[0-9]{1}$")) {
+        if (dateString.matches("^[0-9]{4}/[0-1]{1}[0-9]{1}/[0-3]{1}[0-9]{1}$")) {
             return new Datetime(dateString, "yyyy/MM/dd").getDate();
         }
         // yyyy-MM-dd
-        if (dateString.matches("^[0-9]{4}\\-[0-1]{1}[1-9]{1}\\-[0-3]{1}[0-9]{1}$")) {
+        if (dateString.matches("^[0-9]{4}\\-[0-1]{1}[0-9]{1}\\-[0-3]{1}[0-9]{1}$")) {
             return new Datetime(dateString, "yyyy-MM-dd").getDate();
         }
         // yyyy/MM/dd HH:mm
-        if (dateString.toString().matches("^[0-9]{4}/[0-1]{1}[1-9]{1}/[0-3]{1}[0-9]{1} [0-2]{1}[0-9]{1}:[0-5]{1}[0-9]{1}$")) {
+        if (dateString.toString().matches("^[0-9]{4}/[0-1]{1}[0-9]{1}/[0-3]{1}[0-9]{1} [0-2]{1}[0-9]{1}:[0-5]{1}[0-9]{1}$")) {
             return new Datetime(dateString, "yyyy/MM/dd HH:mm").getDate();
         }
         // yyyy-MM-dd HH:mm
-        if (dateString.toString().matches("^[0-9]{4}\\-[0-1]{1}[1-9]{1}\\-[0-3]{1}[0-9]{1} [0-2]{1}[0-9]{1}:[0-5]{1}[0-9]{1}$")) {
+        if (dateString.toString().matches("^[0-9]{4}\\-[0-1]{1}[0-9]{1}\\-[0-3]{1}[0-9]{1} [0-2]{1}[0-9]{1}:[0-5]{1}[0-9]{1}$")) {
             return new Datetime(dateString, "yyyy-MM-dd HH:mm").getDate();
         }
         // yyyy/MM/dd HH:mm:ss
-        if (dateString.toString().matches("^[0-9]{4}/[0-1]{1}[1-9]{1}/[0-3]{1}[0-9]{1} [0-2]{1}[0-9]{1}:[0-5]{1}[0-9]{1}:[0-5]{1}[0-9]{1}$")) {
+        if (dateString.toString().matches("^[0-9]{4}/[0-1]{1}[0-9]{1}/[0-3]{1}[0-9]{1} [0-2]{1}[0-9]{1}:[0-5]{1}[0-9]{1}:[0-5]{1}[0-9]{1}$")) {
             return new Datetime(dateString, "yyyy/MM/dd HH:mm:ss").getDate();
         }
         // yyyy-MM-dd HH:mm:ss
-        if (dateString.toString().matches("^[0-9]{4}\\-[0-1]{1}[1-9]{1}\\-[0-3]{1}[0-9]{1} [0-2]{1}[0-9]{1}:[0-5]{1}[0-9]{1}:[0-5]{1}[0-9]{1}$")) {
+        if (dateString.toString().matches("^[0-9]{4}\\-[0-1]{1}[0-9]{1}\\-[0-3]{1}[0-9]{1} [0-2]{1}[0-9]{1}:[0-5]{1}[0-9]{1}:[0-5]{1}[0-9]{1}$")) {
             return new Datetime(dateString, "yyyy-MM-dd HH:mm:ss").getDate();
         }
         // HH:mm:ss
