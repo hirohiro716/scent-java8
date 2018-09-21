@@ -14,7 +14,7 @@ public class ArrayHelper {
     
     /**
      * 配列を結合する.
-     * @param <T> 
+     * @param <T>
      * @param arrays 結合する配列
      * @return 結合された配列
      */
