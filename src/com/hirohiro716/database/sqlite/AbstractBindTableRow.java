@@ -115,7 +115,6 @@ public abstract class AbstractBindTableRow extends com.hirohiro716.database.Abst
         } catch (SQLException exception) {
             throw new IOException(exception);
         } catch (DataNotFoundException exception) {
-            exception.printStackTrace();
         }
     }
     
