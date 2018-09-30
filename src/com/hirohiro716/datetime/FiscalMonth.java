@@ -187,6 +187,7 @@ public class FiscalMonth {
             startDate.modifyMonth(this.month);
             startDate.modifyDay(1);
             endDate.setDate(startDate.getDate());
+            endDate.addMonth(1);
             endDate.addDay(-1);
         } else {
             switch (this.baseDay) {
