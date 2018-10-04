@@ -1,9 +1,8 @@
 package com.hirohiro716.datetime;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Date;
-import java.util.List;
-
 import com.hirohiro716.ArrayHelper;
 import com.hirohiro716.datetime.Datetime.Span;
 
@@ -38,7 +37,7 @@ public class SpanOfCutoffDates {
      * @param endLimitDate 求める期間を制限する上限
      * @param cutoffDates 締め日
      */
-    public SpanOfCutoffDates(Date startLimitDate, Date endLimitDate, List<Integer> cutoffDates) {
+    public SpanOfCutoffDates(Date startLimitDate, Date endLimitDate, Collection<Integer> cutoffDates) {
         this(startLimitDate, endLimitDate, cutoffDates.toArray(new Integer[] {}));
     }
     
