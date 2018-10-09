@@ -108,7 +108,6 @@ public class SpanOfCutoffDates {
         this.spans = new ArrayList<>();
         Datetime increment = new Datetime(this.startLimitDate);
         while (increment.getDate().getTime() <= this.endLimitDate.getTime()) {
-            
             Datetime startDatetime = new Datetime(increment.getDate());
             startDatetime.modifyHour(0);
             startDatetime.modifyMinute(0);
@@ -135,13 +134,20 @@ public class SpanOfCutoffDates {
      * @return 締め日
      */
     private int calculateNearCutoffDate(Datetime datetime) {
-        Datetime compare = new Datetime(datetime.getDate());
+        int findCutoffDate = this.cutoffDates.get(0);
+        Datetime temporaryDatetime = new Datetime(datetime.getDate());
         for (Integer cutoffDate: this.cutoffDates) {
-            if (compare.toDay() < cutoffDate) {
-                return cutoffDate;
+            if (temporaryDatetime.toDay() < cutoffDate) {
+                findCutoffDate = cutoffDate;
             }
         }
-        return this.cutoffDates.get(0);
+        if (findCutoffDate > 28) {
+            temporaryDatetime.modifyDay(1);
+            temporaryDatetime.addMonth(1);;
+            temporaryDatetime.addDay(-1);
+            return temporaryDatetime.toDay();
+        }
+        return findCutoffDate;
     }
     
     /**
