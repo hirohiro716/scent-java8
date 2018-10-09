@@ -139,6 +139,7 @@ public class SpanOfCutoffDates {
         for (Integer cutoffDate: this.cutoffDates) {
             if (temporaryDatetime.toDay() < cutoffDate) {
                 findCutoffDate = cutoffDate;
+                break;
             }
         }
         if (findCutoffDate > 28) {
