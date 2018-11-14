@@ -11,7 +11,7 @@ import java.util.List;
  * @author hiro
  */
 public class ArrayHelper {
-
+    
     /**
      * 配列を結合する.
      * @param <T>
