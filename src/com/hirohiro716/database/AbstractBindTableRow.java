@@ -84,10 +84,15 @@ public abstract class AbstractBindTableRow extends AbstractBindTable {
      * @throws DataNotFoundException
      */
     public void update() throws SQLException, DataNotFoundException {
+        if (this.getWhereSet() == null) {
+            throw new SQLException("Invalid operation because search condition is not set.");
+        }
         StringBuilder stringBuilder = new StringBuilder("SELECT * FROM ");
         stringBuilder.append(this.getTableName());
+        stringBuilder.append(" WHERE ");
+        stringBuilder.append(this.getWhereSet().buildParameterClause());
         stringBuilder.append(";");
-        this.getDatabase().update(this.row, stringBuilder.toString());
+        this.getDatabase().update(this.row, stringBuilder.toString(), this.getWhereSet().buildParameters());
     }
     
     /**
