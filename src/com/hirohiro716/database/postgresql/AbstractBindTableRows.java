@@ -32,7 +32,7 @@ public abstract class AbstractBindTableRows extends com.hirohiro716.database.Abs
             stringBuilder.append(" ");
             stringBuilder.append(afterSQL);
             stringBuilder.append(";");
-            this.getDatabase().lockTable(this.getTableName());
+            this.getDatabase().lockTableReadonly(this.getTableName());
             return this.getDatabase().fetchRows(stringBuilder.toString());
         }
         // 検索条件がある場合は行ロック
