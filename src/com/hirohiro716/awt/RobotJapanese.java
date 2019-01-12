@@ -4,80 +4,32 @@ import java.awt.AWTException;
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
-import java.util.LinkedHashMap;
 import java.util.List;
 
 import com.hirohiro716.RegexHelper.RegexPattern;
+import com.hirohiro716.InterfaceKeyInputRobotJapanese;
 import com.hirohiro716.OSHelper;
 import com.hirohiro716.RudeArray;
 
 /**
- * AWTのRobotクラスにちょこっと日本用の機能をつけました.
+ * AWTのRobotクラスに日本語用の機能を足したクラス.
  * @author hiro
  */
-public class RobotJapanese extends Robot {
+public class RobotJapanese extends Robot implements InterfaceKeyInputRobotJapanese {
 
-    @SuppressWarnings("javadoc")
-    public enum ImeMode {
-        OFF(0, "OFF"),
-        HIRAGANA(1, "ひらがな"),
-        KATAKANA_WIDE(2, "カタカナ"),
-        KATAKANA_NARROW(3, "ｶﾀｶﾅ"),
-        ;
-
-        private ImeMode(int value, String description) {
-            this.value = value;
-            this.description = description;
-        }
-
-        private int value;
-
-        public int getValue() {
-            return this.value;
-        }
-
-        private String description;
-
-        public String getDescription() {
-            return this.description;
-        }
-
-        public static ImeMode find(Integer value) {
-            for (ImeMode ime : ImeMode.values()) {
-                if (value != null && ime.value == value) {
-                    return ime;
-                }
-            }
-            return null;
-        }
-
-        public static LinkedHashMap<Integer, String> createHashMap() {
-            LinkedHashMap<Integer, String> hashMap = new LinkedHashMap<>();
-            for (ImeMode mode: ImeMode.values()) {
-                hashMap.put(mode.getValue(), mode.getDescription());
-            }
-            return hashMap;
-        }
-
-    }
-    
     /**
      * コンストラクタ.
      * @throws AWTException
      */
     public RobotJapanese() throws AWTException {
-        super();
     }
     
-    /**
-     * キーを押して離す動作をエミュレートする.
-     * @param keyEvent
-     */
-    public void keyType(int... keyEvent) {
-        for (int key : keyEvent) {
+    @Override
+    public void keyType(int... keyCodes) {
+        for (int key : keyCodes) {
             this.keyPress(key);
         }
-        for (int key : keyEvent) {
+        for (int key : keyCodes) {
             this.keyRelease(key);
         }
     }
@@ -94,9 +46,7 @@ public class RobotJapanese extends Robot {
         }
     }
     
-    /**
-     * IMEをOFFにする.
-     */
+    @Override
     public void changeImeOff() {
         if (this.changeImeOffKeys.size() > 0) {
             for (int[] key: this.changeImeOffKeys) {
@@ -138,9 +88,7 @@ public class RobotJapanese extends Robot {
         }
     }
     
-    /**
-     * IMEをひらがなにする.
-     */
+    @Override
     public void changeImeHiragana() {
         if (this.changeImeHiraganaKeys.size() > 0) {
             for (int[] key: this.changeImeHiraganaKeys) {
@@ -180,9 +128,7 @@ public class RobotJapanese extends Robot {
         }
     }
     
-    /**
-     * IMEをカタカナにする.
-     */
+    @Override
     public void changeImeKatakanaWide() {
         if (this.changeImeKatakanaKeys.size() > 0) {
             for (int[] key: this.changeImeKatakanaKeys) {
@@ -222,9 +168,7 @@ public class RobotJapanese extends Robot {
         }
     }
     
-    /**
-     * IMEをｶﾀｶﾅにする.
-     */
+    @Override
     public void changeImeKatakanaNarrow() {
         if (this.changeImeKatakanaNarrowKeys.size() > 0) {
             for (int[] key: this.changeImeKatakanaNarrowKeys) {
