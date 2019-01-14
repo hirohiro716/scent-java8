@@ -254,6 +254,14 @@ public class Datetime {
     }
 
     /**
+     * ミリ秒をセットする.
+     * @param milliSecond ミリ秒
+     */
+    public void modifyMilliSecond(int milliSecond) {
+        this.calendar.set(Calendar.MILLISECOND, milliSecond);
+    }
+
+    /**
      * 年数を加算する.
      * @param add 加算年数
      */
