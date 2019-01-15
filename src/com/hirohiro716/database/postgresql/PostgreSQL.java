@@ -79,7 +79,7 @@ public class PostgreSQL extends AbstractDatabase {
      */
     public Date fetchNow() throws SQLException {
         try {
-            String sql = "SELECT NOW() AS nowtime;";
+            String sql = "SELECT CLOCK_TIMESTAMP() AS nowtime;";
             RudeArray row = this.fetchRow(sql);
             return row.getDate("nowtime");
         } catch (DataNotFoundException exception) {
