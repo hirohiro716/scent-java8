@@ -64,6 +64,31 @@ public abstract class AbstractBindTable {
     }
 
     /**
+     * テーブルの説明を取得する.
+     * @return テーブルの説明
+     */
+    public abstract String getDescription();
+
+    /**
+     * テーブルの説明を取得する.
+     * @param <T> テーブルの説明を求めるAbstractBindTableを継承したクラス
+     * @param <D> Tのクラスで使用されているデータベースクラス
+     * @param table テーブルの説明を求めるクラス
+     * @param database テーブルの説明のクラスで使用されているデータベースクラス
+     * @return テーブルの説明
+     */
+    public static <T extends AbstractBindTable, D extends AbstractDatabase> String getDescription(Class<T> table, Class<D> database) {
+        try {
+            AbstractDatabase db = null;
+            T instance = table.getConstructor(database).newInstance(db);
+            return instance.getDescription();
+        } catch (Exception exception) {
+            exception.printStackTrace();
+            return null;
+        }
+    }
+
+    /**
      * 初期値が入力されたレコード用の連想配列を取得する.
      * @return 連想配列
      */
