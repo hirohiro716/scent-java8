@@ -276,9 +276,10 @@ public abstract class AbstractDatabase implements Closeable {
                 if (resultSet.next()) {
                     return resultSet.getObject(1).toString();
                 }
-                throw new DataNotFoundException();
             }
+        } catch (Exception exception) {
         }
+        throw new DataNotFoundException();
     }
 
     /**
