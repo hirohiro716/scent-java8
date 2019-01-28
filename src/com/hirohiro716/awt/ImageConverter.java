@@ -37,16 +37,18 @@ public class ImageConverter extends ByteConverter {
     /**
      * コンストラクタ.
      * @param file
+     * @throws IOException 
      */
-    public ImageConverter(File file) {
+    public ImageConverter(File file) throws IOException {
         super(file);
     }
 
     /**
      * コンストラクタ.
      * @param fileLocation
+     * @throws IOException 
      */
-    public ImageConverter(String fileLocation) {
+    public ImageConverter(String fileLocation) throws IOException {
         super(fileLocation);
     }
 
@@ -115,20 +117,14 @@ public class ImageConverter extends ByteConverter {
      * 画像ファイルを指定されたサイズにリサイズします.
      * @param longSide 高さまたは幅の長辺
      * @param isExpansion 拡大リサイズをするかどうか
-     * @return 結果
      * @throws IOException 読込み中または書き込み中にエラーが発生した場合
      */
-    public boolean resize(int longSide, boolean isExpansion) throws IOException {
+    public void resize(int longSide, boolean isExpansion) throws IOException {
         if (this.getBytes() == null) {
-            return false;
+            return;
         }
         ByteArrayInputStream inputStream = new ByteArrayInputStream(this.getBytes());
-        BufferedImage image;
-        try {
-            image = ImageIO.read(inputStream);
-        } catch (IOException exception) {
-            return false;
-        }
+        BufferedImage image = ImageIO.read(inputStream);
         // 比率の計算
         boolean widthLongFlag = false;
         if (image.getWidth() > image.getHeight()) {
@@ -147,7 +143,6 @@ public class ImageConverter extends ByteConverter {
             width = Math.round(longSide / rate);
         }
         this.resize(width, height, isExpansion);
-        return true;
     }
 
 }

@@ -7,7 +7,6 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
-import com.hirohiro716.file.FileHelper;
 import com.hirohiro716.file.FileHelper.FileExtension;
 
 /**
@@ -29,16 +28,18 @@ public class ByteConverter {
     /**
      * ファイルを指定してインスタンス生成する.
      * @param fileLocation ファイル名
+     * @throws IOException 
      */
-    public ByteConverter(String fileLocation) {
+    public ByteConverter(String fileLocation) throws IOException {
         this.setFileLocation(fileLocation);
     }
 
     /**
      * ファイルを指定してインスタンス生成する.
      * @param fileLocation ファイルURI
+     * @throws IOException 
      */
-    public ByteConverter(File fileLocation) {
+    public ByteConverter(File fileLocation) throws IOException {
         this.setFileLocation(fileLocation.getPath());
     }
 
@@ -70,28 +71,20 @@ public class ByteConverter {
     /**
      * ファイルパスを指定する.
      * @param fileLocation 画像ファイルのフルパス
-     * @return 結果
+     * @throws IOException 
      */
-    public boolean setFileLocation(String fileLocation) {
-        if (fileLocation == null || FileHelper.isExistsFile(fileLocation) == false) {
-            return false;
-        }
+    public void setFileLocation(String fileLocation) throws IOException {
         this.fileLocation = fileLocation;
         this.fileExtension = FileExtension.find(fileLocation);
-        try {
-            this.bytes = new byte[1];
-            FileInputStream inputStream = new FileInputStream(fileLocation);
-            ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-            while (inputStream.read(this.bytes) > 0) {
-                outputStream.write(this.bytes);
-            }
-            outputStream.close();
-            inputStream.close();
-            this.bytes = outputStream.toByteArray();
-            return true;
-        } catch (IOException exception) {
-            return false;
+        this.bytes = new byte[1];
+        FileInputStream inputStream = new FileInputStream(fileLocation);
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        while (inputStream.read(this.bytes) > 0) {
+            outputStream.write(this.bytes);
         }
+        outputStream.close();
+        inputStream.close();
+        this.bytes = outputStream.toByteArray();
     }
 
     /**
@@ -177,15 +170,10 @@ public class ByteConverter {
     /**
      * 保持しているファイルを指定したファイル名で保存する.
      * @param fileLocation 保存先フルパス
-     * @return 結果
+     * @throws IOException 
      */
-    public boolean saveAs(String fileLocation) {
-        try {
-            ByteConverter.saveBytesToFile(this.bytes, fileLocation);
-            return true;
-        } catch (IOException exception) {
-            return false;
-        }
+    public void saveAs(String fileLocation) throws IOException {
+        ByteConverter.saveBytesToFile(this.bytes, fileLocation);
     }
 
     /**
