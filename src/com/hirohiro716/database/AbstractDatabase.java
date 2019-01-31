@@ -134,6 +134,15 @@ public abstract class AbstractDatabase implements Closeable {
             // nop
         }
     }
+    
+    /**
+     * コネクションが閉じられているかどうかを取得する.
+     * @return 結果
+     * @throws SQLException
+     */
+    public boolean isClosed() throws SQLException {
+        return (this.connection == null || this.connection.isClosed());
+    }
 
     /**
      * 更新系SQLを実行する.
