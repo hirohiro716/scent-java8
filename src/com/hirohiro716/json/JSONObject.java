@@ -17,6 +17,7 @@ public class JSONObject {
      * コンストラクタ.
      */
     public JSONObject() {
+        super();
     }
     
     /**

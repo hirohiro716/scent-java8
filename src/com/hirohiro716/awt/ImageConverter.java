@@ -23,6 +23,7 @@ public class ImageConverter extends ByteConverter {
      * コンストラクタ.
      */
     public ImageConverter() {
+        super();
     }
 
     /**

@@ -22,6 +22,7 @@ public class RobotJapanese extends Robot implements InterfaceKeyInputRobotJapane
      * @throws AWTException
      */
     public RobotJapanese() throws AWTException {
+        super();
     }
     
     @Override

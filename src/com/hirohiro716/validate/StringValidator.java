@@ -60,6 +60,7 @@ public class StringValidator {
      * コンストラクタ.
      */
     public StringValidator() {
+        super();
     }
 
     /**
