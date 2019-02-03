@@ -48,14 +48,14 @@ public abstract class AbstractBindTable {
      * テーブル名を取得する.
      * @param <T> テーブル名を求めるAbstractBindTableを継承したクラス
      * @param <D> Tのクラスで使用されているデータベースクラス
-     * @param table テーブル名を求めるクラス
-     * @param database テーブル名のクラスで使用されているデータベースクラス
+     * @param tableClass テーブル名を求めるクラス
+     * @param databaseClass テーブル名のクラスで使用されているデータベースクラス
      * @return テーブル名
      */
-    public static <T extends AbstractBindTable, D extends AbstractDatabase> String getTableName(Class<T> table, Class<D> database) {
+    public static <T extends AbstractBindTable, D extends AbstractDatabase> String getTableName(Class<T> tableClass, Class<D> databaseClass) {
         try {
-            AbstractDatabase db = null;
-            T instance = table.getConstructor(database).newInstance(db);
+            AbstractDatabase database = null;
+            T instance = tableClass.getConstructor(databaseClass).newInstance(database);
             return instance.getTableName();
         } catch (Exception exception) {
             exception.printStackTrace();
@@ -73,14 +73,14 @@ public abstract class AbstractBindTable {
      * テーブルの説明を取得する.
      * @param <T> テーブルの説明を求めるAbstractBindTableを継承したクラス
      * @param <D> Tのクラスで使用されているデータベースクラス
-     * @param table テーブルの説明を求めるクラス
-     * @param database テーブルの説明のクラスで使用されているデータベースクラス
+     * @param tableClass テーブルの説明を求めるクラス
+     * @param databaseClass テーブルの説明のクラスで使用されているデータベースクラス
      * @return テーブルの説明
      */
-    public static <T extends AbstractBindTable, D extends AbstractDatabase> String getDescription(Class<T> table, Class<D> database) {
+    public static <T extends AbstractBindTable, D extends AbstractDatabase> String getDescription(Class<T> tableClass, Class<D> databaseClass) {
         try {
-            AbstractDatabase db = null;
-            T instance = table.getConstructor(database).newInstance(db);
+            AbstractDatabase database = null;
+            T instance = tableClass.getConstructor(databaseClass).newInstance(database);
             return instance.getDescription();
         } catch (Exception exception) {
             exception.printStackTrace();
