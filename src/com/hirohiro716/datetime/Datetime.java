@@ -312,7 +312,7 @@ public class Datetime {
 
     @Override
     public String toString() {
-        return this.calendar.getTime().toString();
+        return this.toDatetimeString();
     }
 
     private static LinkedHashMap<Integer, String> weeksHashMap = new LinkedHashMap<>();
