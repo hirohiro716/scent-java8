@@ -60,7 +60,7 @@ public class StringConverter {
     /**
      * 両端の余白を取り除く処理を組み込む.
      */
-    public void appendTrim() {
+    public void addTrim() {
         this.params.put(Pattern.TRIM, null);
     }
 
@@ -69,7 +69,7 @@ public class StringConverter {
      * @param targetString 検索文字列
      * @param replaceString 置き換え文字列
      */
-    public void appendReplace(String targetString, String replaceString) {
+    public void addReplace(String targetString, String replaceString) {
         this.params.put(Pattern.REPLACE, new String[] {targetString, replaceString});
     }
 
@@ -77,7 +77,7 @@ public class StringConverter {
      * キャリッジリターンを置き換える処理を組み込む.
      * @param replaceString 置き換え文字列
      */
-    public void appendReplaceCr(String replaceString) {
+    public void addReplaceCr(String replaceString) {
         this.params.put(Pattern.REPLACE_CR, replaceString);
     }
 
@@ -85,7 +85,7 @@ public class StringConverter {
      * ラインフィードを置き換える処理を組み込む.
      * @param replaceString 置き換え文字列
      */
-    public void appendReplaceLf(String replaceString) {
+    public void addReplaceLf(String replaceString) {
         this.params.put(Pattern.REPLACE_LF, replaceString);
     }
 
@@ -93,7 +93,7 @@ public class StringConverter {
      * CRLFを置き換える処理を組み込む.
      * @param replaceString 置き換え文字列
      */
-    public void appendReplaceCrLf(String replaceString) {
+    public void addReplaceCrLf(String replaceString) {
         this.params.put(Pattern.REPLACE_CRLF, replaceString);
     }
 
@@ -101,7 +101,7 @@ public class StringConverter {
      * 半角スペースを置き換える処理を組み込む.
      * @param replaceString 置き換え文字列
      */
-    public void appendReplaceNarrowSpace(String replaceString) {
+    public void addReplaceNarrowSpace(String replaceString) {
         this.params.put(Pattern.REPLACE_NARROW_SPACE, replaceString);
     }
 
@@ -109,7 +109,7 @@ public class StringConverter {
      * 全角スペースを置き換える処理を組み込む.
      * @param replaceString 置き換え文字列
      */
-    public void appendReplaceWideSpace(String replaceString) {
+    public void addReplaceWideSpace(String replaceString) {
         this.params.put(Pattern.REPLACE_WIDE_SPACE, replaceString);
     }
 
@@ -117,7 +117,7 @@ public class StringConverter {
      * タブ文字を置き換える処理を組み込む.
      * @param replaceString 置き換え文字列
      */
-    public void appendReplaceTab(String replaceString) {
+    public void addReplaceTab(String replaceString) {
         this.params.put(Pattern.REPLACE_TAB, replaceString);
     }
 
@@ -125,7 +125,7 @@ public class StringConverter {
      * 開始位置を指定して文字列を抜き出す処理を組み込む.
      * @param start 開始位置
      */
-    public void appendSubString(int start) {
+    public void addSubString(int start) {
         this.params.put(Pattern.SUB_STRING, new int[]{start});
     }
 
@@ -134,7 +134,7 @@ public class StringConverter {
      * @param start 開始位置
      * @param length 文字数
      */
-    public void appendSubString(int start, int length) {
+    public void addSubString(int start, int length) {
         this.params.put(Pattern.SUB_STRING, new int[]{start, length});
     }
 
@@ -143,7 +143,7 @@ public class StringConverter {
      * @param length 固定長数
      * @param paddingChar 埋める文字列
      */
-    public void appendPaddingLeft(int length, char paddingChar) {
+    public void addPaddingLeft(int length, char paddingChar) {
         this.params.put(Pattern.PADDING_LEFT, new Object[] {length, paddingChar});
     }
 
@@ -152,42 +152,42 @@ public class StringConverter {
      * @param length 固定長数
      * @param paddingChar 埋める文字列
      */
-    public void appendPaddingRight(int length, char paddingChar) {
+    public void addPaddingRight(int length, char paddingChar) {
         this.params.put(Pattern.PADDING_RIGHT, new Object[] {length, paddingChar});
     }
 
     /**
      * 数値として有効な文字列のみを抜き出す処理を組み込む.
      */
-    public void appendIntegerString() {
+    public void addIntegerString() {
         this.params.put(Pattern.INTEGER, null);
     }
 
     /**
      * 数値として有効な文字列のみを抜き出す処理を組み込む.
      */
-    public void appendDecimalString() {
+    public void addDecimalString() {
         this.params.put(Pattern.DECIMAL, null);
     }
 
     /**
      * 数値として有効な文字列のみを抜き出し小数点を省略する処理を組み込む.
      */
-    public void appendTryNonFractionString() {
+    public void addTryNonFractionString() {
         this.params.put(Pattern.TRY_NON_FRACTION, null);
     }
 
     /**
      * 電話番号として有効な文字列のみ（数字,-）を抜き出す処理を組み込む.
      */
-    public void appendTelephone() {
+    public void addTelephone() {
         this.params.put(Pattern.TELEPHONE, null);
     }
 
     /**
      * java.util.Dateオブジェクトまたは日付として有効な文字列をyyyy-MM-dd形式に変換する処理を組み込む.
      */
-    public void appendDatetime() {
+    public void addDatetime() {
         this.params.put(Pattern.DATETIME, null);
     }
 
@@ -195,14 +195,14 @@ public class StringConverter {
      * java.util.Dateオブジェクトまたは日付として有効な文字列をパターンに応じて変換する処理を組み込む.
      * @param formatPattern フォーマットパターン（yyyy-MM-ddなど）
      */
-    public void appendDatetime(String formatPattern) {
+    public void addDatetime(String formatPattern) {
         this.params.put(Pattern.DATETIME, formatPattern);
     }
 
     /**
      * SHA256で文字列を暗号化する処理を組み込む.
      */
-    public void appendEncryptSha256() {
+    public void addEncryptSha256() {
         this.params.put(Pattern.ENCRYPT_SHA256, null);
     }
 
@@ -210,7 +210,7 @@ public class StringConverter {
      * キーを指定してAES128で暗号化する処理を組み込む.
      * @param key キー
      */
-    public void appendEncryptAes128(String key) {
+    public void addEncryptAes128(String key) {
         this.params.put(Pattern.ENCRYPT_AES128, key);
     }
 
@@ -218,49 +218,49 @@ public class StringConverter {
      * キーを指定してAES128で暗号化された文字列を復号化する処理を組み込む.
      * @param key キー
      */
-    public void appendDecryptAes128(String key) {
+    public void addDecryptAes128(String key) {
         this.params.put(Pattern.DECRYPT_AES128, key);
     }
 
     /**
      * 全角文字を半角に変換する.
      */
-    public void appendWideToNarrow() {
+    public void addWideToNarrow() {
         this.params.put(Pattern.WIDE_TO_NARROW, null);
     }
 
     /**
      * 半角文字を全角に変換する.
      */
-    public void appendNarrowToWide() {
+    public void addNarrowToWide() {
         this.params.put(Pattern.NARROW_TO_WIDE, null);
     }
 
     /**
      * 大文字を小文字に変換する.
      */
-    public void appendUpperToLower() {
+    public void addUpperToLower() {
         this.params.put(Pattern.UPPER_TO_LOWER, null);
     }
 
     /**
      * 小文字を大文字に変換する.
      */
-    public void appendLowerToUpper() {
+    public void addLowerToUpper() {
         this.params.put(Pattern.LOWER_TO_UPPER, null);
     }
 
     /**
      * 全角ひらがなを全角カタカナに変換する.
      */
-    public void appendHiraganaToKatakana() {
+    public void addHiraganaToKatakana() {
         this.params.put(Pattern.HIRAGANA_TO_KATAKANA, null);
     }
 
     /**
      * 全角カタカナを全角ひらがなに変換する.
      */
-    public void appendKatakanaToHiragana() {
+    public void addKatakanaToHiragana() {
         this.params.put(Pattern.KATAKANA_TO_HIRAGANA, null);
     }
 
