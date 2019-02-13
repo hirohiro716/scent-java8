@@ -190,7 +190,25 @@ public class StringValidator {
         if (this.params.size() == 0) {
             return "";
         }
-        String parameter = StringConverter.nullReplace(this.params.get(pattern), "");
+        String parameter = "";
+        switch (pattern) {
+        case LENGTH:
+        case MAX_LENGTH:
+        case MIN_LENGTH:
+        case MAX_VALUE:
+        case MIN_VALUE:
+            parameter = StringConverter.nullReplace(StringConverter.tryNonFraction(this.params.get(pattern).toString()), "");
+            break;
+        case BLANK:
+        case INTEGER:
+        case DECIMAL:
+        case ZERO:
+        case DATETIME:
+        case TELEPHONE_NUMBER:
+        case REGEX:
+        case REGEX_REVERSE:
+            break;
+        }
         return pattern.getErrorMessage().replace(ERROR_MESSAGE_ARGUMENT, parameter);
     }
 
