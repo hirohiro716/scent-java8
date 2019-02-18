@@ -39,7 +39,7 @@ public class ValidationException extends com.hirohiro716.validate.ValidationExce
     
     /**
      * 例外の原因となった行を取得する.
-     * @return DynamicTypeArray
+     * @return RudeArray
      */
     public RudeArray getCauseRow() {
         return this.causeRow;
