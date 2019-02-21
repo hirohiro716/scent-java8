@@ -315,7 +315,7 @@ public class StringValidator {
      */
     public static boolean isInteger(Object value) {
         if (value != null) {
-            if (value.toString().matches("^[0-9]{0,}$") == false) {
+            if (value.toString().matches("^[\\-]{0,1}[0-9]{0,}$") == false) {
                 return false;
             }
         }
@@ -329,7 +329,7 @@ public class StringValidator {
      */
     public static boolean isDecimal(Object value) {
         if (value != null) {
-            if (value.toString().matches("^[0-9\\.]{0,}$") == false) {
+            if (value.toString().matches("^[\\-]{0,1}[0-9\\.]{0,}$") == false) {
                 return false;
             }
         }
