@@ -286,7 +286,12 @@ public abstract class AbstractDatabase implements Closeable {
                     return resultSet.getObject(1).toString();
                 }
             }
+        } catch (SQLException exception) {
+            throw exception;
+        } catch (NullPointerException exception) {
+            // nop
         } catch (Exception exception) {
+            exception.printStackTrace();
         }
         throw new DataNotFoundException();
     }
