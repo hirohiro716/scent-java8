@@ -13,9 +13,14 @@ public class FiscalMonth {
      * 月度の決定基準.
      * @author hiro
      */
-    @SuppressWarnings("javadoc")
     public enum BaseDay {
+        /**
+         * 月度の初日を基準とする
+         */
         MONTHLY_DAYS_START(1, "月度の初日を基準とする"),
+        /**
+         * 月度の末日を基準とする
+         */
         MONTHLY_DAYS_END(2, "月度の末日を基準とする"),
         ;
         
