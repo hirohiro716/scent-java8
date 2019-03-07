@@ -57,7 +57,7 @@ public class SQLite extends AbstractDatabase {
 
     /**
      * データベースファイルを指定してコネクションを確立する.
-     * @param データベースファイル
+     * @param databaseLocation データベースファイル
      */
     @Override
     public void connect(String databaseLocation) throws ClassNotFoundException, SQLException {

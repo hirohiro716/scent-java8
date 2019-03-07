@@ -969,6 +969,7 @@ public class StringConverter {
 
     /**
      * ひらがなからカタカナの変換リスト（半角カタカナは非対応）
+     * @return RudeArray
      */
     private static RudeArray createKatakanaToHiraganaList() {
         RudeArray array = new RudeArray();
@@ -1060,6 +1061,7 @@ public class StringConverter {
 
     /**
      * カタカナからひらがなの変換リスト（半角カタカナは非対応）
+     * @return RudeArray
      */
     private static RudeArray createHiraganaToKatakanaList() {
         RudeArray array = new RudeArray();
@@ -1151,6 +1153,7 @@ public class StringConverter {
 
     /**
      * 全角文字から半角文字の変換リスト
+     * @return RudeArray
      */
     private static RudeArray createNarrowToWideList() {
         RudeArray array = new RudeArray();
@@ -1333,6 +1336,7 @@ public class StringConverter {
 
     /**
      * 半角文字から全角文字の変換リスト
+     * @return RudeArray
      */
     private static RudeArray createWideToNarrowList() {
         RudeArray array = new RudeArray();
@@ -1515,6 +1519,7 @@ public class StringConverter {
 
     /**
      * 濁点のひらがな/カタカナへの変換リスト（半角カタカナは非対応）
+     * @return RudeArray
      */
     private static RudeArray createClearToDakutenList() {
         RudeArray array = new RudeArray();
@@ -1563,6 +1568,7 @@ public class StringConverter {
 
     /**
      * 半濁点のひらがな/カタカナへの変換リスト（半角カタカナは非対応）
+     * @return RudeArray
      */
     private static RudeArray createClearToDakutenHalfList() {
         RudeArray array = new RudeArray();
@@ -1581,6 +1587,7 @@ public class StringConverter {
 
     /**
      * 濁点のひらがな/カタカナから通常文字への変換リスト（半角カタカナは非対応）
+     * @return RudeArray
      */
     private static RudeArray createDakutenToClearList() {
         RudeArray array = new RudeArray();
@@ -1629,6 +1636,7 @@ public class StringConverter {
 
     /**
      * 半濁点のひらがな/カタカナから通常文字への変換リスト（半角カタカナは非対応）
+     * @return RudeArray
      */
     private static RudeArray createDakutenHalfToClearList() {
         RudeArray array = new RudeArray();
@@ -1647,6 +1655,7 @@ public class StringConverter {
 
     /**
      * ひらがな/カタカナの小文字への変換リスト（半角カタカナは非対応）
+     * @return RudeArray
      */
     private static RudeArray createUpperToLowerJapaneseList() {
         RudeArray array = new RudeArray();
@@ -1673,6 +1682,7 @@ public class StringConverter {
 
     /**
      * ひらがな/カタカナの小文字から通常文字への変換リスト（半角カタカナは非対応）
+     * @return RudeArray
      */
     private static RudeArray createLowerToUpperJapaneseList() {
         RudeArray array = new RudeArray();

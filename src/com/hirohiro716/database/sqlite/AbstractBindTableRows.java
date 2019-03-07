@@ -5,7 +5,6 @@ import java.io.IOException;
 import java.sql.SQLException;
 
 import com.hirohiro716.RudeArray;
-import com.hirohiro716.database.DataNotFoundException;
 import com.hirohiro716.database.sqlite.SQLite.IsolationLevel;
 
 /**
@@ -96,7 +95,6 @@ public abstract class AbstractBindTableRows extends com.hirohiro716.database.Abs
     /**
      * 編集中を解除する. これはclose()メソッドから自動的に呼び出される.
      * @throws SQLException
-     * @throws DataNotFoundException
      */
     protected abstract void updateToEditingFinish() throws SQLException;
     

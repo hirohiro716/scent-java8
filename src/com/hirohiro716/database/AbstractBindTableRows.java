@@ -78,7 +78,6 @@ public abstract class AbstractBindTableRows extends AbstractBindTable {
      * @param afterSQL ORDER句などのFROM句の後に入力するオプション
      * @return 編集された全レコードの連想配列
      * @throws SQLException 
-     * @throws DataNotFoundException 
      */
     protected abstract RudeArray[] fetchEditRows(String afterSQL) throws SQLException;
     
