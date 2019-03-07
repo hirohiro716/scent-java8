@@ -82,6 +82,14 @@ public class WhereSet implements Cloneable {
     }
 
     private ArrayList<Where> wheres = new ArrayList<>();
+    
+    /**
+     * Where条件を追加する.
+     * @param where Where条件
+     */
+    public void add(Where where) {
+    	this.wheres.add(where);
+    }
 
     /**
      * Where条件を追加する.
@@ -295,7 +303,7 @@ public class WhereSet implements Cloneable {
      * @author hiro
      */
     public static class Where implements Cloneable {
-
+    	
         /**
          * コンストラクタ.
          * @param column カラム名
@@ -310,7 +318,7 @@ public class WhereSet implements Cloneable {
                 this.values.add(value);
             }
         }
-
+        
         /**
          * 「カラム = ?」のようなパラメータWhere句を生成する.
          * @return パラメータWhere句
