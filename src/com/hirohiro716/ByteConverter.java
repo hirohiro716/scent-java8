@@ -78,14 +78,14 @@ public class ByteConverter {
         this.fileLocation = fileLocation;
         this.fileExtension = FileExtension.find(fileLocation);
         this.bytes = new byte[1];
-        FileInputStream inputStream = new FileInputStream(fileLocation);
-        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-        while (inputStream.read(this.bytes) > 0) {
-            outputStream.write(this.bytes);
+        try (FileInputStream inputStream = new FileInputStream(fileLocation)) {
+            try (ByteArrayOutputStream outputStream = new ByteArrayOutputStream()) {
+                while (inputStream.read(this.bytes) > 0) {
+                    outputStream.write(this.bytes);
+                }
+                this.bytes = outputStream.toByteArray();
+            }
         }
-        outputStream.close();
-        inputStream.close();
-        this.bytes = outputStream.toByteArray();
     }
 
     /**
