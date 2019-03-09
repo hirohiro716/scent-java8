@@ -5,6 +5,7 @@ import java.util.ArrayList;
 
 import com.hirohiro716.RudeArray;
 import com.hirohiro716.StringConverter;
+import com.hirohiro716.file.xml.InterfaceProperty;
 
 /**
  * ORMのようなものを提供する抽象クラス.
@@ -100,6 +101,15 @@ public abstract class AbstractBindTable {
      * @return 連想配列
      */
     public static RudeArray createDefaultRow(InterfaceColumn[] columns) {
+    	return createDefaultRow((InterfaceProperty[]) columns);
+    }
+
+    /**
+     * 初期値が入力されたレコード用の連想配列を取得する.
+     * @param columns カラム一覧
+     * @return 連想配列
+     */
+    public static RudeArray createDefaultRow(InterfaceProperty[] columns) {
         RudeArray row = new RudeArray();
         for (InterfaceColumn column: columns) {
             row.put(column.getPhysicalName(), column.getDefaultValue());
