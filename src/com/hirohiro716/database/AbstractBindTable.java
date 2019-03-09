@@ -106,12 +106,12 @@ public abstract class AbstractBindTable {
 
     /**
      * 初期値が入力されたレコード用の連想配列を取得する.
-     * @param columns カラム一覧
+     * @param properties プロパティ一覧
      * @return 連想配列
      */
-    public static RudeArray createDefaultRow(InterfaceProperty[] columns) {
+    public static RudeArray createDefaultRow(InterfaceProperty[] properties) {
         RudeArray row = new RudeArray();
-        for (InterfaceColumn column: columns) {
+        for (InterfaceColumn column: properties) {
             row.put(column.getPhysicalName(), column.getDefaultValue());
         }
         return row;
