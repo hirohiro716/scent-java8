@@ -101,7 +101,11 @@ public abstract class AbstractBindTable {
      * @return 連想配列
      */
     public static RudeArray createDefaultRow(InterfaceColumn[] columns) {
-    	return createDefaultRow((InterfaceProperty[]) columns);
+        RudeArray row = new RudeArray();
+        for (InterfaceColumn column: columns) {
+            row.put(column.getPhysicalName(), column.getDefaultValue());
+        }
+        return row;
     }
 
     /**
@@ -111,8 +115,8 @@ public abstract class AbstractBindTable {
      */
     public static RudeArray createDefaultRow(InterfaceProperty[] properties) {
         RudeArray row = new RudeArray();
-        for (InterfaceColumn column: properties) {
-            row.put(column.getPhysicalName(), column.getDefaultValue());
+        for (InterfaceColumn property: properties) {
+            row.put(property.getPhysicalName(), property.getDefaultValue());
         }
         return row;
     }
