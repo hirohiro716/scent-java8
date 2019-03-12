@@ -89,7 +89,7 @@ public class LayoutSetting {
      * データベースに保存するための文字列を取得する.
      * @return bytesString
      */
-    public String getConvertString() {
+    public String makeSerializedString() {
         try {
             byte[] bytes = this.values.toSerialize();
             String bytesString = ByteConverter.bytesToString(bytes);
