@@ -9,7 +9,7 @@ import com.hirohiro716.database.AbstractBindTable;
  * レイアウト設定を保存するクラス.
  * @author hiro
  */
-public class LayoutSetting {
+public class LayoutSetting implements Cloneable {
 
     /**
      * 配列に格納する項目列挙型.
@@ -82,14 +82,25 @@ public class LayoutSetting {
             this.values = AbstractBindTable.createDefaultRow(Property.values());
         }
     }
-    
+
+    @Override
+    public LayoutSetting clone() {
+		try {
+			LayoutSetting clone = (LayoutSetting) super.clone();
+	    	clone.values = this.values.clone();
+	    	return clone;
+		} catch (CloneNotSupportedException exception) {
+			return new LayoutSetting();
+		}
+	}
+
     private RudeArray values;
 
     /**
      * データベースに保存するための文字列を取得する.
      * @return bytesString
      */
-    public String makeSerializedString() {
+    public String generateSerializedString() {
         try {
             byte[] bytes = this.values.toSerialize();
             String bytesString = ByteConverter.bytesToString(bytes);

@@ -769,7 +769,7 @@ public class RudeArray implements Cloneable, Serializable {
             for (Object key : array.getKeys()) {
                 Object value = array.get(key);
                 if (value != null) {
-                    if (value.getClass().getName().equals(this.getClass().getName())) {
+                    if (value instanceof RudeArray) {
                         RudeArray myArray = (RudeArray) value;
                         array.put(myArray.clone(), key);
                     }
