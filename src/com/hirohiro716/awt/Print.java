@@ -25,8 +25,8 @@ import javax.print.attribute.standard.MediaSizeName;
 import javax.print.attribute.standard.MediaTray;
 import javax.print.attribute.standard.OrientationRequested;
 
-import com.hirohiro716.PrintHelper;
 import com.hirohiro716.file.FileHelper.FileExtension;
+import com.hirohiro716.print.PrintHelper;
 
 /**
  * 印刷の補助をするクラス
