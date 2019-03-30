@@ -287,7 +287,7 @@ public class WhereSet implements Cloneable {
     }
 
     @Override
-    public Object clone() {
+    public WhereSet clone() {
         WhereSet clone = new WhereSet();
         ArrayList<Where> cloneWheres = new ArrayList<>();
         for (Where where: this.wheres) {
