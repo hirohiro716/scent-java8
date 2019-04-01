@@ -441,7 +441,7 @@ public class FileHelper {
      * @throws IOException
      */
     public static void createTextFile(String contents, File file) throws IOException {
-        createTextFile(contents, file, Charset.defaultCharset());;
+        createTextFile(contents, file, Charset.defaultCharset());
     }
 
 }

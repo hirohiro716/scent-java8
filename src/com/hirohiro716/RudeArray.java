@@ -697,7 +697,11 @@ public class RudeArray implements Cloneable, Serializable {
         String[] values = new String[this.size()];
         int i = 0;
         for (Object key : this.getKeys()) {
-            values[i] = this.get(key).toString();
+            try {
+                values[i] = (String) this.get(key);
+            } catch (Exception exception) {
+                values[i] = this.get(key).toString();
+            }
             i++;
         }
         return values;

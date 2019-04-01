@@ -190,17 +190,17 @@ public class XML {
 
     /**
      * XMLの内容から文字列を生成する.
-     * @param encodingString 文字コード（UTF-8 / Shift-JISなど）
+     * @param encoding 文字コード（UTF-8/Shift-JISなど）
      * @return XML
      * @throws TransformerException
      */
-    public String buildSource(String encodingString) throws TransformerException {
+    public String buildSource(String encoding) throws TransformerException {
         DOMSource domSource = new DOMSource(this.document);
         StringWriter stringWriter = new StringWriter();
         StreamResult streamResult = new StreamResult(stringWriter);
         TransformerFactory transformerFactory = TransformerFactory.newInstance();
         Transformer transformer = transformerFactory.newTransformer();
-        transformer.setOutputProperty(OutputKeys.ENCODING, encodingString);
+        transformer.setOutputProperty(OutputKeys.ENCODING, encoding);
         transformer.transform(domSource, streamResult);
         return stringWriter.toString();
     }
@@ -208,17 +208,17 @@ public class XML {
     /**
      * XMLファイルを作成する.
      * @param fileLocation 保存先
-     * @param encodingString 文字コード（UTF-8 / Shift-JISなど）
+     * @param encoding 文字コード（UTF-8/Shift-JISなど）
      * @throws IOException
      * @throws TransformerException
      */
-    public void saveFile(String fileLocation, String encodingString) throws IOException, TransformerException {
+    public void saveFile(String fileLocation, String encoding) throws IOException, TransformerException {
         try (OutputStream outputStream = new FileOutputStream(fileLocation)) {
             DOMSource domSource = new DOMSource(this.document);
             StreamResult streamResult = new StreamResult(outputStream);
             TransformerFactory transformerFactory = TransformerFactory.newInstance();
             Transformer transformer = transformerFactory.newTransformer();
-            transformer.setOutputProperty(OutputKeys.ENCODING, encodingString);
+            transformer.setOutputProperty(OutputKeys.ENCODING, encoding);
             transformer.transform(domSource, streamResult);
         }
     }
