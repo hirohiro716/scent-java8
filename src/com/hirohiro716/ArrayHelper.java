@@ -83,4 +83,58 @@ public class ArrayHelper {
         sort(array, false);
     }
     
+    /**
+     * 配列中で最初に見つかった検索値に対するインデックスを取得する. 見つからなかった場合は-1を返す.
+     * @param array 配列
+     * @param searchValue 検索値
+     * @return インデックス
+     */
+    public static <T> int findIndex(T[] array, T searchValue) {
+        int findIndex = -1;
+        if (array != null) {
+            for (int index = 0; index < array.length; index++) {
+                T value = array[index];
+                if (value == null) {
+                    if (value == searchValue) {
+                        findIndex = index;
+                        break;
+                    }
+                } else {
+                    if (value.equals(searchValue)) {
+                        findIndex = index;
+                        break;
+                    }
+                }
+            }
+        }
+        return findIndex;
+    }
+
+    /**
+     * 配列中で最後に見つかった検索値に対するインデックスを取得する. 見つからなかった場合は-1を返す.
+     * @param array 配列
+     * @param searchValue 検索値
+     * @return インデックス
+     */
+    public static <T> int findLastIndex(T[] array, T searchValue) {
+        int findIndex = -1;
+        if (array != null) {
+            for (int index = array.length - 1; index > -1; index--) {
+                T value = array[index];
+                if (value == null) {
+                    if (value == searchValue) {
+                        findIndex = index;
+                        break;
+                    }
+                } else {
+                    if (value.equals(searchValue)) {
+                        findIndex = index;
+                        break;
+                    }
+                }
+            }
+        }
+        return findIndex;
+    }
+    
 }

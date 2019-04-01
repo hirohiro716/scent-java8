@@ -277,6 +277,8 @@ public class RudeArray implements Cloneable, Serializable {
     public Number getNumber(Object key) {
         try {
             return (Number) this.baseArray.get(key);
+        } catch (ClassCastException exception) {
+            return StringConverter.stringToDouble(this.baseArray.get(key).toString());
         } catch (Exception exception) {
             return null;
         }
