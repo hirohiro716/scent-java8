@@ -416,7 +416,7 @@ public class StringConverter {
      * @return 結果
      */
     public static String paddingLeft(String value, char paddingCharactor, int length) {
-        String paddingString = repeat(String.valueOf(paddingCharactor), length) + value;
+        String paddingString = repeat(String.valueOf(paddingCharactor), length) + nullReplace(value, "");
         return subString(paddingString, paddingString.length() - length, length);
     }
 
@@ -428,7 +428,7 @@ public class StringConverter {
      * @return 結果
      */
     public static String paddingRight(String value, char paddingCharactor, int length) {
-        String paddingString = value + repeat(String.valueOf(paddingCharactor), length);
+        String paddingString = nullReplace(value, "") + repeat(String.valueOf(paddingCharactor), length);
         return subString(paddingString, 0, length);
     }
 

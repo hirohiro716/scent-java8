@@ -168,7 +168,7 @@ public abstract class AbstractDatabase implements Closeable {
         try (PreparedStatement statement = this.connection.prepareStatement(sql)) {
             statement.setQueryTimeout(this.timeout);
             for (int i = 0; i < params.length; i++) {
-                statement.setObject(i + 1, params[i]);
+                statement.setObject(i + 1, castSearchValue(params[i]));
             }
             return statement.executeUpdate();
         }
@@ -187,7 +187,7 @@ public abstract class AbstractDatabase implements Closeable {
             int updateCount = 0;
             for (Object[] params: paramsArray) {
                 for (int i = 0; i < params.length; i++) {
-                    statement.setObject(i + 1, params[i]);
+                    statement.setObject(i + 1, castSearchValue(params[i]));
                 }
                 updateCount += statement.executeUpdate();
             }
@@ -222,7 +222,7 @@ public abstract class AbstractDatabase implements Closeable {
          */
         public void execute(Object[] params) throws SQLException {
             for (int i = 0; i < params.length; i++) {
-                this.statement.setObject(i + 1, params[i]);
+                this.statement.setObject(i + 1, castSearchValue(params[i]));
             }
             this.updateCount += this.statement.executeUpdate();
         }
@@ -279,7 +279,7 @@ public abstract class AbstractDatabase implements Closeable {
         try (PreparedStatement statement = this.connection.prepareStatement(sql, ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_READ_ONLY)) {
             statement.setQueryTimeout(this.timeout);
             for (int i = 0; i < params.length; i++) {
-                statement.setObject(i + 1, params[i]);
+                statement.setObject(i + 1, castSearchValue(params[i]));
             }
             try (ResultSet resultSet = statement.executeQuery()) {
                 if (resultSet.next()) {
@@ -332,7 +332,7 @@ public abstract class AbstractDatabase implements Closeable {
         try (PreparedStatement statement = this.connection.prepareStatement(sql, ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_READ_ONLY)) {
             statement.setQueryTimeout(this.timeout);
             for (int i = 0; i < params.length; i++) {
-                statement.setObject(i + 1, params[i]);
+                statement.setObject(i + 1, castSearchValue(params[i]));
             }
             try (ResultSet resultSet = statement.executeQuery()) {
                 if (resultSet.next()) {
@@ -383,7 +383,7 @@ public abstract class AbstractDatabase implements Closeable {
         try (PreparedStatement statement = this.connection.prepareStatement(sql, ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_READ_ONLY)) {
             statement.setQueryTimeout(this.timeout);
             for (int i = 0; i < params.length; i++) {
-                statement.setObject(i + 1, params[i]);
+                statement.setObject(i + 1, castSearchValue(params[i]));
             }
             try (ResultSet resultSet = statement.executeQuery()) {
                 RudeArray rows = new RudeArray();
@@ -399,21 +399,39 @@ public abstract class AbstractDatabase implements Closeable {
             }
         }
     }
+    
+    /**
+     * 検索に使用するオブジェクトをデータベースで使用できる適当な型にキャストする.
+     * @param value 元のオブジェクト
+     * @return キャストしたオブジェクト
+     */
+    private static Object castSearchValue(Object value) {
+        if (value == null) {
+            return value;
+        }
+        switch (value.getClass().getName()) {
+        case "java.util.Date":
+            java.util.Date date = (java.util.Date) value;
+            return new Date(date.getTime());
+        default:
+            return value;
+        }
+    }
 
     /**
      * データベースから取得した値をjavaで使用する適当な型にキャストする.
-     * @param value 元の値
-     * @return 変換後の値
+     * @param value 元のオブジェクト
+     * @return キャストしたオブジェクト
      */
     private static Object castDatabaseValue(Object value) {
         if (value == null) {
             return value;
         }
-        switch (value.getClass().getSimpleName()) {
-        case "Timestamp":
+        switch (value.getClass().getName()) {
+        case "java.sql.Timestamp":
             Timestamp timestamp = (Timestamp) value;
             return new Date(timestamp.getTime());
-        case "BigDecimal":
+        case "java.math.BigDecimal":
             BigDecimal bigDecimal = (BigDecimal) value;
             return bigDecimal.doubleValue();
         default:
@@ -474,7 +492,7 @@ public abstract class AbstractDatabase implements Closeable {
             statement.setQueryTimeout(this.timeout);
             Object[] params = whereSet.buildParameters();
             for (int i = 0; i < params.length; i++) {
-                statement.setObject(i + 1, params[i]);
+                statement.setObject(i + 1, castSearchValue(params[i]));
             }
             try (ResultSet resultSet = statement.executeQuery()) {
                 boolean isUpdated = false;
@@ -538,7 +556,7 @@ public abstract class AbstractDatabase implements Closeable {
         try (PreparedStatement statement = this.connection.prepareStatement(sql, ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_UPDATABLE)) {
             statement.setQueryTimeout(this.timeout);
             for (int i = 0; i < params.length; i++) {
-                statement.setObject(i + 1, params[i]);
+                statement.setObject(i + 1, castSearchValue(params[i]));
             }
             try (ResultSet resultSet = statement.executeQuery()) {
                 boolean isUpdated = false;
