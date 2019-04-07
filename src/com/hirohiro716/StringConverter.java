@@ -1,5 +1,6 @@
 package com.hirohiro716;
 
+import java.nio.charset.Charset;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.Date;
@@ -54,7 +55,8 @@ public class StringConverter {
         UPPER_TO_LOWER,
         LOWER_TO_UPPER,
         HIRAGANA_TO_KATAKANA,
-        KATAKANA_TO_HIRAGANA;
+        KATAKANA_TO_HIRAGANA,
+        SHIFT_JIS,
     }
 
     /**
@@ -265,6 +267,13 @@ public class StringConverter {
     }
 
     /**
+     * 文字コードをShift_JISに一度変換する処理を組み込む.
+     */
+    public void addShiftJIS() {
+        this.params.put(Pattern.SHIFT_JIS, null);
+    }
+
+    /**
      * 設定した変換パラメータを初期化する.
      */
     public void clear() {
@@ -384,6 +393,9 @@ public class StringConverter {
                 break;
             case KATAKANA_TO_HIRAGANA:
                 value = katakanaToHiragana(value);
+                break;
+            case SHIFT_JIS:
+                value = onceToShiftJIS(value);
                 break;
             }
         }
@@ -716,6 +728,21 @@ public class StringConverter {
         String telephone_pattern = "[^0-9-]{1,}";
         return value.replaceAll(telephone_pattern, "");
 
+    }
+    
+    private static final Charset SHIFT_JIS = Charset.forName("Shift_JIS");
+    
+    /**
+     * 文字コードを一度Shift_JISに変換して改めて文字列に戻した値を取得する.
+     * @param value 元の文字列
+     * @return Shift_JISに一度変換した後の文字列
+     */
+    public static String onceToShiftJIS(String value) {
+        if (value == null) {
+            return null;
+        }
+        String shiftjis = new String(value.getBytes(SHIFT_JIS), SHIFT_JIS);
+        return shiftjis;
     }
 
     /**

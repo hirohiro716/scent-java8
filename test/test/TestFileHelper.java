@@ -1,17 +1,26 @@
 package test;
 
+import java.io.File;
+
 import com.hirohiro716.file.FileHelper;
 
 @SuppressWarnings("all")
 public class TestFileHelper {
 
     public static void main(String[] args) {
-        try {
-            System.out.println(FileHelper.findClassFileDirectory(TestFileHelper.class));
-        } catch (Exception exception) {
-        }
-        System.out.println(FileHelper.findClassPackageFile(TestFileHelper.class));
-        System.out.println(FileHelper.findClassPackageFileDirectory(TestFileHelper.class));
+        
+        File directory = new File("/home/hiro");
+        
+        
+        System.out.println(directory.toURI());
+        
+        System.out.println(new File(directory.toURI() + "test"));
+        
+        
+        System.out.println(FileHelper.generateOptimizedPathFromURI(directory.toURI()));
+        
+        
+        
     }
 
 }
