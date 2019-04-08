@@ -641,14 +641,14 @@ public class StringConverter {
      * @return 暗号化した値
      */
     public static String encryptSha256(String value) {
-        MessageDigest md;
+        MessageDigest messageDigest;
         try {
-            md = (MessageDigest) MessageDigest.getInstance("SHA-256").clone();
+            messageDigest = (MessageDigest) MessageDigest.getInstance("SHA-256").clone();
         } catch (NoSuchAlgorithmException | CloneNotSupportedException exception) {
             return "";
         }
-        md.update(value.getBytes());
-        byte[] bytes = md.digest();
+        messageDigest.update(value.getBytes());
+        byte[] bytes = messageDigest.digest();
         return ByteConverter.bytesToString(bytes);
     }
 
@@ -664,8 +664,8 @@ public class StringConverter {
             for (int i = 0; i < 16; i++) {
                 stringBuilder.append(" ");
             }
-            String new_key = stringBuilder.toString().substring(0, 16);
-            SecretKeySpec sksSpec = new SecretKeySpec(new_key.getBytes(), "AES");
+            String newKey = stringBuilder.toString().substring(0, 16);
+            SecretKeySpec sksSpec = new SecretKeySpec(newKey.getBytes(), "AES");
             Cipher cipher = Cipher.getInstance("AES");  // 今のところ別のインスタンスを返してくれてる？
             cipher.init(Cipher.ENCRYPT_MODE, sksSpec);
             byte[] bytes = cipher.doFinal(value.getBytes());
@@ -687,8 +687,8 @@ public class StringConverter {
             for (int i = 0; i < 16; i++) {
                 stringBuilder.append(" ");
             }
-            String new_key = stringBuilder.toString().substring(0, 16);
-            SecretKeySpec sksSpec = new SecretKeySpec(new_key.getBytes(), "AES");
+            String newKey = stringBuilder.toString().substring(0, 16);
+            SecretKeySpec sksSpec = new SecretKeySpec(newKey.getBytes(), "AES");
             Cipher cipher = Cipher.getInstance("AES");  // 別のインスタンスを返してくれる？
             cipher.init(Cipher.DECRYPT_MODE, sksSpec);
             byte[] bytes = ByteConverter.stringToBytes(encrypted);
@@ -704,6 +704,9 @@ public class StringConverter {
      * @return 変換後
      */
     public static String extractInteger(String value) {
+        if (value == null) {
+            return null;
+        }
         String number_pattern = "[^0-9]{1,}";
         return value.replaceAll(number_pattern, "");
     }
@@ -714,6 +717,9 @@ public class StringConverter {
      * @return 変換後
      */
     public static String extractDecimal(String value) {
+        if (value == null) {
+            return null;
+        }
         String number_pattern = "[^0-9\\.]{1,}";
         return value.replaceAll(number_pattern, "");
 
@@ -725,6 +731,9 @@ public class StringConverter {
      * @return 変換後
      */
     public static String extractTelephoneNumber(String value) {
+        if (value == null) {
+            return null;
+        }
         String telephone_pattern = "[^0-9-]{1,}";
         return value.replaceAll(telephone_pattern, "");
 
