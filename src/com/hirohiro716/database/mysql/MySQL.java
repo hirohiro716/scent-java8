@@ -20,11 +20,11 @@ public class MySQL extends AbstractDatabase {
 
     /**
      * MySQLデータベースに接続する.
-     * @param server サーバー名（IP）
+     * @param server サーバー名(IP)
      * @param dbName データベース名
      * @param user ユーザー名
      * @param pass パスワード
-     * @param characterEncoding 文字セット（utf8など）
+     * @param characterEncoding 文字セット(utf8など)
      * @throws SQLException
      * @throws ClassNotFoundException
      */
@@ -35,11 +35,11 @@ public class MySQL extends AbstractDatabase {
 
     /**
      * MySQLデータベースに接続する.
-     * @param server サーバー名（IP）
+     * @param server サーバー名(IP)
      * @param dbName データベース名
      * @param user ユーザー名
      * @param pass パスワード
-     * @param characterEncoding 文字セット（utf8など）
+     * @param characterEncoding 文字セット(utf8など)
      * @param port ポート番号
      * @throws SQLException
      * @throws ClassNotFoundException

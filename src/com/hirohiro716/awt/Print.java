@@ -112,8 +112,8 @@ public class Print {
 
     /**
      * 用紙サイズをミリメートルで指定します.
-     * @param width 幅（mm）
-     * @param height 高さ（mm）
+     * @param width 幅(mm)
+     * @param height 高さ(mm)
      */
     public void setPaperSize(float width, float height) {
         MediaSizeName sizeName = MediaSize.findMedia(width, height, Size2DSyntax.MM);
@@ -203,7 +203,7 @@ public class Print {
 
     /**
      * 印刷結果の画像データを保持したImageHelperインスタンスを取得します.
-     * @param zoomRate 拡大比率（1が等倍・0.5で半分）
+     * @param zoomRate 拡大比率(1が等倍・0.5で半分)
      * @param fileExtension 画像タイプ
      * @return ImageHelperインスタンス
      * @throws PrinterException

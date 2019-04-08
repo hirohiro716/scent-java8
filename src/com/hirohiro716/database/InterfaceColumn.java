@@ -33,8 +33,8 @@ public interface InterfaceColumn {
     public Object getDefaultValue();
     
     /**
-     * 項目値の最大文字数を取得する.（-1は無制限を示す）
-     * @return 最大文字数（-1は無制限を示す）
+     * 項目値の最大文字数を取得する.(-1は無制限を示す)
+     * @return 最大文字数(-1は無制限を示す)
      */
     public int getMaxLength();
 }

@@ -437,7 +437,7 @@ public class WhereSet implements Cloneable {
         }
 
         /**
-         * 比較値を全て取得する.（BETWEENやINの場合のみ）
+         * 比較値を全て取得する.(BETWEENやINの場合のみ)
          * @return values
          */
         public ArrayList<Object> getValues() {
@@ -445,7 +445,7 @@ public class WhereSet implements Cloneable {
         }
 
         /**
-         * 比較値を全てセットする.（BETWEENやINの場合のみ）
+         * 比較値を全てセットする.(BETWEENやINの場合のみ)
          * @param values
          */
         public void setValues(Object... values) {

@@ -103,7 +103,7 @@ public abstract class AbstractDatabase implements Closeable {
     private int timeout = 0;
 
     /**
-     * タイムアウト（秒数）を取得する.
+     * タイムアウト(秒数)を取得する.
      * @return タイムアウト秒数
      */
     public int getStatementTimeout() {
@@ -111,7 +111,7 @@ public abstract class AbstractDatabase implements Closeable {
     }
 
     /**
-     * タイムアウト（秒数）を設定する.
+     * タイムアウト(秒数)を設定する.
      * @param timeout タイムアウト秒数
      */
     public void setStatementTimeout(int timeout) {
@@ -581,7 +581,7 @@ public abstract class AbstractDatabase implements Closeable {
     /**
      * ResultSetに適宜値を変換の上入力する.
      * @param resultSet 対象ResultSet
-     * @param columnIndex カラム番号（１から開始）
+     * @param columnIndex カラム番号(１から開始)
      * @param value 入力する値
      * @throws SQLException
      */

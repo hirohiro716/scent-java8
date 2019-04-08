@@ -20,7 +20,7 @@ public class GraphicsHelper {
      * @param value 文字列
      * @param useFont 使用フォント
      * @param graphics2D
-     * @return 幅（point）
+     * @return 幅(point)
      */
     public static int calculateStringWidth(String value, Font useFont, Graphics2D graphics2D) {
         graphics2D.setFont(useFont);
@@ -31,7 +31,7 @@ public class GraphicsHelper {
      * 文字列の描画高さをポイントで取得します.
      * @param useFont 使用フォント
      * @param graphics2D
-     * @return 高さ（point）
+     * @return 高さ(point)
      */
     public static int calculateStringHeight(Font useFont, Graphics2D graphics2D) {
         graphics2D.setFont(useFont);
@@ -43,7 +43,7 @@ public class GraphicsHelper {
      * @param value 文字列
      * @param useFont 使用フォント
      * @param graphics2D
-     * @return 高さ（point）
+     * @return 高さ(point)
      */
     public static int calculateStringHeight(String value, Font useFont, Graphics2D graphics2D) {
         graphics2D.setFont(useFont);
@@ -102,7 +102,7 @@ public class GraphicsHelper {
      * @param height 調節高さ
      * @param fontName フォント名
      * @param fontSize 初期サイズ
-     * @param fontStyle フォントスタイル（Font.PLAINなど）
+     * @param fontStyle フォントスタイル(Font.PLAINなど)
      * @return 調整後のフォント
      */
     public static Font createApplySizeFont(String value, int width, int height, String fontName, int fontSize, int fontStyle) {
@@ -118,7 +118,7 @@ public class GraphicsHelper {
      * @param height 調節高さ
      * @param fontName フォント名
      * @param fontSize 初期サイズ
-     * @param fontStyle フォントスタイル（Font.PLAINなど）
+     * @param fontStyle フォントスタイル(Font.PLAINなど)
      * @param graphics2D
      * @return 調整後のフォント
      */
@@ -169,7 +169,7 @@ public class GraphicsHelper {
      * @param width 調節幅
      * @param fontName フォント名
      * @param fontSize 初期サイズ
-     * @param fontStyle フォントスタイル（Font.PLAINなど）
+     * @param fontStyle フォントスタイル(Font.PLAINなど)
      * @return 調整後のフォント
      */
     public static Font createApplySizeFont(String value, int width, String fontName, int fontSize, int fontStyle) {
@@ -184,7 +184,7 @@ public class GraphicsHelper {
      * @param width 調節幅
      * @param fontName フォント名
      * @param fontSize 初期サイズ
-     * @param fontStyle フォントスタイル（Font.PLAINなど）
+     * @param fontStyle フォントスタイル(Font.PLAINなど)
      * @param graphics2D
      * @return 調整後のフォント
      */
@@ -238,7 +238,7 @@ public class GraphicsHelper {
      * @param height 調節高さ
      * @param fontName フォント名
      * @param fontSize 初期サイズ
-     * @param fontStyle フォントスタイル（Font.PLAINなど）
+     * @param fontStyle フォントスタイル(Font.PLAINなど)
      * @return 調整後のフォントサイズ
      */
     public static int calculateApplyFontSize(String value, int width, int height, String fontName, int fontSize, int fontStyle) {
@@ -254,7 +254,7 @@ public class GraphicsHelper {
      * @param height 調節高さ
      * @param fontName フォント名
      * @param fontSize 初期サイズ
-     * @param fontStyle フォントスタイル（Font.PLAINなど）
+     * @param fontStyle フォントスタイル(Font.PLAINなど)
      * @param graphics2D
      * @return 調整後のフォントサイズ
      */
@@ -305,7 +305,7 @@ public class GraphicsHelper {
      * @param width 調節幅
      * @param fontName フォント名
      * @param fontSize 初期サイズ
-     * @param fontStyle フォントスタイル（Font.PLAINなど）
+     * @param fontStyle フォントスタイル(Font.PLAINなど)
      * @return 調整後のフォントサイズ
      */
     public static int calculateApplyFontSize(String value, int width, String fontName, int fontSize, int fontStyle) {
@@ -320,7 +320,7 @@ public class GraphicsHelper {
      * @param width 調節幅
      * @param fontName フォント名
      * @param fontSize 初期サイズ
-     * @param fontStyle フォントスタイル（Font.PLAINなど）
+     * @param fontStyle フォントスタイル(Font.PLAINなど)
      * @param graphics2D
      * @return 調整後のフォントサイズ
      */

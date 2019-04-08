@@ -36,7 +36,7 @@ public class Datetime {
 
     /**
      * 日時文字列を指定してインスタンス生成する.
-     * @param datetimeString 日時文字列（yyyy-MM-dd HH:mm:ss）
+     * @param datetimeString 日時文字列(yyyy-MM-dd HH:mm:ss)
      */
     public Datetime(String datetimeString) {
         this.setDatetime(datetimeString);
@@ -71,7 +71,7 @@ public class Datetime {
 
     /**
      * 日時文字列を取得する.
-     * @return 日時文字列（初期パターンはyyyy-MM-dd HH:mm:ss）
+     * @return 日時文字列(初期パターンはyyyy-MM-dd HH:mm:ss)
      */
     public String toDatetimeString() {
         SimpleDateFormat dateFormat = new SimpleDateFormat(this.formatPattern);
@@ -90,7 +90,7 @@ public class Datetime {
 
     /**
      * 日付文字列を取得する.
-     * @return 日付文字列（yyyy-MM-dd）
+     * @return 日付文字列(yyyy-MM-dd)
      */
     public String toDateString() {
         SimpleDateFormat dateFormat = new SimpleDateFormat(FORMAT_PATTERN_DATE);
@@ -99,7 +99,7 @@ public class Datetime {
 
     /**
      * 時刻文字列を取得する.
-     * @return 時刻文字列（HH:mm:ss）
+     * @return 時刻文字列(HH:mm:ss)
      */
     public String toTimeString() {
         SimpleDateFormat dateFormat = new SimpleDateFormat(FORMAT_PATTERN_TIME);
@@ -159,7 +159,7 @@ public class Datetime {
     }
 
     /**
-     * 月を取得する.（1～12）
+     * 月を取得する.(1～12)
      * @return 月
      */
     public int toMonth() {
@@ -167,7 +167,7 @@ public class Datetime {
     }
 
     /**
-     * 日を取得する.（1～31）
+     * 日を取得する.(1～31)
      * @return 日
      */
     public int toDay() {
@@ -175,7 +175,7 @@ public class Datetime {
     }
 
     /**
-     * 時刻を取得する.（0～23）
+     * 時刻を取得する.(0～23)
      * @return 時刻
      */
     public int toHour() {
@@ -183,7 +183,7 @@ public class Datetime {
     }
 
     /**
-     * 分を取得する.（0～59）
+     * 分を取得する.(0～59)
      * @return 分
      */
     public int toMinute() {
@@ -191,7 +191,7 @@ public class Datetime {
     }
 
     /**
-     * 秒を取得する.（0～59）
+     * 秒を取得する.(0～59)
      * @return 秒
      */
     public int toSecond() {
@@ -200,7 +200,7 @@ public class Datetime {
 
     /**
      * 週を取得する.
-     * @return 各Calendar定数（Calendar.SUNDAYなど）
+     * @return 各Calendar定数(Calendar.SUNDAYなど)
      */
     public int toWeek() {
         return this.calendar.get(Calendar.DAY_OF_WEEK);
@@ -215,7 +215,7 @@ public class Datetime {
     }
 
     /**
-     * 月をセットする.（1月ならば１）
+     * 月をセットする.(1月ならば１)
      * @param month 月
      */
     public void modifyMonth(int month) {
@@ -337,7 +337,7 @@ public class Datetime {
     /**
      * Date型を文字列に変換する.
      * @param date 日付
-     * @return 日付文字列（yyyy-MM-dd HH:mm:ss）
+     * @return 日付文字列(yyyy-MM-dd HH:mm:ss)
      */
     public static String dateToString(Date date) {
         try {

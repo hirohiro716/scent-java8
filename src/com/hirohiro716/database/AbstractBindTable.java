@@ -148,7 +148,7 @@ public abstract class AbstractBindTable {
     public abstract void validate() throws ValidationException, Exception;
     
     /**
-     * 保持している連想配列を標準化（全角を半角に変換したり）する.
+     * 保持している連想配列を標準化(全角を半角に変換したり)する.
      * @throws Exception
      */
     public abstract void normalize() throws Exception;
@@ -157,7 +157,7 @@ public abstract class AbstractBindTable {
      * レコードを検索する.
      * @param selectSQL WHERE句の前のSELECT句
      * @param afterSQL WHERE句の後に付与するオプション句
-     * @param whereSetArray 検索条件（複数指定するとOR検索になる）
+     * @param whereSetArray 検索条件(複数指定するとOR検索になる)
      * @return 検索結果
      * @throws SQLException
      */
@@ -183,7 +183,7 @@ public abstract class AbstractBindTable {
 
     /**
      * レコードを検索する.
-     * @param whereSetArray 検索条件（複数指定するとOR検索になる）
+     * @param whereSetArray 検索条件(複数指定するとOR検索になる)
      * @return 検索結果
      * @throws SQLException
      */
@@ -194,7 +194,7 @@ public abstract class AbstractBindTable {
     /**
      * レコードを検索する.
      * @param afterSQL WHERE句の後に付与するオプション句
-     * @param whereSetArray 検索条件（複数指定するとOR検索になる）
+     * @param whereSetArray 検索条件(複数指定するとOR検索になる)
      * @return 検索結果
      * @throws SQLException
      */

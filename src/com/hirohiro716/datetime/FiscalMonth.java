@@ -104,7 +104,7 @@ public class FiscalMonth {
     
     /**
      * 締め日を取得する.
-     * @return 締め日（1〜28）28を超える場合は末締め扱い
+     * @return 締め日(1〜28)28を超える場合は末締め扱い
      */
     public int getCutoffDay() {
         return this.cutoffDay;
@@ -112,7 +112,7 @@ public class FiscalMonth {
     
     /**
      * 締め日をセットする.
-     * @param cutoffDay 締め日（1〜28）28を超える場合は末締め扱い
+     * @param cutoffDay 締め日(1〜28)28を超える場合は末締め扱い
      */
     public void setCutoffDay(int cutoffDay) {
         this.cutoffDay = cutoffDay;
@@ -228,7 +228,7 @@ public class FiscalMonth {
     /**
      * 月度インスタンスを生成する.
      * @param baseDay 月度の決定基準
-     * @param cutoffDay 締め日（1〜28）28を超える場合は末締め扱い
+     * @param cutoffDay 締め日(1〜28)28を超える場合は末締め扱い
      * @param year 年
      * @param month 月度
      * @return Monthly
@@ -245,7 +245,7 @@ public class FiscalMonth {
     /**
      * Dateから月度を特定する.
      * @param baseDay 月度の決定基準
-     * @param cutoffDay 締め日（1〜28）28を超える場合は末締め扱い
+     * @param cutoffDay 締め日(1〜28)28を超える場合は末締め扱い
      * @param date 対象日
      * @return Monthly
      */

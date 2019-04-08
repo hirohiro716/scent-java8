@@ -190,7 +190,7 @@ public class XML {
 
     /**
      * XMLの内容から文字列を生成する.
-     * @param encoding 文字コード（UTF-8/Shift_JISなど）
+     * @param encoding 文字コード(UTF-8/Shift_JISなど)
      * @return XML
      * @throws TransformerException
      */
@@ -208,7 +208,7 @@ public class XML {
     /**
      * XMLファイルを作成する.
      * @param fileLocation 保存先
-     * @param encoding 文字コード（UTF-8/Shift_JISなど）
+     * @param encoding 文字コード(UTF-8/Shift_JISなど)
      * @throws IOException
      * @throws TransformerException
      */
@@ -245,7 +245,7 @@ public class XML {
     /**
      * XMLの内容を取り込む.
      * @param source XML内容
-     * @param encoding 文字コード（UTF-8/Shift_JISなど）
+     * @param encoding 文字コード(UTF-8/Shift_JISなど)
      * @throws IOException
      * @throws SAXException
      */

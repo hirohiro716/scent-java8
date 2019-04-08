@@ -180,7 +180,7 @@ public class StringConverter {
     }
 
     /**
-     * 電話番号として有効な文字列のみ（数字,-）を抜き出す処理を組み込む.
+     * 電話番号として有効な文字列のみ(数字,-)を抜き出す処理を組み込む.
      */
     public void addTelephone() {
         this.params.put(Pattern.TELEPHONE, null);
@@ -195,7 +195,7 @@ public class StringConverter {
 
     /**
      * java.util.Dateオブジェクトまたは日付として有効な文字列をパターンに応じて変換する処理を組み込む.
-     * @param formatPattern フォーマットパターン（yyyy-MM-ddなど）
+     * @param formatPattern フォーマットパターン(yyyy-MM-ddなど)
      */
     public void addDatetime(String formatPattern) {
         this.params.put(Pattern.DATETIME, formatPattern);
@@ -596,7 +596,7 @@ public class StringConverter {
     }
 
     /**
-     * value(元文字列)のstart(開始位置)からlength（文字数）分を取得する. 開始位置に矛盾があった場合は空文字""を取得する.<br>
+     * value(元文字列)のstart(開始位置)からlength(文字数)分を取得する. 開始位置に矛盾があった場合は空文字""を取得する.<br>
      * lengthがvalueの文字数を超えた範囲を指定していた場合はあるだけ返す.
      * @param value 元の文字列
      * @param start 開始位置
@@ -619,7 +619,7 @@ public class StringConverter {
     }
 
     /**
-     * value(元文字列)のstart（開始位置）からの文字列をすべて返す. 開始位置に矛盾があった場合は空文字""を取得する.
+     * value(元文字列)のstart(開始位置)からの文字列をすべて返す. 開始位置に矛盾があった場合は空文字""を取得する.
      * @param value 元の文字列
      * @param start 開始位置
      * @return 結果
@@ -995,7 +995,7 @@ public class StringConverter {
     private static RudeArray toLowerJapaneseList;
 
     /**
-     * ひらがなからカタカナの変換リスト（半角カタカナは非対応）
+     * ひらがなからカタカナの変換リスト(半角カタカナは非対応)
      * @return RudeArray
      */
     private static RudeArray createKatakanaToHiraganaList() {
@@ -1087,7 +1087,7 @@ public class StringConverter {
     }
 
     /**
-     * カタカナからひらがなの変換リスト（半角カタカナは非対応）
+     * カタカナからひらがなの変換リスト(半角カタカナは非対応)
      * @return RudeArray
      */
     private static RudeArray createHiraganaToKatakanaList() {
@@ -1545,7 +1545,7 @@ public class StringConverter {
     }
 
     /**
-     * 濁点のひらがな/カタカナへの変換リスト（半角カタカナは非対応）
+     * 濁点のひらがな/カタカナへの変換リスト(半角カタカナは非対応)
      * @return RudeArray
      */
     private static RudeArray createClearToDakutenList() {
@@ -1594,7 +1594,7 @@ public class StringConverter {
     }
 
     /**
-     * 半濁点のひらがな/カタカナへの変換リスト（半角カタカナは非対応）
+     * 半濁点のひらがな/カタカナへの変換リスト(半角カタカナは非対応)
      * @return RudeArray
      */
     private static RudeArray createClearToDakutenHalfList() {
@@ -1613,7 +1613,7 @@ public class StringConverter {
     }
 
     /**
-     * 濁点のひらがな/カタカナから通常文字への変換リスト（半角カタカナは非対応）
+     * 濁点のひらがな/カタカナから通常文字への変換リスト(半角カタカナは非対応)
      * @return RudeArray
      */
     private static RudeArray createDakutenToClearList() {
@@ -1662,7 +1662,7 @@ public class StringConverter {
     }
 
     /**
-     * 半濁点のひらがな/カタカナから通常文字への変換リスト（半角カタカナは非対応）
+     * 半濁点のひらがな/カタカナから通常文字への変換リスト(半角カタカナは非対応)
      * @return RudeArray
      */
     private static RudeArray createDakutenHalfToClearList() {
@@ -1681,7 +1681,7 @@ public class StringConverter {
     }
 
     /**
-     * ひらがな/カタカナの小文字への変換リスト（半角カタカナは非対応）
+     * ひらがな/カタカナの小文字への変換リスト(半角カタカナは非対応)
      * @return RudeArray
      */
     private static RudeArray createUpperToLowerJapaneseList() {
@@ -1708,7 +1708,7 @@ public class StringConverter {
     }
 
     /**
-     * ひらがな/カタカナの小文字から通常文字への変換リスト（半角カタカナは非対応）
+     * ひらがな/カタカナの小文字から通常文字への変換リスト(半角カタカナは非対応)
      * @return RudeArray
      */
     private static RudeArray createLowerToUpperJapaneseList() {

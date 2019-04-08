@@ -93,7 +93,7 @@ public class SpanOfCutoffDates {
     
     /**
      * コンストラクタで指定した締め日を取得する.
-     * @return 締め日の配列（1〜28）28を超える場合は末締め扱い
+     * @return 締め日の配列(1〜28)28を超える場合は末締め扱い
      */
     public Integer[] getCutoffDates() {
         return this.cutoffDates.toArray(new Integer[] {});

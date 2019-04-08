@@ -91,7 +91,7 @@ public abstract class AbstractBindTableRows extends AbstractBindTable {
     
     /**
      * 複数のレコードの編集を開始する.
-     * @param orderByColumns 並び替えを指定（ASC・DESCを含むカラム名）
+     * @param orderByColumns 並び替えを指定(ASC・DESCを含むカラム名)
      * @throws SQLException
      */
     public void edit(String... orderByColumns) throws SQLException {
@@ -109,7 +109,7 @@ public abstract class AbstractBindTableRows extends AbstractBindTable {
     }
     
     /**
-     * 検索条件が空の状態の上書き（全レコード置き換え）を許可するかどうか.
+     * 検索条件が空の状態の上書き(全レコード置き換え)を許可するかどうか.
      * @return 許可する場合はtrue
      */
     public abstract boolean isPermittedSearchConditioEmptyUpdate();

@@ -82,7 +82,7 @@ public class MailTransmitter {
     private InternetAddress[] toMailAddress = new InternetAddress[] {};
 
     /**
-     * 送信先（TO）メールアドレスをセットする.
+     * 送信先(TO)メールアドレスをセットする.
      * @param toMailAddress
      * @throws Exception アドレスの有効性確認失敗
      */
@@ -91,7 +91,7 @@ public class MailTransmitter {
     }
 
     /**
-     * 送信先（TO）メールアドレスを追加する.
+     * 送信先(TO)メールアドレスを追加する.
      * @param toMailAddress
      * @throws Exception アドレスの有効性確認失敗
      */
@@ -109,7 +109,7 @@ public class MailTransmitter {
     private InternetAddress[] ccMailAddress = new InternetAddress[] {};
 
     /**
-     * 送信先（CC）メールアドレスをセットする.
+     * 送信先(CC)メールアドレスをセットする.
      * @param ccMailAddress
      * @throws Exception アドレスの有効性確認失敗
      */
@@ -118,7 +118,7 @@ public class MailTransmitter {
     }
 
     /**
-     * 送信先（CC）メールアドレスを追加する.
+     * 送信先(CC)メールアドレスを追加する.
      * @param ccMailAddress
      * @throws Exception アドレスの有効性確認失敗
      */
@@ -136,7 +136,7 @@ public class MailTransmitter {
     private InternetAddress[] bccMailAddress = new InternetAddress[] {};
 
     /**
-     * 送信先（BCC）メールアドレスをセットする.
+     * 送信先(BCC)メールアドレスをセットする.
      * @param bccMailAddress
      * @throws Exception アドレスの有効性確認失敗
      */
@@ -145,7 +145,7 @@ public class MailTransmitter {
     }
 
     /**
-     * 送信先（BCC）メールアドレスを追加する.
+     * 送信先(BCC)メールアドレスを追加する.
      * @param bccMailAddress
      * @throws Exception アドレスの有効性確認失敗
      */

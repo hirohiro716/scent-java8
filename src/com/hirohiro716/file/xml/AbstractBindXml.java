@@ -101,7 +101,7 @@ public abstract class AbstractBindXml {
     /**
      * プロパティ値をXMLファイルから取得する.
      * @param name プロパティ名
-     * @return プロパティ値（該当するプロパティがなければnull）
+     * @return プロパティ値(該当するプロパティがなければnull)
      */
     public String getValue(String name) {
         return this.xmlHelper.get(name);
