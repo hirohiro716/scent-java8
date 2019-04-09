@@ -1,10 +1,12 @@
 package com.hirohiro716.file;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -442,6 +444,38 @@ public class FileHelper {
      */
     public static void createTextFile(String contents, File file) throws IOException {
         createTextFile(contents, file, Charset.defaultCharset());
+    }
+    
+    /**
+     * テキストファイルに内容を読み込む.
+     * @param file ファイルオブジェクト
+     * @param charset 文字セット
+     * @return ファイルの内容
+     * @throws IOException
+     */
+    public static String readTextFile(File file, Charset charset) throws IOException {
+        try (FileInputStream stream = new FileInputStream(file)) {
+            try (InputStreamReader streamReader = new InputStreamReader(stream, charset)) {
+                try (BufferedReader bufferedReader = new BufferedReader(streamReader)) {
+                    StringBuilder result = new StringBuilder();
+                    String line;
+                    while ((line = bufferedReader.readLine()) != null) {
+                        result.append(line);
+                    }
+                    return result.toString();
+                }
+            }
+        }
+    }
+    
+    /**
+     * テキストファイルの内容をデフォルトの文字セットを使用して読み込む.
+     * @param file ファイルオブジェクト
+     * @return ファイルの内容
+     * @throws IOException
+     */
+    public static String readTextFile(File file) throws IOException {
+        return readTextFile(file, Charset.defaultCharset());
     }
 
 }
