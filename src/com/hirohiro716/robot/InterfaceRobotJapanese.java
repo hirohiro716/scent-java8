@@ -1,12 +1,13 @@
-package com.hirohiro716;
+package com.hirohiro716.robot;
 
 import java.util.LinkedHashMap;
 
 /**
- * 日本語用のキー入力機能を実装するRobotのインターフェース.
+ * 日本語用のキー入力機能のインターフェース.
  * @author hiro
+ * @param <T> KeyCodeの型
  */
-public interface InterfaceRobotJapanese {
+public interface InterfaceRobotJapanese<T> {
 
     /**
      * IMEモード.
@@ -88,7 +89,8 @@ public interface InterfaceRobotJapanese {
      * キーを押して離す動作を実行する.
      * @param keyCodes
      */
-    public void keyType(int... keyCodes);
+    @SuppressWarnings("unchecked")
+    public void keyType(T... keyCodes);
     
     /**
      * IMEをOFFにする.
