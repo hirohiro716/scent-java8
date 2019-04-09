@@ -7,13 +7,13 @@ import java.util.LinkedHashMap;
  * @author hiro
  * @param <T> KeyCodeの型
  */
-public interface InterfaceRobotJapanese<T> {
+public interface InterfaceTypingRobotJapanese<T> {
 
     /**
      * IMEモード.
      * @author hiro
      */
-    public enum ImeMode {
+    public enum IMEMode {
         /**
          * OFF
          */
@@ -32,7 +32,7 @@ public interface InterfaceRobotJapanese<T> {
         KATAKANA_NARROW(3, "ｶﾀｶﾅ"),
         ;
 
-        private ImeMode(int value, String description) {
+        private IMEMode(int value, String description) {
             this.value = value;
             this.description = description;
         }
@@ -62,8 +62,8 @@ public interface InterfaceRobotJapanese<T> {
          * @param value
          * @return 定数
          */
-        public static ImeMode find(Integer value) {
-            for (ImeMode ime : ImeMode.values()) {
+        public static IMEMode find(Integer value) {
+            for (IMEMode ime : IMEMode.values()) {
                 if (value != null && ime.value == value) {
                     return ime;
                 }
@@ -77,7 +77,7 @@ public interface InterfaceRobotJapanese<T> {
          */
         public static LinkedHashMap<Integer, String> createLinkedHashMap() {
             LinkedHashMap<Integer, String> hashMap = new LinkedHashMap<>();
-            for (ImeMode mode: ImeMode.values()) {
+            for (IMEMode mode: IMEMode.values()) {
                 hashMap.put(mode.getValue(), mode.getDescription());
             }
             return hashMap;

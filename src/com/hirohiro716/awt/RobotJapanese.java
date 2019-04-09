@@ -7,13 +7,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.hirohiro716.OSHelper;
-import com.hirohiro716.robot.InterfaceRobotJapanese;
+import com.hirohiro716.robot.InterfaceTypingRobotJapanese;
 
 /**
  * AWTのRobotクラスに日本語用の機能を足したクラス.
  * @author hiro
  */
-public class RobotJapanese extends Robot implements InterfaceRobotJapanese<Integer> {
+public class RobotJapanese extends Robot implements InterfaceTypingRobotJapanese<Integer> {
 
     /**
      * コンストラクタ.
