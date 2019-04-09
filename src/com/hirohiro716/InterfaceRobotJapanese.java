@@ -6,7 +6,7 @@ import java.util.LinkedHashMap;
  * 日本語用のキー入力機能を実装するRobotのインターフェース.
  * @author hiro
  */
-public interface InterfaceKeyInputRobotJapanese {
+public interface InterfaceRobotJapanese {
 
     /**
      * IMEモード.

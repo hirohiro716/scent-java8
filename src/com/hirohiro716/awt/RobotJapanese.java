@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.hirohiro716.RegexHelper.RegexPattern;
-import com.hirohiro716.InterfaceKeyInputRobotJapanese;
+import com.hirohiro716.InterfaceRobotJapanese;
 import com.hirohiro716.OSHelper;
 import com.hirohiro716.RudeArray;
 
@@ -15,7 +15,7 @@ import com.hirohiro716.RudeArray;
  * AWTのRobotクラスに日本語用の機能を足したクラス.
  * @author hiro
  */
-public class RobotJapanese extends Robot implements InterfaceKeyInputRobotJapanese {
+public class RobotJapanese extends Robot implements InterfaceRobotJapanese {
 
     /**
      * コンストラクタ.
