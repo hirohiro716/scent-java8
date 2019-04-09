@@ -1,4 +1,4 @@
-package com.hirohiro716.web;
+package com.hirohiro716.net.web;
 
 import java.io.BufferedReader;
 import java.io.IOException;

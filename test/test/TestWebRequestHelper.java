@@ -2,7 +2,7 @@ package test;
 
 import java.io.IOException;
 
-import com.hirohiro716.web.WEBRequest;
+import com.hirohiro716.net.web.WEBRequest;
 
 @SuppressWarnings({ "all"})
 public class TestWebRequestHelper {
