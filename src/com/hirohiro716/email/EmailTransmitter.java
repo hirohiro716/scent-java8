@@ -14,7 +14,7 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
 /**
- * JavaMail1.6.1を使用したメール送信を行うクラス.
+ * JavaMail1.6.1を使用したE-mail送信を行うクラス.
  * @author hiro
  */
 public class EmailTransmitter {
