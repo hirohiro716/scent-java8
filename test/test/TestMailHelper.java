@@ -4,6 +4,7 @@ import javax.mail.MessagingException;
 import javax.mail.internet.AddressException;
 
 import com.hirohiro716.email.EmailTransmitter;
+import com.hirohiro716.email.EmailTransmitter.ReceiverType;
 
 @SuppressWarnings("all")
 public class TestMailHelper {
@@ -13,14 +14,14 @@ public class TestMailHelper {
         try {
 
             EmailTransmitter mail = new EmailTransmitter();
-            mail.setMyMailAddress("not.alter@gmail.com");
-            mail.setSmtpHost("smtp.gmail.com");
-            mail.setSmtpUser("not.alter@gmail.com");
-            mail.setSmtpPassword("55838553");
-            mail.setToMailAddress("hirohiro716@gmail.com");
-            mail.setSmtpPortNumber(465);
+            mail.setMyEmailAddress("not.alter@gmail.com");
+            mail.setHost("smtp.gmail.com");
+            mail.setUser("not.alter@gmail.com");
+            mail.setPassword("55838553");
+            mail.addReceiverEmailAddress("hirohiro716@gmail.com", ReceiverType.TO);
+            mail.setPortNumber(465);
             mail.setDebug(true);
-            mail.setEnableTls(true);
+            mail.setEnableTLS(true);
             mail.send("手酢と3", "テスト めっせーじ ｻﾝ");
             
             System.out.println("ok");

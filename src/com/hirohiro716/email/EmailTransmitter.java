@@ -2,6 +2,7 @@ package com.hirohiro716.email;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.Properties;
 
 import javax.mail.Authenticator;
@@ -18,146 +19,81 @@ import javax.mail.internet.MimeMessage;
  */
 public class EmailTransmitter {
 
-    private InternetAddress[] myMailAddress = new InternetAddress[] {};
+    private InternetAddress[] myEmailAddress = new InternetAddress[] {};
 
     /**
      * 送信元メールアドレスをセットする.
-     * @param myMailAddress
+     * @param emailAddress
      * @throws Exception アドレスの有効性確認失敗
      */
-    public void setMyMailAddress(String myMailAddress) throws Exception {
-        this.myMailAddress = InternetAddress.parse(myMailAddress);
+    public void setMyEmailAddress(String emailAddress) throws Exception {
+        this.myEmailAddress = InternetAddress.parse(emailAddress);
     }
 
-    private String smtpHost;
+    private String host;
 
     /**
      * 送信メールサーバーを設定.
-     * @param smtpHost
+     * @param host
      */
-    public void setSmtpHost(String smtpHost) {
-        this.smtpHost = smtpHost;
+    public void setHost(String host) {
+        this.host = host;
     }
 
-    private String smtpUser;
+    private String user;
 
     /**
      * 送信メールサーバー認証ユーザーを設定.
-     * @param smtpUser
+     * @param user
      */
-    public void setSmtpUser(String smtpUser) {
-        this.smtpUser = smtpUser;
+    public void setUser(String user) {
+        this.user = user;
     }
 
-    private String smtpPass;
+    private String password;
 
     /**
      * 送信メールサーバー認証パスワードを設定.
-     * @param smtpPass
+     * @param password
      */
-    public void setSmtpPassword(String smtpPass) {
-        this.smtpPass = smtpPass;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
-    private String smtpPortNumber = "25";
+    private String portNumber = "25";
 
     /**
      * 送信メールポート番号を設定.
-     * @param smtpPortNumber
+     * @param portNumber
      */
-    public void setSmtpPortNumber(int smtpPortNumber) {
-        this.smtpPortNumber = String.valueOf(smtpPortNumber);
+    public void setPortNumber(int portNumber) {
+        this.portNumber = String.valueOf(portNumber);
     }
 
-    private boolean isEnableTls = false;
+    private boolean isEnableTLS = false;
 
     /**
      * メールの通信にTLSを使用するかどうか.
-     * @param isEnableTls
+     * @param isEnableTLS
      */
-    public void setEnableTls(boolean isEnableTls) {
-        this.isEnableTls = isEnableTls;
+    public void setEnableTLS(boolean isEnableTLS) {
+        this.isEnableTLS = isEnableTLS;
     }
-
-    private InternetAddress[] toMailAddress = new InternetAddress[] {};
-
+    
+    private HashMap<ReceiverType, ArrayList<InternetAddress>> receiverEmailAddresses = new HashMap<>();
+    
     /**
-     * 送信先(TO)メールアドレスをセットする.
-     * @param toMailAddress
-     * @throws Exception アドレスの有効性確認失敗
+     * 受信者のE-mailアドレスを追加する.
+     * @param emailAddress E-mailアドレス
+     * @param receiverType 受信者タイプ
+     * @throws Exception
      */
-    public void setToMailAddress(String toMailAddress) throws Exception {
-        this.toMailAddress = InternetAddress.parse(toMailAddress);
-    }
-
-    /**
-     * 送信先(TO)メールアドレスを追加する.
-     * @param toMailAddress
-     * @throws Exception アドレスの有効性確認失敗
-     */
-    public void addToMailAddress(String toMailAddress) throws Exception {
-        ArrayList<InternetAddress> addresses = new ArrayList<>();
-        for (InternetAddress address: this.toMailAddress) {
-            addresses.add(address);
+    public void addReceiverEmailAddress(String emailAddress, ReceiverType receiverType) throws Exception {
+        if (this.receiverEmailAddresses.containsKey(receiverType) == false) {
+            this.receiverEmailAddresses.put(receiverType, new ArrayList<>());
         }
-        for (InternetAddress address: InternetAddress.parse(toMailAddress)) {
-            addresses.add(address);
-        }
-        this.toMailAddress = addresses.toArray(new InternetAddress[] {});
-    }
-
-    private InternetAddress[] ccMailAddress = new InternetAddress[] {};
-
-    /**
-     * 送信先(CC)メールアドレスをセットする.
-     * @param ccMailAddress
-     * @throws Exception アドレスの有効性確認失敗
-     */
-    public void setCcMailAddress(String ccMailAddress) throws Exception {
-        this.ccMailAddress = InternetAddress.parse(ccMailAddress);
-    }
-
-    /**
-     * 送信先(CC)メールアドレスを追加する.
-     * @param ccMailAddress
-     * @throws Exception アドレスの有効性確認失敗
-     */
-    public void addCcMailAddress(String ccMailAddress) throws Exception {
-        ArrayList<InternetAddress> addresses = new ArrayList<>();
-        for (InternetAddress address: this.ccMailAddress) {
-            addresses.add(address);
-        }
-        for (InternetAddress address: InternetAddress.parse(ccMailAddress)) {
-            addresses.add(address);
-        }
-        this.ccMailAddress = addresses.toArray(new InternetAddress[] {});
-    }
-
-    private InternetAddress[] bccMailAddress = new InternetAddress[] {};
-
-    /**
-     * 送信先(BCC)メールアドレスをセットする.
-     * @param bccMailAddress
-     * @throws Exception アドレスの有効性確認失敗
-     */
-    public void setBccMailAddress(String bccMailAddress) throws Exception {
-        this.bccMailAddress = InternetAddress.parse(bccMailAddress);
-    }
-
-    /**
-     * 送信先(BCC)メールアドレスを追加する.
-     * @param bccMailAddress
-     * @throws Exception アドレスの有効性確認失敗
-     */
-    public void addBccMailAddress(String bccMailAddress) throws Exception {
-        ArrayList<InternetAddress> addresses = new ArrayList<>();
-        for (InternetAddress address: this.bccMailAddress) {
-            addresses.add(address);
-        }
-        for (InternetAddress address: InternetAddress.parse(bccMailAddress)) {
-            addresses.add(address);
-        }
-        this.bccMailAddress = addresses.toArray(new InternetAddress[] {});
+        ArrayList<InternetAddress> emailAddresses = this.receiverEmailAddresses.get(receiverType);
+        emailAddresses.add(InternetAddress.parse(emailAddress)[0]);
     }
     
     private String charset = "UTF-8";
@@ -188,10 +124,10 @@ public class EmailTransmitter {
      */
     public void send(String subject, String body) throws Exception {
         Properties properties = new Properties();
-        properties.put("mail.smtp.host", this.smtpHost);
+        properties.put("mail.smtp.host", this.host);
         properties.put("mail.smtp.auth", "true");
-        properties.put("mail.smtp.port", this.smtpPortNumber);
-        if (this.isEnableTls) {
+        properties.put("mail.smtp.port", this.portNumber);
+        if (this.isEnableTLS) {
             properties.put("mail.smtp.starttls.required", "true");
             properties.put("mail.smtp.starttls.enable", "true");
             properties.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
@@ -200,17 +136,20 @@ public class EmailTransmitter {
         Session session = Session.getInstance(properties, this.new SmtpAuth());
         session.setDebug(this.isDebug);
         MimeMessage mime = new MimeMessage(session);
-        if (this.myMailAddress.length > 0) {
-            mime.addFrom(this.myMailAddress);
+        if (this.myEmailAddress.length > 0) {
+            mime.addFrom(this.myEmailAddress);
         }
-        if (this.toMailAddress.length > 0) {
-            mime.addRecipients(Message.RecipientType.TO, this.toMailAddress);
+        ArrayList<InternetAddress> emailAddresses = this.receiverEmailAddresses.get(ReceiverType.TO);
+        if (emailAddresses != null && emailAddresses.size() > 0) {
+            mime.addRecipients(Message.RecipientType.TO, emailAddresses.toArray(new InternetAddress[] {}));
         }
-        if (this.ccMailAddress.length > 0) {
-            mime.addRecipients(Message.RecipientType.CC, this.ccMailAddress);
+        emailAddresses = this.receiverEmailAddresses.get(ReceiverType.CC);
+        if (emailAddresses != null && emailAddresses.size() > 0) {
+            mime.addRecipients(Message.RecipientType.CC, emailAddresses.toArray(new InternetAddress[] {}));
         }
-        if (this.bccMailAddress.length > 0) {
-            mime.addRecipients(Message.RecipientType.BCC, this.bccMailAddress);
+        emailAddresses = this.receiverEmailAddresses.get(ReceiverType.BCC);
+        if (emailAddresses != null && emailAddresses.size() > 0) {
+            mime.addRecipients(Message.RecipientType.BCC, emailAddresses.toArray(new InternetAddress[] {}));
         }
         mime.setSubject(subject, this.charset);
         mime.setText(body, this.charset);
@@ -222,9 +161,28 @@ public class EmailTransmitter {
 
         @Override
         protected PasswordAuthentication getPasswordAuthentication() {
-            return new PasswordAuthentication(EmailTransmitter.this.smtpUser, EmailTransmitter.this.smtpPass);
+            return new PasswordAuthentication(EmailTransmitter.this.user, EmailTransmitter.this.password);
         }
 
     }
-
+    
+    /**
+     * 受信者の種類列挙型.
+     * @author hiro
+     */
+    public enum ReceiverType {
+        /**
+         * 宛先
+         */
+        TO,
+        /**
+         * CC
+         */
+        CC,
+        /**
+         * BCC
+         */
+        BCC,
+    }
+    
 }
