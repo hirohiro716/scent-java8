@@ -18,9 +18,9 @@ import javax.mail.internet.MimeMessage;
  * @author hiro
  */
 public class EmailTransmitter {
-
+    
     private InternetAddress[] myEmailAddress = new InternetAddress[] {};
-
+    
     /**
      * 送信元メールアドレスをセットする.
      * @param emailAddress
@@ -29,11 +29,11 @@ public class EmailTransmitter {
     public void setMyEmailAddress(String emailAddress) throws Exception {
         this.myEmailAddress = InternetAddress.parse(emailAddress);
     }
-
+    
     private String host;
-
+    
     /**
-     * 送信メールサーバーを設定.
+     * 送信メールサーバーをセットする.
      * @param host
      */
     public void setHost(String host) {
@@ -43,7 +43,7 @@ public class EmailTransmitter {
     private String user;
 
     /**
-     * 送信メールサーバー認証ユーザーを設定.
+     * 送信メールサーバー認証ユーザーをセットする.
      * @param user
      */
     public void setUser(String user) {
@@ -53,7 +53,7 @@ public class EmailTransmitter {
     private String password;
 
     /**
-     * 送信メールサーバー認証パスワードを設定.
+     * 送信メールサーバー認証パスワードをセットする.
      * @param password
      */
     public void setPassword(String password) {
@@ -63,7 +63,7 @@ public class EmailTransmitter {
     private String portNumber = "25";
 
     /**
-     * 送信メールポート番号を設定.
+     * 送信メールポート番号をセットする.
      * @param portNumber
      */
     public void setPortNumber(int portNumber) {
