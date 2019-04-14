@@ -113,7 +113,7 @@ public class WEBRequest {
             try (BufferedReader bufferedReader = new BufferedReader(streamReader)) {
                 String line;
                 while ((line = bufferedReader.readLine()) != null) {
-                    body = StringConverter.join(body, line, "\n");;
+                    body = StringConverter.join(body, line, "\n");
                 }
             }
         }
@@ -137,7 +137,7 @@ public class WEBRequest {
 //            try (BufferedReader bufferedReader = new BufferedReader(streamReader)) {
 //                String line;
 //                while ((line = bufferedReader.readLine()) != null) {
-//                    body = ConvertValue.stringJoin(body, line, "\n");;
+//                    body = ConvertValue.stringJoin(body, line, "\n");
 //                }
 //            }
 //        }
@@ -164,7 +164,7 @@ public class WEBRequest {
             try (BufferedReader bufferedReader = new BufferedReader(streamReader)) {
                 String line;
                 while ((line = bufferedReader.readLine()) != null) {
-                    body = StringConverter.join(body, line, "\n");;
+                    body = StringConverter.join(body, line, "\n");
                 }
             }
         }

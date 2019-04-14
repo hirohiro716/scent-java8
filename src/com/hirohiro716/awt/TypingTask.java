@@ -57,6 +57,8 @@ public class TypingTask extends AbstractTypingTask<Integer> {
         case Y:
         case Z:
             return KeyEvent.getExtendedKeyCodeForChar(keyCode.toString().charAt(0));
+        case SPACE:
+            return KeyEvent.VK_SPACE;
         case ENTER:
             return KeyEvent.VK_ENTER;
         case ESCAPE:
@@ -113,6 +115,8 @@ public class TypingTask extends AbstractTypingTask<Integer> {
         case KeyEvent.VK_Y:
         case KeyEvent.VK_Z:
             return KeyCode.find(KeyEvent.getKeyText(keyCode));
+        case KeyEvent.VK_SPACE:
+            return KeyCode.SPACE;
         case KeyEvent.VK_ENTER:
             return KeyCode.ENTER;
         case KeyEvent.VK_ESCAPE:

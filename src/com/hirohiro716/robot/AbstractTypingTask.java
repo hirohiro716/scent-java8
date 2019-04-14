@@ -16,6 +16,11 @@ public abstract class AbstractTypingTask<T> implements InterfaceTypingTask<T> {
     private ArrayList<Task> tasks = new ArrayList<>();
     
     @Override
+    public int getNumberOfTasks() {
+        return this.tasks.size();
+    }
+    
+    @Override
     public String makeTaskDefinitionString() {
         StringBuilder result = new StringBuilder();
         for (Task task: this.tasks) {

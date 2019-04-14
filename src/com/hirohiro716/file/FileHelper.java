@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.FilenameFilter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -13,6 +14,7 @@ import java.net.URISyntaxException;
 import java.nio.charset.Charset;
 import java.security.CodeSource;
 import java.security.ProtectionDomain;
+import java.util.ArrayList;
 
 import com.hirohiro716.OSHelper;
 
@@ -150,6 +152,11 @@ public class FileHelper {
         MP4(".mp4", ".MP4"),
 
         /**
+         * DATファイル
+         */
+        DAT(".dat", ".DAT"),
+
+        /**
          * 不明
          */
         UNKNOWN("."), ;
@@ -249,6 +256,29 @@ public class FileHelper {
             }
         }
         return null;
+    }
+    
+    /**
+     * ディレクトリ内のファイルをサブディレクトリを含めすべて取得する.
+     * @param directory 対象ディレクトリ
+     * @param filenameFilter フィルタ(nullも可)
+     * @return 見つかったファイル
+     */
+    public static File[] findAllFilesFromDirectory(File directory, FilenameFilter filenameFilter) {
+        ArrayList<File> files = new ArrayList<>();
+        if (directory != null && directory.isDirectory()) {
+            for (File file: directory.listFiles()) {
+                if (filenameFilter ==null || filenameFilter.accept(file, file.getName())) {
+                    files.add(file);
+                }
+                if (file.isDirectory()) {
+                    for (File fileOfSubDirectory: findAllFilesFromDirectory(file, filenameFilter)) {
+                        files.add(fileOfSubDirectory);
+                    }
+                }
+            }
+        }
+        return files.toArray(new File[] {});
     }
 
     /**

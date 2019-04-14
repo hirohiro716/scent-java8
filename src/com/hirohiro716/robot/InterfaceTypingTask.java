@@ -37,6 +37,12 @@ public interface InterfaceTypingTask<T> {
     public abstract void importFromTaskDefinitionString(String taskDefinitionString);
     
     /**
+     * セットされているタスク数を取得する.
+     * @return タスク数
+     */
+    public abstract int getNumberOfTasks();
+    
+    /**
      * キーを入力するタスクを追加する.
      * @param keyCodes
      */
@@ -186,6 +192,10 @@ public interface InterfaceTypingTask<T> {
          * Z
          */
         Z,
+        /**
+         * SPACE
+         */
+        SPACE,
         /**
          * ENTER
          */

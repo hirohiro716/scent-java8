@@ -144,7 +144,7 @@ public class SpanOfCutoffDates {
         }
         if (findCutoffDate > 28) {
             temporaryDatetime.modifyDay(1);
-            temporaryDatetime.addMonth(1);;
+            temporaryDatetime.addMonth(1);
             temporaryDatetime.addDay(-1);
             return temporaryDatetime.toDay();
         }
