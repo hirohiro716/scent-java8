@@ -1,4 +1,4 @@
-package com.hirohiro716.mail;
+package com.hirohiro716.email;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -16,7 +16,7 @@ import javax.mail.internet.MimeMessage;
  * JavaMail1.6.1を使用したメール送信を行うクラス.
  * @author hiro
  */
-public class MailTransmitter {
+public class EmailTransmitter {
 
     private InternetAddress[] myMailAddress = new InternetAddress[] {};
 
@@ -59,14 +59,14 @@ public class MailTransmitter {
         this.smtpPass = smtpPass;
     }
 
-    private String smtpPort = "25";
+    private String smtpPortNumber = "25";
 
     /**
-     * 送信メールポートを設定.
-     * @param smtpPort
+     * 送信メールポート番号を設定.
+     * @param smtpPortNumber
      */
-    public void setSmtpPort(int smtpPort) {
-        this.smtpPort = String.valueOf(smtpPort);
+    public void setSmtpPortNumber(int smtpPortNumber) {
+        this.smtpPortNumber = String.valueOf(smtpPortNumber);
     }
 
     private boolean isEnableTls = false;
@@ -159,7 +159,27 @@ public class MailTransmitter {
         }
         this.bccMailAddress = addresses.toArray(new InternetAddress[] {});
     }
-
+    
+    private String charset = "UTF-8";
+    
+    /**
+     * Charsetをセットする.
+     * @param charset
+     */
+    public void setCharset(String charset) {
+        this.charset = charset;
+    }
+    
+    private boolean isDebug = false;
+    
+    /**
+     * デバッグが有効かどうかをセットする.
+     * @param isDebug
+     */
+    public void setDebug(boolean isDebug) {
+        this.isDebug = isDebug;
+    }
+    
     /**
      * メールを送信する.
      * @param subject メール表題
@@ -170,7 +190,7 @@ public class MailTransmitter {
         Properties properties = new Properties();
         properties.put("mail.smtp.host", this.smtpHost);
         properties.put("mail.smtp.auth", "true");
-        properties.put("mail.smtp.port", this.smtpPort);
+        properties.put("mail.smtp.port", this.smtpPortNumber);
         if (this.isEnableTls) {
             properties.put("mail.smtp.starttls.required", "true");
             properties.put("mail.smtp.starttls.enable", "true");
@@ -178,7 +198,7 @@ public class MailTransmitter {
             properties.put("mail.smtp.socketFactory.fallback", "true");
         }
         Session session = Session.getInstance(properties, this.new SmtpAuth());
-//          session.setDebug(true); // コメントアウトしないとだめだよ
+        session.setDebug(this.isDebug);
         MimeMessage mime = new MimeMessage(session);
         if (this.myMailAddress.length > 0) {
             mime.addFrom(this.myMailAddress);
@@ -192,8 +212,8 @@ public class MailTransmitter {
         if (this.bccMailAddress.length > 0) {
             mime.addRecipients(Message.RecipientType.BCC, this.bccMailAddress);
         }
-        mime.setSubject(subject, "iso-2022-jp");
-        mime.setText(body, "iso-2022-jp");
+        mime.setSubject(subject, this.charset);
+        mime.setText(body, this.charset);
         mime.setSentDate(new Date());
         Transport.send(mime);
     }
@@ -202,7 +222,7 @@ public class MailTransmitter {
 
         @Override
         protected PasswordAuthentication getPasswordAuthentication() {
-            return new PasswordAuthentication(MailTransmitter.this.smtpUser, MailTransmitter.this.smtpPass);
+            return new PasswordAuthentication(EmailTransmitter.this.smtpUser, EmailTransmitter.this.smtpPass);
         }
 
     }

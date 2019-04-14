@@ -3,28 +3,34 @@ package test;
 import javax.mail.MessagingException;
 import javax.mail.internet.AddressException;
 
-import com.hirohiro716.mail.MailTransmitter;
+import com.hirohiro716.email.EmailTransmitter;
 
 @SuppressWarnings("all")
 public class TestMailHelper {
 
     public static void main(String[] args) {
-        MailTransmitter mail = new MailTransmitter();
+        
         try {
 
+            EmailTransmitter mail = new EmailTransmitter();
             mail.setMyMailAddress("not.alter@gmail.com");
             mail.setSmtpHost("smtp.gmail.com");
             mail.setSmtpUser("not.alter@gmail.com");
             mail.setSmtpPassword("55838553");
             mail.setToMailAddress("hirohiro716@gmail.com");
-            mail.setSmtpPort(465);
+            mail.setSmtpPortNumber(465);
+            mail.setDebug(true);
             mail.setEnableTls(true);
-            mail.send("test3", "test message 3");
-
+            mail.send("手酢と3", "テスト めっせーじ ｻﾝ");
+            
             System.out.println("ok");
+            
         } catch (Exception exception) {
+            
             exception.printStackTrace();
+            
         }
+        
     }
 
 }
