@@ -298,13 +298,13 @@ public class StringConverter {
                 value = value.replace(paramsStrings[0], paramsStrings[1]);
                 break;
             case REPLACE_CR:
-                value = value.replace("\r", this.params.getString(pattern));
+                value = crReplace(value, this.params.getString(pattern));
                 break;
             case REPLACE_LF:
-                value = value.replace("\n", this.params.getString(pattern));
+                value = lfReplace(value, this.params.getString(pattern));
                 break;
             case REPLACE_CRLF:
-                value = value.replace("\r\n", this.params.getString(pattern));
+                value = value.replaceAll("\r\n", this.params.getString(pattern));
                 break;
             case REPLACE_NARROW_SPACE:
                 value = value.replace(" ", this.params.getString(pattern));
@@ -471,6 +471,48 @@ public class StringConverter {
             stringBuilder.append(string);
         }
         return stringBuilder.toString();
+    }
+    
+    /**
+     * 改行コード(CR)を置き換える. CRLFのCRは置き換えない.
+     * @param value 対象
+     * @param replacement 置き換える文字列
+     * @return 置き換え後の値
+     */
+    public static String crReplace(Object value, String replacement) {
+        if (value == null) {
+            return null;
+        }
+        String stringValue = (String) value;
+        return stringValue.replaceAll("\r([^\n])|\r$", replacement + "$1");
+    }
+
+    /**
+     * 改行コード(LF)を置き換える. CRLFのLFは置き換えない.
+     * @param value 対象
+     * @param replacement 置き換える文字列
+     * @return 置き換え後の値
+     */
+    public static String lfReplace(Object value, String replacement) {
+        if (value == null) {
+            return null;
+        }
+        String stringValue = (String) value;
+        return stringValue.replaceAll("([^\r])\n|^\n", "$1" + replacement);
+    }
+
+    /**
+     * 改行コード(CRLF)を置き換える.
+     * @param value 対象
+     * @param replacement 置き換える文字列
+     * @return 置き換え後の値
+     */
+    public static String crlfReplace(Object value, String replacement) {
+        if (value == null) {
+            return null;
+        }
+        String stringValue = (String) value;
+        return stringValue.replaceAll("\r\n", replacement);
     }
 
     /**
