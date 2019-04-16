@@ -76,7 +76,7 @@ public class StringConverter {
     }
 
     /**
-     * キャリッジリターンを置き換える処理を組み込む.
+     * 改行コード(LF)を置き換える処理を組み込む. CRLFのLFは置き換えない.
      * @param replaceString 置き換え文字列
      */
     public void addReplaceCr(String replaceString) {
@@ -84,7 +84,7 @@ public class StringConverter {
     }
 
     /**
-     * ラインフィードを置き換える処理を組み込む.
+     * 改行コード(CR)を置き換える処理を組み込む. CRLFのCRは置き換えない.
      * @param replaceString 置き換え文字列
      */
     public void addReplaceLf(String replaceString) {
@@ -92,7 +92,7 @@ public class StringConverter {
     }
 
     /**
-     * CRLFを置き換える処理を組み込む.
+     * 改行コード(CRLF)を置き換える処理を組み込む.
      * @param replaceString 置き換え文字列
      */
     public void addReplaceCrLf(String replaceString) {

@@ -13,11 +13,18 @@ import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
+import com.hirohiro716.StringConverter;
+
 /**
  * JavaMail1.6.1を使用したE-mail送信を行うクラス.
  * @author hiro
  */
 public class EmailTransmitter {
+    
+    /**
+     * メール本文に使用する改行コード.
+     */
+    public static final String LINE_SEPARATOR = "\r\n";
     
     private InternetAddress[] myEmailAddress = new InternetAddress[] {};
     
@@ -152,6 +159,9 @@ public class EmailTransmitter {
             mime.addRecipients(Message.RecipientType.BCC, emailAddresses.toArray(new InternetAddress[] {}));
         }
         mime.setSubject(subject, this.charset);
+        StringConverter converter = new StringConverter();
+        converter.addReplaceCr(LINE_SEPARATOR);
+        converter.addReplaceLf(LINE_SEPARATOR);
         mime.setText(body, this.charset);
         mime.setSentDate(new Date());
         Transport.send(mime);
