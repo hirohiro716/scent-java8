@@ -22,14 +22,14 @@ import com.hirohiro716.StringConverter;
 public class EmailTransmitter {
     
     /**
-     * メール本文に使用する改行コード.
+     * E-mail本文に使用する改行コード.
      */
     public static final String LINE_SEPARATOR = "\r\n";
     
     private InternetAddress[] myEmailAddress = new InternetAddress[] {};
     
     /**
-     * 送信元メールアドレスをセットする.
+     * 送信元E-mailアドレスをセットする.
      * @param emailAddress
      * @throws Exception アドレスの有効性確認失敗
      */
@@ -40,7 +40,7 @@ public class EmailTransmitter {
     private String host;
     
     /**
-     * 送信メールサーバーをセットする.
+     * 送信E-mailサーバーをセットする.
      * @param host
      */
     public void setHost(String host) {
@@ -50,7 +50,7 @@ public class EmailTransmitter {
     private String user;
 
     /**
-     * 送信メールサーバー認証ユーザーをセットする.
+     * 送信E-mailサーバー認証ユーザーをセットする.
      * @param user
      */
     public void setUser(String user) {
@@ -60,7 +60,7 @@ public class EmailTransmitter {
     private String password;
 
     /**
-     * 送信メールサーバー認証パスワードをセットする.
+     * 送信E-mailサーバー認証パスワードをセットする.
      * @param password
      */
     public void setPassword(String password) {
@@ -70,7 +70,7 @@ public class EmailTransmitter {
     private String portNumber = "25";
 
     /**
-     * 送信メールポート番号をセットする.
+     * 送信E-mailポート番号をセットする.
      * @param portNumber
      */
     public void setPortNumber(int portNumber) {
@@ -80,7 +80,7 @@ public class EmailTransmitter {
     private boolean isEnableTLS = false;
 
     /**
-     * メールの通信にTLSを使用するかどうか.
+     * E-mailの通信にTLSを使用するかどうか.
      * @param isEnableTLS
      */
     public void setEnableTLS(boolean isEnableTLS) {
@@ -124,8 +124,8 @@ public class EmailTransmitter {
     }
     
     /**
-     * メールを送信する.
-     * @param subject メール表題
+     * E-mailを送信する.
+     * @param subject E-mail表題
      * @param body 本文
      * @throws Exception メッセージの送信に失敗
      */

@@ -12,7 +12,7 @@ public abstract class AbstractBindTableRow extends AbstractBindTable {
 
     /**
      * コンストラクタ.
-     * @param database
+     * @param database 接続済みDatabase
      */
     public AbstractBindTableRow(AbstractDatabase database) {
         super(database);

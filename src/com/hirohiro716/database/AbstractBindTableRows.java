@@ -14,7 +14,7 @@ public abstract class AbstractBindTableRows extends AbstractBindTable {
     
     /**
      * コンストラクタ.
-     * @param database
+     * @param database 接続済みDatabase
      */
     public AbstractBindTableRows(AbstractDatabase database) {
         super(database);

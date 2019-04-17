@@ -15,7 +15,7 @@ public abstract class AbstractBindTable {
 
     /**
      * コンストラクタ.
-     * @param database
+     * @param database 接続済みDatabase
      */
     public AbstractBindTable(AbstractDatabase database) {
         this.database = database;
@@ -33,7 +33,7 @@ public abstract class AbstractBindTable {
     
     /**
      * データベースオブジェクトを再指定する.
-     * @param database
+     * @param database 接続済みDatabase
      */
     protected void setDatabase(AbstractDatabase database) {
         this.database = database;
