@@ -836,7 +836,7 @@ public class RudeArray implements Cloneable, Serializable {
      * @param sortKey 基準値が含まれるRudeArray内のキー
      * @return 並び替え後の新規ArrayList
      */
-    public static ArrayList<RudeArray> sortAsc(List<RudeArray> source, String sortKey) {
+    public static ArrayList<RudeArray> sortAsc(Iterable<RudeArray> source, String sortKey) {
         ArrayList<RudeArray> result = new ArrayList<>();
         for (RudeArray array: source) {
             result.add(array);
@@ -851,7 +851,7 @@ public class RudeArray implements Cloneable, Serializable {
      * @param sortKey 基準値が含まれるRudeArray内のキー
      * @return 並び替え後の新規ArrayList
      */
-    public static ArrayList<RudeArray> sortDesc(List<RudeArray> source, String sortKey) {
+    public static ArrayList<RudeArray> sortDesc(Iterable<RudeArray> source, String sortKey) {
         ArrayList<RudeArray> result = new ArrayList<>();
         for (RudeArray array: source) {
             result.add(array);
