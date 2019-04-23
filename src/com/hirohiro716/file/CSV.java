@@ -83,6 +83,16 @@ public class CSV {
         this.rows.add(arrayList);
     }
     
+    private String delimiter = ",";
+    
+    /**
+     * 区切り文字をセットする.
+     * @param delimiter
+     */
+    public void setDelimiter(String delimiter) {
+        this.delimiter = delimiter;
+    }
+    
     /**
      * ファイルから読み込む.
      * @param file ファイル
@@ -107,7 +117,7 @@ public class CSV {
             while ((line = reader.readLine()) != null) {
                 ArrayList<String> values = new ArrayList<>();
                 StringBuilder value = new StringBuilder();
-                boolean isValueImporting = false;
+                boolean isStringImporting = false;
                 for (int index = 0; index < line.length(); index++) {
                     String one = line.substring(index, index + 1);
                     String two = one;
@@ -115,25 +125,25 @@ public class CSV {
                         two = line.substring(index, index + 2);
                     } catch (IndexOutOfBoundsException exception) {
                     }
-                    if (one.equals("\"")) {
-                        if (two.equals("\"\"") && isValueImporting) {
+                    if (one.equals(this.delimiter) && isStringImporting == false) {
+                        values.add(value.toString());
+                        value = new StringBuilder();
+                    } else if (one.equals("\"")) {
+                        if (two.equals("\"\"")) {
                             value.append(one);
                             index++;
                         } else {
-                            if (isValueImporting) {
-                                values.add(value.toString());
-                                value = new StringBuilder();
-                                isValueImporting = false;
+                            if (isStringImporting) {
+                                isStringImporting = false;
                             } else {
-                                isValueImporting = true;
+                                isStringImporting = true;
                             }
                         }
                     } else {
-                        if (isValueImporting) {
-                            value.append(one);
-                        }
+                        value.append(one);
                     }
                 }
+                values.add(value.toString());
                 if (firstRowIsHeader && isHeaderDone == false) {
                     this.setHeaders(values);
                     isHeaderDone = true;
@@ -176,7 +186,7 @@ public class CSV {
                     header = StringConverter.nullReplace(this.headers.get(index), "").replaceAll("\"", "\"\"");
                 }
                 if (index > 0) {
-                    csv.append(",");
+                    csv.append(this.delimiter);
                 }
                 csv.append("\"");
                 csv.append(header);
@@ -191,7 +201,7 @@ public class CSV {
                     value = StringConverter.nullReplace(row.get(index), "").replaceAll("\"", "\"\"");
                 }
                 if (index > 0) {
-                    csv.append(",");
+                    csv.append(this.delimiter);
                 }
                 csv.append("\"");
                 csv.append(value);
