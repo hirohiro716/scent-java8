@@ -21,7 +21,7 @@ public class PropertyXML {
     /**
      * コメント用
      */
-    private String comment = "This was made by com.hirohiro716.file.PropertyXmlHelper";
+    private String comment = "This was made by com.hirohiro716.file.PropertyXML";
 
     /**
      * XMLファイルの場所を指定する. ファイルがない場合は作成される.
