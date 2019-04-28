@@ -1385,8 +1385,8 @@ public class StringConverter {
         array.put("%", "％");
         array.put("&", "＆");
         array.put("'", "’");
-        array.put("(", "(");
-        array.put(")", ")");
+        array.put("(", "（");
+        array.put(")", "）");
         array.put("=", "＝");
         array.put("-", "－");
         array.put("~", "～");
@@ -1568,8 +1568,8 @@ public class StringConverter {
         array.put("％", "%");
         array.put("＆", "&");
         array.put("’", "'");
-        array.put("(", "(");
-        array.put(")", ")");
+        array.put("（", "(");
+        array.put("）", ")");
         array.put("＝", "=");
         array.put("－", "-");
         array.put("～", "~");

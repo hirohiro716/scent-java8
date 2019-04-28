@@ -13,9 +13,11 @@ public class TestConvertValue {
         
         String value = "\nあ\rあいう\r\nえ\naaa\r";
         
-        System.out.println(convert.execute(value).replaceAll("\r\n", "[crlf]\n"));
+//        System.out.println(convert.execute(value).replaceAll("\r\n", "[crlf]\n"));
         
 //        System.out.println(value.replaceAll("\r$|\r([^\n])", "[cr]$1"));
+        
+        System.out.println(StringConverter.stringToBoolean("TRUE"));
         
         
     }
