@@ -121,15 +121,21 @@ public class CSV {
                 for (int index = 0; index < line.length(); index++) {
                     String one = line.substring(index, index + 1);
                     String two = one;
+                    String three = one;
                     try {
                         two = line.substring(index, index + 2);
+                        three = two;
+                        try {
+                            three = line.substring(index, index + 3);
+                        } catch (IndexOutOfBoundsException exception) {
+                        }
                     } catch (IndexOutOfBoundsException exception) {
                     }
                     if (one.equals(this.delimiter) && isStringImporting == false) {
                         values.add(value.toString());
                         value = new StringBuilder();
                     } else if (one.equals("\"")) {
-                        if (two.equals("\"\"")) {
+                        if (two.equals("\"\"") && three.equals("\"\"") == false && three.equals("\"\",") == false) {
                             value.append(one);
                             index++;
                         } else {
