@@ -95,21 +95,21 @@ public interface InterfaceTypingRobotJapanese<T> {
     /**
      * IMEをOFFにする.
      */
-    public void changeImeOff();
+    public void changeIMEOff();
     
     /**
      * IMEをひらがなにする.
      */
-    public void changeImeHiragana();
+    public void changeIMEHiragana();
     
     /**
      * IMEをカタカナにする.
      */
-    public void changeImeKatakanaWide();
+    public void changeIMEKatakanaWide();
     
     /**
      * IMEをｶﾀｶﾅにする.
      */
-    public void changeImeKatakanaNarrow();
+    public void changeIMEKatakanaNarrow();
     
 }

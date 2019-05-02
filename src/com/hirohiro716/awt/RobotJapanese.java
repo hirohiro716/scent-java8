@@ -33,22 +33,22 @@ public class RobotJapanese extends Robot implements InterfaceTypingRobotJapanese
         }
     }
     
-    private List<Integer[]> changeImeOffKeys = new ArrayList<>();
+    private List<Integer[]> changeIMEOffKeys = new ArrayList<>();
     
     /**
      * IMEをOFFにするためのホットキーをセットする.
      * @param keyCodes
      */
-    public void setChangeImeOffKeys(Integer[]... keyCodes) {
+    public void setChangeIMEOffKeys(Integer[]... keyCodes) {
         for (Integer[] key: keyCodes) {
-            this.changeImeOffKeys.add(key);
+            this.changeIMEOffKeys.add(key);
         }
     }
     
     @Override
-    public void changeImeOff() {
-        if (this.changeImeOffKeys.size() > 0) {
-            for (Integer[] key: this.changeImeOffKeys) {
+    public void changeIMEOff() {
+        if (this.changeIMEOffKeys.size() > 0) {
+            for (Integer[] key: this.changeIMEOffKeys) {
                 this.keyType(key);
             }
             this.waitForIdle();
@@ -75,22 +75,22 @@ public class RobotJapanese extends Robot implements InterfaceTypingRobotJapanese
         }
     }
 
-    private List<Integer[]> changeImeHiraganaKeys = new ArrayList<>();
+    private List<Integer[]> changeIMEHiraganaKeys = new ArrayList<>();
     
     /**
      * IMEをひらがなにするためのホットキーをセットする.
      * @param keyCodes
      */
-    public void setChangeImeHiraganaKeys(Integer[]... keyCodes) {
+    public void setChangeIMEHiraganaKeys(Integer[]... keyCodes) {
         for (Integer[] key: keyCodes) {
-            this.changeImeHiraganaKeys.add(key);
+            this.changeIMEHiraganaKeys.add(key);
         }
     }
     
     @Override
-    public void changeImeHiragana() {
-        if (this.changeImeHiraganaKeys.size() > 0) {
-            for (Integer[] key: this.changeImeHiraganaKeys) {
+    public void changeIMEHiragana() {
+        if (this.changeIMEHiraganaKeys.size() > 0) {
+            for (Integer[] key: this.changeIMEHiraganaKeys) {
                 this.keyType(key);
             }
         } else {
@@ -115,22 +115,22 @@ public class RobotJapanese extends Robot implements InterfaceTypingRobotJapanese
         }
     }
 
-    private List<Integer[]> changeImeKatakanaKeys = new ArrayList<>();
+    private List<Integer[]> changeIMEKatakanaKeys = new ArrayList<>();
     
     /**
      * IMEをカタカナにするためのホットキーをセットする.
      * @param keyCodes
      */
-    public void setChangeImeKatakanaKeys(Integer[]... keyCodes) {
+    public void setChangeIMEKatakanaKeys(Integer[]... keyCodes) {
         for (Integer[] key: keyCodes) {
-            this.changeImeKatakanaKeys.add(key);
+            this.changeIMEKatakanaKeys.add(key);
         }
     }
     
     @Override
-    public void changeImeKatakanaWide() {
-        if (this.changeImeKatakanaKeys.size() > 0) {
-            for (Integer[] key: this.changeImeKatakanaKeys) {
+    public void changeIMEKatakanaWide() {
+        if (this.changeIMEKatakanaKeys.size() > 0) {
+            for (Integer[] key: this.changeIMEKatakanaKeys) {
                 this.keyType(key);
             }
         } else {
@@ -155,22 +155,22 @@ public class RobotJapanese extends Robot implements InterfaceTypingRobotJapanese
         }
     }
 
-    private List<Integer[]> changeImeKatakanaNarrowKeys = new ArrayList<>();
+    private List<Integer[]> changeIMEKatakanaNarrowKeys = new ArrayList<>();
     
     /**
      * IMEをｶﾀｶﾅにするためのホットキーをセットする.
      * @param keyCodes
      */
-    public void setChangeImeKatakanaNarrowKeys(Integer[]... keyCodes) {
+    public void setChangeIMEKatakanaNarrowKeys(Integer[]... keyCodes) {
         for (Integer[] key: keyCodes) {
-            this.changeImeKatakanaKeys.add(key);
+            this.changeIMEKatakanaKeys.add(key);
         }
     }
     
     @Override
-    public void changeImeKatakanaNarrow() {
-        if (this.changeImeKatakanaNarrowKeys.size() > 0) {
-            for (Integer[] key: this.changeImeKatakanaNarrowKeys) {
+    public void changeIMEKatakanaNarrow() {
+        if (this.changeIMEKatakanaNarrowKeys.size() > 0) {
+            for (Integer[] key: this.changeIMEKatakanaNarrowKeys) {
                 this.keyType(key);
             }
         } else {
