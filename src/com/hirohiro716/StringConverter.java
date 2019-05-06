@@ -533,7 +533,7 @@ public class StringConverter {
      * @param boolString 有効文字列
      * @return 結果
      */
-    public static boolean stringToBoolean(String boolString) {
+    public static Boolean stringToBoolean(String boolString) {
         try {
             return Boolean.parseBoolean(boolString);
         } catch (Exception exception) {
