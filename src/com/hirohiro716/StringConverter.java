@@ -1389,6 +1389,8 @@ public class StringConverter {
         array.put(")", "）");
         array.put("=", "＝");
         array.put("-", "－");
+        array.put("‑", "－");
+        array.put("ｰ", "－");
         array.put("~", "～");
         array.put("^", "＾");
         array.put("\\", "￥");
