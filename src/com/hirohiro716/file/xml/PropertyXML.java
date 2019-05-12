@@ -46,7 +46,7 @@ public class PropertyXML {
      * @param name プロパティ名
      * @return 値
      */
-    public String get(String name) {
+    public String read(String name) {
         if (this.properties == null) {
             return null;
         }
@@ -62,7 +62,7 @@ public class PropertyXML {
      * @param value 値
      * @throws IOException
      */
-    public void put(String name, String value) throws IOException {
+    public void write(String name, String value) throws IOException {
         if (this.properties == null) {
             return;
         }

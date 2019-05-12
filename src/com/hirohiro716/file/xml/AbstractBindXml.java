@@ -81,13 +81,13 @@ public abstract class AbstractBindXml {
     /**
      * すべてのプロパティをXMLファイルから取得する.
      */
-    public abstract void fetchAllProperties();
+    public abstract void readAllProperties();
     
     /**
      * すべてのプロパティをXMLに書き込む.
      * @throws IOException
      */
-    public abstract void updateAllProperties() throws IOException;
+    public abstract void writeAllProperties() throws IOException;
 
     /**
      * プロパティが存在するか確認する.
@@ -103,8 +103,8 @@ public abstract class AbstractBindXml {
      * @param name プロパティ名
      * @return プロパティ値(該当するプロパティがなければnull)
      */
-    public String getValue(String name) {
-        return this.xmlHelper.get(name);
+    public String read(String name) {
+        return this.xmlHelper.read(name);
     }
 
     /**
@@ -113,8 +113,8 @@ public abstract class AbstractBindXml {
      * @param value プロパティ値
      * @throws IOException
      */
-    public void setValue(String name, String value) throws IOException {
-        this.xmlHelper.put(name, value);
+    public void write(String name, String value) throws IOException {
+        this.xmlHelper.write(name, value);
     }
 
 }
