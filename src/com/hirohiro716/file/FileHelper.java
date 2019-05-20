@@ -17,6 +17,7 @@ import java.security.ProtectionDomain;
 import java.util.ArrayList;
 
 import com.hirohiro716.OSHelper;
+import com.hirohiro716.StringConverter;
 
 import static com.hirohiro716.file.FileHelper.FileExtension.*;
 
@@ -490,6 +491,9 @@ public class FileHelper {
                     StringBuilder result = new StringBuilder();
                     String line;
                     while ((line = bufferedReader.readLine()) != null) {
+                        if (result.length() > 0) {
+                            result.append(StringConverter.LINE_SEPARATOR);
+                        }
                         result.append(line);
                     }
                     return result.toString();

@@ -111,48 +111,65 @@ public class CSV {
             exception.printStackTrace();
         }
         // ファイルから読み込む
-        boolean isHeaderDone = false;
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(file), charset))) {
-            String line = null;
-            while ((line = reader.readLine()) != null) {
-                ArrayList<String> values = new ArrayList<>();
-                StringBuilder value = new StringBuilder();
-                boolean isStringImporting = false;
-                for (int index = 0; index < line.length(); index++) {
-                    String one = line.substring(index, index + 1);
-                    String two = one;
-                    String three = one;
-                    try {
-                        two = line.substring(index, index + 2);
-                        three = two;
-                        try {
-                            three = line.substring(index, index + 3);
-                        } catch (IndexOutOfBoundsException exception) {
-                        }
-                    } catch (IndexOutOfBoundsException exception) {
-                    }
-                    if (one.equals(this.delimiter) && isStringImporting == false) {
+            boolean isStringImporting = false;
+            boolean isHeaderDone = false;
+            ArrayList<String> values = new ArrayList<>();
+            StringBuilder value = new StringBuilder();
+            int firstChar = reader.read();
+            int secondChar = reader.read();
+            int thirdChar = reader.read();
+            while (firstChar > -1) {
+                String first = new String(new char[] {(char) firstChar});
+                String second = new String(new char[] {(char) secondChar});
+                String third = new String(new char[] {(char) thirdChar});
+                if (first.equals(this.delimiter) && isStringImporting == false) {
+                    // 次の値
+                    values.add(value.toString());
+                    value = new StringBuilder();
+                } else if (first.equals("\n") && isStringImporting == false || first.equals("\r") && isStringImporting == false) {
+                    // 行として取り込んで次の行へ
+                    if (values.size() > 0 || value.length() > 0) {
                         values.add(value.toString());
-                        value = new StringBuilder();
-                    } else if (one.equals("\"")) {
-                        if (two.equals("\"\"") && three.equals("\"\"") == false && three.equals("\"\",") == false) {
-                            value.append(one);
-                            index++;
+                        if (firstRowIsHeader && isHeaderDone == false) {
+                            this.setHeaders(values);
+                            isHeaderDone = true;
                         } else {
-                            if (isStringImporting) {
-                                isStringImporting = false;
-                            } else {
-                                isStringImporting = true;
-                            }
+                            this.addRow(values);
                         }
-                    } else {
-                        value.append(one);
+                        isStringImporting = false;
+                        values = new ArrayList<>();
+                        value = new StringBuilder();
                     }
+                } else if (first.equals("\"")) {
+                    // エスケープ
+                    if (second.equals("\"") && third.equals(",") == false || second.equals("\"") && thirdChar == -1
+                            || second.equals("\"") && third.equals("\n") || second.equals("\"") && third.equals("\r")) {
+                        value.append(first);
+                        reader.skip(1);
+                    } else {
+                        if (isStringImporting) {
+                            isStringImporting = false;
+                        } else {
+                            isStringImporting = true;
+                        }
+                    }
+                } else {
+                    // その他
+                    value.append(first);
                 }
+                firstChar = secondChar;
+                secondChar = thirdChar;
+                thirdChar = reader.read();
+                first = new String(new char[] {(char) firstChar});
+                second = new String(new char[] {(char) secondChar});
+                third = new String(new char[] {(char) thirdChar});
+            }
+            // 最終行が未取り込みなら取り込む
+            if (values.size() > 0 || value.length() > 0) {
                 values.add(value.toString());
                 if (firstRowIsHeader && isHeaderDone == false) {
                     this.setHeaders(values);
-                    isHeaderDone = true;
                 } else {
                     this.addRow(values);
                 }
