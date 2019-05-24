@@ -35,7 +35,7 @@ public abstract class AbstractTypingTask<T> implements InterfaceTypingTask<T> {
                 for (T keyCode: task.getKeyCodes()) {
                     keyCodes.add(this.findTaskKeyCode(keyCode));
                 }
-                result.append(ArrayHelper.join(keyCodes, DEFINITION_STRING_VALUES_DELIMITER));
+                result.append(ArrayHelper.join(keyCodes.toArray(new KeyCode[] {}), DEFINITION_STRING_VALUES_DELIMITER));
                 break;
             case SLEEP:
                 result.append(task.getTaskType().toString());

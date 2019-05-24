@@ -136,14 +136,14 @@ public class ArrayHelper {
         }
         return findIndex;
     }
-    
+
     /**
      * 配列をすべて区切り文字で連結する.
      * @param array 配列
      * @param delimiter 区切り文字
      * @return 連結した文字列
      */
-    public static <T> String join(Iterable<T> array, String delimiter) {
+    public static <T> String join(T[] array, String delimiter) {
         StringBuilder stringBuilder = new StringBuilder();
         for (T value: array) {
             if (stringBuilder.length() > 0) {
