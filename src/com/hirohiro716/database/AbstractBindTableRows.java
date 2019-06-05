@@ -83,14 +83,6 @@ public abstract class AbstractBindTableRows extends AbstractBindTable {
     
     /**
      * 複数のレコードの編集を開始する.
-     * @throws SQLException 
-     */
-    public void edit() throws SQLException {
-        this.setRows(this.fetchEditRows(""));
-    }
-    
-    /**
-     * 複数のレコードの編集を開始する.
      * @param orderByColumns 並び替えを指定(ASC・DESCを含むカラム名)
      * @throws SQLException
      */

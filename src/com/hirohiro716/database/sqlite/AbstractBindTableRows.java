@@ -71,11 +71,6 @@ public abstract class AbstractBindTableRows extends com.hirohiro716.database.Abs
             exception.printStackTrace();
         }
     }
-
-    @Override
-    public void edit() throws SQLException {
-        this.edit(new String[] {});
-    }
     
     /**
      * レコードが編集中かどうかの判定メソッド. これはedit()メソッドから自動的に呼び出され編集するかの判定に使われる.
