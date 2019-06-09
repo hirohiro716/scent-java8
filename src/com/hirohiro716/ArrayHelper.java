@@ -31,7 +31,7 @@ public class ArrayHelper {
     
     /**
      * 配列をListに変換する.
-     * @param <T>
+     * @param <T> 型
      * @param array 配列
      * @return Listオブジェクト
      */
@@ -85,6 +85,7 @@ public class ArrayHelper {
     
     /**
      * 配列中で最初に見つかった検索値に対するインデックスを取得する. 見つからなかった場合は-1を返す.
+     * @param <T> 
      * @param array 配列
      * @param searchValue 検索値
      * @return インデックス
@@ -112,6 +113,7 @@ public class ArrayHelper {
 
     /**
      * 配列中で最後に見つかった検索値に対するインデックスを取得する. 見つからなかった場合は-1を返す.
+     * @param <T> 型
      * @param array 配列
      * @param searchValue 検索値
      * @return インデックス
@@ -139,6 +141,7 @@ public class ArrayHelper {
 
     /**
      * 配列をすべて区切り文字で連結する.
+     * @param <T> 型
      * @param array 配列
      * @param delimiter 区切り文字
      * @return 連結した文字列
