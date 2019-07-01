@@ -1,11 +1,15 @@
 package com.hirohiro716;
 
+import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
 
 import com.hirohiro716.file.FileHelper.FileExtension;
 
@@ -217,6 +221,42 @@ public class ByteConverter {
                 byteArrayOutStream.write(bytes);
             }
             return byteArrayOutStream.toByteArray();
+        }
+    }
+
+    /**
+     * シリアライズを行いByte配列を取得する. 値の部分に入っているオブジェクトのシリアライズはサポートしない.
+     * @param serializable シリアライズするオブジェクト
+     * @return シリアライズしたByte配列
+     * @throws IOException
+     */
+    public static byte[] serialize(Serializable serializable) throws IOException {
+        try (ByteArrayOutputStream bytesOutStream = new ByteArrayOutputStream()) {
+            byte[] result;
+            try (ObjectOutputStream objOutputStream = new ObjectOutputStream(bytesOutStream)) {
+                objOutputStream.writeObject(serializable);
+                objOutputStream.reset();
+                result = bytesOutStream.toByteArray();
+                bytesOutStream.close();
+                bytesOutStream.reset();
+                return result;
+            }
+        }
+    }
+    
+    /**
+     * Byte配列からデシリアライズを行いインスタンスを復元する. 値の部分に入っているオブジェクトのシリアライズはサポートしない.
+     * @param serialized byte配列
+     * @return デシリアライズしたインスタンス
+     * @throws IOException
+     * @throws ClassNotFoundException
+     */
+    @SuppressWarnings("unchecked")
+    public static <T> T desirialize(byte[] serialized) throws IOException, ClassNotFoundException {
+        ByteArrayInputStream bytesInputStream = new ByteArrayInputStream(serialized);
+        try (ObjectInputStream objInputStream = new ObjectInputStream(bytesInputStream)) {
+            T object = (T) objInputStream.readObject();
+            return object;
         }
     }
 

@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 import com.hirohiro716.RudeArray;
 import com.hirohiro716.StringConverter;
-import com.hirohiro716.file.xml.InterfaceProperty;
+import com.hirohiro716.InterfaceProperty;
 
 /**
  * ORMのようなものを提供する抽象クラス.
@@ -115,7 +115,7 @@ public abstract class AbstractBindTable {
      */
     public static RudeArray createDefaultRow(InterfaceProperty[] properties) {
         RudeArray row = new RudeArray();
-        for (InterfaceColumn property: properties) {
+        for (InterfaceProperty property: properties) {
             row.put(property.getPhysicalName(), property.getDefaultValue());
         }
         return row;

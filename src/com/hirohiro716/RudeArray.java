@@ -1,10 +1,6 @@
 package com.hirohiro716;
 
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
 import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.sql.Time;
 import java.sql.Timestamp;
@@ -692,32 +688,18 @@ public class RudeArray implements Cloneable, Serializable {
      * @throws IOException
      */
     public byte[] toSerialize() throws IOException {
-        try (ByteArrayOutputStream bytesOutStream = new ByteArrayOutputStream()) {
-            byte[] result;
-            try (ObjectOutputStream objOutputStream = new ObjectOutputStream(bytesOutStream)) {
-                objOutputStream.writeObject(this);
-                objOutputStream.reset();
-                result = bytesOutStream.toByteArray();
-                bytesOutStream.close();
-                bytesOutStream.reset();
-                return result;
-            }
-        }
+        return ByteConverter.serialize(this);
     }
 
     /**
-     * byte配列からデシリアライズを行いインスタンスを復元する. 値の部分に入っているオブジェクトのシリアライズはサポートしない.
+     * Byte配列からデシリアライズを行いインスタンスを復元する. 値の部分に入っているオブジェクトのシリアライズはサポートしない.
      * @param serialized byte配列
      * @return RudeArray
      * @throws IOException
      * @throws ClassNotFoundException
      */
     public static RudeArray desirialize(byte[] serialized) throws IOException, ClassNotFoundException {
-        ByteArrayInputStream bytesInputStream = new ByteArrayInputStream(serialized);
-        try (ObjectInputStream objInputStream = new ObjectInputStream(bytesInputStream)) {
-            RudeArray array = (RudeArray) objInputStream.readObject();
-            return array;
-        }
+        return ByteConverter.desirialize(serialized);
     }
 
     /**

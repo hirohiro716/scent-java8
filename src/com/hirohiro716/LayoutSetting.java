@@ -2,7 +2,7 @@ package com.hirohiro716;
 
 import java.io.IOException;
 
-import com.hirohiro716.file.xml.InterfaceProperty;
+import com.hirohiro716.InterfaceProperty;
 import com.hirohiro716.database.AbstractBindTable;
 
 /**

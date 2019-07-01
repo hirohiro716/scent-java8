@@ -1,5 +1,7 @@
 package com.hirohiro716.file.xml;
 
+import com.hirohiro716.InterfaceProperty;
+
 /**
  * 値の検証に失敗した場合に発生する例外クラス
  * @author hiro

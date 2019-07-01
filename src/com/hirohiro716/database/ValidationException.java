@@ -1,5 +1,6 @@
 package com.hirohiro716.database;
 
+import com.hirohiro716.InterfaceProperty;
 import com.hirohiro716.RudeArray;
 
 /**
@@ -19,7 +20,7 @@ public class ValidationException extends com.hirohiro716.validate.ValidationExce
      * @param causeRow 例外の原因となった行
      * @param causeColumn 例外の原因となった項目
      */
-    public ValidationException(String message, RudeArray causeRow, InterfaceColumn causeColumn) {
+    public ValidationException(String message, RudeArray causeRow, InterfaceProperty causeColumn) {
         super(message);
         this.causeRow = causeRow;
         this.causeColumn = causeColumn;
@@ -30,7 +31,7 @@ public class ValidationException extends com.hirohiro716.validate.ValidationExce
      * @param message 詳細メッセージ
      * @param causeColumn 例外の原因となった項目
      */
-    public ValidationException(String message, InterfaceColumn causeColumn) {
+    public ValidationException(String message, InterfaceProperty causeColumn) {
         super(message);
         this.causeColumn = causeColumn;
     }
@@ -45,13 +46,13 @@ public class ValidationException extends com.hirohiro716.validate.ValidationExce
         return this.causeRow;
     }
 
-    private InterfaceColumn causeColumn;
+    private InterfaceProperty causeColumn;
     
     /**
      * 例外の原因となった項目を取得する.
      * @return InterfaceColumn
      */
-    public InterfaceColumn getCauseColumn() {
+    public InterfaceProperty getCauseColumn() {
         return this.causeColumn;
     }
     

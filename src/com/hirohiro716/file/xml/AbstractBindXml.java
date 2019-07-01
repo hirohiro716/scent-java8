@@ -2,6 +2,7 @@ package com.hirohiro716.file.xml;
 
 import java.io.IOException;
 
+import com.hirohiro716.InterfaceProperty;
 import com.hirohiro716.RudeArray;
 
 /**
