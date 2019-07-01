@@ -5,7 +5,6 @@ import java.util.Date;
 import java.util.HashMap;
 
 import com.hirohiro716.RudeArray;
-import com.hirohiro716.RudeArray.ValueType;
 
 @SuppressWarnings({ "all"})
 public class RudeArrayTest {

@@ -12,7 +12,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.Date;
-import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -27,58 +26,7 @@ import com.hirohiro716.datetime.Datetime;
 public class RudeArray implements Cloneable, Serializable {
 
     /**
-     * 値の型
-     * @author hiro
-     */
-    public enum ValueType {
-        /**
-         * 文字列
-         */
-        STRING,
-        /**
-         * 真偽値
-         */
-        BOOLEAN,
-        /**
-         * 整数型32bit
-         */
-        INTEGER,
-        /**
-         * 整数型64bit
-         */
-        LONG,
-        /**
-         * 浮動小数点数32bit
-         */
-        FLOAT,
-        /**
-         * 浮動小数点数64bit
-         */
-        DOUBLE,
-        /**
-         * 日付型
-         */
-        DATE,
-        /**
-         * バイト配列
-         */
-        BYTES,
-        /**
-         * java.sql.Timestamp
-         */
-        SQL_TIMESTAMP,
-        /**
-         * java.sql.Date
-         */
-        SQL_DATE,
-        /**
-         * java.sql.Time
-         */
-        SQL_TIME
-    }
-
-    /**
-     * シリアルバージョンUID
+     * serialVersionUID
      */
     private static final long serialVersionUID = -1692187503079204210L;
 
@@ -117,27 +65,6 @@ public class RudeArray implements Cloneable, Serializable {
             this.baseArray = (LinkedHashMap<Object, Object>) hashMap;
         } catch (Exception exception) {
         }
-    }
-
-    // 型の保持用
-    private HashMap<Object, ValueType> valueTypes = new HashMap<>();
-
-    /**
-     * 予め設定してあるキーに対するデータ型を取得する.
-     * @param key キー
-     * @return ValueType
-     */
-    public ValueType getValueType(Object key) {
-        return this.valueTypes.get(key);
-    }
-
-    /**
-     * getメソッドを使用した際に自動的に値を変換させるためにデータ型を指定する.
-     * @param key キー
-     * @param valueType データ型
-     */
-    public void setValueType(Object key, ValueType valueType) {
-        this.valueTypes.put(key, valueType);
     }
 
     /**
@@ -184,34 +111,6 @@ public class RudeArray implements Cloneable, Serializable {
      * @return 値
      */
     public Object get(Object key) {
-        if (this.valueTypes.containsKey(key)) {
-            switch (this.valueTypes.get(key)) {
-            case STRING:
-                return this.getString(key);
-            case BOOLEAN:
-                return this.getBoolean(key);
-            case BYTES:
-                return this.getBytes(key);
-            case DATE:
-                return this.getDate(key);
-            case DOUBLE:
-                return this.getDouble(key);
-            case FLOAT:
-                return this.getFloat(key);
-            case INTEGER:
-                return this.getInteger(key);
-            case LONG:
-                return this.getLong(key);
-            case SQL_TIMESTAMP:
-                return this.getTimestampSql(key);
-            case SQL_DATE:
-                return this.getDateSql(key);
-            case SQL_TIME:
-                return this.getTimeSql(key);
-            default:
-                break;
-            }
-        }
         return this.baseArray.get(key);
     }
 
