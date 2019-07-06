@@ -1,12 +1,12 @@
 package com.hirohiro716.file.xml;
 
 import java.io.ByteArrayInputStream;
+import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.io.StringWriter;
 import java.util.ArrayList;
-
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
@@ -254,8 +254,8 @@ public class XML {
     }
 
     /**
-     * XMLファイルを作成する.
-     * @param fileLocation 保存先
+     * XMLファイルを取り込む.
+     * @param fileLocation 場所
      * @throws IOException
      * @throws SAXException
      */
@@ -263,4 +263,14 @@ public class XML {
         this.document = this.builder.parse(fileLocation);
     }
 
+    /**
+     * XMLファイルを取り込む.
+     * @param file ファイル
+     * @throws IOException
+     * @throws SAXException 
+     */
+    public void importFromFile(File file) throws IOException, SAXException {
+        this.document = this.builder.parse(file);
+    }
+    
 }

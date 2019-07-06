@@ -1,5 +1,6 @@
 package com.hirohiro716.file.xml;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -7,6 +8,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.Properties;
+
+import com.hirohiro716.file.FileHelper;
 
 /**
  * プロパティXMLファイルを作成します.
@@ -40,7 +43,25 @@ public class PropertyXML {
             throw ioException;
         }
     }
-
+    
+    /**
+     * XMLファイルの場所を指定する. ファイルがない場合は作成される.
+     * @param file ファイル
+     * @throws IOException
+     */
+    public void entryFile(File file) throws IOException {
+        this.properties = new Properties();
+        this.fileLocation = FileHelper.generateOptimizedPathFromURI(file.toURI());
+        try (InputStream inputStream = new FileInputStream(file)) {
+            this.properties.loadFromXML(inputStream);
+        } catch (FileNotFoundException fileNotFoundException) {
+            saveFile();
+        } catch (IOException ioException) {
+            this.properties = null;
+            throw ioException;
+        }
+    }
+    
     /**
      * 設定値を取得する.
      * @param name プロパティ名
