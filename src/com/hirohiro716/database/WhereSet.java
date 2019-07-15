@@ -481,8 +481,15 @@ public class WhereSet implements Cloneable {
             for (Object value: this.getValues()) {
                 // Dateインスタンスのコピー
                 if (value instanceof Date) {
-                    cloneValues.add(new Date(((Date) value).getTime()));
-                    continue;
+                    try {
+                        @SuppressWarnings("unchecked")
+                        Class<Date> dateClass = (Class<Date>) Class.forName(value.getClass().getName());
+                        Date cloneDate = dateClass.newInstance();
+                        cloneDate.setTime(((Date) value).getTime());
+                        cloneValues.add(cloneDate);
+                        continue;
+                    } catch (Exception exception) {
+                    }
                 }
                 cloneValues.add(value);
             }
