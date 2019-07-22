@@ -126,19 +126,6 @@ public class RudeArray implements Cloneable, Serializable {
     }
 
     /**
-     * セットした値をString[]として取得する.
-     * @param key キー
-     * @return 値 存在しない場合や型が違った場合はnullを返す.
-     */
-    public String[] getStrings(Object key) {
-        try {
-            return (String[]) this.baseArray.get(key);
-        } catch (Exception exception) {
-            return null;
-        }
-    }
-
-    /**
      * セットした値をByteとして取得する.
      * @param key キー
      * @return 値 存在しない場合や型が違った場合はnullを返す.
@@ -146,19 +133,6 @@ public class RudeArray implements Cloneable, Serializable {
     public Byte getByte(Object key) {
         try {
             return (byte) this.baseArray.get(key);
-        } catch (Exception exception) {
-            return null;
-        }
-    }
-
-    /**
-     * セットした値をByte[]として取得する.
-     * @param key キー
-     * @return 値 存在しない場合や型が違った場合はnullを返す.
-     */
-    public byte[] getBytes(Object key) {
-        try {
-            return (byte[]) this.baseArray.get(key);
         } catch (Exception exception) {
             return null;
         }
@@ -180,19 +154,6 @@ public class RudeArray implements Cloneable, Serializable {
     }
 
     /**
-     * セットした値をNumber[]として取得する.
-     * @param key キー
-     * @return 値 存在しない場合や型が違った場合はnullを返す.
-     */
-    public Number[] getNumbers(Object key) {
-        try {
-            return (Number[]) this.baseArray.get(key);
-        } catch (Exception exception) {
-            return null;
-        }
-    }
-
-    /**
      * セットした値をShortとして取得する.
      * @param key キー
      * @return 値 存在しない場合や型が違った場合はnullを返す.
@@ -202,19 +163,6 @@ public class RudeArray implements Cloneable, Serializable {
             return (Short) this.baseArray.get(key);
         } catch (ClassCastException exception) {
             return StringConverter.stringToShort(this.baseArray.get(key).toString());
-        } catch (Exception exception) {
-            return null;
-        }
-    }
-
-    /**
-     * セットした値をShort[]として取得する.
-     * @param key キー
-     * @return 値 存在しない場合や型が違った場合はnullを返す.
-     */
-    public short[] getShorts(Object key) {
-        try {
-            return (short[]) this.baseArray.get(key);
         } catch (Exception exception) {
             return null;
         }
@@ -236,19 +184,6 @@ public class RudeArray implements Cloneable, Serializable {
     }
 
     /**
-     * セットした値をInteger[]として取得する.
-     * @param key キー
-     * @return 値 存在しない場合や型が違った場合はnullを返す.
-     */
-    public int[] getIntegers(Object key) {
-        try {
-            return (int[]) this.baseArray.get(key);
-        } catch (Exception exception) {
-            return null;
-        }
-    }
-
-    /**
      * セットした値をFloatとして取得する.
      * @param key キー
      * @return 値 存在しない場合や型が違った場合はnullを返す.
@@ -258,19 +193,6 @@ public class RudeArray implements Cloneable, Serializable {
             return (Float) this.baseArray.get(key);
         } catch (ClassCastException exception) {
             return StringConverter.stringToFloat(this.baseArray.get(key).toString());
-        } catch (Exception exception) {
-            return null;
-        }
-    }
-
-    /**
-     * セットした値をFloat[]として取得する.
-     * @param key キー
-     * @return 値 存在しない場合や型が違った場合はnullを返す.
-     */
-    public float[] getFloats(Object key) {
-        try {
-            return (float[]) this.baseArray.get(key);
         } catch (Exception exception) {
             return null;
         }
@@ -292,19 +214,6 @@ public class RudeArray implements Cloneable, Serializable {
     }
 
     /**
-     * セットした値をLong[]として取得する.
-     * @param key キー
-     * @return 値 存在しない場合や型が違った場合はnullを返す.
-     */
-    public long[] getLongs(Object key) {
-        try {
-            return (long[]) this.baseArray.get(key);
-        } catch (Exception exception) {
-            return null;
-        }
-    }
-
-    /**
      * セットした値をDoubleとして取得する.
      * @param key キー
      * @return 値 存在しない場合や型が違った場合はnullを返す.
@@ -314,19 +223,6 @@ public class RudeArray implements Cloneable, Serializable {
             return (Double) this.baseArray.get(key);
         } catch (ClassCastException exception) {
             return StringConverter.stringToDouble(this.baseArray.get(key).toString());
-        } catch (Exception exception) {
-            return null;
-        }
-    }
-
-    /**
-     * セットした値をDouble[]として取得する.
-     * @param key キー
-     * @return 値 存在しない場合や型が違った場合はnullを返す.
-     */
-    public double[] getDoubles(Object key) {
-        try {
-            return (double[]) this.baseArray.get(key);
         } catch (Exception exception) {
             return null;
         }
@@ -348,19 +244,6 @@ public class RudeArray implements Cloneable, Serializable {
     }
 
     /**
-     * セットした値をBoolean[]として取得する.
-     * @param key キー
-     * @return 値 存在しない場合や型が違った場合はnullを返す.
-     */
-    public boolean[] getBooleans(Object key) {
-        try {
-            return (boolean[]) this.baseArray.get(key);
-        } catch (Exception exception) {
-            return null;
-        }
-    }
-
-    /**
      * セットした値をDateとして取得する.
      * @param key キー
      * @return 値 存在しない場合や型が違った場合はnullを返す.
@@ -376,19 +259,6 @@ public class RudeArray implements Cloneable, Serializable {
             } catch (ClassCastException e2) {
                 return Datetime.stringToDate(this.baseArray.get(key).toString());
             }
-        } catch (Exception exception) {
-            return null;
-        }
-    }
-
-    /**
-     * セットした値をDate[]として取得する.
-     * @param key キー
-     * @return 値 存在しない場合や型が違った場合はnullを返す.
-     */
-    public Date[] getDates(Object key) {
-        try {
-            return (Date[]) this.baseArray.get(key);
         } catch (Exception exception) {
             return null;
         }

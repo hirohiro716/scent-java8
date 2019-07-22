@@ -128,7 +128,7 @@ public class StringConverter {
      * @param start 開始位置
      */
     public void addSubString(int start) {
-        this.params.put(Pattern.SUB_STRING, new int[]{start});
+        this.params.put(Pattern.SUB_STRING, new Integer[]{start});
     }
 
     /**
@@ -137,7 +137,7 @@ public class StringConverter {
      * @param length 文字数
      */
     public void addSubString(int start, int length) {
-        this.params.put(Pattern.SUB_STRING, new int[]{start, length});
+        this.params.put(Pattern.SUB_STRING, new Integer[]{start, length});
     }
 
     /**
@@ -294,7 +294,7 @@ public class StringConverter {
                 value = trim(value);
                 break;
             case REPLACE:
-                String[] paramsStrings = this.params.getStrings(pattern);
+                String[] paramsStrings = (String[]) this.params.get(pattern);
                 value = value.replace(paramsStrings[0], paramsStrings[1]);
                 break;
             case REPLACE_CR:
@@ -316,12 +316,11 @@ public class StringConverter {
                 value = value.replace("\t", this.params.getString(pattern));
                 break;
             case SUB_STRING:
-                int[] start_length;
-                start_length = this.params.getIntegers(pattern);
-                if (start_length.length == 1) {
-                    value = subString(value, start_length[0]);
+                Integer[] startLength = (Integer[]) this.params.get(pattern);
+                if (startLength.length == 1) {
+                    value = subString(value, startLength[0]);
                 } else {
-                    value = subString(value, start_length[0], start_length[1]);
+                    value = subString(value, startLength[0], startLength[1]);
                 }
                 break;
             case PADDING_LEFT:
