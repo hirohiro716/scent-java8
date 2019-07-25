@@ -130,6 +130,8 @@ public abstract class AbstractDatabase implements Closeable {
     public void close() {
         try {
             this.connection.close();
+        } catch (SQLException exception) {
+            exception.printStackTrace();
         } catch (Exception exception) {
             // nop
         }
