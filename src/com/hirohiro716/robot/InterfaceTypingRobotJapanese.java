@@ -90,26 +90,26 @@ public interface InterfaceTypingRobotJapanese<T> {
      * @param keyCodes
      */
     @SuppressWarnings("unchecked")
-    public void keyType(T... keyCodes);
+    public abstract void keyType(T... keyCodes);
     
     /**
      * IMEをOFFにする.
      */
-    public void changeIMEOff();
+    public abstract void changeIMEOff();
     
     /**
      * IMEをひらがなにする.
      */
-    public void changeIMEHiragana();
+    public abstract void changeIMEHiragana();
     
     /**
      * IMEをカタカナにする.
      */
-    public void changeIMEKatakanaWide();
+    public abstract void changeIMEKatakanaWide();
     
     /**
      * IMEをｶﾀｶﾅにする.
      */
-    public void changeIMEKatakanaNarrow();
+    public abstract void changeIMEKatakanaNarrow();
     
 }
