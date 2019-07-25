@@ -40,7 +40,7 @@ public abstract class AbstractBindTableRows extends com.hirohiro716.database.Abs
         stringBuilder.append(this.getWhereSet().buildParameterClause());
         stringBuilder.append(" ");
         stringBuilder.append(afterSQL);
-        stringBuilder.append(" FOR UPDATE");
+        stringBuilder.append(" FOR UPDATE NOWAIT");
         stringBuilder.append(";");
         return this.getDatabase().fetchRows(stringBuilder.toString(), this.getWhereSet().buildParameters());
     }
