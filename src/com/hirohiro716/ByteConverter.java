@@ -246,6 +246,7 @@ public class ByteConverter {
     
     /**
      * Byte配列からデシリアライズを行いインスタンスを復元する. 値の部分に入っているオブジェクトのシリアライズはサポートしない.
+     * @param <T> インスタンスの型
      * @param serialized byte配列
      * @return デシリアライズしたインスタンス
      * @throws IOException
