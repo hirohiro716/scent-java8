@@ -17,83 +17,87 @@ public class RegexHelper {
         /**
          * 半角数値のみ
          */
-        INTEGER_NARROW_ONLY("[0-9]"),
+        INTEGER_NARROW_ONLY("^[0-9]{0,}$"),
         /**
          * 全角数値のみ
          */
-        INTEGER_WIDE_ONLY("[０-９]"),
+        INTEGER_WIDE_ONLY("^[０-９]{0,}$"),
         /**
          * 小数のみ
          */
-        DECIMAL("[0-9\\.]"),
+        DECIMAL("^[0-9\\.]{0,}$"),
         /**
          * 正負小数のみ
          */
-        DECIMAL_NEGATIVE("[0-9\\.\\-]"),
+        DECIMAL_NEGATIVE("^[0-9\\.\\-]{0,}$"),
         /**
          * 電話番号のみ(半角数字及びハイフン)
          */
-        TEL_NUMBER_ONLY("[0-9\\-]"),
+        TEL_NUMBER_ONLY("^[0-9\\-]{0,}$"),
+        /**
+         * 日時のみ(半角数字、ハイフン及びスラッシュ及びコロン)
+         */
+        DATETIME_ONLY("^[0-9\\-\\/: ]{0,}$"),
         /**
          * 日付のみ(半角数字、ハイフン及びスラッシュ)
          */
-        DATE_ONLY("[0-9\\-\\/: ]"),
+        DATE_ONLY("^[0-9\\-\\/]{0,}$"),
         /**
          * 時刻のみ(半角数字及びコロン)
          */
-        TIME_ONLY("[0-9:]"),
+        TIME_ONLY("^[0-9:]{0,}$"),
         /**
          * アルファベットのみ
          */
-        ALPHABET_ONLY("[a-zA-Zａ-ｚＡ-Ｚ]"),
+        ALPHABET_ONLY("^[a-zA-Zａ-ｚＡ-Ｚ]{0,}$"),
         /**
          * アルファベット半角のみ
          */
-        ALPHABET_NARROW_ONLY("[a-zA-Z]"),
+        ALPHABET_NARROW_ONLY("^[a-zA-Z]{0,}$"),
         /**
          * アルファベット全角のみ
          */
-        ALPHABET_WIDE_ONLY("[ａ-ｚＡ-Ｚ]"),
+        ALPHABET_WIDE_ONLY("^[ａ-ｚＡ-Ｚ]{0,}$"),
         /**
          * アルファベット半角小文字のみ
          */
-        ALPHABET_NARROW_LOWER_ONLY("[a-z]"),
+        ALPHABET_NARROW_LOWER_ONLY("^[a-z]{0,}$"),
         /**
          * アルファベット半角大文字のみ
          */
-        ALPHABET_NARROW_UPPER_ONLY("[A-Z]"),
+        ALPHABET_NARROW_UPPER_ONLY("^[A-Z]{0,}$"),
         /**
          * アルファベット全角小文字のみ
          */
-        ALPHABET_WIDE_LOWER_ONLY("[ａ-ｚ]"),
+        ALPHABET_WIDE_LOWER_ONLY("^[ａ-ｚ]{0,}$"),
         /**
          * アルファベット全角大文字のみ
          */
-        ALPHABET_WIDE_UPPER_ONLY("[Ａ-Ｚ]"),
+        ALPHABET_WIDE_UPPER_ONLY("^[Ａ-Ｚ]{0,}$"),
         /**
          * 半角カタカナのみ
          */
-        KATAKANA_NARROW_ONLY("[ｦ-ﾟ]"),
+        KATAKANA_NARROW_ONLY("^[ｦ-ﾟ]{0,}$"),
         /**
          * 全角カタカナのみ
          */
-        KATAKANA_WIDE_ONLY("[ァ-ヴ]|ー"),
+        KATAKANA_WIDE_ONLY("^[ァ-ヴー]{0,}$"),
         /**
          * ひらがなのみ
          */
-        HIRAGANA_ONLY("[ぁ-ん]|ー"),
+        HIRAGANA_ONLY("^[ぁ-んー]{0,}$"),
         /**
          * 改行のみ
          */
-        LINE_SEPARATOR("\\r\\n|\\r|\\n"),
+        LINE_SEPARATOR("^(\\r\\n|\\r|\\n){0,}$"),
         /**
          * タブ文字のみ
          */
-        TAB("\\t"),
+        TAB("^\\t{0,}$"),
         /**
          * スペース文字のみ
          */
-        SPACE("　| "),
+        SPACE("^(　| ){0,}$"),
         /**
          * 半角文字のみ
          */
