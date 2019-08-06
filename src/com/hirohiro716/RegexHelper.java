@@ -85,7 +85,7 @@ public class RegexHelper {
         /**
          * 改行のみ
          */
-        LINE_SEPARATOR("\\n"),
+        LINE_SEPARATOR("\\r\\n|\\r|\\n"),
         /**
          * タブ文字のみ
          */
@@ -93,7 +93,7 @@ public class RegexHelper {
         /**
          * スペース文字のみ
          */
-        SPACE("(　| )"),
+        SPACE("　| "),
         /**
          * 半角文字のみ
          */
