@@ -139,66 +139,66 @@ public class RegexHelper {
      * @param value 検索値
      * @return 正規表現による比較用文字列
      */
-    public static String makeWildcardCompareAtRegexJapanese(String value) {
+    public static String makeBroadCompareValue(String value) {
         if (value == null || value.length() == 0) {
             return "";
         }
-        StringBuilder sb = new StringBuilder();
+        StringBuilder result = new StringBuilder();
         for (int i = 0; i < value.length(); i++) {
-            String convChar = value.substring(i, i + 1);
+            String one = value.substring(i, i + 1);
             convert: {
-                if (RegexPattern.HIRAGANA_ONLY.pattern.matcher(convChar).find()) {
-                    sb.append("(");
-                    sb.append(convChar);
-                    sb.append("|");
-                    sb.append(StringConverter.hiraganaToKatakana(convChar));
-                    sb.append(")");
+                if (RegexPattern.HIRAGANA_ONLY.pattern.matcher(one).find()) {
+                    result.append("(");
+                    result.append(one);
+                    result.append("|");
+                    result.append(StringConverter.hiraganaToKatakana(one));
+                    result.append(")");
                     break convert;
                 }
-                if (RegexPattern.KATAKANA_WIDE_ONLY.pattern.matcher(convChar).find()) {
-                    sb.append("(");
-                    sb.append(convChar);
-                    sb.append("|");
-                    sb.append(StringConverter.katakanaToHiragana(convChar));
-                    sb.append(")");
+                if (RegexPattern.KATAKANA_WIDE_ONLY.pattern.matcher(one).find()) {
+                    result.append("(");
+                    result.append(one);
+                    result.append("|");
+                    result.append(StringConverter.katakanaToHiragana(one));
+                    result.append(")");
                     break convert;
                 }
-                if (RegexPattern.INTEGER_NARROW_ONLY.pattern.matcher(convChar).find()) {
-                    sb.append("(");
-                    sb.append(convChar);
-                    sb.append("|");
-                    sb.append(StringConverter.narrowToWide(convChar));
-                    sb.append(")");
+                if (RegexPattern.INTEGER_NARROW_ONLY.pattern.matcher(one).find()) {
+                    result.append("(");
+                    result.append(one);
+                    result.append("|");
+                    result.append(StringConverter.narrowToWide(one));
+                    result.append(")");
                     break convert;
                 }
-                if (RegexPattern.INTEGER_WIDE_ONLY.pattern.matcher(convChar).find()) {
-                    sb.append("(");
-                    sb.append(convChar);
-                    sb.append("|");
-                    sb.append(StringConverter.wideToNarrow(convChar));
-                    sb.append(")");
+                if (RegexPattern.INTEGER_WIDE_ONLY.pattern.matcher(one).find()) {
+                    result.append("(");
+                    result.append(one);
+                    result.append("|");
+                    result.append(StringConverter.wideToNarrow(one));
+                    result.append(")");
                     break convert;
                 }
-                if (RegexPattern.ALPHABET_ONLY.pattern.matcher(convChar).find()) {
+                if (RegexPattern.ALPHABET_ONLY.pattern.matcher(one).find()) {
                     // 半角小文字に変換
-                    String alphabet = StringConverter.wideToNarrow(convChar);
+                    String alphabet = StringConverter.wideToNarrow(one);
                     alphabet = alphabet.toLowerCase();
                     // 4パターン追加
-                    sb.append("(");
-                    sb.append(alphabet);
-                    sb.append("|");
-                    sb.append(alphabet.toUpperCase());
-                    sb.append("|");
-                    sb.append(StringConverter.narrowToWide(alphabet));
-                    sb.append("|");
-                    sb.append(StringConverter.narrowToWide(alphabet.toUpperCase()));
-                    sb.append(")");
+                    result.append("(");
+                    result.append(alphabet);
+                    result.append("|");
+                    result.append(alphabet.toUpperCase());
+                    result.append("|");
+                    result.append(StringConverter.narrowToWide(alphabet));
+                    result.append("|");
+                    result.append(StringConverter.narrowToWide(alphabet.toUpperCase()));
+                    result.append(")");
                     break convert;
                 }
-                sb.append(convChar);
+                result.append(one);
             }
         }
-        return sb.toString();
+        return result.toString();
     }
 
 }
