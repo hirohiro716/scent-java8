@@ -132,7 +132,7 @@ public class RegexHelper {
      */
     public static boolean isMatch(String value, String compileText) {
         Pattern regexPattern = Pattern.compile(compileText);
-        if (regexPattern.matcher(value).find() == false) {
+        if (regexPattern.matcher(value).matches() == false) {
             return false;
         }
         return true;
@@ -151,7 +151,7 @@ public class RegexHelper {
         for (int i = 0; i < value.length(); i++) {
             String one = value.substring(i, i + 1);
             convert: {
-                if (RegexPattern.HIRAGANA_ONLY.pattern.matcher(one).find()) {
+                if (RegexPattern.HIRAGANA_ONLY.pattern.matcher(one).matches()) {
                     result.append("(");
                     result.append(one);
                     result.append("|");
@@ -159,7 +159,7 @@ public class RegexHelper {
                     result.append(")");
                     break convert;
                 }
-                if (RegexPattern.KATAKANA_WIDE_ONLY.pattern.matcher(one).find()) {
+                if (RegexPattern.KATAKANA_WIDE_ONLY.pattern.matcher(one).matches()) {
                     result.append("(");
                     result.append(one);
                     result.append("|");
@@ -167,7 +167,7 @@ public class RegexHelper {
                     result.append(")");
                     break convert;
                 }
-                if (RegexPattern.INTEGER_NARROW_ONLY.pattern.matcher(one).find()) {
+                if (RegexPattern.INTEGER_NARROW_ONLY.pattern.matcher(one).matches()) {
                     result.append("(");
                     result.append(one);
                     result.append("|");
@@ -175,7 +175,7 @@ public class RegexHelper {
                     result.append(")");
                     break convert;
                 }
-                if (RegexPattern.INTEGER_WIDE_ONLY.pattern.matcher(one).find()) {
+                if (RegexPattern.INTEGER_WIDE_ONLY.pattern.matcher(one).matches()) {
                     result.append("(");
                     result.append(one);
                     result.append("|");
@@ -183,7 +183,7 @@ public class RegexHelper {
                     result.append(")");
                     break convert;
                 }
-                if (RegexPattern.ALPHABET_ONLY.pattern.matcher(one).find()) {
+                if (RegexPattern.ALPHABET_ONLY.pattern.matcher(one).matches()) {
                     // 半角小文字に変換
                     String alphabet = StringConverter.wideToNarrow(one);
                     alphabet = alphabet.toLowerCase();

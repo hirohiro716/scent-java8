@@ -279,13 +279,13 @@ public class StringValidator {
                 break;
             case REGEX:
                 java.util.regex.Pattern regexPattern = (java.util.regex.Pattern) this.params.get(pattern);
-                if (stringValue.length() > 0 && regexPattern.matcher(stringValue).find() == false) {
+                if (stringValue.length() > 0 && regexPattern.matcher(stringValue).matches() == false) {
                     throw new ValidationException(this.targetName + this.buildErrorMessage(pattern));
                 }
                 break;
             case REGEX_REVERSE:
                 java.util.regex.Pattern regexPatternReverse = (java.util.regex.Pattern) this.params.get(pattern);
-                if (stringValue.length() > 0 && regexPatternReverse.matcher(stringValue).find()) {
+                if (stringValue.length() > 0 && regexPatternReverse.matcher(stringValue).matches()) {
                     throw new ValidationException(this.targetName + this.buildErrorMessage(pattern));
                 }
                 break;
