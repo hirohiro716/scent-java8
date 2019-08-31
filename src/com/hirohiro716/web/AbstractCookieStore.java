@@ -95,7 +95,7 @@ public abstract class AbstractCookieStore implements CookieStore {
                     this.removePersistCookie(uri, httpCookieWithDate.getHttpCookie());
                     continue;
                 }
-                if (httpCookieWithDate.isVerifySecureURI(uri) == false) {
+                if (httpCookieWithDate.isVerifyURI(uri) == false) {
                     continue;
                 }
                 if (httpCookieWithDate.isVerifyPortNumber(uri) == false) {
@@ -279,21 +279,32 @@ public abstract class AbstractCookieStore implements CookieStore {
         }
         
         /**
-         * URIがCookieのSecure条件を満たしているか確認する.
+         * URIがCookieの条件を満たしているか確認する.
          * @param uri
          * @return 結果
          */
-        public boolean isVerifySecureURI(URI uri) {
-            if (this.httpCookie.getSecure() == false) {
-                return true;
+        public boolean isVerifyURI(URI uri) {
+            if (this.httpCookie.getSecure()) {
+                switch (uri.getScheme()) {
+                case "https":
+                case "HTTPS":
+                    break;
+                default:
+                    return false;
+                }
             }
-            switch (uri.getScheme()) {
-            case "https":
-            case "HTTPS":
-                return true;
-            default:
-                return false;
+            if (this.httpCookie.isHttpOnly()) {
+                switch (uri.getScheme()) {
+                case "http":
+                case "https":
+                case "HTTP":
+                case "HTTPS":
+                    break;
+                default:
+                    return false;
+                }
             }
+            return true;
         }
         
         /**
