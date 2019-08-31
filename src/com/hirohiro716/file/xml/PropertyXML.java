@@ -7,6 +7,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.util.HashMap;
 import java.util.Properties;
 
 import com.hirohiro716.file.FileHelper;
@@ -90,6 +91,31 @@ public class PropertyXML {
         this.properties.setProperty(name, value);
         saveFile();
     }
+    
+    /**
+     * 値を削除する.
+     * @param name プロパティ名
+     * @throws IOException
+     */
+    public void remove(String name) throws IOException {
+        if (this.properties == null) {
+            return;
+        }
+        this.properties.remove(name);
+        saveFile();
+    }
+
+    /**
+     * 値をすべて削除する.
+     * @throws IOException
+     */
+    public void clear() throws IOException {
+        if (this.properties == null) {
+            return;
+        }
+        this.properties.clear();
+        saveFile();
+    }
 
     /**
      * プロパティが存在するか確認する.
@@ -101,6 +127,19 @@ public class PropertyXML {
             return false;
         }
         return this.properties.containsKey(name);
+    }
+    
+    /**
+     * 保存済みのすべてのプロパティを取得する.
+     * @return HashMap<String, String>
+     */
+    public HashMap<String, String> createHashMap() {
+        HashMap<String, String> hashMap = new HashMap<>();
+        for (Object keyObject: this.properties.keySet()) {
+            String key = (String) keyObject;
+            hashMap.put(key, this.properties.getProperty(key)); 
+        }
+        return hashMap;
     }
 
     /**
