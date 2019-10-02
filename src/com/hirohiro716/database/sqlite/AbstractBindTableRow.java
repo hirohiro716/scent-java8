@@ -110,13 +110,7 @@ public abstract class AbstractBindTableRow extends com.hirohiro716.database.Abst
             if (this.isEditMode) {
                 this.updateToEditingFinish();
                 if (this.getDatabase().getIsolationLevel() != null) {
-                    switch (this.getDatabase().getIsolationLevel()) {
-                    case DEFERRED:
-                    case IMMEDIATE:
-                    case EXCLUSIVE:
-                        this.getDatabase().commit();
-                        break;
-                    }
+                    this.getDatabase().commit();
                 }
                 this.isEditMode = false;
             }
