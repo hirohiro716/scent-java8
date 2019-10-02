@@ -95,10 +95,11 @@ public abstract class AbstractBindTableRow extends com.hirohiro716.database.Abst
     
     /**
      * 編集中を解除する. これはclose()メソッドから自動的に呼び出される.
+     * @param sqlite 分離レベルEXCLUSIVEでトランザクションが開始されたDatabase
      * @throws SQLException
      * @throws DataNotFoundException
      */
-    protected abstract void updateToEditingFinish() throws SQLException, DataNotFoundException;
+    protected abstract void updateToEditingFinish(SQLite sqlite) throws SQLException, DataNotFoundException;
     
     /**
      * 編集中を解除してデータを閉じる.
@@ -108,9 +109,21 @@ public abstract class AbstractBindTableRow extends com.hirohiro716.database.Abst
     public void close() throws IOException {
         try {
             if (this.isEditMode) {
-                this.updateToEditingFinish();
-                if (this.getDatabase().getIsolationLevel() != null) {
-                    this.getDatabase().commit();
+                String location = this.getDatabase().getDatabaseLocation();
+                this.getDatabase().close();
+                try (SQLite sqlite = new SQLite()) {
+                    sqlite.connect(location);
+                    sqlite.begin(IsolationLevel.EXCLUSIVE);
+                    this.updateToEditingFinish(sqlite);
+                    sqlite.commit();
+                } catch (ClassNotFoundException exception) {
+                    exception.printStackTrace();
+                }
+                try {
+                    this.setDatabase(new SQLite());
+                    this.getDatabase().connect(location);
+                } catch (ClassNotFoundException exception) {
+                    exception.printStackTrace();
                 }
                 this.isEditMode = false;
             }
