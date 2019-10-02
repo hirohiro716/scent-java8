@@ -112,12 +112,6 @@ public abstract class AbstractBindTableRows extends com.hirohiro716.database.Abs
                 } catch (ClassNotFoundException exception) {
                     exception.printStackTrace();
                 }
-                try {
-                    this.setDatabase(new SQLite());
-                    this.getDatabase().connect(location);
-                } catch (ClassNotFoundException exception) {
-                    exception.printStackTrace();
-                }
                 this.isEditMode = false;
             }
             this.getRows().clear();
