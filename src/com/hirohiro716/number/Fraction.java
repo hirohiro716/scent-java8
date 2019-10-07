@@ -1,5 +1,7 @@
 package com.hirohiro716.number;
 
+import static com.hirohiro716.StringConverter.*;
+
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.LinkedHashMap;
@@ -54,15 +56,19 @@ public enum Fraction {
      * @return 端数処理されたlong
      */
     public long execute(double value) {
-        BigDecimal bigDecimal = new BigDecimal(value);
+        BigDecimal bigDecimal = new BigDecimal(String.valueOf(value));
         switch (this) {
         case FLOOR:
-            return bigDecimal.setScale(0, RoundingMode.FLOOR).longValue();
+            bigDecimal = new BigDecimal(value);
+            break;
         case CEIL:
-            return bigDecimal.setScale(0, RoundingMode.CEILING).longValue();
+            bigDecimal = bigDecimal.add(new BigDecimal("0.9"));
+            break;
         default:
-            return bigDecimal.setScale(0, RoundingMode.HALF_UP).longValue();
+            bigDecimal = bigDecimal.add(new BigDecimal("0.5"));
+            break;
         }
+        return bigDecimal.setScale(0, RoundingMode.FLOOR).longValue();
     }
 
     /**
@@ -72,15 +78,19 @@ public enum Fraction {
      * @return 端数処理された値
      */
     public double execute(double value, int digit) {
-        BigDecimal bigDecimal = new BigDecimal(value);
+        BigDecimal bigDecimal = new BigDecimal(String.valueOf(value));
+        String zero = repeat("0", digit);
         switch (this) {
         case FLOOR:
-            return bigDecimal.setScale(digit, RoundingMode.FLOOR).doubleValue();
+            break;
         case CEIL:
-            return bigDecimal.setScale(digit, RoundingMode.CEILING).doubleValue();
+            bigDecimal = bigDecimal.add(new BigDecimal(join("0.", zero, "9")));
+            break;
         default:
-            return bigDecimal.setScale(digit, RoundingMode.HALF_UP).doubleValue();
+            bigDecimal = bigDecimal.add(new BigDecimal(join("0.", zero, "5")));
+            break;
         }
+        return bigDecimal.setScale(digit, RoundingMode.FLOOR).doubleValue();
     }
 
     /**
