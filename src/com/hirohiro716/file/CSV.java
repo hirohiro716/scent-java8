@@ -50,15 +50,23 @@ public class CSV {
     private ArrayList<ArrayList<String>> rows = new ArrayList<>();
     
     /**
-     * 全行を取得する.
-     * @return 全行
+     * 行数を取得する.
+     * @return 行数
      */
-    public String[][] getRows() {
-        ArrayList<String[]> rows = new ArrayList<>();
-        for (ArrayList<String> sourceRow: this.rows) {
-            rows.add(sourceRow.toArray(new String[] {}));
+    public int size() {
+        return this.rows.size();
+    }
+    
+    /**
+     * 1行を取得する.
+     * @param index 位置
+     * @return 行情報(indexが範囲外ならnull)
+     */
+    public String[] getRow(int index) {
+        if (this.rows.size() <= index) {
+            return null;
         }
-        return rows.toArray(new String[][] {});
+        return this.rows.get(index).toArray(new String[] {});
     }
     
     /**
