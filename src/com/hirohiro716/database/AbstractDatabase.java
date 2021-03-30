@@ -414,7 +414,7 @@ public abstract class AbstractDatabase implements Closeable {
         switch (value.getClass().getName()) {
         case "java.util.Date":
             java.util.Date date = (java.util.Date) value;
-            return new Date(date.getTime());
+            return new Timestamp(date.getTime());
         default:
             return value;
         }
