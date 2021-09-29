@@ -68,6 +68,7 @@ public abstract class AbstractBindTableRow extends AbstractBindTable {
     public void edit() throws SQLException, DataNotFoundException {
         this.setRow(this.fetchEditRow());
         if (this.isDeleted()) {
+            this.getDatabase().rollback();
             throw new DataNotFoundException();
         }
     }
