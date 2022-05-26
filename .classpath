@@ -5,6 +5,6 @@
 	<classpathentry kind="lib" path="libs/javax.mail.jar"/>
 	<classpathentry kind="lib" path="libs/zxing/core-3.3.4-20180529.153305-1.jar"/>
 	<classpathentry kind="lib" path="libs/zxing/javase-3.3.4-20180529.153314-1.jar"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/oracle-jdk-8"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/oracle-jdk8"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
