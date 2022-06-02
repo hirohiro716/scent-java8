@@ -264,7 +264,7 @@ public abstract class AbstractDatabase implements Closeable {
     }
 
     /**
-     * SELECT結果の最初のレコード. 最初のフィールドの値を取得する。
+     * SELECT結果の最初のレコード。最初のフィールドの値を取得する。
      *
      * @param sql
      * @return 値
@@ -284,7 +284,7 @@ public abstract class AbstractDatabase implements Closeable {
     }
 
     /**
-     * プリペアードステートメントでSELECT結果の最初のレコード. 最初のフィールドの値を取得する。
+     * プリペアードステートメントでSELECT結果の最初のレコード。最初のフィールドの値を取得する。
      *
      * @param sql
      * @param params パラメータ

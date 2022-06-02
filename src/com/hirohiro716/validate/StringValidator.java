@@ -162,7 +162,7 @@ public class StringValidator {
     }
 
     /**
-     * 日付形式チェックを予約する. java.util.Dateか日付として有効な文字列かをチェックする。
+     * 日付形式チェックを予約する。java.util.Dateか日付として有効な文字列かをチェックする。
      *
      */
     public void addDatetimeCheck() {

@@ -15,8 +15,8 @@ import java.util.List;
 import com.hirohiro716.datetime.Datetime;
 
 /**
- * LinkedHashMapに雑な使い方ができるよう機能を追加したクラス.<br>
- * キーにはプリミティブ型かString型を指定します. 値はObject型.<br>
+ * LinkedHashMapに雑な使い方ができるよう機能を追加したクラス。<br>
+ * キーにはプリミティブ型かString型を指定します. 値はObject型。<br>
  * @author hiro
  */
 public class RudeArray implements Cloneable, Serializable {
@@ -79,7 +79,7 @@ public class RudeArray implements Cloneable, Serializable {
     private int autoKey = 0;
 
     /**
-     * キーを指定せずに値をセットする. キーは0以上の自動採番。
+     * キーを指定せずに値をセットする。キーは0以上の自動採番。
      *
      * @param value 値
      */
@@ -95,7 +95,7 @@ public class RudeArray implements Cloneable, Serializable {
     }
 
     /**
-     * Object配列をキーを指定せずにセットする. キーは0以上の自動採番。
+     * Object配列をキーを指定せずにセットする。キーは0以上の自動採番。
      *
      * @param values 追加する値配列
      */
@@ -539,7 +539,7 @@ public class RudeArray implements Cloneable, Serializable {
     }
 
     /**
-     * 配列を結合する. キーが重複していた場合は後の値で上書きされる。
+     * 配列を結合する。キーが重複していた場合は後の値で上書きされる。
      *
      * @param arrays 配列
      */
@@ -602,7 +602,7 @@ public class RudeArray implements Cloneable, Serializable {
     }
 
     /**
-     * シリアライズを行いByte配列を取得する. 値の部分に入っているオブジェクトのシリアライズはサポートしない。
+     * シリアライズを行いByte配列を取得する。値の部分に入っているオブジェクトのシリアライズはサポートしない。
      *
      * @return シリアライズしたByte配列
      * @throws IOException
@@ -612,7 +612,7 @@ public class RudeArray implements Cloneable, Serializable {
     }
 
     /**
-     * Byte配列からデシリアライズを行いインスタンスを復元する. 値の部分に入っているオブジェクトのシリアライズはサポートしない。
+     * Byte配列からデシリアライズを行いインスタンスを復元する。値の部分に入っているオブジェクトのシリアライズはサポートしない。
      *
      * @param serialized byte配列
      * @return RudeArray

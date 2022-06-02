@@ -73,7 +73,7 @@ public abstract class AbstractBindTableRow extends com.hirohiro716.database.Abst
     }
     
     /**
-     * 取得したレコードが編集中かどうかの判定メソッド. これはedit(WhereSet)メソッドから自動的に呼び出され編集するかの判定に使われる。
+     * 取得したレコードが編集中かどうかの判定メソッド。これはedit(WhereSet)メソッドから自動的に呼び出され編集するかの判定に使われる。
      *
      * @param sqlite 分離レベルEXCLUSIVEでトランザクションが開始されたDatabase
      * @return 編集中かどうか
@@ -81,7 +81,7 @@ public abstract class AbstractBindTableRow extends com.hirohiro716.database.Abst
     public abstract boolean isEditing(SQLite sqlite);
     
     /**
-     * 編集中に変更する. これはedit(WhereSet)メソッドから自動的に呼び出される。
+     * 編集中に変更する。これはedit(WhereSet)メソッドから自動的に呼び出される。
      *
      * @param sqlite 分離レベルEXCLUSIVEでトランザクションが開始されたDatabase
      * @throws SQLException 
@@ -101,7 +101,7 @@ public abstract class AbstractBindTableRow extends com.hirohiro716.database.Abst
     }
     
     /**
-     * 編集中を解除する. これはclose()メソッドから自動的に呼び出される。
+     * 編集中を解除する。これはclose()メソッドから自動的に呼び出される。
      *
      * @param sqlite 分離レベルEXCLUSIVEでトランザクションが開始されたDatabase
      * @throws SQLException

@@ -79,7 +79,7 @@ public class StringConverter {
     }
 
     /**
-     * 改行コード(LF)を置き換える処理を組み込む. CRLFのLFは置き換えない。
+     * 改行コード(LF)を置き換える処理を組み込む。CRLFのLFは置き換えない。
      *
      * @param replaceString 置き換え文字列
      */
@@ -88,7 +88,7 @@ public class StringConverter {
     }
 
     /**
-     * 改行コード(CR)を置き換える処理を組み込む. CRLFのCRは置き換えない。
+     * 改行コード(CR)を置き換える処理を組み込む。CRLFのCRは置き換えない。
      *
      * @param replaceString 置き換え文字列
      */
@@ -509,7 +509,7 @@ public class StringConverter {
     }
     
     /**
-     * 改行コード(CR)を置き換える. CRLFのCRは置き換えない。
+     * 改行コード(CR)を置き換える。CRLFのCRは置き換えない。
      *
      * @param value 対象
      * @param replacement 置き換える文字列
@@ -524,7 +524,7 @@ public class StringConverter {
     }
 
     /**
-     * 改行コード(LF)を置き換える. CRLFのLFは置き換えない。
+     * 改行コード(LF)を置き換える。CRLFのLFは置き換えない。
      *
      * @param value 対象
      * @param replacement 置き換える文字列
@@ -568,7 +568,7 @@ public class StringConverter {
     }
 
     /**
-     * String型をboolean型に変換する. 変換できない場合はfalse。
+     * String型をboolean型に変換する。変換できない場合はfalse。
      *
      * @param boolString 有効文字列
      * @return 結果
@@ -582,7 +582,7 @@ public class StringConverter {
     }
 
     /**
-     * String型をshort型に変換する. 変換できない場合はnullを取得する. 小数点は無効です。
+     * String型をshort型に変換する. 変換できない場合はnullを取得する。小数点は無効です。
      *
      * @param shortString 有効文字列
      * @return 結果
@@ -596,7 +596,7 @@ public class StringConverter {
     }
 
     /**
-     * String型をInteger型に変換する. 変換できない場合はnullを取得する. 小数点は無効です。
+     * String型をInteger型に変換する. 変換できない場合はnullを取得する。小数点は無効です。
      *
      * @param intString 有効文字列
      * @return 結果
@@ -610,7 +610,7 @@ public class StringConverter {
     }
 
     /**
-     * String型をlong型に変換する. 変換できない場合はnullを取得する. 小数点は無効です。
+     * String型をlong型に変換する. 変換できない場合はnullを取得する。小数点は無効です。
      *
      * @param longString 有効文字列
      * @return 結果
@@ -624,7 +624,7 @@ public class StringConverter {
     }
 
     /**
-     * String型をFloat型に変換する. 変換できない場合はnullを取得する。
+     * String型をFloat型に変換する。変換できない場合はnullを取得する。
      *
      * @param floatString 有効文字列
      * @return 結果
@@ -638,7 +638,7 @@ public class StringConverter {
     }
 
     /**
-     * String型をDouble型に変換する. 変換できない場合はnullを取得する。
+     * String型をDouble型に変換する。変換できない場合はnullを取得する。
      *
      * @param doubleString 有効文字列
      * @return 結果
@@ -683,7 +683,7 @@ public class StringConverter {
     }
 
     /**
-     * value(元文字列)のstart(開始位置)からlength(文字数)分を取得する. 開始位置に矛盾があった場合は空文字""を取得する.<br>
+     * value(元文字列)のstart(開始位置)からlength(文字数)分を取得する. 開始位置に矛盾があった場合は空文字""を取得する。<br>
      * lengthがvalueの文字数を超えた範囲を指定していた場合はあるだけ返す。
      *
      * @param value 元の文字列
@@ -707,7 +707,7 @@ public class StringConverter {
     }
 
     /**
-     * value(元文字列)のstart(開始位置)からの文字列をすべて返す. 開始位置に矛盾があった場合は空文字""を取得する。
+     * value(元文字列)のstart(開始位置)からの文字列をすべて返す。開始位置に矛盾があった場合は空文字""を取得する。
      *
      * @param value 元の文字列
      * @param start 開始位置
@@ -743,7 +743,7 @@ public class StringConverter {
     }
 
     /**
-     * 文字列をAES128で暗号化して返す. 必ず16文字の暗号化キーを指定する. 復号化にはdecryptAes128を使用する。
+     * 文字列をAES128で暗号化して返す. 必ず16文字の暗号化キーを指定する。復号化にはdecryptAes128を使用する。
      *
      * @param key 16文字の暗号化キーを指定
      * @param value 元の値

@@ -144,7 +144,7 @@ public abstract class AbstractBindTable {
     }
     
     /**
-     * 編集・更新・削除に使用するレコード特定用のWhereSetを指定する.<br>
+     * 編集・更新・削除に使用するレコード特定用のWhereSetを指定する。<br>
      * 編集する前は必ずこのメソッドを使用して抽出条件を指定する。
      *
      * @param whereSet 

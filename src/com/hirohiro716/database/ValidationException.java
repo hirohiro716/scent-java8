@@ -15,7 +15,7 @@ public class ValidationException extends com.hirohiro716.validate.ValidationExce
     private static final long serialVersionUID = 1733617763538002291L;
 
     /**
-     * コンストラクタ. 値検証失敗の新規例外を構築する。
+     * コンストラクタ。値検証失敗の新規例外を構築する。
      *
      * @param message 詳細メッセージ
      * @param causeRow 例外の原因となった行
@@ -28,7 +28,7 @@ public class ValidationException extends com.hirohiro716.validate.ValidationExce
     }
 
     /**
-     * コンストラクタ. 値検証失敗の新規例外を構築する。
+     * コンストラクタ。値検証失敗の新規例外を構築する。
      *
      * @param message 詳細メッセージ
      * @param causeColumn 例外の原因となった項目

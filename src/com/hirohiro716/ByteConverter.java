@@ -163,7 +163,7 @@ public class ByteConverter {
     }
 
     /**
-     * 16進数文字列をbyte配列に変換する. 失敗した場合はnullを返す。
+     * 16進数文字列をbyte配列に変換する。失敗した場合はnullを返す。
      *
      * @param bytesString 変換対象
      * @return 変換後Byte配列
@@ -243,7 +243,7 @@ public class ByteConverter {
     }
 
     /**
-     * シリアライズを行いByte配列を取得する. 値の部分に入っているオブジェクトのシリアライズはサポートしない。
+     * シリアライズを行いByte配列を取得する。値の部分に入っているオブジェクトのシリアライズはサポートしない。
      *
      * @param serializable シリアライズするオブジェクト
      * @return シリアライズしたByte配列
@@ -264,7 +264,7 @@ public class ByteConverter {
     }
     
     /**
-     * Byte配列からデシリアライズを行いインスタンスを復元する. 値の部分に入っているオブジェクトのシリアライズはサポートしない。
+     * Byte配列からデシリアライズを行いインスタンスを復元する。値の部分に入っているオブジェクトのシリアライズはサポートしない。
      *
      * @param <T> インスタンスの型
      * @param serialized byte配列

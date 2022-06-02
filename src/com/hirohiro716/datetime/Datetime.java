@@ -175,7 +175,7 @@ public class Datetime {
     }
 
     /**
-     * 月を取得する.(1～12)
+     * 月を取得する。(1～12)
      * @return 月
      */
     public int toMonth() {
@@ -183,7 +183,7 @@ public class Datetime {
     }
 
     /**
-     * 日を取得する.(1～31)
+     * 日を取得する。(1～31)
      * @return 日
      */
     public int toDay() {
@@ -191,7 +191,7 @@ public class Datetime {
     }
 
     /**
-     * 時刻を取得する.(0～23)
+     * 時刻を取得する。(0～23)
      * @return 時刻
      */
     public int toHour() {
@@ -199,7 +199,7 @@ public class Datetime {
     }
 
     /**
-     * 分を取得する.(0～59)
+     * 分を取得する。(0～59)
      * @return 分
      */
     public int toMinute() {
@@ -207,7 +207,7 @@ public class Datetime {
     }
 
     /**
-     * 秒を取得する.(0～59)
+     * 秒を取得する。(0～59)
      * @return 秒
      */
     public int toSecond() {
@@ -233,7 +233,7 @@ public class Datetime {
     }
 
     /**
-     * 月をセットする.(1月ならば１)
+     * 月をセットする。(1月ならば１)
      * @param month 月
      */
     public void modifyMonth(int month) {

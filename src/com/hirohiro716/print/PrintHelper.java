@@ -13,7 +13,7 @@ public class PrintHelper {
     private static final double MILLIMETER_TO_POINT_RATE = 72.0 / 25.4;
 
     /**
-     * ミリメートルからポイントを算出する.。
+     * ミリメートルからポイントを算出する。
      *
      * @param millimeter ミリメートル
      * @return ポイント

@@ -29,7 +29,7 @@ public class PropertyXML {
     private String comment = "This was made by com.hirohiro716.file.PropertyXML";
 
     /**
-     * XMLファイルの場所を指定する. ファイルがない場合は作成される。
+     * XMLファイルの場所を指定する。ファイルがない場合は作成される。
      *
      * @param fileLocation ファイルのフルパス
      * @throws IOException
@@ -48,7 +48,7 @@ public class PropertyXML {
     }
     
     /**
-     * XMLファイルの場所を指定する. ファイルがない場合は作成される。
+     * XMLファイルの場所を指定する。ファイルがない場合は作成される。
      *
      * @param file ファイル
      * @throws IOException
@@ -152,7 +152,7 @@ public class PropertyXML {
     }
 
     /**
-     * コメントをセットします. データ作成時のみ意味がある。
+     * コメントをセットします。データ作成時のみ意味がある。
      *
      * @param value 値
      */

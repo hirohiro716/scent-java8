@@ -82,7 +82,7 @@ public abstract class AbstractBindTableRow extends AbstractBindTable {
     }
     
     /**
-     * 取得したレコードが削除済みかどうかの判定メソッド. これはedit(WhereSet)メソッドから自動的に呼び出され編集するかの判定に使われる。
+     * 取得したレコードが削除済みかどうかの判定メソッド。これはedit(WhereSet)メソッドから自動的に呼び出され編集するかの判定に使われる。
      *
      * @return 削除済みかどうか
      */

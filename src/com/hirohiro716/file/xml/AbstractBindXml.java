@@ -23,7 +23,7 @@ public abstract class AbstractBindXml {
     }
 
     /**
-     * XMLファイルの場所を指定する. ファイルがない場合は作成される。
+     * XMLファイルの場所を指定する。ファイルがない場合は作成される。
      *
      * @param xmlFileLocation ファイルのフルパス
      * @throws IOException

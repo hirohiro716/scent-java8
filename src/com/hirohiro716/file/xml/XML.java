@@ -111,7 +111,7 @@ public class XML {
     }
 
     /**
-     * 要素をID属性で検索する. 検索結果がない場合はnullを返す。
+     * 要素をID属性で検索する。検索結果がない場合はnullを返す。
      *
      * @param id
      * @return 要素
