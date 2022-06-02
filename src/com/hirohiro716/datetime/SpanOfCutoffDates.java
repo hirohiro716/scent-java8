@@ -86,7 +86,6 @@ public class SpanOfCutoffDates {
     
     /**
      * 締め日を昇順に並び替える。
-     *
      */
     private void sortCutoffDates() {
         ArrayList<Integer> newCutoffDates = new ArrayList<>();
@@ -111,7 +110,6 @@ public class SpanOfCutoffDates {
 
     /**
      * 締め日で分割した期間の配列を取得する。
-     *
      */
     private void calculateSpans() {
         this.spans = new ArrayList<>();

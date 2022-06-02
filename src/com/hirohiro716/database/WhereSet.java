@@ -289,7 +289,6 @@ public class WhereSet implements Cloneable {
 
     /**
      * 内部で保持しているWhereクラスリストを破棄する。
-     *
      */
     public void clear() {
         this.wheres.clear();

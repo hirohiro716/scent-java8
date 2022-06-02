@@ -28,7 +28,6 @@ public class RudeArray implements Cloneable, Serializable {
 
     /**
      * コンストラクタ。
-     *
      */
     public RudeArray() {
         this.baseArray = new LinkedHashMap<>();
@@ -122,7 +121,6 @@ public class RudeArray implements Cloneable, Serializable {
      *
      * @param key キー
      * @return 値 存在しない場合や型が違った場合はnullを返す。
-     *
      */
     public String getString(Object key) {
         try {
@@ -139,7 +137,6 @@ public class RudeArray implements Cloneable, Serializable {
      *
      * @param key キー
      * @return 値 存在しない場合や型が違った場合はnullを返す。
-     *
      */
     public Byte getByte(Object key) {
         try {
@@ -154,7 +151,6 @@ public class RudeArray implements Cloneable, Serializable {
      *
      * @param key キー
      * @return 値 存在しない場合や型が違った場合はnullを返す。
-     *
      */
     public Number getNumber(Object key) {
         try {
@@ -171,7 +167,6 @@ public class RudeArray implements Cloneable, Serializable {
      *
      * @param key キー
      * @return 値 存在しない場合や型が違った場合はnullを返す。
-     *
      */
     public Short getShort(Object key) {
         try {
@@ -188,7 +183,6 @@ public class RudeArray implements Cloneable, Serializable {
      *
      * @param key キー
      * @return 値 存在しない場合や型が違った場合はnullを返す。
-     *
      */
     public Integer getInteger(Object key) {
         try {
@@ -205,7 +199,6 @@ public class RudeArray implements Cloneable, Serializable {
      *
      * @param key キー
      * @return 値 存在しない場合や型が違った場合はnullを返す。
-     *
      */
     public Float getFloat(Object key) {
         try {
@@ -222,7 +215,6 @@ public class RudeArray implements Cloneable, Serializable {
      *
      * @param key キー
      * @return 値 存在しない場合や型が違った場合はnullを返す。
-     *
      */
     public Long getLong(Object key) {
         try {
@@ -239,7 +231,6 @@ public class RudeArray implements Cloneable, Serializable {
      *
      * @param key キー
      * @return 値 存在しない場合や型が違った場合はnullを返す。
-     *
      */
     public Double getDouble(Object key) {
         try {
@@ -256,7 +247,6 @@ public class RudeArray implements Cloneable, Serializable {
      *
      * @param key キー
      * @return 値 存在しない場合や型が違った場合はnullを返す。
-     *
      */
     public Boolean getBoolean(Object key) {
         try {
@@ -273,7 +263,6 @@ public class RudeArray implements Cloneable, Serializable {
      *
      * @param key キー
      * @return 値 存在しない場合や型が違った場合はnullを返す。
-     *
      */
     public Date getDate(Object key) {
         // Date
@@ -296,7 +285,6 @@ public class RudeArray implements Cloneable, Serializable {
      *
      * @param key キー
      * @return 値 存在しない場合や型が違った場合はnullを返す。
-     *
      */
     public java.sql.Date getDateSql(Object key) {
         // java.sql.Date
@@ -324,7 +312,6 @@ public class RudeArray implements Cloneable, Serializable {
      *
      * @param key キー
      * @return 値 存在しない場合や型が違った場合はnullを返す。
-     *
      */
     public Time getTimeSql(Object key) {
         // Time
@@ -352,7 +339,6 @@ public class RudeArray implements Cloneable, Serializable {
      *
      * @param key キー
      * @return 値 存在しない場合や型が違った場合はnullを返す。
-     *
      */
     public Timestamp getTimestampSql(Object key) {
         // Timestamp
@@ -375,7 +361,6 @@ public class RudeArray implements Cloneable, Serializable {
      *
      * @param key キー
      * @return 値 存在しない場合や型が違った場合はnullを返す。
-     *
      */
     public RudeArray getRudeArray(Object key) {
         try {
@@ -437,7 +422,6 @@ public class RudeArray implements Cloneable, Serializable {
 
     /**
      * 保持しているすべての値を消去する。
-     *
      */
     public void clear() {
         this.autoKey = 0;

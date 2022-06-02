@@ -46,7 +46,6 @@ public class Task<T> {
 
     /**
      * タスクをスタートさせる。
-     *
      */
     public void start() {
         this.thread.start();

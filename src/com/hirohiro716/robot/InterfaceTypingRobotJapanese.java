@@ -100,25 +100,21 @@ public interface InterfaceTypingRobotJapanese<T> {
     
     /**
      * IMEをOFFにする。
-     *
      */
     public abstract void changeIMEOff();
     
     /**
      * IMEをひらがなにする。
-     *
      */
     public abstract void changeIMEHiragana();
     
     /**
      * IMEをカタカナにする。
-     *
      */
     public abstract void changeIMEKatakanaWide();
     
     /**
      * IMEをｶﾀｶﾅにする。
-     *
      */
     public abstract void changeIMEKatakanaNarrow();
     

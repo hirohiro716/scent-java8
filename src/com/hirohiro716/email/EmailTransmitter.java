@@ -24,7 +24,6 @@ public class EmailTransmitter {
     
     /**
      * E-mail本文に使用する改行コード。
-     *
      */
     public static final String LINE_SEPARATOR = "\r\n";
     

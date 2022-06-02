@@ -35,7 +35,6 @@ public class XML {
 
     /**
      * コンストラクタでorg.w3c.dom.Documentインスタンスを生成する。
-     *
      */
     public XML() {
         try {

@@ -19,13 +19,11 @@ public class SQLite extends AbstractDatabase {
 
     /**
      * SQLiteにはBoolean型が無いのでINTEGERで代用する際の有効を表す数値。
-     *
      */
     public static final int BOOLEAN_VALUE_ENABLED = 1;
     
     /**
      * SQLiteにはBoolean型が無いのでINTEGERで代用する際の無効を表す数値。
-     *
      */
     public static final int BOOLEAN_VALUE_DISABLED = 0;
     

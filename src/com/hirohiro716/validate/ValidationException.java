@@ -15,7 +15,6 @@ public class ValidationException extends Exception {
      * 指定された詳細メッセージを持つ新規例外を構築する. 原因は初期化されない。Throwable.initCause(java.lang.Throwable)を呼び出すことによってあとでこれを初期化することができる。
      *
      * @param message 詳細メッセージ。詳細メッセージはあとでThrowable.getMessage()メソッドで取得できるように保存されます。
-     *
      */
     public ValidationException(String message) {
         super(message);

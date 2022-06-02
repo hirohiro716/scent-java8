@@ -27,7 +27,6 @@ public abstract class AbstractCookieStore implements CookieStore {
     
     /**
      * 初回の永続化済みCookieを読み込む処理。
-     *
      */
     private void initialize() {
         if (this.isInitialized) {

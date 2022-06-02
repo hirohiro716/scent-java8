@@ -198,7 +198,6 @@ public class FiscalMonth {
 
     /**
      * その月の開始日と終了日を計算して適用する。
-     *
      */
     private void caclulateStartAndEndDate() {
         Datetime defaultDate = new Datetime("1971-01-01 00:00:00");

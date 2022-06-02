@@ -98,7 +98,6 @@ public class Print {
 
     /**
      * トレイを実際にセットします。
-     *
      */
     private void setMediaTrayAttribute() {
         if (this.instanceMediaTray.length() > 0) {

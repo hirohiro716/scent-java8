@@ -12,19 +12,16 @@ public interface InterfaceTypingTask<T> {
     
     /**
      * 定義情報のタスクの区切り文字。
-     *
      */
     public static final String DEFINITION_STRING_TASK_DELIMITER = " ";
 
     /**
      * 定義情報のタイプと値の区切り文字。
-     *
      */
     public static final String DEFINITION_STRING_TYPE_AND_VALUE_DELIMITER = ":";
 
     /**
      * 定義情報の複数値の区切り文字。
-     *
      */
     public static final String DEFINITION_STRING_VALUES_DELIMITER = ",";
     
@@ -88,7 +85,6 @@ public interface InterfaceTypingTask<T> {
     
     /**
      * タスクを実行する。
-     *
      */
     public abstract void execute();
     

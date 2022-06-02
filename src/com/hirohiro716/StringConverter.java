@@ -62,7 +62,6 @@ public class StringConverter {
 
     /**
      * 両端の余白を取り除く処理を組み込む。
-     *
      */
     public void addTrim() {
         this.params.put(Pattern.TRIM, null);
@@ -173,7 +172,6 @@ public class StringConverter {
 
     /**
      * 数値として有効な文字列のみを抜き出す処理を組み込む。
-     *
      */
     public void addIntegerString() {
         this.params.put(Pattern.INTEGER, null);
@@ -181,7 +179,6 @@ public class StringConverter {
 
     /**
      * 数値として有効な文字列のみを抜き出す処理を組み込む。
-     *
      */
     public void addDecimalString() {
         this.params.put(Pattern.DECIMAL, null);
@@ -189,7 +186,6 @@ public class StringConverter {
 
     /**
      * 数値として有効な文字列のみを抜き出し小数点を省略する処理を組み込む。
-     *
      */
     public void addTryNonFractionString() {
         this.params.put(Pattern.TRY_NON_FRACTION, null);
@@ -197,7 +193,6 @@ public class StringConverter {
 
     /**
      * 電話番号として有効な文字列のみ(数字,-)を抜き出す処理を組み込む。
-     *
      */
     public void addTelephone() {
         this.params.put(Pattern.TELEPHONE, null);
@@ -205,7 +200,6 @@ public class StringConverter {
 
     /**
      * java.util.Dateオブジェクトまたは日付として有効な文字列をyyyy-MM-dd形式に変換する処理を組み込む。
-     *
      */
     public void addDatetime() {
         this.params.put(Pattern.DATETIME, null);
@@ -222,7 +216,6 @@ public class StringConverter {
 
     /**
      * SHA256で文字列を暗号化する処理を組み込む。
-     *
      */
     public void addEncryptSha256() {
         this.params.put(Pattern.ENCRYPT_SHA256, null);
@@ -248,7 +241,6 @@ public class StringConverter {
 
     /**
      * 全角文字を半角に変換する。
-     *
      */
     public void addWideToNarrow() {
         this.params.put(Pattern.WIDE_TO_NARROW, null);
@@ -256,7 +248,6 @@ public class StringConverter {
 
     /**
      * 半角文字を全角に変換する。
-     *
      */
     public void addNarrowToWide() {
         this.params.put(Pattern.NARROW_TO_WIDE, null);
@@ -264,7 +255,6 @@ public class StringConverter {
 
     /**
      * 大文字を小文字に変換する。
-     *
      */
     public void addUpperToLower() {
         this.params.put(Pattern.UPPER_TO_LOWER, null);
@@ -272,7 +262,6 @@ public class StringConverter {
 
     /**
      * 小文字を大文字に変換する。
-     *
      */
     public void addLowerToUpper() {
         this.params.put(Pattern.LOWER_TO_UPPER, null);
@@ -280,7 +269,6 @@ public class StringConverter {
 
     /**
      * 全角ひらがなを全角カタカナに変換する。
-     *
      */
     public void addHiraganaToKatakana() {
         this.params.put(Pattern.HIRAGANA_TO_KATAKANA, null);
@@ -288,7 +276,6 @@ public class StringConverter {
 
     /**
      * 全角カタカナを全角ひらがなに変換する。
-     *
      */
     public void addKatakanaToHiragana() {
         this.params.put(Pattern.KATAKANA_TO_HIRAGANA, null);
@@ -296,7 +283,6 @@ public class StringConverter {
 
     /**
      * 文字コードをShift_JISに一度変換する処理を組み込む。
-     *
      */
     public void addShiftJIS() {
         this.params.put(Pattern.SHIFT_JIS, null);
@@ -304,7 +290,6 @@ public class StringConverter {
 
     /**
      * 設定した変換パラメータを初期化する。
-     *
      */
     public void clear() {
         this.params.clear();

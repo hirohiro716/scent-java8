@@ -66,7 +66,6 @@ public class LayoutSetting implements Cloneable {
 
     /**
      * コンストラクタ。
-     *
      */
     public LayoutSetting() {
         this.values = AbstractBindTable.createDefaultRow(Property.values());

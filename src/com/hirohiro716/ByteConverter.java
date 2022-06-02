@@ -26,7 +26,6 @@ public class ByteConverter {
 
     /**
      * コンストラクタ。
-     *
      */
     public ByteConverter() {
         super();

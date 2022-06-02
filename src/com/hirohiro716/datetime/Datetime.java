@@ -22,7 +22,6 @@ public class Datetime {
 
     /**
      * 現在の日時を指定してインスタンス生成する。
-     *
      */
     public Datetime() {
         super();

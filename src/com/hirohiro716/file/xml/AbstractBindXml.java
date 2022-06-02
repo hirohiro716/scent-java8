@@ -16,7 +16,6 @@ public abstract class AbstractBindXml {
 
     /**
      * コンストラクタ。
-     *
      */
     public AbstractBindXml() {
         this.xmlHelper = new PropertyXML();
@@ -90,7 +89,6 @@ public abstract class AbstractBindXml {
     
     /**
      * すべてのプロパティをXMLファイルから取得する。
-     *
      */
     public abstract void readAllProperties();
     

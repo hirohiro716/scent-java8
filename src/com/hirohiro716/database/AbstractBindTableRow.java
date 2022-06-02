@@ -43,7 +43,6 @@ public abstract class AbstractBindTableRow extends AbstractBindTable {
     
     /**
      * 初期値が入力されたレコード用の連想配列を編集中のレコードとしてセットする。
-     *
      */
     public void setDefaultRow() {
         this.row = this.createDefaultRow();

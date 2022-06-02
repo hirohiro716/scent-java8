@@ -58,7 +58,6 @@ public class StringValidator {
 
     /**
      * コンストラクタ。
-     *
      */
     public StringValidator() {
         super();
@@ -86,7 +85,6 @@ public class StringValidator {
 
     /**
      * 文字列の空欄チェックを予約する。
-     *
      */
     public void addBlankCheck() {
         this.params.put(Pattern.BLANK, null);
@@ -94,7 +92,6 @@ public class StringValidator {
 
     /**
      * 文字列の数値有効性チェックを予約する。
-     *
      */
     public void addIntegerCheck() {
         this.params.put(Pattern.INTEGER, null);
@@ -102,7 +99,6 @@ public class StringValidator {
 
     /**
      * 文字列の少数値有効性チェックを予約する。
-     *
      */
     public void addDecimalCheck() {
         this.params.put(Pattern.DECIMAL, null);
@@ -137,7 +133,6 @@ public class StringValidator {
 
     /**
      * 数値のゼロチェックを予約する。
-     *
      */
     public void addZeroCheck() {
         this.params.put(Pattern.ZERO, null);
@@ -163,7 +158,6 @@ public class StringValidator {
 
     /**
      * 日付形式チェックを予約する。java.util.Dateか日付として有効な文字列かをチェックする。
-     *
      */
     public void addDatetimeCheck() {
         this.params.put(Pattern.DATETIME, null);
@@ -171,7 +165,6 @@ public class StringValidator {
 
     /**
      * 文字列の電話番号有効性チェックを予約する。
-     *
      */
     public void addTelephoneNumberCheck() {
         this.params.put(Pattern.TELEPHONE_NUMBER, null);
@@ -197,7 +190,6 @@ public class StringValidator {
 
     /**
      * セットしたチェックパターンをすべて解除する。
-     *
      */
     public void clear() {
         this.params.clear();
