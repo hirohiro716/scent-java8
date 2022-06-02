@@ -28,7 +28,7 @@ public class ExceptionHelper {
      */
     public static String createDetailMessage(String newMessage, Exception exception) {
         exception.printStackTrace();
-        StringBuilder message = new StringBuilder();
+        StringBuilder message = new StringBuilder(newMessage);
         if (message.length() > 0) {
             message.append(LINE_SEPARATOR);
             message.append(LINE_SEPARATOR);
