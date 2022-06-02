@@ -14,7 +14,8 @@ import java.io.Serializable;
 import com.hirohiro716.file.FileHelper.FileExtension;
 
 /**
- * バイト操作を補助するクラス.
+ * バイト操作を補助するクラス。
+ *
  * @author hiro
  */
 public class ByteConverter {
@@ -24,14 +25,16 @@ public class ByteConverter {
     private byte[] bytes;
 
     /**
-     * コンストラクタ.
+     * コンストラクタ。
+     *
      */
     public ByteConverter() {
         super();
     }
 
     /**
-     * ファイルを指定してインスタンス生成する.
+     * ファイルを指定してインスタンス生成する。
+     *
      * @param fileLocation ファイル名
      * @throws IOException 
      */
@@ -40,7 +43,8 @@ public class ByteConverter {
     }
 
     /**
-     * ファイルを指定してインスタンス生成する.
+     * ファイルを指定してインスタンス生成する。
+     *
      * @param fileLocation ファイルURI
      * @throws IOException 
      */
@@ -49,7 +53,8 @@ public class ByteConverter {
     }
 
     /**
-     * バイト配列と拡張子を指定してインスタンス生成する.
+     * バイト配列と拡張子を指定してインスタンス生成する。
+     *
      * @param bytes バイト配列
      */
     public ByteConverter(byte[] bytes) {
@@ -57,7 +62,8 @@ public class ByteConverter {
     }
 
     /**
-     * バイト配列と拡張子を指定してインスタンス生成する.
+     * バイト配列と拡張子を指定してインスタンス生成する。
+     *
      * @param bytes バイト配列
      * @param fileExtension 拡張子
      */
@@ -66,7 +72,8 @@ public class ByteConverter {
     }
 
     /**
-     * ファイルパスを取得する.
+     * ファイルパスを取得する。
+     *
      * @return 画像ファイルのフルパス
      */
     public String getFileLocation() {
@@ -74,7 +81,8 @@ public class ByteConverter {
     }
 
     /**
-     * ファイルパスを指定する.
+     * ファイルパスを指定する。
+     *
      * @param fileLocation 画像ファイルのフルパス
      * @throws IOException 
      */
@@ -93,7 +101,8 @@ public class ByteConverter {
     }
 
     /**
-     * 画像バイナリを取得する.
+     * 画像バイナリを取得する。
+     *
      * @return バイト配列
      */
     public byte[] getBytes() {
@@ -101,7 +110,8 @@ public class ByteConverter {
     }
 
     /**
-     * バイナリをセットする.
+     * バイナリをセットする。
+     *
      * @param bytes バイト配列
      */
     public void setBytes(byte[] bytes) {
@@ -110,7 +120,8 @@ public class ByteConverter {
     }
 
     /**
-     * バイナリを拡張子指定でセットする.
+     * バイナリを拡張子指定でセットする。
+     *
      * @param bytes バイト配列
      * @param fileExtension 拡張子
      */
@@ -120,7 +131,8 @@ public class ByteConverter {
     }
 
     /**
-     * ファイル拡張子を取得する.
+     * ファイル拡張子を取得する。
+     *
      * @return 拡張子
      */
     public FileExtension getFileExtension() {
@@ -128,7 +140,8 @@ public class ByteConverter {
     }
 
     /**
-     * byte配列を16進数文字列に変換する.
+     * byte配列を16進数文字列に変換する。
+     *
      * @param bytes 変換対象
      * @return 変化後文字列
      */
@@ -150,7 +163,8 @@ public class ByteConverter {
     }
 
     /**
-     * 16進数文字列をbyte配列に変換する. 失敗した場合はnullを返す.
+     * 16進数文字列をbyte配列に変換する. 失敗した場合はnullを返す。
+     *
      * @param bytesString 変換対象
      * @return 変換後Byte配列
      */
@@ -173,7 +187,8 @@ public class ByteConverter {
     }
 
     /**
-     * 保持しているファイルを指定したファイル名で保存する.
+     * 保持しているファイルを指定したファイル名で保存する。
+     *
      * @param fileLocation 保存先フルパス
      * @throws IOException 
      */
@@ -182,7 +197,8 @@ public class ByteConverter {
     }
 
     /**
-     * byte配列をファイルに保存する.
+     * byte配列をファイルに保存する。
+     *
      * @param bytes 保存対象byte配列
      * @param fileLocation ファイル名
      * @throws java.io.IOException
@@ -195,7 +211,8 @@ public class ByteConverter {
     }
 
     /**
-     * ファイルを読み込んでbyte配列を取得する.
+     * ファイルを読み込んでbyte配列を取得する。
+     *
      * @param file 対象ファイル
      * @return バイナリ
      * @throws java.io.IOException
@@ -209,7 +226,8 @@ public class ByteConverter {
     }
 
     /**
-     * InputStreamを読み込んでbyte配列を取得する.
+     * InputStreamを読み込んでbyte配列を取得する。
+     *
      * @param inputStream 対象ストリーム
      * @return バイナリ
      * @throws java.io.IOException
@@ -225,7 +243,8 @@ public class ByteConverter {
     }
 
     /**
-     * シリアライズを行いByte配列を取得する. 値の部分に入っているオブジェクトのシリアライズはサポートしない.
+     * シリアライズを行いByte配列を取得する. 値の部分に入っているオブジェクトのシリアライズはサポートしない。
+     *
      * @param serializable シリアライズするオブジェクト
      * @return シリアライズしたByte配列
      * @throws IOException
@@ -245,7 +264,8 @@ public class ByteConverter {
     }
     
     /**
-     * Byte配列からデシリアライズを行いインスタンスを復元する. 値の部分に入っているオブジェクトのシリアライズはサポートしない.
+     * Byte配列からデシリアライズを行いインスタンスを復元する. 値の部分に入っているオブジェクトのシリアライズはサポートしない。
+     *
      * @param <T> インスタンスの型
      * @param serialized byte配列
      * @return デシリアライズしたインスタンス

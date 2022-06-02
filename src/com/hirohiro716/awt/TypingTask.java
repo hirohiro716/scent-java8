@@ -7,13 +7,15 @@ import java.util.Collection;
 import com.hirohiro716.robot.AbstractTypingTask;
 
 /**
- * AWTで自動キー入力を行うクラス.
+ * AWTで自動キー入力を行うクラス。
+ *
  * @author hiro
  */
 public class TypingTask extends AbstractTypingTask<Integer> {
     
     /**
-     * コンストラクタ.
+     * コンストラクタ。
+     *
      * @throws AWTException
      */
     public TypingTask() throws AWTException {
@@ -139,6 +141,4 @@ public class TypingTask extends AbstractTypingTask<Integer> {
             return KeyCode.END;
         }
         return KeyCode.UNDEFINED;
-    }
-    
-}
+    }}

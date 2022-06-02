@@ -15,7 +15,8 @@ public class ValidationException extends com.hirohiro716.validate.ValidationExce
     private static final long serialVersionUID = 1733617763538002291L;
 
     /**
-     * コンストラクタ. 値検証失敗の新規例外を構築する.
+     * コンストラクタ. 値検証失敗の新規例外を構築する。
+     *
      * @param message 詳細メッセージ
      * @param causeRow 例外の原因となった行
      * @param causeColumn 例外の原因となった項目
@@ -27,7 +28,8 @@ public class ValidationException extends com.hirohiro716.validate.ValidationExce
     }
 
     /**
-     * コンストラクタ. 値検証失敗の新規例外を構築する.
+     * コンストラクタ. 値検証失敗の新規例外を構築する。
+     *
      * @param message 詳細メッセージ
      * @param causeColumn 例外の原因となった項目
      */
@@ -39,7 +41,8 @@ public class ValidationException extends com.hirohiro716.validate.ValidationExce
     private RudeArray causeRow;
     
     /**
-     * 例外の原因となった行を取得する.
+     * 例外の原因となった行を取得する。
+     *
      * @return RudeArray
      */
     public RudeArray getCauseRow() {
@@ -49,11 +52,10 @@ public class ValidationException extends com.hirohiro716.validate.ValidationExce
     private InterfaceProperty causeColumn;
     
     /**
-     * 例外の原因となった項目を取得する.
+     * 例外の原因となった項目を取得する。
+     *
      * @return InterfaceColumn
      */
     public InterfaceProperty getCauseColumn() {
         return this.causeColumn;
-    }
-    
-}
+    }}

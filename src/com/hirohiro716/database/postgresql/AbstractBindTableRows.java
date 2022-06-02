@@ -5,13 +5,15 @@ import java.sql.SQLException;
 import com.hirohiro716.RudeArray;
 
 /**
- * ORMのようなものを提供する抽象クラス.
+ * ORMのようなものを提供する抽象クラス。
+ *
  * @author hiro
  */
 public abstract class AbstractBindTableRows extends com.hirohiro716.database.AbstractBindTableRows {
 
     /**
-     * コンストラクタ.
+     * コンストラクタ。
+     *
      * @param postgreSQL
      */
     public AbstractBindTableRows(PostgreSQL postgreSQL) {

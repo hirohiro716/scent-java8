@@ -4,7 +4,8 @@ import java.util.ArrayList;
 import java.util.Date;
 
 /**
- * Where文を作成するクラス.
+ * Where文を作成するクラス。
+ *
  * @author hiro
  */
 public class WhereSet implements Cloneable {
@@ -71,7 +72,8 @@ public class WhereSet implements Cloneable {
         private String string;
 
         /**
-         * データベース用比較演算子を取得する.
+         * データベース用比較演算子を取得する。
+         *
          * @return 比較演算子
          */
         @Override
@@ -84,7 +86,8 @@ public class WhereSet implements Cloneable {
     private ArrayList<Where> wheres = new ArrayList<>();
     
     /**
-     * Where条件を追加する.
+     * Where条件を追加する。
+     *
      * @param where Where条件
      */
     public void add(Where where) {
@@ -92,7 +95,8 @@ public class WhereSet implements Cloneable {
     }
 
     /**
-     * Where条件を追加する.
+     * Where条件を追加する。
+     *
      * @param column カラム名
      * @param comparison 比較演算子
      * @param value 比較値
@@ -102,7 +106,8 @@ public class WhereSet implements Cloneable {
     }
 
     /**
-     * Where条件を追加する.
+     * Where条件を追加する。
+     *
      * @param column カラム名
      * @param comparison 比較演算子
      * @param isNot NOTかどうか
@@ -115,7 +120,8 @@ public class WhereSet implements Cloneable {
     }
 
     /**
-     * Where条件を追加する.
+     * Where条件を追加する。
+     *
      * @param column カラム名
      * @param comparison 比較演算子
      * @param value 比較値
@@ -127,7 +133,8 @@ public class WhereSet implements Cloneable {
     }
 
     /**
-     * BETWEEN演算子でWhere条件を追加する.
+     * BETWEEN演算子でWhere条件を追加する。
+     *
      * @param column カラム名
      * @param value1 比較値1
      * @param value2 比較値2
@@ -137,7 +144,8 @@ public class WhereSet implements Cloneable {
     }
 
     /**
-     * BETWEEN演算子でWhere条件を追加する.
+     * BETWEEN演算子でWhere条件を追加する。
+     *
      * @param column カラム名
      * @param isNot NOTかどうか
      * @param value1 比較値1
@@ -150,7 +158,8 @@ public class WhereSet implements Cloneable {
     }
 
     /**
-     * BETWEEN演算子でWhere条件を追加する.
+     * BETWEEN演算子でWhere条件を追加する。
+     *
      * @param column カラム名
      * @param value1 比較値1
      * @param value2 比較値2
@@ -162,7 +171,8 @@ public class WhereSet implements Cloneable {
     }
 
     /**
-     * IN演算子でWhere条件を追加する.
+     * IN演算子でWhere条件を追加する。
+     *
      * @param column カラム名
      * @param values 値
      */
@@ -171,7 +181,8 @@ public class WhereSet implements Cloneable {
     }
 
     /**
-     * IN演算子でWhere条件を追加する.
+     * IN演算子でWhere条件を追加する。
+     *
      * @param column カラム名
      * @param values 値
      */
@@ -182,7 +193,8 @@ public class WhereSet implements Cloneable {
     }
     
     /**
-     * IS NULL演算子でWhere条件を追加する.
+     * IS NULL演算子でWhere条件を追加する。
+     *
      * @param column カラム名
      */
     public void addIsNull(String column) {
@@ -190,7 +202,8 @@ public class WhereSet implements Cloneable {
     }
     
     /**
-     * IS NULL演算子でWhere条件を追加する.
+     * IS NULL演算子でWhere条件を追加する。
+     *
      * @param column カラム名
      */
     public void addIsNullWithNot(String column) {
@@ -200,7 +213,8 @@ public class WhereSet implements Cloneable {
     }
 
     /**
-     * 「カラム1 = ? AND カラム2 = ?」のようなパラメータWhere句を生成する.
+     * 「カラム1 = ? AND カラム2 = ?」のようなパラメータWhere句を生成する。
+     *
      * @return パラメータWhere句
      */
     public String buildParameterClause() {
@@ -215,7 +229,8 @@ public class WhereSet implements Cloneable {
     }
 
     /**
-     * buildParameterClauseメソッドで作成したWhere句に対するパラメータを生成する.
+     * buildParameterClauseメソッドで作成したWhere句に対するパラメータを生成する。
+     *
      * @return パラメータ
      */
     public Object[] buildParameters() {
@@ -250,7 +265,8 @@ public class WhereSet implements Cloneable {
     }
 
     /**
-     * 内部で保持しているWhereクラスリストを取得する.
+     * 内部で保持しているWhereクラスリストを取得する。
+     *
      * @return Whereクラスリスト
      */
     public ArrayList<Where> getWheres() {
@@ -258,7 +274,8 @@ public class WhereSet implements Cloneable {
     }
 
     /**
-     * 内部で保持しているWhereオブジェクトを検索する.
+     * 内部で保持しているWhereオブジェクトを検索する。
+     *
      * @param column Whereオブジェクトに設定されているcolumn
      * @return 該当するWhereオブジェクト
      */
@@ -272,14 +289,16 @@ public class WhereSet implements Cloneable {
     }
 
     /**
-     * 内部で保持しているWhereクラスリストを破棄する.
+     * 内部で保持しているWhereクラスリストを破棄する。
+     *
      */
     public void clear() {
         this.wheres.clear();
     }
 
     /**
-     * 内部で保持しているWhereの数を取得する.
+     * 内部で保持しているWhereの数を取得する。
+     *
      * @return Where数
      */
     public int size() {
@@ -299,13 +318,15 @@ public class WhereSet implements Cloneable {
     }
 
     /**
-     * Whereの１つの条件を表すクラス.
+     * Whereの１つの条件を表すクラス。
+     *
      * @author hiro
      */
     public static class Where implements Cloneable {
     	
         /**
-         * コンストラクタ.
+         * コンストラクタ。
+         *
          * @param column カラム名
          * @param comparison 比較演算子
          * @param values 比較値
@@ -320,7 +341,8 @@ public class WhereSet implements Cloneable {
         }
         
         /**
-         * 「カラム = ?」のようなパラメータWhere句を生成する.
+         * 「カラム = ?」のようなパラメータWhere句を生成する。
+         *
          * @return パラメータWhere句
          */
         public String buildParameterClause() {
@@ -368,7 +390,8 @@ public class WhereSet implements Cloneable {
         private String column;
 
         /**
-         * カラム名を取得する.
+         * カラム名を取得する。
+         *
          * @return column
          */
         public String getColumn() {
@@ -376,7 +399,8 @@ public class WhereSet implements Cloneable {
         }
 
         /**
-         * カラム名をセットする.
+         * カラム名をセットする。
+         *
          * @param column
          */
         public void setColumn(String column) {
@@ -386,7 +410,8 @@ public class WhereSet implements Cloneable {
         private Comparison comparison;
 
         /**
-         * 比較演算子を取得する.
+         * 比較演算子を取得する。
+         *
          * @return comparison
          */
         public Comparison getComparison() {
@@ -394,7 +419,8 @@ public class WhereSet implements Cloneable {
         }
 
         /**
-         * 比較演算子をセットする.
+         * 比較演算子をセットする。
+         *
          * @param comparison
          */
         public void setComparison(Comparison comparison) {
@@ -404,7 +430,8 @@ public class WhereSet implements Cloneable {
         private ArrayList<Object> values;
 
         /**
-         * 比較値を取得する.
+         * 比較値を取得する。
+         *
          * @return value
          */
         public Object getValue() {
@@ -416,7 +443,8 @@ public class WhereSet implements Cloneable {
         }
 
         /**
-         * 比較値その２を取得する.
+         * 比較値その２を取得する。
+         *
          * @return value
          */
         public Object getValue2() {
@@ -428,7 +456,8 @@ public class WhereSet implements Cloneable {
         }
 
         /**
-         * 比較値をセットする.
+         * 比較値をセットする。
+         *
          * @param value
          */
         public void setValue(Object value) {
@@ -466,7 +495,8 @@ public class WhereSet implements Cloneable {
         }
 
         /**
-         * 条件がNOTかどうかをセットする.
+         * 条件がNOTかどうかをセットする。
+         *
          * @param isNot
          */
         public void setNot(boolean isNot) {

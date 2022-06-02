@@ -11,14 +11,16 @@ import com.google.zxing.common.BitMatrix;
 import com.google.zxing.qrcode.QRCodeWriter;
 
 /**
- * java.awtでQRコードを生成するクラス.
+ * java.awtでQRコードを生成するクラス。
+ *
  * 
  * @author hiro
  */
 public class QRCodeHelper {
     
     /**
-     * QRコードのBufferedImageオブジェクトを作成する.
+     * QRコードのBufferedImageオブジェクトを作成する。
+     *
      * @param contents 内容
      * @param width 幅ピクセル
      * @param height 高さピクセル
@@ -32,7 +34,8 @@ public class QRCodeHelper {
     }
     
     /**
-     * QRコードのJPEG画像を保存する.
+     * QRコードのJPEG画像を保存する。
+     *
      * @param contents 内容
      * @param width 幅ピクセル
      * @param height 高さピクセル
@@ -41,6 +44,4 @@ public class QRCodeHelper {
      */
     public static void writeJpegFile(String contents, int width, int height, File file) throws Exception {
         ImageIO.write(createBufferedImage(contents, width, height), "jpg", file);
-    }
-    
-}
+    }}

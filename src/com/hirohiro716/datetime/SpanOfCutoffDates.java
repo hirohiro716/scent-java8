@@ -7,13 +7,15 @@ import com.hirohiro716.ArrayHelper;
 import com.hirohiro716.datetime.Datetime.Span;
 
 /**
- * 締め日と締め日の間の期間のクラス.
+ * 締め日と締め日の間の期間のクラス。
+ *
  * @author hiro
  */
 public class SpanOfCutoffDates {
     
     /**
-     * コンストラクタ.
+     * コンストラクタ。
+     *
      * @param startLimitDate 求める期間を制限する下限
      * @param endLimitDate 求める期間を制限する上限
      * @param cutoffDates 締め日
@@ -32,7 +34,8 @@ public class SpanOfCutoffDates {
     }
     
     /**
-     * コンストラクタ.
+     * コンストラクタ。
+     *
      * @param startLimitDate 求める期間を制限する下限
      * @param endLimitDate 求める期間を制限する上限
      * @param cutoffDates 締め日
@@ -44,7 +47,8 @@ public class SpanOfCutoffDates {
     private Date startLimitDate;
     
     /**
-     * 求める期間を制限する下限を取得する.
+     * 求める期間を制限する下限を取得する。
+     *
      * @return Date 求める期間を制限するための下限日
      */
     public Date getStartLimitDate() {
@@ -54,7 +58,8 @@ public class SpanOfCutoffDates {
     private Date endLimitDate;
     
     /**
-     * 求める期間を制限する上限を取得する.
+     * 求める期間を制限する上限を取得する。
+     *
      * @return Date 求める期間を制限するための上限日
      */
     public Date getEndLimitDate() {
@@ -64,7 +69,8 @@ public class SpanOfCutoffDates {
     private ArrayList<Integer> cutoffDates = new ArrayList<>();
     
     /**
-     * 締め日を追加する.
+     * 締め日を追加する。
+     *
      * @param cutoffDate
      */
     private void addCutoffDate(Integer cutoffDate) {
@@ -79,7 +85,8 @@ public class SpanOfCutoffDates {
     }
     
     /**
-     * 締め日を昇順に並び替える.
+     * 締め日を昇順に並び替える。
+     *
      */
     private void sortCutoffDates() {
         ArrayList<Integer> newCutoffDates = new ArrayList<>();
@@ -92,7 +99,8 @@ public class SpanOfCutoffDates {
     }
     
     /**
-     * コンストラクタで指定した締め日を取得する.
+     * コンストラクタで指定した締め日を取得する。
+     *
      * @return 締め日の配列(1〜28)28を超える場合は末締め扱い
      */
     public Integer[] getCutoffDates() {
@@ -102,7 +110,8 @@ public class SpanOfCutoffDates {
     private ArrayList<Span> spans;
 
     /**
-     * 締め日で分割した期間の配列を取得する.
+     * 締め日で分割した期間の配列を取得する。
+     *
      */
     private void calculateSpans() {
         this.spans = new ArrayList<>();
@@ -129,7 +138,8 @@ public class SpanOfCutoffDates {
     }
     
     /**
-     * 対象日に最も近い締め日を取得する.
+     * 対象日に最も近い締め日を取得する。
+     *
      * @param datetime
      * @return 締め日
      */
@@ -152,11 +162,10 @@ public class SpanOfCutoffDates {
     }
     
     /**
-     * 締め日で分割した期間の配列を取得する.
+     * 締め日で分割した期間の配列を取得する。
+     *
      * @return 締め日で分割した期間の配列
      */
     public Span[] getSpans() {
         return this.spans.toArray(new Span[] {});
-    }
-    
-}
+    }}

@@ -11,7 +11,8 @@ import com.hirohiro716.validate.ValidationException;
 public class JAN13Helper {
 
     /**
-     * JAN13コードの有効性チェックを行います.
+     * JAN13コードの有効性チェックを行います。
+     *
      * @param barcode バーコード
      * @return 結果
      */
@@ -35,7 +36,8 @@ public class JAN13Helper {
     }
 
     /**
-     * チェックデジットを除いた値を取得します.
+     * チェックデジットを除いた値を取得します。
+     *
      * @param barcode バーコード
      * @return チェックデジットを除いた値12桁
      */
@@ -51,7 +53,8 @@ public class JAN13Helper {
     }
 
     /**
-     * チェックデジットを除いた値をノーチェックで取得します.
+     * チェックデジットを除いた値をノーチェックで取得します。
+     *
      * @param barcode バーコード
      * @return チェックデジットを除いた値12桁
      */
@@ -64,7 +67,8 @@ public class JAN13Helper {
     }
 
     /**
-     * チェックデジットを算出します.
+     * チェックデジットを算出します。
+     *
      * @param barcode バーコード
      * @return チェックデジット
      */

@@ -7,7 +7,8 @@ import com.hirohiro716.ArrayHelper;
 import com.hirohiro716.StringConverter;
 
 /**
- * 自動のキー入力機能の抽象クラス.
+ * 自動のキー入力機能の抽象クラス。
+ *
  * @author hiro
  * @param <T> KeyCodeの型
  */
@@ -109,7 +110,8 @@ public abstract class AbstractTypingTask<T> implements InterfaceTypingTask<T> {
     }
 
     /**
-     * タスクの種類列挙型.
+     * タスクの種類列挙型。
+     *
      * @author hiro
      */
     private enum TaskType {
@@ -124,7 +126,8 @@ public abstract class AbstractTypingTask<T> implements InterfaceTypingTask<T> {
         ;
         
         /**
-         * 文字列からTaskTypeの取得を試みる.
+         * 文字列からTaskTypeの取得を試みる。
+         *
          * @param string 文字列 
          * @return TaskType
          */
@@ -137,18 +140,18 @@ public abstract class AbstractTypingTask<T> implements InterfaceTypingTask<T> {
                 }
             }
             return null;
-        }
-        
-    }
+        }    }
     
     /**
-     * 自動キー入力のタスクのクラス.
+     * 自動キー入力のタスクのクラス。
+     *
      * @author hiro
      */
     private class Task {
 
         /**
-         * キー入力するTaskを作成する.
+         * キー入力するTaskを作成する。
+         *
          * @param keyCodes
          */
         public Task(ArrayList<T> keyCodes) {
@@ -159,7 +162,8 @@ public abstract class AbstractTypingTask<T> implements InterfaceTypingTask<T> {
         }
         
         /**
-         * 待機するTaskを作成する.
+         * 待機するTaskを作成する。
+         *
          * @param milliseconds ミリ秒
          */
         public Task(long milliseconds) {
@@ -170,7 +174,8 @@ public abstract class AbstractTypingTask<T> implements InterfaceTypingTask<T> {
         private TaskType taskType;
         
         /**
-         * タスクの種類を取得する.
+         * タスクの種類を取得する。
+         *
          * @return タスクの種類
          */
         public TaskType getTaskType() {
@@ -180,7 +185,8 @@ public abstract class AbstractTypingTask<T> implements InterfaceTypingTask<T> {
         private ArrayList<T> keyCodes;
         
         /**
-         * KeyCodeを取得する.
+         * KeyCodeを取得する。
+         *
          * @return KeyCode
          */
         public ArrayList<T> getKeyCodes() {
@@ -190,13 +196,12 @@ public abstract class AbstractTypingTask<T> implements InterfaceTypingTask<T> {
         private long milliseconds;
         
         /**
-         * 待機時間を取得する.
+         * 待機時間を取得する。
+         *
          * @return milliseconds
          */
         public long getMilliseconds() {
             return this.milliseconds;
         }
 
-    }
-    
-}
+    }}

@@ -10,7 +10,8 @@ import com.hirohiro716.database.DataNotFoundException;
 import com.hirohiro716.RudeArray;
 
 /**
- * PostgreSQLへのJDBC接続を補助するクラス.
+ * PostgreSQLへのJDBC接続を補助するクラス。
+ *
  * @author hiro
  */
 public class PostgreSQL extends AbstractDatabase {
@@ -22,7 +23,8 @@ public class PostgreSQL extends AbstractDatabase {
     }
 
     /**
-     * PostgreSQLデータベースに接続する.
+     * PostgreSQLデータベースに接続する。
+     *
      * @param server サーバー名(IP)
      * @param dbName データベース名
      * @param user ユーザー名
@@ -37,7 +39,8 @@ public class PostgreSQL extends AbstractDatabase {
     }
 
     /**
-     * PostgreSQLデータベースに接続する.
+     * PostgreSQLデータベースに接続する。
+     *
      * @param server サーバー名(IP)
      * @param dbName データベース名
      * @param user ユーザー名
@@ -53,7 +56,8 @@ public class PostgreSQL extends AbstractDatabase {
     }
 
     /**
-     * テーブルの読み書きをロックする.
+     * テーブルの読み書きをロックする。
+     *
      * @param tableName テーブル名
      * @throws SQLException
      */
@@ -63,7 +67,8 @@ public class PostgreSQL extends AbstractDatabase {
     }
 
     /**
-     * テーブルの書き込みをロックする.
+     * テーブルの書き込みをロックする。
+     *
      * @param tableName テーブル名
      * @throws SQLException
      */
@@ -73,7 +78,8 @@ public class PostgreSQL extends AbstractDatabase {
     }
 
     /**
-     * データベースサーバーの現在の時刻を取得する.
+     * データベースサーバーの現在の時刻を取得する。
+     *
      * @return 現在の時刻
      * @throws SQLException
      */

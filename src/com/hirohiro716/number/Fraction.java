@@ -33,7 +33,8 @@ public enum Fraction {
     private int value;
 
     /**
-     * それぞれの端数処理を表す数値を取得する.
+     * それぞれの端数処理を表す数値を取得する。
+     *
      * @return 値
      */
     public int getValue() {
@@ -43,7 +44,8 @@ public enum Fraction {
     private String description;
 
     /**
-     * 端数処理の説明を取得する.
+     * 端数処理の説明を取得する。
+     *
      * @return 説明
      */
     public String getDescription() {
@@ -51,7 +53,8 @@ public enum Fraction {
     }
 
     /**
-     * 端数処理を行い結果を取得する.
+     * 端数処理を行い結果を取得する。
+     *
      * @param value 対象値
      * @return 端数処理されたlong
      */
@@ -72,7 +75,8 @@ public enum Fraction {
     }
 
     /**
-     * 端数処理を行い結果を取得する.
+     * 端数処理を行い結果を取得する。
+     *
      * @param value 対象値
      * @param digit 桁数
      * @return 端数処理された値
@@ -94,7 +98,8 @@ public enum Fraction {
     }
 
     /**
-     * 数値から端数処理を取得する.
+     * 数値から端数処理を取得する。
+     *
      * @param value 端数処理を表す数値
      * @return Fraction
      */
@@ -108,7 +113,8 @@ public enum Fraction {
     }
 
     /**
-     * 端数処理一覧の連想配列を取得する.
+     * 端数処理一覧の連想配列を取得する。
+     *
      * @return LinkedHashMap
      */
     public static LinkedHashMap<Integer, String> createLinkedHashMap() {

@@ -3,13 +3,15 @@ package com.hirohiro716;
 import static com.hirohiro716.StringConverter.*;
 
 /**
- * 例外を処理するための補助メソッドクラス.
+ * 例外を処理するための補助メソッドクラス。
+ *
  * @author hiro
  */
 public class ExceptionHelper {
     
     /**
-     * 例外から詳細メッセージを作成する.
+     * 例外から詳細メッセージを作成する。
+     *
      * @param exception 発生例外
      * @return 詳細メッセージ
      */
@@ -18,7 +20,8 @@ public class ExceptionHelper {
     }
     
     /**
-     * 新しいメッセージと例外から詳細メッセージを作成する.
+     * 新しいメッセージと例外から詳細メッセージを作成する。
+     *
      * @param newMessage 新しいメッセージ
      * @param exception 発生例外
      * @return 詳細メッセージ
@@ -44,6 +47,4 @@ public class ExceptionHelper {
             message.append(exception.getClass().getName());
         }
         return message.toString();
-    }
-    
-}
+    }}

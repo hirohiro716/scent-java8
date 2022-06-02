@@ -10,13 +10,15 @@ import com.hirohiro716.OSHelper;
 import com.hirohiro716.robot.InterfaceTypingRobotJapanese;
 
 /**
- * AWTのRobotクラスに日本語用の機能を足したクラス.
+ * AWTのRobotクラスに日本語用の機能を足したクラス。
+ *
  * @author hiro
  */
 public class RobotJapanese extends Robot implements InterfaceTypingRobotJapanese<Integer> {
 
     /**
-     * コンストラクタ.
+     * コンストラクタ。
+     *
      * @throws AWTException
      */
     public RobotJapanese() throws AWTException {
@@ -36,7 +38,8 @@ public class RobotJapanese extends Robot implements InterfaceTypingRobotJapanese
     private List<Integer[]> changeIMEOffKeys = new ArrayList<>();
     
     /**
-     * IMEをOFFにするためのホットキーをセットする.
+     * IMEをOFFにするためのホットキーをセットする。
+     *
      * @param keyCodes
      */
     public void setChangeIMEOffKeys(Integer[]... keyCodes) {
@@ -78,7 +81,8 @@ public class RobotJapanese extends Robot implements InterfaceTypingRobotJapanese
     private List<Integer[]> changeIMEHiraganaKeys = new ArrayList<>();
     
     /**
-     * IMEをひらがなにするためのホットキーをセットする.
+     * IMEをひらがなにするためのホットキーをセットする。
+     *
      * @param keyCodes
      */
     public void setChangeIMEHiraganaKeys(Integer[]... keyCodes) {
@@ -118,7 +122,8 @@ public class RobotJapanese extends Robot implements InterfaceTypingRobotJapanese
     private List<Integer[]> changeIMEKatakanaKeys = new ArrayList<>();
     
     /**
-     * IMEをカタカナにするためのホットキーをセットする.
+     * IMEをカタカナにするためのホットキーをセットする。
+     *
      * @param keyCodes
      */
     public void setChangeIMEKatakanaKeys(Integer[]... keyCodes) {
@@ -158,7 +163,8 @@ public class RobotJapanese extends Robot implements InterfaceTypingRobotJapanese
     private List<Integer[]> changeIMEKatakanaNarrowKeys = new ArrayList<>();
     
     /**
-     * IMEをｶﾀｶﾅにするためのホットキーをセットする.
+     * IMEをｶﾀｶﾅにするためのホットキーをセットする。
+     *
      * @param keyCodes
      */
     public void setChangeIMEKatakanaNarrowKeys(Integer[]... keyCodes) {

@@ -13,7 +13,8 @@ import java.util.Properties;
 import com.hirohiro716.file.FileHelper;
 
 /**
- * プロパティXMLファイルを作成します.
+ * プロパティXMLファイルを作成します。
+ *
  * @author hiro
  */
 public class PropertyXML {
@@ -28,7 +29,8 @@ public class PropertyXML {
     private String comment = "This was made by com.hirohiro716.file.PropertyXML";
 
     /**
-     * XMLファイルの場所を指定する. ファイルがない場合は作成される.
+     * XMLファイルの場所を指定する. ファイルがない場合は作成される。
+     *
      * @param fileLocation ファイルのフルパス
      * @throws IOException
      */
@@ -46,7 +48,8 @@ public class PropertyXML {
     }
     
     /**
-     * XMLファイルの場所を指定する. ファイルがない場合は作成される.
+     * XMLファイルの場所を指定する. ファイルがない場合は作成される。
+     *
      * @param file ファイル
      * @throws IOException
      */
@@ -64,7 +67,8 @@ public class PropertyXML {
     }
     
     /**
-     * 設定値を取得する.
+     * 設定値を取得する。
+     *
      * @param name プロパティ名
      * @return 値
      */
@@ -79,7 +83,8 @@ public class PropertyXML {
     }
 
     /**
-     * 値を保存する.
+     * 値を保存する。
+     *
      * @param name プロパティ名
      * @param value 値
      * @throws IOException
@@ -93,7 +98,8 @@ public class PropertyXML {
     }
     
     /**
-     * 値を削除する.
+     * 値を削除する。
+     *
      * @param name プロパティ名
      * @throws IOException
      */
@@ -106,7 +112,8 @@ public class PropertyXML {
     }
 
     /**
-     * 値をすべて削除する.
+     * 値をすべて削除する。
+     *
      * @throws IOException
      */
     public void clear() throws IOException {
@@ -118,7 +125,8 @@ public class PropertyXML {
     }
 
     /**
-     * プロパティが存在するか確認する.
+     * プロパティが存在するか確認する。
+     *
      * @param name
      * @return 結果
      */
@@ -130,7 +138,8 @@ public class PropertyXML {
     }
     
     /**
-     * 保存済みのすべてのプロパティを取得する.
+     * 保存済みのすべてのプロパティを取得する。
+     *
      * @return HashMap<String, String>
      */
     public HashMap<String, String> createHashMap() {
@@ -143,7 +152,8 @@ public class PropertyXML {
     }
 
     /**
-     * コメントをセットします. データ作成時のみ意味がある.
+     * コメントをセットします. データ作成時のみ意味がある。
+     *
      * @param value 値
      */
     public void setComment(String value) {
@@ -151,7 +161,8 @@ public class PropertyXML {
     }
 
     /**
-     * ファイルを保存する.
+     * ファイルを保存する。
+     *
      * @throws IOException 
      */
     private void saveFile() throws IOException {

@@ -7,21 +7,24 @@ import com.hirohiro716.RudeArray;
 import com.hirohiro716.StringConverter;
 
 /**
- * JSON(RFC8259)オブジェクトクラス.
+ * JSON(RFC8259)オブジェクトクラス。
+ *
  * 
  * @author hiro
  */
 public class JSONObject {
     
     /**
-     * コンストラクタ.
+     * コンストラクタ。
+     *
      */
     public JSONObject() {
         super();
     }
     
     /**
-     * コンストラクタ.
+     * コンストラクタ。
+     *
      * @param json
      */
     public JSONObject(String json) {
@@ -49,7 +52,8 @@ public class JSONObject {
     }
 
     /**
-     * 文字列として取得する.
+     * 文字列として取得する。
+     *
      * @return 文字列 キャストに失敗した場合はnull
      */
     public String getString() {
@@ -57,7 +61,8 @@ public class JSONObject {
     }
     
     /**
-     * 文字列をセットする.
+     * 文字列をセットする。
+     *
      * @param value
      */
     public void setString(String value) {
@@ -66,7 +71,8 @@ public class JSONObject {
     }
     
     /**
-     * 文字列を取得する.
+     * 文字列を取得する。
+     *
      * @param name 
      * @return 文字列 キャストに失敗した場合はnull
      */
@@ -75,7 +81,8 @@ public class JSONObject {
     }
     
     /**
-     * JSONオブジェクト内に名前を指定して文字列をセットする.
+     * JSONオブジェクト内に名前を指定して文字列をセットする。
+     *
      * @param name
      * @param value
      */
@@ -84,7 +91,8 @@ public class JSONObject {
     }
 
     /**
-     * 数値を取得する.
+     * 数値を取得する。
+     *
      * @return Number キャストに失敗した場合はnull
      */
     public Number getNumber() {
@@ -92,7 +100,8 @@ public class JSONObject {
     }
     
     /**
-     * 数値をセットする.
+     * 数値をセットする。
+     *
      * @param value
      */
     public void setNumber(Number value) {
@@ -101,7 +110,8 @@ public class JSONObject {
     }
     
     /**
-     * 数値を取得する.
+     * 数値を取得する。
+     *
      * @param name
      * @return Number キャストに失敗した場合はnull
      */
@@ -110,7 +120,8 @@ public class JSONObject {
     }
     
     /**
-     * JSONオブジェクト内に名前を指定して数値をセットする.
+     * JSONオブジェクト内に名前を指定して数値をセットする。
+     *
      * @param name
      * @param value
      */
@@ -119,7 +130,8 @@ public class JSONObject {
     }
     
     /**
-     * 真偽値を取得する.
+     * 真偽値を取得する。
+     *
      * @return Boolean キャストに失敗した場合はnull
      */
     public Boolean getBoolean() {
@@ -127,7 +139,8 @@ public class JSONObject {
     }
     
     /**
-     * 真偽値をセットする.
+     * 真偽値をセットする。
+     *
      * @param value
      */
     public void setBoolean(boolean value) {
@@ -136,7 +149,8 @@ public class JSONObject {
     }
     
     /**
-     * 真偽値を取得する.
+     * 真偽値を取得する。
+     *
      * @param name
      * @return Boolean キャストに失敗した場合はnull
      */
@@ -145,7 +159,8 @@ public class JSONObject {
     }
     
     /**
-     * JSONオブジェクト内に名前を指定して真偽値をセットする.
+     * JSONオブジェクト内に名前を指定して真偽値をセットする。
+     *
      * @param name
      * @param value
      */
@@ -154,7 +169,8 @@ public class JSONObject {
     }
     
     /**
-     * 配列を取得する.
+     * 配列を取得する。
+     *
      * @return Object[] キャストに失敗した場合はnull
      */
     public Object[] getArray() {
@@ -166,7 +182,8 @@ public class JSONObject {
     }
     
     /**
-     * 配列をセットする.
+     * 配列をセットする。
+     *
      * @param values
      */
     public void setArray(Object[] values) {
@@ -175,7 +192,8 @@ public class JSONObject {
     }
 
     /**
-     * 配列を取得する.
+     * 配列を取得する。
+     *
      * @param name
      * @return 結果
      */
@@ -188,7 +206,8 @@ public class JSONObject {
     }
     
     /**
-     * JSONオブジェクト内に名前を指定して配列をセットする.
+     * JSONオブジェクト内に名前を指定して配列をセットする。
+     *
      * @param name
      * @param values
      */
@@ -197,7 +216,8 @@ public class JSONObject {
     }
     
     /**
-     * JSONオブジェクトを取得する.
+     * JSONオブジェクトを取得する。
+     *
      * @param name
      * @return JSONObject キャストに失敗した場合はnull
      */
@@ -210,7 +230,8 @@ public class JSONObject {
     }
     
     /**
-     * JSONオブジェクト内に名前を指定してJSONオブジェクトをセットする.
+     * JSONオブジェクト内に名前を指定してJSONオブジェクトをセットする。
+     *
      * @param name
      * @param jsonObject
      */
@@ -219,7 +240,8 @@ public class JSONObject {
     }
     
     /**
-     * JSONを解析して連想配列で保持する.
+     * JSONを解析して連想配列で保持する。
+     *
      * @param jsonObjectString
      */
     private void parseJSONObject(String jsonObjectString) {
@@ -238,7 +260,8 @@ public class JSONObject {
     }
 
     /**
-     * JSONオブジェクトや配列などの文字列を分割する.
+     * JSONオブジェクトや配列などの文字列を分割する。
+     *
      * @param jsonArrayString
      * @param delimiter
      * @return 配列
@@ -312,7 +335,8 @@ public class JSONObject {
     }
 
     /**
-     * 特定の文字列{}[]に囲まれた内部の値をエスケープやネストを考慮して文字列として取得する.
+     * 特定の文字列{}[]に囲まれた内部の値をエスケープやネストを考慮して文字列として取得する。
+     *
      * @param wrapJsonString 抽出対象の文字列
      * @param openingBracket 開始記号
      * @param endingBracket 終了記号
@@ -391,7 +415,8 @@ public class JSONObject {
     }
     
     /**
-     * JSONの文字列を整形する.
+     * JSONの文字列を整形する。
+     *
      * @param jsonStringValue
      * @return 整形後文字列
      */
@@ -457,7 +482,8 @@ public class JSONObject {
     }
     
     /**
-     * JSONの値部分をオブジェクトに変換する.
+     * JSONの値部分をオブジェクトに変換する。
+     *
      * @param jsonValuePart
      * @return 値オブジェクト
      */
@@ -492,7 +518,8 @@ public class JSONObject {
     }
     
     /**
-     * 内部のオブジェクトからJSONを出力する.
+     * 内部のオブジェクトからJSONを出力する。
+     *
      * @return JSON
      */
     public String buildJSON() {
@@ -515,7 +542,8 @@ public class JSONObject {
     }
     
     /**
-     * 値をJSONに変換する.
+     * 値をJSONに変換する。
+     *
      * @param value
      * @return JSON
      */
@@ -569,6 +597,4 @@ public class JSONObject {
             json.append("null");
         }
         return json.toString();
-    }
-    
-}
+    }}

@@ -1,19 +1,22 @@
 package com.hirohiro716;
 
 /**
- * 設定項目などを表すインターフェース.
+ * 設定項目などを表すインターフェース。
+ *
  * @author hiro
  */
 public interface InterfaceProperty {
     
     /**
-     * 項目の日本語名を取得する.
+     * 項目の日本語名を取得する。
+     *
      * @return 日本語名
      */
     public abstract String getLogicalName();
     
     /**
-     * 項目の物理名を取得する.
+     * 項目の物理名を取得する。
+     *
      * @return 物理名
      */
     public default String getPhysicalName() {
@@ -21,7 +24,8 @@ public interface InterfaceProperty {
     }
     
     /**
-     * 項目の初期値を取得する.
+     * 項目の初期値を取得する。
+     *
      * @return 初期値
      */
     public abstract Object getDefaultValue();

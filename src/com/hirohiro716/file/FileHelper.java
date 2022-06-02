@@ -22,7 +22,8 @@ import com.hirohiro716.StringConverter;
 import static com.hirohiro716.file.FileHelper.FileExtension.*;
 
 /**
- * ファイル操作を補助します.
+ * ファイル操作を補助します。
+ *
  * @author hiro
  */
 public class FileHelper {
@@ -174,7 +175,8 @@ public class FileHelper {
         }
 
         /**
-         * ファイル名から一致する拡張子を取得する.
+         * ファイル名から一致する拡張子を取得する。
+         *
          * @param fileName ファイル名
          * @return 拡張子
          */
@@ -228,7 +230,8 @@ public class FileHelper {
         }
 
         /**
-         * ファイル拡張子から種類を取得する.
+         * ファイル拡張子から種類を取得する。
+         *
          * @param fileExtension 拡張子
          * @return 種類
          */
@@ -245,7 +248,8 @@ public class FileHelper {
     }
 
     /**
-     * ファイルの所属するRootを取得する.
+     * ファイルの所属するRootを取得する。
+     *
      * @param file 対象ファイル
      * @return Root
      */
@@ -260,7 +264,8 @@ public class FileHelper {
     }
     
     /**
-     * ディレクトリ内のファイルをサブディレクトリを含めすべて取得する.
+     * ディレクトリ内のファイルをサブディレクトリを含めすべて取得する。
+     *
      * @param directory 対象ディレクトリ
      * @param filenameFilter フィルタ(nullも可)
      * @return 見つかったファイル
@@ -283,7 +288,8 @@ public class FileHelper {
     }
 
     /**
-     * フォルダを新規作成する.
+     * フォルダを新規作成する。
+     *
      * @param location 作成フォルダ
      * @return 結果
      */
@@ -298,7 +304,8 @@ public class FileHelper {
     }
 
     /**
-     * フォルダの存在を確認する.
+     * フォルダの存在を確認する。
+     *
      * @param location 確認フォルダ
      * @return 結果
      */
@@ -308,7 +315,8 @@ public class FileHelper {
     }
 
     /**
-     * ファイルの存在を確認する.
+     * ファイルの存在を確認する。
+     *
      * @param location 確認ファイル
      * @return 結果
      */
@@ -318,7 +326,8 @@ public class FileHelper {
     }
 
     /**
-     * URIを実行環境OS用に最適化されたパスに変換する.
+     * URIを実行環境OS用に最適化されたパスに変換する。
+     *
      * @param location 対象URI
      * @return 実行環境OS用パス
      */
@@ -347,7 +356,8 @@ public class FileHelper {
     }
 
     /**
-     * ファイルの親フォルダを取得する. 引数がフォルダの場合はそのまま返す.
+     * ファイルの親フォルダを取得する. 引数がフォルダの場合はそのまま返す。
+     *
      * @param location ファイル名
      * @return フォルダのFileオブジェクト
      */
@@ -366,7 +376,8 @@ public class FileHelper {
     }
 
     /**
-     * クラスのフルパスを取得する.
+     * クラスのフルパスを取得する。
+     *
      * @param c 取得するクラス
      * @return フルパス
      */
@@ -380,7 +391,8 @@ public class FileHelper {
     }
 
     /**
-     * クラスの親フォルダを取得する.
+     * クラスの親フォルダを取得する。
+     *
      * @param c 取得するクラス
      * @return 親フォルダ絶対パス
      */
@@ -390,7 +402,8 @@ public class FileHelper {
     }
 
     /**
-     * クラスのパッケージファイル名を取得する.
+     * クラスのパッケージファイル名を取得する。
+     *
      * @param c 取得するクラス
      * @return パッケージファイル名
      */
@@ -408,7 +421,8 @@ public class FileHelper {
     }
 
     /**
-     * パッケージの親フォルダを取得する.
+     * パッケージの親フォルダを取得する。
+     *
      * @param c 取得するクラス
      * @return 親フォルダ絶対パス
      */
@@ -418,7 +432,8 @@ public class FileHelper {
     }
 
     /**
-     * ファイルをコピーする.
+     * ファイルをコピーする。
+     *
      * @param orgFile コピー元ファイル
      * @param copyFile コピー先ファイル
      * @param bufferByteSize バッファ
@@ -436,7 +451,8 @@ public class FileHelper {
     }
 
     /**
-     * ファイルをコピーします.
+     * ファイルをコピーします。
+     *
      * @param orgInputStream コピー元ファイルストリーム
      * @param copyFile コピー先ファイル
      * @param bufferByteSize バッファ
@@ -454,7 +470,8 @@ public class FileHelper {
     }
     
     /**
-     * テキストファイルを作成する.
+     * テキストファイルを作成する。
+     *
      * @param contents 内容
      * @param file ファイルオブジェクト
      * @param charset 文字セット
@@ -468,7 +485,8 @@ public class FileHelper {
     }
 
     /**
-     * テキストファイルをデフォルトの文字セットを使用して作成する.
+     * テキストファイルをデフォルトの文字セットを使用して作成する。
+     *
      * @param contents 内容
      * @param file ファイルオブジェクト
      * @throws IOException
@@ -478,7 +496,8 @@ public class FileHelper {
     }
     
     /**
-     * テキストファイルに内容を読み込む.
+     * テキストファイルに内容を読み込む。
+     *
      * @param file ファイルオブジェクト
      * @param charset 文字セット
      * @return ファイルの内容
@@ -503,7 +522,8 @@ public class FileHelper {
     }
     
     /**
-     * テキストファイルの内容をデフォルトの文字セットを使用して読み込む.
+     * テキストファイルの内容をデフォルトの文字セットを使用して読み込む。
+     *
      * @param file ファイルオブジェクト
      * @return ファイルの内容
      * @throws IOException

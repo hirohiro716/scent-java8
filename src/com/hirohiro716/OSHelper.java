@@ -1,7 +1,8 @@
 package com.hirohiro716;
 
 /**
- * OSに関する処理をするクラス.
+ * OSに関する処理をするクラス。
+ *
  * @author hiro
  */
 public class OSHelper {
@@ -15,7 +16,8 @@ public class OSHelper {
     }
 
     /**
-     * OSを取得する.
+     * OSを取得する。
+     *
      * @return OS
      */
     public static OS findOS() {

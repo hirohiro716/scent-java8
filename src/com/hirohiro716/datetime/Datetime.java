@@ -7,7 +7,8 @@ import java.util.Date;
 import java.util.LinkedHashMap;
 
 /**
- * 日付関連を取り扱うクラス.
+ * 日付関連を取り扱うクラス。
+ *
  * @author hiro
  */
 public class Datetime {
@@ -20,14 +21,16 @@ public class Datetime {
     private Calendar calendar = (Calendar) Calendar.getInstance().clone();
 
     /**
-     * 現在の日時を指定してインスタンス生成する.
+     * 現在の日時を指定してインスタンス生成する。
+     *
      */
     public Datetime() {
         super();
     }
 
     /**
-     * 日時を指定してインスタンス生成する.
+     * 日時を指定してインスタンス生成する。
+     *
      * @param date 日付
      */
     public Datetime(Date date) {
@@ -35,7 +38,8 @@ public class Datetime {
     }
 
     /**
-     * 日時文字列を指定してインスタンス生成する.
+     * 日時文字列を指定してインスタンス生成する。
+     *
      * @param datetimeString 日時文字列(yyyy-MM-dd HH:mm:ss)
      */
     public Datetime(String datetimeString) {
@@ -43,7 +47,8 @@ public class Datetime {
     }
 
     /**
-     * 日時文字列とformatパターンを指定してインスタンス生成する.
+     * 日時文字列とformatパターンを指定してインスタンス生成する。
+     *
      * @param datetimeString 日時文字列
      * @param formatPattern formatパターン
      */
@@ -52,7 +57,8 @@ public class Datetime {
     }
 
     /**
-     * 日時とformatパターンを指定してインスタンス生成する.
+     * 日時とformatパターンを指定してインスタンス生成する。
+     *
      * @param date 日時
      * @param formatPattern formatパターン
      */
@@ -62,7 +68,8 @@ public class Datetime {
     }
 
     /**
-     * Date型の値を取得する.
+     * Date型の値を取得する。
+     *
      * @return 日時
      */
     public Date getDate() {
@@ -70,7 +77,8 @@ public class Datetime {
     }
 
     /**
-     * 日時文字列を取得する.
+     * 日時文字列を取得する。
+     *
      * @return 日時文字列(初期パターンはyyyy-MM-dd HH:mm:ss)
      */
     public String toDatetimeString() {
@@ -79,7 +87,8 @@ public class Datetime {
     }
 
     /**
-     * 日時文字列をformatパターンを指定して取得する.
+     * 日時文字列をformatパターンを指定して取得する。
+     *
      * @param formatPattern formatパターン
      * @return 日時文字列
      */
@@ -89,7 +98,8 @@ public class Datetime {
     }
 
     /**
-     * 日付文字列を取得する.
+     * 日付文字列を取得する。
+     *
      * @return 日付文字列(yyyy-MM-dd)
      */
     public String toDateString() {
@@ -98,7 +108,8 @@ public class Datetime {
     }
 
     /**
-     * 時刻文字列を取得する.
+     * 時刻文字列を取得する。
+     *
      * @return 時刻文字列(HH:mm:ss)
      */
     public String toTimeString() {
@@ -107,7 +118,8 @@ public class Datetime {
     }
 
     /**
-     * 日付をセットする.
+     * 日付をセットする。
+     *
      * @param date 日時
      */
     public void setDate(Date date) {
@@ -115,7 +127,8 @@ public class Datetime {
     }
 
     /**
-     * 日時文字列をセットする.
+     * 日時文字列をセットする。
+     *
      * @param datetimeString 日時文字列
      */
     public void setDatetime(String datetimeString) {
@@ -128,7 +141,8 @@ public class Datetime {
     }
 
     /**
-     * 日時文字列とformatパターンをセットする.
+     * 日時文字列とformatパターンをセットする。
+     *
      * @param datetimeString
      * @param formatPattern
      */
@@ -138,7 +152,8 @@ public class Datetime {
     }
 
     /**
-     * 年月日時分秒を一括セットする.
+     * 年月日時分秒を一括セットする。
+     *
      * @param year 年
      * @param month 月
      * @param day 日
@@ -151,7 +166,8 @@ public class Datetime {
     }
 
     /**
-     * 年を取得する.
+     * 年を取得する。
+     *
      * @return 年
      */
     public int toYear() {
@@ -199,7 +215,8 @@ public class Datetime {
     }
 
     /**
-     * 週を取得する.
+     * 週を取得する。
+     *
      * @return 各Calendar定数(Calendar.SUNDAYなど)
      */
     public int toWeek() {
@@ -207,7 +224,8 @@ public class Datetime {
     }
 
     /**
-     * 年をセットする.
+     * 年をセットする。
+     *
      * @param year 年
      */
     public void modifyYear(int year) {
@@ -223,7 +241,8 @@ public class Datetime {
     }
 
     /**
-     * 日をセットする.
+     * 日をセットする。
+     *
      * @param day 日
      */
     public void modifyDay(int day) {
@@ -231,7 +250,8 @@ public class Datetime {
     }
 
     /**
-     * 時刻をセットする.
+     * 時刻をセットする。
+     *
      * @param hour 時刻
      */
     public void modifyHour(int hour) {
@@ -239,7 +259,8 @@ public class Datetime {
     }
 
     /**
-     * 分をセットする.
+     * 分をセットする。
+     *
      * @param minute 分
      */
     public void modifyMinute(int minute) {
@@ -247,7 +268,8 @@ public class Datetime {
     }
 
     /**
-     * 秒をセットする.
+     * 秒をセットする。
+     *
      * @param second 秒
      */
     public void modifySecond(int second) {
@@ -255,7 +277,8 @@ public class Datetime {
     }
 
     /**
-     * ミリ秒をセットする.
+     * ミリ秒をセットする。
+     *
      * @param milliSecond ミリ秒
      */
     public void modifyMilliSecond(int milliSecond) {
@@ -263,7 +286,8 @@ public class Datetime {
     }
 
     /**
-     * 年数を加算する.
+     * 年数を加算する。
+     *
      * @param add 加算年数
      */
     public void addYear(int add) {
@@ -271,7 +295,8 @@ public class Datetime {
     }
 
     /**
-     * 月数を加算する.
+     * 月数を加算する。
+     *
      * @param add 加算月数
      */
     public void addMonth(int add) {
@@ -279,7 +304,8 @@ public class Datetime {
     }
 
     /**
-     * 日数を加算する.
+     * 日数を加算する。
+     *
      * @param add 加算日数
      */
     public void addDay(int add) {
@@ -287,7 +313,8 @@ public class Datetime {
     }
 
     /**
-     * 時数を加算する.
+     * 時数を加算する。
+     *
      * @param add 加算時数
      */
     public void addHour(int add) {
@@ -295,7 +322,8 @@ public class Datetime {
     }
 
     /**
-     * 分数を加算する.
+     * 分数を加算する。
+     *
      * @param add 加算分数
      */
     public void addMinute(int add) {
@@ -303,7 +331,8 @@ public class Datetime {
     }
 
     /**
-     * 秒数を加算する.
+     * 秒数を加算する。
+     *
      * @param add 加算秒数
      */
     public void addSecond(int add) {
@@ -318,7 +347,8 @@ public class Datetime {
     private static LinkedHashMap<Integer, String> weeksHashMap = new LinkedHashMap<>();
     
     /**
-     * 曜日定数と日本語曜日名の連想配列を取得する.
+     * 曜日定数と日本語曜日名の連想配列を取得する。
+     *
      * @return 曜日の連想配列
      */
     public static LinkedHashMap<Integer, String> getWeeksHashMap() {
@@ -335,7 +365,8 @@ public class Datetime {
     }
 
     /**
-     * Date型を文字列に変換する.
+     * Date型を文字列に変換する。
+     *
      * @param date 日付
      * @return 日付文字列(yyyy-MM-dd HH:mm:ss)
      */
@@ -349,7 +380,8 @@ public class Datetime {
     }
 
     /**
-     * Date型を文字列に変換する.
+     * Date型を文字列に変換する。
+     *
      * @param date 日付
      * @param pattern 変換パターン
      * @return 日付文字列
@@ -364,7 +396,8 @@ public class Datetime {
     }
 
     /**
-     * 日付文字列をDate型に変換する.
+     * 日付文字列をDate型に変換する。
+     *
      * @param dateString 日付文字列
      * @return 日付
      */
@@ -405,13 +438,15 @@ public class Datetime {
     }
 
     /**
-     * 期間を表すクラス.
+     * 期間を表すクラス。
+     *
      * @author hiro
      */
     public static class Span {
         
         /**
-         * コンストラクタ.
+         * コンストラクタ。
+         *
          * @param startDatetime
          * @param endDatetime
          */
@@ -423,7 +458,8 @@ public class Datetime {
         Datetime startDatetime;
         
         /**
-         * 期間の開始日時を取得する.
+         * 期間の開始日時を取得する。
+         *
          * @return Datetime
          */
         public Datetime getStartDatetime() {
@@ -433,13 +469,10 @@ public class Datetime {
         Datetime endDatetime;
         
         /**
-         * 期間の終了日時を取得する.
+         * 期間の終了日時を取得する。
+         *
          * @return Datetime
          */
         public Datetime getEndDatetime() {
             return this.endDatetime;
-        }
-        
-    }
-    
-}
+        }    }}

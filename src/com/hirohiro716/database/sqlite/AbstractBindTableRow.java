@@ -9,13 +9,15 @@ import com.hirohiro716.database.DataNotFoundException;
 import com.hirohiro716.database.sqlite.SQLite.IsolationLevel;
 
 /**
- * ORMのようなものを提供する抽象クラス.
+ * ORMのようなものを提供する抽象クラス。
+ *
  * @author hiro
  */
 public abstract class AbstractBindTableRow extends com.hirohiro716.database.AbstractBindTableRow implements Closeable {
     
     /**
-     * コンストラクタ.
+     * コンストラクタ。
+     *
      * @param sqlite 
      */
     public AbstractBindTableRow(SQLite sqlite) {
@@ -23,7 +25,8 @@ public abstract class AbstractBindTableRow extends com.hirohiro716.database.Abst
     }
 
     /**
-     * コンストラクタで指定したデータベースオブジェクトを取得する.
+     * コンストラクタで指定したデータベースオブジェクトを取得する。
+     *
      * @return SQLite
      */
     @Override
@@ -44,7 +47,8 @@ public abstract class AbstractBindTableRow extends com.hirohiro716.database.Abst
     private boolean isEditMode = false;
     
     /**
-     * レコードの編集を開始する.
+     * レコードの編集を開始する。
+     *
      * @throws SQLException 
      * @throws DataNotFoundException 
      */
@@ -69,14 +73,16 @@ public abstract class AbstractBindTableRow extends com.hirohiro716.database.Abst
     }
     
     /**
-     * 取得したレコードが編集中かどうかの判定メソッド. これはedit(WhereSet)メソッドから自動的に呼び出され編集するかの判定に使われる.
+     * 取得したレコードが編集中かどうかの判定メソッド. これはedit(WhereSet)メソッドから自動的に呼び出され編集するかの判定に使われる。
+     *
      * @param sqlite 分離レベルEXCLUSIVEでトランザクションが開始されたDatabase
      * @return 編集中かどうか
      */
     public abstract boolean isEditing(SQLite sqlite);
     
     /**
-     * 編集中に変更する. これはedit(WhereSet)メソッドから自動的に呼び出される.
+     * 編集中に変更する. これはedit(WhereSet)メソッドから自動的に呼び出される。
+     *
      * @param sqlite 分離レベルEXCLUSIVEでトランザクションが開始されたDatabase
      * @throws SQLException 
      * @throws DataNotFoundException 
@@ -84,7 +90,8 @@ public abstract class AbstractBindTableRow extends com.hirohiro716.database.Abst
     protected abstract void updateToEditing(SQLite sqlite) throws SQLException, DataNotFoundException;
 
     /**
-     * 編集中のレコードを保持している連想配列で更新する.
+     * 編集中のレコードを保持している連想配列で更新する。
+     *
      * @throws SQLException
      * @throws DataNotFoundException
      */
@@ -94,7 +101,8 @@ public abstract class AbstractBindTableRow extends com.hirohiro716.database.Abst
     }
     
     /**
-     * 編集中を解除する. これはclose()メソッドから自動的に呼び出される.
+     * 編集中を解除する. これはclose()メソッドから自動的に呼び出される。
+     *
      * @param sqlite 分離レベルEXCLUSIVEでトランザクションが開始されたDatabase
      * @throws SQLException
      * @throws DataNotFoundException
@@ -102,7 +110,8 @@ public abstract class AbstractBindTableRow extends com.hirohiro716.database.Abst
     protected abstract void updateToEditingFinish(SQLite sqlite) throws SQLException, DataNotFoundException;
     
     /**
-     * 編集中を解除してデータを閉じる.
+     * 編集中を解除してデータを閉じる。
+     *
      * @throws IOException
      */
     @Override
@@ -126,6 +135,4 @@ public abstract class AbstractBindTableRow extends com.hirohiro716.database.Abst
             throw new IOException(exception);
         } catch (DataNotFoundException exception) {
         }
-    }
-    
-}
+    }}

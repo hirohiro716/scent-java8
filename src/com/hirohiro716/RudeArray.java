@@ -27,7 +27,8 @@ public class RudeArray implements Cloneable, Serializable {
     private static final long serialVersionUID = -1692187503079204210L;
 
     /**
-     * コンストラクタ.
+     * コンストラクタ。
+     *
      */
     public RudeArray() {
         this.baseArray = new LinkedHashMap<>();
@@ -37,7 +38,8 @@ public class RudeArray implements Cloneable, Serializable {
     private LinkedHashMap<Object, Object> baseArray;
 
     /**
-     * 内部的に保持しているLinkedHashMapを取得する.
+     * 内部的に保持しているLinkedHashMapを取得する。
+     *
      * @param <K>
      * @param <V> 
      * @return HashMap
@@ -52,7 +54,8 @@ public class RudeArray implements Cloneable, Serializable {
     }
 
     /**
-     * 内部的に保持しているHashMapを上書きする.
+     * 内部的に保持しているHashMapを上書きする。
+     *
      * @param hashMap
      */
     @SuppressWarnings("unchecked")
@@ -64,7 +67,8 @@ public class RudeArray implements Cloneable, Serializable {
     }
 
     /**
-     * キーを指定して値をセットする.
+     * キーを指定して値をセットする。
+     *
      * @param key キー
      * @param value 値
      */
@@ -75,7 +79,8 @@ public class RudeArray implements Cloneable, Serializable {
     private int autoKey = 0;
 
     /**
-     * キーを指定せずに値をセットする. キーは0以上の自動採番.
+     * キーを指定せずに値をセットする. キーは0以上の自動採番。
+     *
      * @param value 値
      */
     public void add(Object value) {
@@ -90,7 +95,8 @@ public class RudeArray implements Cloneable, Serializable {
     }
 
     /**
-     * Object配列をキーを指定せずにセットする. キーは0以上の自動採番.
+     * Object配列をキーを指定せずにセットする. キーは0以上の自動採番。
+     *
      * @param values 追加する値配列
      */
     public void addMultiple(Object[] values) {
@@ -102,7 +108,8 @@ public class RudeArray implements Cloneable, Serializable {
     }
 
     /**
-     * セットした値を取得する.
+     * セットした値を取得する。
+     *
      * @param key キー
      * @return 値
      */
@@ -111,9 +118,11 @@ public class RudeArray implements Cloneable, Serializable {
     }
 
     /**
-     * セットした値をStringとして取得する.
+     * セットした値をStringとして取得する。
+     *
      * @param key キー
-     * @return 値 存在しない場合や型が違った場合はnullを返す.
+     * @return 値 存在しない場合や型が違った場合はnullを返す。
+     *
      */
     public String getString(Object key) {
         try {
@@ -126,9 +135,11 @@ public class RudeArray implements Cloneable, Serializable {
     }
 
     /**
-     * セットした値をByteとして取得する.
+     * セットした値をByteとして取得する。
+     *
      * @param key キー
-     * @return 値 存在しない場合や型が違った場合はnullを返す.
+     * @return 値 存在しない場合や型が違った場合はnullを返す。
+     *
      */
     public Byte getByte(Object key) {
         try {
@@ -139,9 +150,11 @@ public class RudeArray implements Cloneable, Serializable {
     }
 
     /**
-     * セットした値をNumberとして取得する.
+     * セットした値をNumberとして取得する。
+     *
      * @param key キー
-     * @return 値 存在しない場合や型が違った場合はnullを返す.
+     * @return 値 存在しない場合や型が違った場合はnullを返す。
+     *
      */
     public Number getNumber(Object key) {
         try {
@@ -154,9 +167,11 @@ public class RudeArray implements Cloneable, Serializable {
     }
 
     /**
-     * セットした値をShortとして取得する.
+     * セットした値をShortとして取得する。
+     *
      * @param key キー
-     * @return 値 存在しない場合や型が違った場合はnullを返す.
+     * @return 値 存在しない場合や型が違った場合はnullを返す。
+     *
      */
     public Short getShort(Object key) {
         try {
@@ -169,9 +184,11 @@ public class RudeArray implements Cloneable, Serializable {
     }
 
     /**
-     * セットした値をIntegerとして取得する.
+     * セットした値をIntegerとして取得する。
+     *
      * @param key キー
-     * @return 値 存在しない場合や型が違った場合はnullを返す.
+     * @return 値 存在しない場合や型が違った場合はnullを返す。
+     *
      */
     public Integer getInteger(Object key) {
         try {
@@ -184,9 +201,11 @@ public class RudeArray implements Cloneable, Serializable {
     }
 
     /**
-     * セットした値をFloatとして取得する.
+     * セットした値をFloatとして取得する。
+     *
      * @param key キー
-     * @return 値 存在しない場合や型が違った場合はnullを返す.
+     * @return 値 存在しない場合や型が違った場合はnullを返す。
+     *
      */
     public Float getFloat(Object key) {
         try {
@@ -199,9 +218,11 @@ public class RudeArray implements Cloneable, Serializable {
     }
 
     /**
-     * セットした値をLongとして取得する.
+     * セットした値をLongとして取得する。
+     *
      * @param key キー
-     * @return 値 存在しない場合や型が違った場合はnullを返す.
+     * @return 値 存在しない場合や型が違った場合はnullを返す。
+     *
      */
     public Long getLong(Object key) {
         try {
@@ -214,9 +235,11 @@ public class RudeArray implements Cloneable, Serializable {
     }
 
     /**
-     * セットした値をDoubleとして取得する.
+     * セットした値をDoubleとして取得する。
+     *
      * @param key キー
-     * @return 値 存在しない場合や型が違った場合はnullを返す.
+     * @return 値 存在しない場合や型が違った場合はnullを返す。
+     *
      */
     public Double getDouble(Object key) {
         try {
@@ -229,9 +252,11 @@ public class RudeArray implements Cloneable, Serializable {
     }
 
     /**
-     * セットした値をBooleanとして取得する.
+     * セットした値をBooleanとして取得する。
+     *
      * @param key キー
-     * @return 値 存在しない場合や型が違った場合はnullを返す.
+     * @return 値 存在しない場合や型が違った場合はnullを返す。
+     *
      */
     public Boolean getBoolean(Object key) {
         try {
@@ -244,9 +269,11 @@ public class RudeArray implements Cloneable, Serializable {
     }
 
     /**
-     * セットした値をDateとして取得する.
+     * セットした値をDateとして取得する。
+     *
      * @param key キー
-     * @return 値 存在しない場合や型が違った場合はnullを返す.
+     * @return 値 存在しない場合や型が違った場合はnullを返す。
+     *
      */
     public Date getDate(Object key) {
         // Date
@@ -265,9 +292,11 @@ public class RudeArray implements Cloneable, Serializable {
     }
 
     /**
-     * セットした値をjava.sql.Dateとして取得する.
+     * セットした値をjava.sql.Dateとして取得する。
+     *
      * @param key キー
-     * @return 値 存在しない場合や型が違った場合はnullを返す.
+     * @return 値 存在しない場合や型が違った場合はnullを返す。
+     *
      */
     public java.sql.Date getDateSql(Object key) {
         // java.sql.Date
@@ -291,9 +320,11 @@ public class RudeArray implements Cloneable, Serializable {
     }
 
     /**
-     * セットした値をTimeとして取得する.
+     * セットした値をTimeとして取得する。
+     *
      * @param key キー
-     * @return 値 存在しない場合や型が違った場合はnullを返す.
+     * @return 値 存在しない場合や型が違った場合はnullを返す。
+     *
      */
     public Time getTimeSql(Object key) {
         // Time
@@ -317,9 +348,11 @@ public class RudeArray implements Cloneable, Serializable {
     }
 
     /**
-     * セットした値をTimestampとして取得する.
+     * セットした値をTimestampとして取得する。
+     *
      * @param key キー
-     * @return 値 存在しない場合や型が違った場合はnullを返す.
+     * @return 値 存在しない場合や型が違った場合はnullを返す。
+     *
      */
     public Timestamp getTimestampSql(Object key) {
         // Timestamp
@@ -338,9 +371,11 @@ public class RudeArray implements Cloneable, Serializable {
     }
 
     /**
-     * セットした値をRudeArrayとして取得する.
+     * セットした値をRudeArrayとして取得する。
+     *
      * @param key キー
-     * @return 値 存在しない場合や型が違った場合はnullを返す.
+     * @return 値 存在しない場合や型が違った場合はnullを返す。
+     *
      */
     public RudeArray getRudeArray(Object key) {
         try {
@@ -351,7 +386,8 @@ public class RudeArray implements Cloneable, Serializable {
     }
 
     /**
-     * キーが存在するか確認する.
+     * キーが存在するか確認する。
+     *
      * @param key キー
      * @return 結果
      */
@@ -360,7 +396,8 @@ public class RudeArray implements Cloneable, Serializable {
     }
 
     /**
-     * 値が存在するか確認する.
+     * 値が存在するか確認する。
+     *
      * @param value 値
      * @return 結果
      */
@@ -369,7 +406,8 @@ public class RudeArray implements Cloneable, Serializable {
     }
 
     /**
-     * 指定されたキーの要素を削除する.
+     * 指定されたキーの要素を削除する。
+     *
      * @param key キー
      * @return 結果
      */
@@ -382,7 +420,8 @@ public class RudeArray implements Cloneable, Serializable {
     }
 
     /**
-     * 指定された値の要素を削除する.
+     * 指定された値の要素を削除する。
+     *
      * @param value 値
      * @return 結果
      */
@@ -397,7 +436,8 @@ public class RudeArray implements Cloneable, Serializable {
     }
 
     /**
-     * 保持しているすべての値を消去する.
+     * 保持しているすべての値を消去する。
+     *
      */
     public void clear() {
         this.autoKey = 0;
@@ -405,7 +445,8 @@ public class RudeArray implements Cloneable, Serializable {
     }
 
     /**
-     * 配列数を取得する.
+     * 配列数を取得する。
+     *
      * @return 配列数
      */
     public int size() {
@@ -413,7 +454,8 @@ public class RudeArray implements Cloneable, Serializable {
     }
 
     /**
-     * 配列内のキーをすべて取得する.
+     * 配列内のキーをすべて取得する。
+     *
      * @return すべてのキー
      */
     public Object[] getKeys() {
@@ -426,7 +468,8 @@ public class RudeArray implements Cloneable, Serializable {
     }
 
     /**
-     * 配列内のキーをString[]としてすべて取得する.
+     * 配列内のキーをString[]としてすべて取得する。
+     *
      * @return すべてのキー
      */
     public String[] getKeysAtString() {
@@ -445,7 +488,8 @@ public class RudeArray implements Cloneable, Serializable {
     }
 
     /**
-     * 配列内の値をすべて取得する.
+     * 配列内の値をすべて取得する。
+     *
      * @return すべての値
      */
     public Object[] getValues() {
@@ -457,7 +501,8 @@ public class RudeArray implements Cloneable, Serializable {
     }
 
     /**
-     * 配列内の値をString[]してすべて取得する.
+     * 配列内の値をString[]してすべて取得する。
+     *
      * @return すべての値
      */
     public String[] getValuesAtString() {
@@ -475,7 +520,8 @@ public class RudeArray implements Cloneable, Serializable {
     }
 
     /**
-     * 配列内の値をRudeArray[]としてすべて取得する.
+     * 配列内の値をRudeArray[]としてすべて取得する。
+     *
      * @return すべての値
      */
     public RudeArray[] getValuesAtRudeArray() {
@@ -493,7 +539,8 @@ public class RudeArray implements Cloneable, Serializable {
     }
 
     /**
-     * 配列を結合する. キーが重複していた場合は後の値で上書きされる.
+     * 配列を結合する. キーが重複していた場合は後の値で上書きされる。
+     *
      * @param arrays 配列
      */
     public void merge(RudeArray... arrays) {
@@ -505,7 +552,8 @@ public class RudeArray implements Cloneable, Serializable {
     }
 
     /**
-     * すべての値を連結した文字列を取得する.
+     * すべての値を連結した文字列を取得する。
+     *
      * @param separator 連結文字列
      * @return 連結後文字列
      */
@@ -528,7 +576,8 @@ public class RudeArray implements Cloneable, Serializable {
     }
 
     /**
-     * 配列のコピーを新しいインスタンスで作成する.
+     * 配列のコピーを新しいインスタンスで作成する。
+     *
      * @return 配列
      */
     @Override
@@ -553,7 +602,8 @@ public class RudeArray implements Cloneable, Serializable {
     }
 
     /**
-     * シリアライズを行いByte配列を取得する. 値の部分に入っているオブジェクトのシリアライズはサポートしない.
+     * シリアライズを行いByte配列を取得する. 値の部分に入っているオブジェクトのシリアライズはサポートしない。
+     *
      * @return シリアライズしたByte配列
      * @throws IOException
      */
@@ -562,7 +612,8 @@ public class RudeArray implements Cloneable, Serializable {
     }
 
     /**
-     * Byte配列からデシリアライズを行いインスタンスを復元する. 値の部分に入っているオブジェクトのシリアライズはサポートしない.
+     * Byte配列からデシリアライズを行いインスタンスを復元する. 値の部分に入っているオブジェクトのシリアライズはサポートしない。
+     *
      * @param serialized byte配列
      * @return RudeArray
      * @throws IOException
@@ -573,7 +624,8 @@ public class RudeArray implements Cloneable, Serializable {
     }
 
     /**
-     * 内部HashMapのtoStringを出力する.
+     * 内部HashMapのtoStringを出力する。
+     *
      * @return キーと値の組み合わせ
      */
     @Override
@@ -582,7 +634,8 @@ public class RudeArray implements Cloneable, Serializable {
     }
 
     /**
-     * 複数のRudeArrayを含むArrayListをRudeArray内部のキーを基準に昇順で並び替えを行い新しいArrayListを取得する.
+     * 複数のRudeArrayを含むArrayListをRudeArray内部のキーを基準に昇順で並び替えを行い新しいArrayListを取得する。
+     *
      * @param source 並び替え対象ArrayList
      * @param sortKey 基準値が含まれるRudeArray内のキー
      * @return 並び替え後の新規ArrayList
@@ -597,7 +650,8 @@ public class RudeArray implements Cloneable, Serializable {
     }
 
     /**
-     * 複数のRudeArrayを含むArrayListをRudeArray内部のキーを基準に降順で並び替えを行い新しいArrayListを取得する.
+     * 複数のRudeArrayを含むArrayListをRudeArray内部のキーを基準に降順で並び替えを行い新しいArrayListを取得する。
+     *
      * @param source 並び替え対象ArrayList
      * @param sortKey 基準値が含まれるRudeArray内のキー
      * @return 並び替え後の新規ArrayList
@@ -612,7 +666,8 @@ public class RudeArray implements Cloneable, Serializable {
     }
 
     /**
-     * RudeArrayを昇順で並び替えるソート条件クラス.
+     * RudeArrayを昇順で並び替えるソート条件クラス。
+     *
      * @author hiro
      */
     private static class RudeArrayComparatorAsc implements Comparator<RudeArray> {
@@ -620,7 +675,8 @@ public class RudeArray implements Cloneable, Serializable {
         private Object sortKey;
 
         /**
-         * コンストラクタで並び替えの基準とするキーを指定する.
+         * コンストラクタで並び替えの基準とするキーを指定する。
+         *
          * @param sortKey
          */
         public RudeArrayComparatorAsc(Object sortKey) {
@@ -646,7 +702,8 @@ public class RudeArray implements Cloneable, Serializable {
     }
 
     /**
-     * RudeArrayを降順で並び替えるソート条件クラス.
+     * RudeArrayを降順で並び替えるソート条件クラス。
+     *
      * @author hiro
      */
     private static class RudeArrayComparatorDesc implements Comparator<RudeArray> {
@@ -654,7 +711,8 @@ public class RudeArray implements Cloneable, Serializable {
         private Object sortKey;
 
         /**
-         * コンストラクタで並び替えの基準とするキーを指定する.
+         * コンストラクタで並び替えの基準とするキーを指定する。
+         *
          * @param sortKey
          */
         public RudeArrayComparatorDesc(Object sortKey) {

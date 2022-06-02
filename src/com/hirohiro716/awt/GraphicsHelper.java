@@ -10,13 +10,15 @@ import com.hirohiro716.RudeArray;
 import static com.hirohiro716.StringConverter.*;
 
 /**
- * Graphicsを使用して描画する際に便利なメソッドを格納したクラスです.
+ * Graphicsを使用して描画する際に便利なメソッドを格納したクラスです。
+ *
  * @author hiro
  */
 public class GraphicsHelper {
 
     /**
-     * 文字列の描画幅をポイントで取得します.
+     * 文字列の描画幅をポイントで取得します。
+     *
      * @param value 文字列
      * @param useFont 使用フォント
      * @param graphics2D
@@ -28,7 +30,8 @@ public class GraphicsHelper {
     }
 
     /**
-     * 文字列の描画高さをポイントで取得します.
+     * 文字列の描画高さをポイントで取得します。
+     *
      * @param useFont 使用フォント
      * @param graphics2D
      * @return 高さ(point)
@@ -39,7 +42,8 @@ public class GraphicsHelper {
     }
 
     /**
-     * 文字列の描画高さをポイントで取得します.
+     * 文字列の描画高さをポイントで取得します。
+     *
      * @param value 文字列
      * @param useFont 使用フォント
      * @param graphics2D
@@ -53,7 +57,8 @@ public class GraphicsHelper {
     }
 
     /**
-     * 文字列の描画サイズをポイントで取得します.
+     * 文字列の描画サイズをポイントで取得します。
+     *
      * @param value 文字列
      * @param useFont 使用フォント
      * @param graphics2D
@@ -67,7 +72,8 @@ public class GraphicsHelper {
     }
 
     /**
-     * フォントサイズを自動調節します.
+     * フォントサイズを自動調節します。
+     *
      * @param value 文字列
      * @param width 調節幅
      * @param height 調節高さ
@@ -82,7 +88,8 @@ public class GraphicsHelper {
     }
 
     /**
-     * フォントサイズを自動調節します.
+     * フォントサイズを自動調節します。
+     *
      * @param value 文字列
      * @param width 調節幅
      * @param height 調節高さ
@@ -96,7 +103,8 @@ public class GraphicsHelper {
     }
 
     /**
-     * フォントサイズを自動調節します.
+     * フォントサイズを自動調節します。
+     *
      * @param value 文字列
      * @param width 調節幅
      * @param height 調節高さ
@@ -112,7 +120,8 @@ public class GraphicsHelper {
     }
 
     /**
-     * フォントサイズを自動調節します.
+     * フォントサイズを自動調節します。
+     *
      * @param value 文字列
      * @param width 調節幅
      * @param height 調節高さ
@@ -137,7 +146,8 @@ public class GraphicsHelper {
     }
 
     /**
-     * フォントサイズを自動調節します.
+     * フォントサイズを自動調節します。
+     *
      * @param value 文字列
      * @param width 調節幅
      * @param fontName フォント名
@@ -151,7 +161,8 @@ public class GraphicsHelper {
     }
 
     /**
-     * フォントサイズを自動調節します.
+     * フォントサイズを自動調節します。
+     *
      * @param value 文字列
      * @param width 調節幅
      * @param fontName フォント名
@@ -164,7 +175,8 @@ public class GraphicsHelper {
     }
 
     /**
-     * フォントサイズを自動調節します.
+     * フォントサイズを自動調節します。
+     *
      * @param value 文字列
      * @param width 調節幅
      * @param fontName フォント名
@@ -179,7 +191,8 @@ public class GraphicsHelper {
     }
 
     /**
-     * フォントサイズを自動調節します.
+     * フォントサイズを自動調節します。
+     *
      * @param value 文字列
      * @param width 調節幅
      * @param fontName フォント名
@@ -203,7 +216,8 @@ public class GraphicsHelper {
     }
 
     /**
-     * フォントサイズを自動調節します.
+     * フォントサイズを自動調節します。
+     *
      * @param value 文字列
      * @param width 調節幅
      * @param height 調節高さ
@@ -218,7 +232,8 @@ public class GraphicsHelper {
     }
 
     /**
-     * フォントサイズを自動調節します.
+     * フォントサイズを自動調節します。
+     *
      * @param value 文字列
      * @param width 調節幅
      * @param height 調節高さ
@@ -232,7 +247,8 @@ public class GraphicsHelper {
     }
 
     /**
-     * フォントサイズを自動調節します.
+     * フォントサイズを自動調節します。
+     *
      * @param value 文字列
      * @param width 調節幅
      * @param height 調節高さ
@@ -248,7 +264,8 @@ public class GraphicsHelper {
     }
 
     /**
-     * フォントサイズを自動調節します.
+     * フォントサイズを自動調節します。
+     *
      * @param value 文字列
      * @param width 調節幅
      * @param height 調節高さ
@@ -273,7 +290,8 @@ public class GraphicsHelper {
     }
 
     /**
-     * フォントサイズを自動調節します.
+     * フォントサイズを自動調節します。
+     *
      * @param value 文字列
      * @param width 調節幅
      * @param fontName フォント名
@@ -287,7 +305,8 @@ public class GraphicsHelper {
     }
 
     /**
-     * フォントサイズを自動調節します.
+     * フォントサイズを自動調節します。
+     *
      * @param value 文字列
      * @param width 調節幅
      * @param fontName フォント名
@@ -300,7 +319,8 @@ public class GraphicsHelper {
     }
 
     /**
-     * フォントサイズを自動調節します.
+     * フォントサイズを自動調節します。
+     *
      * @param value 文字列
      * @param width 調節幅
      * @param fontName フォント名
@@ -315,7 +335,8 @@ public class GraphicsHelper {
     }
 
     /**
-     * フォントサイズを自動調節します.
+     * フォントサイズを自動調節します。
+     *
      * @param value 文字列
      * @param width 調節幅
      * @param fontName フォント名
@@ -339,7 +360,8 @@ public class GraphicsHelper {
     }
 
     /**
-     * 左上を基準として文字列を描画します.
+     * 左上を基準として文字列を描画します。
+     *
      * @param value 文字列
      * @param x 左位置
      * @param y 上位置
@@ -353,7 +375,8 @@ public class GraphicsHelper {
     }
 
     /**
-     * 右上を基準として文字列を描画します.
+     * 右上を基準として文字列を描画します。
+     *
      * @param value 文字列
      * @param x 左位置
      * @param y 上位置
@@ -368,7 +391,8 @@ public class GraphicsHelper {
     }
 
     /**
-     * 中央上を基準として文字列を描画します.
+     * 中央上を基準として文字列を描画します。
+     *
      * @param value 文字列
      * @param x 左位置
      * @param y 上位置
@@ -383,7 +407,8 @@ public class GraphicsHelper {
     }
 
     /**
-     * 左下を基準として文字列を描画します.
+     * 左下を基準として文字列を描画します。
+     *
      * @param value 文字列
      * @param x 左位置
      * @param y 上位置
@@ -396,7 +421,8 @@ public class GraphicsHelper {
     }
 
     /**
-     * 右下を基準として文字列を描画します.
+     * 右下を基準として文字列を描画します。
+     *
      * @param value 文字列
      * @param x 左位置
      * @param y 上位置
@@ -411,7 +437,8 @@ public class GraphicsHelper {
     }
 
     /**
-     * 中央下を基準として文字列を描画します.
+     * 中央下を基準として文字列を描画します。
+     *
      * @param value 文字列
      * @param x 左位置
      * @param y 上位置
@@ -426,7 +453,8 @@ public class GraphicsHelper {
     }
 
     /**
-     * 文字列を自動改行して箱の中に収まるようにフォントサイズを自動調整します.
+     * 文字列を自動改行して箱の中に収まるようにフォントサイズを自動調整します。
+     *
      * @param value 文字列
      * @param x 左位置
      * @param y 右位置
@@ -507,7 +535,8 @@ public class GraphicsHelper {
     }
 
     /**
-     * 文字列を自動改行して箱の中に収まるようにフォントサイズを自動調整し中央に配置します.
+     * 文字列を自動改行して箱の中に収まるようにフォントサイズを自動調整し中央に配置します。
+     *
      * @param value 文字列
      * @param x 左位置
      * @param y 右位置

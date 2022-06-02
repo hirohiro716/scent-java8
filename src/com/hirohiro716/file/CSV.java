@@ -12,7 +12,8 @@ import java.util.Collection;
 import com.hirohiro716.StringConverter;
 
 /**
- * CSVファイルの作成をサポートする.
+ * CSVファイルの作成をサポートする。
+ *
  * @author hiro
  */
 public class CSV {
@@ -20,7 +21,8 @@ public class CSV {
     private ArrayList<String> headers = null;
     
     /**
-     * ヘッダーを取得する.
+     * ヘッダーを取得する。
+     *
      * @return ヘッダー
      */
     public String[] getHeaders() {
@@ -28,7 +30,8 @@ public class CSV {
     }
     
     /**
-     * ヘッダーをセットする.
+     * ヘッダーをセットする。
+     *
      * @param headers
      */
     public void setHeaders(String[] headers) {
@@ -39,7 +42,8 @@ public class CSV {
     }
     
     /**
-     * ヘッダーをセットする.
+     * ヘッダーをセットする。
+     *
      * @param headers
      */
     public void setHeaders(Collection<String> headers) {
@@ -50,7 +54,8 @@ public class CSV {
     private ArrayList<ArrayList<String>> rows = new ArrayList<>();
     
     /**
-     * 行数を取得する.
+     * 行数を取得する。
+     *
      * @return 行数
      */
     public int size() {
@@ -58,7 +63,8 @@ public class CSV {
     }
     
     /**
-     * 1行を取得する.
+     * 1行を取得する。
+     *
      * @param index 位置
      * @return 行情報(indexが範囲外ならnull)
      */
@@ -70,7 +76,8 @@ public class CSV {
     }
     
     /**
-     * 新規行を追加する.
+     * 新規行を追加する。
+     *
      * @param row
      */
     public void addRow(String[] row) {
@@ -82,7 +89,8 @@ public class CSV {
     }
     
     /**
-     * 新規行を追加する.
+     * 新規行を追加する。
+     *
      * @param row
      */
     public void addRow(Collection<String> row) {
@@ -94,7 +102,8 @@ public class CSV {
     private String delimiter = ",";
     
     /**
-     * 区切り文字をセットする.
+     * 区切り文字をセットする。
+     *
      * @param delimiter
      */
     public void setDelimiter(String delimiter) {
@@ -102,7 +111,8 @@ public class CSV {
     }
     
     /**
-     * ファイルから読み込む.
+     * ファイルから読み込む。
+     *
      * @param file ファイル
      * @param charsetName 文字セット
      * @param firstRowIsHeader 最初の行をヘッダーにするかどうか
@@ -186,7 +196,8 @@ public class CSV {
     }
     
     /**
-     * ファイルに書き込む.
+     * ファイルに書き込む。
+     *
      * @param file ファイル
      * @param charsetName 文字セット
      * @throws IOException 
@@ -242,6 +253,4 @@ public class CSV {
         }
         // ファイルに保存
         FileHelper.createTextFile(csv.toString(), file, charset);
-    }
-    
-}
+    }}

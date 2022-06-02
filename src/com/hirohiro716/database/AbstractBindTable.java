@@ -8,13 +8,15 @@ import com.hirohiro716.StringConverter;
 import com.hirohiro716.InterfaceProperty;
 
 /**
- * ORMのようなものを提供する抽象クラス.
+ * ORMのようなものを提供する抽象クラス。
+ *
  * @author hiro
  */
 public abstract class AbstractBindTable {
 
     /**
-     * コンストラクタ.
+     * コンストラクタ。
+     *
      * @param database 接続済みDatabase
      */
     public AbstractBindTable(AbstractDatabase database) {
@@ -24,7 +26,8 @@ public abstract class AbstractBindTable {
     private AbstractDatabase database;
     
     /**
-     * コンストラクタで指定したデータベースオブジェクトを取得する.
+     * コンストラクタで指定したデータベースオブジェクトを取得する。
+     *
      * @return AbstractDatabase
      */
     public AbstractDatabase getDatabase() {
@@ -32,7 +35,8 @@ public abstract class AbstractBindTable {
     }
     
     /**
-     * データベースオブジェクトを再指定する.
+     * データベースオブジェクトを再指定する。
+     *
      * @param database 接続済みDatabase
      */
     protected void setDatabase(AbstractDatabase database) {
@@ -40,13 +44,15 @@ public abstract class AbstractBindTable {
     }
     
     /**
-     * テーブル名を取得する.
+     * テーブル名を取得する。
+     *
      * @return テーブル名
      */
     public abstract String getTableName();
 
     /**
-     * テーブル名を取得する.
+     * テーブル名を取得する。
+     *
      * @param <T> テーブル名を求めるAbstractBindTableを継承したクラス
      * @param <D> Tのクラスで使用されているデータベースクラス
      * @param tableClass テーブル名を求めるクラス
@@ -65,13 +71,15 @@ public abstract class AbstractBindTable {
     }
 
     /**
-     * テーブルの説明を取得する.
+     * テーブルの説明を取得する。
+     *
      * @return テーブルの説明
      */
     public abstract String getDescription();
 
     /**
-     * テーブルの説明を取得する.
+     * テーブルの説明を取得する。
+     *
      * @param <T> テーブルの説明を求めるAbstractBindTableを継承したクラス
      * @param <D> Tのクラスで使用されているデータベースクラス
      * @param tableClass テーブルの説明を求めるクラス
@@ -90,13 +98,15 @@ public abstract class AbstractBindTable {
     }
 
     /**
-     * 初期値が入力されたレコード用の連想配列を取得する.
+     * 初期値が入力されたレコード用の連想配列を取得する。
+     *
      * @return 連想配列
      */
     public abstract RudeArray createDefaultRow();
 
     /**
-     * 初期値が入力されたレコード用の連想配列を取得する.
+     * 初期値が入力されたレコード用の連想配列を取得する。
+     *
      * @param columns カラム一覧
      * @return 連想配列
      */
@@ -109,7 +119,8 @@ public abstract class AbstractBindTable {
     }
 
     /**
-     * 初期値が入力されたレコード用の連想配列を取得する.
+     * 初期値が入力されたレコード用の連想配列を取得する。
+     *
      * @param properties プロパティ一覧
      * @return 連想配列
      */
@@ -124,7 +135,8 @@ public abstract class AbstractBindTable {
     private WhereSet whereSet = null;
     
     /**
-     * 編集・更新・削除に使用するレコード特定用のWhereSetを取得する.
+     * 編集・更新・削除に使用するレコード特定用のWhereSetを取得する。
+     *
      * @return whereSet
      */
     protected WhereSet getWhereSet() {
@@ -133,7 +145,8 @@ public abstract class AbstractBindTable {
     
     /**
      * 編集・更新・削除に使用するレコード特定用のWhereSetを指定する.<br>
-     * 編集する前は必ずこのメソッドを使用して抽出条件を指定する.
+     * 編集する前は必ずこのメソッドを使用して抽出条件を指定する。
+     *
      * @param whereSet 
      */
     public void setWhereSet(WhereSet whereSet) {
@@ -141,20 +154,23 @@ public abstract class AbstractBindTable {
     }
 
     /**
-     * 保持している連想配列が有効か検証する.
+     * 保持している連想配列が有効か検証する。
+     *
      * @throws ValidationException
      * @throws Exception 
      */
     public abstract void validate() throws ValidationException, Exception;
     
     /**
-     * 保持している連想配列を標準化(全角を半角に変換したり)する.
+     * 保持している連想配列を標準化(全角を半角に変換したり)する。
+     *
      * @throws Exception
      */
     public abstract void normalize() throws Exception;
 
     /**
-     * レコードを検索する.
+     * レコードを検索する。
+     *
      * @param selectSQL WHERE句の前のSELECT句
      * @param afterSQL WHERE句の後に付与するオプション句
      * @param whereSetArray 検索条件(複数指定するとOR検索になる)
@@ -182,7 +198,8 @@ public abstract class AbstractBindTable {
     }
 
     /**
-     * レコードを検索する.
+     * レコードを検索する。
+     *
      * @param whereSetArray 検索条件(複数指定するとOR検索になる)
      * @return 検索結果
      * @throws SQLException
@@ -192,7 +209,8 @@ public abstract class AbstractBindTable {
     }
 
     /**
-     * レコードを検索する.
+     * レコードを検索する。
+     *
      * @param afterSQL WHERE句の後に付与するオプション句
      * @param whereSetArray 検索条件(複数指定するとOR検索になる)
      * @return 検索結果

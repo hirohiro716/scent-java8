@@ -16,20 +16,23 @@ import javax.mail.internet.MimeMessage;
 import com.hirohiro716.StringConverter;
 
 /**
- * JavaMail1.6.1を使用したE-mail送信を行うクラス.
+ * JavaMail1.6.1を使用したE-mail送信を行うクラス。
+ *
  * @author hiro
  */
 public class EmailTransmitter {
     
     /**
-     * E-mail本文に使用する改行コード.
+     * E-mail本文に使用する改行コード。
+     *
      */
     public static final String LINE_SEPARATOR = "\r\n";
     
     private InternetAddress[] myEmailAddress = new InternetAddress[] {};
     
     /**
-     * 送信元E-mailアドレスをセットする.
+     * 送信元E-mailアドレスをセットする。
+     *
      * @param emailAddress
      * @throws Exception アドレスの有効性確認失敗
      */
@@ -40,7 +43,8 @@ public class EmailTransmitter {
     private String host;
     
     /**
-     * 送信E-mailサーバーをセットする.
+     * 送信E-mailサーバーをセットする。
+     *
      * @param host
      */
     public void setHost(String host) {
@@ -50,7 +54,8 @@ public class EmailTransmitter {
     private String user;
 
     /**
-     * 送信E-mailサーバー認証ユーザーをセットする.
+     * 送信E-mailサーバー認証ユーザーをセットする。
+     *
      * @param user
      */
     public void setUser(String user) {
@@ -60,7 +65,8 @@ public class EmailTransmitter {
     private String password;
 
     /**
-     * 送信E-mailサーバー認証パスワードをセットする.
+     * 送信E-mailサーバー認証パスワードをセットする。
+     *
      * @param password
      */
     public void setPassword(String password) {
@@ -70,7 +76,8 @@ public class EmailTransmitter {
     private String portNumber = "25";
 
     /**
-     * 送信E-mailポート番号をセットする.
+     * 送信E-mailポート番号をセットする。
+     *
      * @param portNumber
      */
     public void setPortNumber(int portNumber) {
@@ -80,7 +87,8 @@ public class EmailTransmitter {
     private boolean isEnableTLS = false;
 
     /**
-     * E-mailの通信にTLSを使用するかどうか.
+     * E-mailの通信にTLSを使用するかどうか。
+     *
      * @param isEnableTLS
      */
     public void setEnableTLS(boolean isEnableTLS) {
@@ -90,7 +98,8 @@ public class EmailTransmitter {
     private HashMap<ReceiverType, ArrayList<InternetAddress>> receiverEmailAddresses = new HashMap<>();
     
     /**
-     * 受信者のE-mailアドレスを追加する.
+     * 受信者のE-mailアドレスを追加する。
+     *
      * @param emailAddress E-mailアドレス
      * @param receiverType 受信者タイプ
      * @throws Exception
@@ -106,7 +115,8 @@ public class EmailTransmitter {
     private String charset = "UTF-8";
     
     /**
-     * Charsetをセットする.
+     * Charsetをセットする。
+     *
      * @param charset
      */
     public void setCharset(String charset) {
@@ -116,7 +126,8 @@ public class EmailTransmitter {
     private boolean isDebug = false;
     
     /**
-     * デバッグが有効かどうかをセットする.
+     * デバッグが有効かどうかをセットする。
+     *
      * @param isDebug
      */
     public void setDebug(boolean isDebug) {
@@ -124,7 +135,8 @@ public class EmailTransmitter {
     }
     
     /**
-     * E-mailを送信する.
+     * E-mailを送信する。
+     *
      * @param subject E-mail表題
      * @param body 本文
      * @throws Exception メッセージの送信に失敗
@@ -177,7 +189,8 @@ public class EmailTransmitter {
     }
     
     /**
-     * 受信者の種類列挙型.
+     * 受信者の種類列挙型。
+     *
      * @author hiro
      */
     public enum ReceiverType {
@@ -193,6 +206,4 @@ public class EmailTransmitter {
          * BCC
          */
         BCC,
-    }
-    
-}
+    }}

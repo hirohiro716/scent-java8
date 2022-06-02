@@ -7,13 +7,15 @@ import java.util.HashMap;
 import com.hirohiro716.file.xml.PropertyXML;
 
 /**
- * XMLファイルにCookieを保持するクラス.
+ * XMLファイルにCookieを保持するクラス。
+ *
  * @author hiro
  */
 public class XMLCookieStore extends AbstractCookieStore {
 
     /**
-     * コンストラクタ.
+     * コンストラクタ。
+     *
      * @param xmlFile Cookie情報を保存するXMLファイル
      * @throws IOException 
      */
@@ -44,6 +46,4 @@ public class XMLCookieStore extends AbstractCookieStore {
     @Override
     protected HashMap<String, String> loadAllPersistedCookies() throws Exception {
         return this.xml.createHashMap();
-    }
-    
-}
+    }}

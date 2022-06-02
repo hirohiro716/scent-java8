@@ -11,7 +11,8 @@ import javax.crypto.spec.SecretKeySpec;
 import com.hirohiro716.datetime.Datetime;
 
 /**
- * 値を変換するクラス.
+ * 値を変換するクラス。
+ *
  * @author hiro
  */
 public class StringConverter {
@@ -60,14 +61,16 @@ public class StringConverter {
     }
 
     /**
-     * 両端の余白を取り除く処理を組み込む.
+     * 両端の余白を取り除く処理を組み込む。
+     *
      */
     public void addTrim() {
         this.params.put(Pattern.TRIM, null);
     }
 
     /**
-     * 文字列を置き換える処理を組み込む.
+     * 文字列を置き換える処理を組み込む。
+     *
      * @param targetString 検索文字列
      * @param replaceString 置き換え文字列
      */
@@ -76,7 +79,8 @@ public class StringConverter {
     }
 
     /**
-     * 改行コード(LF)を置き換える処理を組み込む. CRLFのLFは置き換えない.
+     * 改行コード(LF)を置き換える処理を組み込む. CRLFのLFは置き換えない。
+     *
      * @param replaceString 置き換え文字列
      */
     public void addReplaceCr(String replaceString) {
@@ -84,7 +88,8 @@ public class StringConverter {
     }
 
     /**
-     * 改行コード(CR)を置き換える処理を組み込む. CRLFのCRは置き換えない.
+     * 改行コード(CR)を置き換える処理を組み込む. CRLFのCRは置き換えない。
+     *
      * @param replaceString 置き換え文字列
      */
     public void addReplaceLf(String replaceString) {
@@ -92,7 +97,8 @@ public class StringConverter {
     }
 
     /**
-     * 改行コード(CRLF)を置き換える処理を組み込む.
+     * 改行コード(CRLF)を置き換える処理を組み込む。
+     *
      * @param replaceString 置き換え文字列
      */
     public void addReplaceCrLf(String replaceString) {
@@ -100,7 +106,8 @@ public class StringConverter {
     }
 
     /**
-     * 半角スペースを置き換える処理を組み込む.
+     * 半角スペースを置き換える処理を組み込む。
+     *
      * @param replaceString 置き換え文字列
      */
     public void addReplaceNarrowSpace(String replaceString) {
@@ -108,7 +115,8 @@ public class StringConverter {
     }
 
     /**
-     * 全角スペースを置き換える処理を組み込む.
+     * 全角スペースを置き換える処理を組み込む。
+     *
      * @param replaceString 置き換え文字列
      */
     public void addReplaceWideSpace(String replaceString) {
@@ -116,7 +124,8 @@ public class StringConverter {
     }
 
     /**
-     * タブ文字を置き換える処理を組み込む.
+     * タブ文字を置き換える処理を組み込む。
+     *
      * @param replaceString 置き換え文字列
      */
     public void addReplaceTab(String replaceString) {
@@ -124,7 +133,8 @@ public class StringConverter {
     }
 
     /**
-     * 開始位置を指定して文字列を抜き出す処理を組み込む.
+     * 開始位置を指定して文字列を抜き出す処理を組み込む。
+     *
      * @param start 開始位置
      */
     public void addSubString(int start) {
@@ -132,7 +142,8 @@ public class StringConverter {
     }
 
     /**
-     * 開始位置と文字数を指定して文字列を抜き出す処理を組み込む.
+     * 開始位置と文字数を指定して文字列を抜き出す処理を組み込む。
+     *
      * @param start 開始位置
      * @param length 文字数
      */
@@ -141,7 +152,8 @@ public class StringConverter {
     }
 
     /**
-     * 指定された桁数まで指定された文字で左埋めの処理を組み込む.
+     * 指定された桁数まで指定された文字で左埋めの処理を組み込む。
+     *
      * @param length 固定長数
      * @param paddingChar 埋める文字列
      */
@@ -150,7 +162,8 @@ public class StringConverter {
     }
 
     /**
-     * 指定された桁数まで指定された文字で右埋めの処理を組み込む.
+     * 指定された桁数まで指定された文字で右埋めの処理を組み込む。
+     *
      * @param length 固定長数
      * @param paddingChar 埋める文字列
      */
@@ -159,42 +172,48 @@ public class StringConverter {
     }
 
     /**
-     * 数値として有効な文字列のみを抜き出す処理を組み込む.
+     * 数値として有効な文字列のみを抜き出す処理を組み込む。
+     *
      */
     public void addIntegerString() {
         this.params.put(Pattern.INTEGER, null);
     }
 
     /**
-     * 数値として有効な文字列のみを抜き出す処理を組み込む.
+     * 数値として有効な文字列のみを抜き出す処理を組み込む。
+     *
      */
     public void addDecimalString() {
         this.params.put(Pattern.DECIMAL, null);
     }
 
     /**
-     * 数値として有効な文字列のみを抜き出し小数点を省略する処理を組み込む.
+     * 数値として有効な文字列のみを抜き出し小数点を省略する処理を組み込む。
+     *
      */
     public void addTryNonFractionString() {
         this.params.put(Pattern.TRY_NON_FRACTION, null);
     }
 
     /**
-     * 電話番号として有効な文字列のみ(数字,-)を抜き出す処理を組み込む.
+     * 電話番号として有効な文字列のみ(数字,-)を抜き出す処理を組み込む。
+     *
      */
     public void addTelephone() {
         this.params.put(Pattern.TELEPHONE, null);
     }
 
     /**
-     * java.util.Dateオブジェクトまたは日付として有効な文字列をyyyy-MM-dd形式に変換する処理を組み込む.
+     * java.util.Dateオブジェクトまたは日付として有効な文字列をyyyy-MM-dd形式に変換する処理を組み込む。
+     *
      */
     public void addDatetime() {
         this.params.put(Pattern.DATETIME, null);
     }
 
     /**
-     * java.util.Dateオブジェクトまたは日付として有効な文字列をパターンに応じて変換する処理を組み込む.
+     * java.util.Dateオブジェクトまたは日付として有効な文字列をパターンに応じて変換する処理を組み込む。
+     *
      * @param formatPattern フォーマットパターン(yyyy-MM-ddなど)
      */
     public void addDatetime(String formatPattern) {
@@ -202,14 +221,16 @@ public class StringConverter {
     }
 
     /**
-     * SHA256で文字列を暗号化する処理を組み込む.
+     * SHA256で文字列を暗号化する処理を組み込む。
+     *
      */
     public void addEncryptSha256() {
         this.params.put(Pattern.ENCRYPT_SHA256, null);
     }
 
     /**
-     * キーを指定してAES128で暗号化する処理を組み込む.
+     * キーを指定してAES128で暗号化する処理を組み込む。
+     *
      * @param key キー
      */
     public void addEncryptAes128(String key) {
@@ -217,7 +238,8 @@ public class StringConverter {
     }
 
     /**
-     * キーを指定してAES128で暗号化された文字列を復号化する処理を組み込む.
+     * キーを指定してAES128で暗号化された文字列を復号化する処理を組み込む。
+     *
      * @param key キー
      */
     public void addDecryptAes128(String key) {
@@ -225,63 +247,72 @@ public class StringConverter {
     }
 
     /**
-     * 全角文字を半角に変換する.
+     * 全角文字を半角に変換する。
+     *
      */
     public void addWideToNarrow() {
         this.params.put(Pattern.WIDE_TO_NARROW, null);
     }
 
     /**
-     * 半角文字を全角に変換する.
+     * 半角文字を全角に変換する。
+     *
      */
     public void addNarrowToWide() {
         this.params.put(Pattern.NARROW_TO_WIDE, null);
     }
 
     /**
-     * 大文字を小文字に変換する.
+     * 大文字を小文字に変換する。
+     *
      */
     public void addUpperToLower() {
         this.params.put(Pattern.UPPER_TO_LOWER, null);
     }
 
     /**
-     * 小文字を大文字に変換する.
+     * 小文字を大文字に変換する。
+     *
      */
     public void addLowerToUpper() {
         this.params.put(Pattern.LOWER_TO_UPPER, null);
     }
 
     /**
-     * 全角ひらがなを全角カタカナに変換する.
+     * 全角ひらがなを全角カタカナに変換する。
+     *
      */
     public void addHiraganaToKatakana() {
         this.params.put(Pattern.HIRAGANA_TO_KATAKANA, null);
     }
 
     /**
-     * 全角カタカナを全角ひらがなに変換する.
+     * 全角カタカナを全角ひらがなに変換する。
+     *
      */
     public void addKatakanaToHiragana() {
         this.params.put(Pattern.KATAKANA_TO_HIRAGANA, null);
     }
 
     /**
-     * 文字コードをShift_JISに一度変換する処理を組み込む.
+     * 文字コードをShift_JISに一度変換する処理を組み込む。
+     *
      */
     public void addShiftJIS() {
         this.params.put(Pattern.SHIFT_JIS, null);
     }
 
     /**
-     * 設定した変換パラメータを初期化する.
+     * 設定した変換パラメータを初期化する。
+     *
      */
     public void clear() {
         this.params.clear();
     }
 
     /**
-     * 値の変換を実行する.
+     * 値の変換を実行する。
+     *
      * @param target 変換対象
      * @return 結果
      */
@@ -402,7 +433,8 @@ public class StringConverter {
     }
 
     /**
-     * 両端の全角スペースと半角スペースを除く.
+     * 両端の全角スペースと半角スペースを除く。
+     *
      * @param value 対象
      * @return 文字列
      */
@@ -420,7 +452,8 @@ public class StringConverter {
     }
 
     /**
-     * 文字列の左側を指定桁数まで指定文字を埋める.
+     * 文字列の左側を指定桁数まで指定文字を埋める。
+     *
      * @param value 対象文字列
      * @param paddingCharactor 埋める文字
      * @param length 桁数
@@ -432,7 +465,8 @@ public class StringConverter {
     }
 
     /**
-     * 文字列の右側を指定桁数まで指定文字を埋める.
+     * 文字列の右側を指定桁数まで指定文字を埋める。
+     *
      * @param value 対象文字列
      * @param paddingCharactor 埋める文字
      * @param length 桁数
@@ -444,7 +478,8 @@ public class StringConverter {
     }
 
     /**
-     * 文字列をStringBuilderで連結して返す.
+     * 文字列をStringBuilderで連結して返す。
+     *
      * @param objects 文字列郡
      * @return 連結した文字列
      */
@@ -459,7 +494,8 @@ public class StringConverter {
     }
 
     /**
-     * 指定回数繰り返した文字列を取得する.
+     * 指定回数繰り返した文字列を取得する。
+     *
      * @param string 繰り返す文字列
      * @param count 回数
      * @return 繰り返し連結した文字列
@@ -473,7 +509,8 @@ public class StringConverter {
     }
     
     /**
-     * 改行コード(CR)を置き換える. CRLFのCRは置き換えない.
+     * 改行コード(CR)を置き換える. CRLFのCRは置き換えない。
+     *
      * @param value 対象
      * @param replacement 置き換える文字列
      * @return 置き換え後の値
@@ -487,7 +524,8 @@ public class StringConverter {
     }
 
     /**
-     * 改行コード(LF)を置き換える. CRLFのLFは置き換えない.
+     * 改行コード(LF)を置き換える. CRLFのLFは置き換えない。
+     *
      * @param value 対象
      * @param replacement 置き換える文字列
      * @return 置き換え後の値
@@ -501,7 +539,8 @@ public class StringConverter {
     }
 
     /**
-     * 改行コード(CRLF)を置き換える.
+     * 改行コード(CRLF)を置き換える。
+     *
      * @param value 対象
      * @param replacement 置き換える文字列
      * @return 置き換え後の値
@@ -515,7 +554,8 @@ public class StringConverter {
     }
 
     /**
-     * nullを指定の文字列に置き換える.
+     * nullを指定の文字列に置き換える。
+     *
      * @param value 対象
      * @param newString nullの場合に返す文字列
      * @return 文字列
@@ -528,7 +568,8 @@ public class StringConverter {
     }
 
     /**
-     * String型をboolean型に変換する. 変換できない場合はfalse.
+     * String型をboolean型に変換する. 変換できない場合はfalse。
+     *
      * @param boolString 有効文字列
      * @return 結果
      */
@@ -541,7 +582,8 @@ public class StringConverter {
     }
 
     /**
-     * String型をshort型に変換する. 変換できない場合はnullを取得する. 小数点は無効です.
+     * String型をshort型に変換する. 変換できない場合はnullを取得する. 小数点は無効です。
+     *
      * @param shortString 有効文字列
      * @return 結果
      */
@@ -554,7 +596,8 @@ public class StringConverter {
     }
 
     /**
-     * String型をInteger型に変換する. 変換できない場合はnullを取得する. 小数点は無効です.
+     * String型をInteger型に変換する. 変換できない場合はnullを取得する. 小数点は無効です。
+     *
      * @param intString 有効文字列
      * @return 結果
      */
@@ -567,7 +610,8 @@ public class StringConverter {
     }
 
     /**
-     * String型をlong型に変換する. 変換できない場合はnullを取得する. 小数点は無効です.
+     * String型をlong型に変換する. 変換できない場合はnullを取得する. 小数点は無効です。
+     *
      * @param longString 有効文字列
      * @return 結果
      */
@@ -580,7 +624,8 @@ public class StringConverter {
     }
 
     /**
-     * String型をFloat型に変換する. 変換できない場合はnullを取得する.
+     * String型をFloat型に変換する. 変換できない場合はnullを取得する。
+     *
      * @param floatString 有効文字列
      * @return 結果
      */
@@ -593,7 +638,8 @@ public class StringConverter {
     }
 
     /**
-     * String型をDouble型に変換する. 変換できない場合はnullを取得する.
+     * String型をDouble型に変換する. 変換できない場合はnullを取得する。
+     *
      * @param doubleString 有効文字列
      * @return 結果
      */
@@ -638,7 +684,8 @@ public class StringConverter {
 
     /**
      * value(元文字列)のstart(開始位置)からlength(文字数)分を取得する. 開始位置に矛盾があった場合は空文字""を取得する.<br>
-     * lengthがvalueの文字数を超えた範囲を指定していた場合はあるだけ返す.
+     * lengthがvalueの文字数を超えた範囲を指定していた場合はあるだけ返す。
+     *
      * @param value 元の文字列
      * @param start 開始位置
      * @param length 文字数
@@ -660,7 +707,8 @@ public class StringConverter {
     }
 
     /**
-     * value(元文字列)のstart(開始位置)からの文字列をすべて返す. 開始位置に矛盾があった場合は空文字""を取得する.
+     * value(元文字列)のstart(開始位置)からの文字列をすべて返す. 開始位置に矛盾があった場合は空文字""を取得する。
+     *
      * @param value 元の文字列
      * @param start 開始位置
      * @return 結果
@@ -677,7 +725,8 @@ public class StringConverter {
     }
 
     /**
-     * 文字列をsha256で不可逆暗号化して返す.
+     * 文字列をsha256で不可逆暗号化して返す。
+     *
      * @param value 元の値
      * @return 暗号化した値
      */
@@ -694,7 +743,8 @@ public class StringConverter {
     }
 
     /**
-     * 文字列をAES128で暗号化して返す. 必ず16文字の暗号化キーを指定する. 復号化にはdecryptAes128を使用する.
+     * 文字列をAES128で暗号化して返す. 必ず16文字の暗号化キーを指定する. 復号化にはdecryptAes128を使用する。
+     *
      * @param key 16文字の暗号化キーを指定
      * @param value 元の値
      * @return 暗号化した値
@@ -717,7 +767,8 @@ public class StringConverter {
     }
 
     /**
-     * encryptAes128メソッドで暗号化された文字列を復号化する.
+     * encryptAes128メソッドで暗号化された文字列を復号化する。
+     *
      * @param key 暗号化の際に使用したキーを指定
      * @param encrypted encrypt_aes128メソッドで暗号化された文字列
      * @return 元の値
@@ -740,7 +791,8 @@ public class StringConverter {
     }
 
     /**
-     * 番号として有効な文字列だけを取得する.
+     * 番号として有効な文字列だけを取得する。
+     *
      * @param value 元の文字列
      * @return 変換後
      */
@@ -753,7 +805,8 @@ public class StringConverter {
     }
 
     /**
-     * 少数として有効な文字列だけを取得する.
+     * 少数として有効な文字列だけを取得する。
+     *
      * @param value 元の文字列
      * @return 変換後
      */
@@ -767,7 +820,8 @@ public class StringConverter {
     }
 
     /**
-     * 電話番号として有効な文字列だけを取得する.
+     * 電話番号として有効な文字列だけを取得する。
+     *
      * @param value 元の文字列
      * @return 変換後
      */
@@ -783,7 +837,8 @@ public class StringConverter {
     private static final Charset SHIFT_JIS = Charset.forName("Shift_JIS");
     
     /**
-     * 文字コードを一度Shift_JISに変換して改めて文字列に戻した値を取得する.
+     * 文字コードを一度Shift_JISに変換して改めて文字列に戻した値を取得する。
+     *
      * @param value 元の文字列
      * @return Shift_JISに一度変換した後の文字列
      */
@@ -796,7 +851,8 @@ public class StringConverter {
     }
 
     /**
-     * 全角文字を半角文字に変換する.
+     * 全角文字を半角文字に変換する。
+     *
      * @param value 変換対象
      * @return 変換後
      */
@@ -819,7 +875,8 @@ public class StringConverter {
     }
 
     /**
-     * 半角文字を全角文字に変換する.
+     * 半角文字を全角文字に変換する。
+     *
      * @param value 変換対象
      * @return 変換後
      */
@@ -849,7 +906,8 @@ public class StringConverter {
     }
 
     /**
-     * ひらがなをカタカナに変換する.
+     * ひらがなをカタカナに変換する。
+     *
      * @param value 変換対象
      * @return 変換後
      */
@@ -872,7 +930,8 @@ public class StringConverter {
     }
 
     /**
-     * カタカナをひらがなに変換する.
+     * カタカナをひらがなに変換する。
+     *
      * @param value 変換対象
      * @return 変換後
      */
@@ -895,7 +954,8 @@ public class StringConverter {
     }
 
     /**
-     * 濁点を付けて返す.
+     * 濁点を付けて返す。
+     *
      * @param value 変換対象
      * @return 変換後
      */
@@ -918,7 +978,8 @@ public class StringConverter {
     }
 
     /**
-     * 濁点を取って返す.
+     * 濁点を取って返す。
+     *
      * @param value 変換対象
      * @return 変換後
      */
@@ -941,7 +1002,8 @@ public class StringConverter {
     }
 
     /**
-     * 半濁点を付けて返す.
+     * 半濁点を付けて返す。
+     *
      * @param value 変換対象
      * @return 変換後
      */
@@ -964,7 +1026,8 @@ public class StringConverter {
     }
 
     /**
-     * 半濁点を取って返す.
+     * 半濁点を取って返す。
+     *
      * @param value 変換対象
      * @return 変換後
      */
@@ -987,7 +1050,8 @@ public class StringConverter {
     }
 
     /**
-     * 日本語の小文字を大文字にして返す.
+     * 日本語の小文字を大文字にして返す。
+     *
      * @param value 変換対象
      * @return 変換後
      */
@@ -1010,7 +1074,8 @@ public class StringConverter {
     }
 
     /**
-     * 日本語の大文字を小文字にして返す.
+     * 日本語の大文字を小文字にして返す。
+     *
      * @param value 変換対象
      * @return 変換後
      */

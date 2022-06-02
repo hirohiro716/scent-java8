@@ -3,7 +3,8 @@ package com.hirohiro716.print;
 import java.util.ArrayList;
 
 /**
- * 印刷関連の静的関数を提供する.
+ * 印刷関連の静的関数を提供する。
+ *
  * @author hiro
  */
 public class PrintHelper {
@@ -12,7 +13,8 @@ public class PrintHelper {
     private static final double MILLIMETER_TO_POINT_RATE = 72.0 / 25.4;
 
     /**
-     * ミリメートルからポイントを算出する..
+     * ミリメートルからポイントを算出する.。
+     *
      * @param millimeter ミリメートル
      * @return ポイント
      */
@@ -21,7 +23,8 @@ public class PrintHelper {
     }
 
     /**
-     * ポイントからミリメートルを算出する.
+     * ポイントからミリメートルを算出する。
+     *
      * @param point ポイント
      * @return ミリメートル
      */
@@ -32,7 +35,8 @@ public class PrintHelper {
     private static final ArrayList<String> VERTICAL_STRING_LIST = new ArrayList<>();
     
     /**
-     * 縦書きの場合に回転する必要がある文字列を取得する.
+     * 縦書きの場合に回転する必要がある文字列を取得する。
+     *
      * @return 縦書き時に回転する必要がある文字列リスト
      */
     public static ArrayList<String> getVerticalStringList() {
@@ -75,6 +79,4 @@ public class PrintHelper {
             VERTICAL_STRING_LIST.add("｝");
         }
         return VERTICAL_STRING_LIST;
-    }
-    
-}
+    }}

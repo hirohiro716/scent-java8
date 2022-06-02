@@ -4,13 +4,15 @@ import java.util.Date;
 import java.util.LinkedHashMap;
 
 /**
- * 会計月度のクラス.
+ * 会計月度のクラス。
+ *
  * @author hiro
  */
 public class FiscalMonth {
     
     /**
-     * 月度の決定基準.
+     * 月度の決定基準。
+     *
      * @author hiro
      */
     public enum BaseDay {
@@ -25,7 +27,8 @@ public class FiscalMonth {
         ;
         
         /**
-         * コンストラクタ.
+         * コンストラクタ。
+         *
          * @param value 列挙体を表す数値
          * @param description 説明
          */
@@ -37,7 +40,8 @@ public class FiscalMonth {
         private int value;
         
         /**
-         * 列挙体を表す数値を取得する.
+         * 列挙体を表す数値を取得する。
+         *
          * @return 列挙体を表す数値
          */
         public int getValue() {
@@ -47,7 +51,8 @@ public class FiscalMonth {
         private String description;
         
         /**
-         * 列挙体の説明を取得する.
+         * 列挙体の説明を取得する。
+         *
          * @return 説明
          */
         public String getDescription() {
@@ -55,7 +60,8 @@ public class FiscalMonth {
         }
 
         /**
-         * すべての列挙体で値と説明の連想配列を作成する.
+         * すべての列挙体で値と説明の連想配列を作成する。
+         *
          * @return 連想配列
          */
         public static LinkedHashMap<Integer, String> createLinkedHashMap() {
@@ -67,7 +73,8 @@ public class FiscalMonth {
         }
         
         /**
-         * 列挙体を表す数値から列挙体を取得する.
+         * 列挙体を表す数値から列挙体を取得する。
+         *
          * @param value 列挙体を表す数値
          * @return 見つかった列挙体 またはnull
          */
@@ -85,7 +92,8 @@ public class FiscalMonth {
     private BaseDay baseDay = BaseDay.MONTHLY_DAYS_END;
     
     /**
-     * 月度の決定基準定数を取得する.
+     * 月度の決定基準定数を取得する。
+     *
      * @return BaseDay
      */
     public BaseDay getBaseDay() {
@@ -93,7 +101,8 @@ public class FiscalMonth {
     }
     
     /**
-     * 月度の決定基準定数をセットする.
+     * 月度の決定基準定数をセットする。
+     *
      * @param baseDay
      */
     public void setBaseDay(BaseDay baseDay) {
@@ -103,7 +112,8 @@ public class FiscalMonth {
     private int cutoffDay = 31;
     
     /**
-     * 締め日を取得する.
+     * 締め日を取得する。
+     *
      * @return 締め日(1〜28)28を超える場合は末締め扱い
      */
     public int getCutoffDay() {
@@ -111,7 +121,8 @@ public class FiscalMonth {
     }
     
     /**
-     * 締め日をセットする.
+     * 締め日をセットする。
+     *
      * @param cutoffDay 締め日(1〜28)28を超える場合は末締め扱い
      */
     public void setCutoffDay(int cutoffDay) {
@@ -121,7 +132,8 @@ public class FiscalMonth {
     private int year = 1970;
     
     /**
-     * 年を取得する.
+     * 年を取得する。
+     *
      * @return 年
      */
     public int getYear() {
@@ -129,7 +141,8 @@ public class FiscalMonth {
     }
     
     /**
-     * 年をセットする.
+     * 年をセットする。
+     *
      * @param year 西暦
      */
     public void setYear(int year) {
@@ -139,7 +152,8 @@ public class FiscalMonth {
     private int month = 1;
     
     /**
-     * 月を取得する.
+     * 月を取得する。
+     *
      * @return 月
      */
     public int getMonth() {
@@ -147,7 +161,8 @@ public class FiscalMonth {
     }
     
     /**
-     * 月をセットする.
+     * 月をセットする。
+     *
      * @param month 1〜12
      */
     public void setMonth(int month) {
@@ -157,7 +172,8 @@ public class FiscalMonth {
     private Datetime startDatetime = null;
     
     /**
-     * 開始日を取得する.
+     * 開始日を取得する。
+     *
      * @return 開始日
      */
     public Datetime getStartDatetime() {
@@ -170,7 +186,8 @@ public class FiscalMonth {
     private Datetime endDatetime;
     
     /**
-     * 終了日を取得する.
+     * 終了日を取得する。
+     *
      * @return 終了日
      */
     public Datetime getEndDatetime() {
@@ -181,7 +198,8 @@ public class FiscalMonth {
     }
 
     /**
-     * その月の開始日と終了日を計算して適用する.
+     * その月の開始日と終了日を計算して適用する。
+     *
      */
     private void caclulateStartAndEndDate() {
         Datetime defaultDate = new Datetime("1971-01-01 00:00:00");
@@ -226,7 +244,8 @@ public class FiscalMonth {
     }
     
     /**
-     * 月度インスタンスを生成する.
+     * 月度インスタンスを生成する。
+     *
      * @param baseDay 月度の決定基準
      * @param cutoffDay 締め日(1〜28)28を超える場合は末締め扱い
      * @param year 年
@@ -243,7 +262,8 @@ public class FiscalMonth {
     }
     
     /**
-     * Dateから月度を特定する.
+     * Dateから月度を特定する。
+     *
      * @param baseDay 月度の決定基準
      * @param cutoffDay 締め日(1〜28)28を超える場合は末締め扱い
      * @param date 対象日
@@ -273,7 +293,8 @@ public class FiscalMonth {
     }
 
     /**
-     * すべての月の連想配列を取得する.
+     * すべての月の連想配列を取得する。
+     *
      * @return LinkedHashMap
      */
     public static LinkedHashMap<Integer, String> createLinkedHashMap() {
@@ -282,6 +303,4 @@ public class FiscalMonth {
             hashMap.put(i, i + "月");
         }
         return hashMap;
-    }
-    
-}
+    }}

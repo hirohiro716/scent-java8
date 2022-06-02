@@ -3,13 +3,15 @@ package com.hirohiro716.number;
 import com.hirohiro716.StringConverter;
 
 /**
- * 計算関数を格納するクラス.
+ * 計算関数を格納するクラス。
+ *
  * @author hiro
  */
 public class CalculationHelper {
 
     /**
-     * 文字列内の全ての数値を加算して返します.
+     * 文字列内の全ての数値を加算して返します。
+     *
      * @param value 数値が含まれている文字列
      * @return 結果
      */
@@ -22,7 +24,8 @@ public class CalculationHelper {
     }
 
     /**
-     * intの配列のすべての値を加算して返します.
+     * intの配列のすべての値を加算して返します。
+     *
      * @param values int配列
      * @return 結果
      */

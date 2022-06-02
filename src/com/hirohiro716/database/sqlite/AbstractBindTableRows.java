@@ -8,13 +8,15 @@ import com.hirohiro716.RudeArray;
 import com.hirohiro716.database.sqlite.SQLite.IsolationLevel;
 
 /**
- * ORMのようなものを提供する抽象クラス.
+ * ORMのようなものを提供する抽象クラス。
+ *
  * @author hiro
  */
 public abstract class AbstractBindTableRows extends com.hirohiro716.database.AbstractBindTableRows implements Closeable {
 
     /**
-     * コンストラクタ.
+     * コンストラクタ。
+     *
      * @param sqlite
      */
     public AbstractBindTableRows(SQLite sqlite) {
@@ -22,7 +24,8 @@ public abstract class AbstractBindTableRows extends com.hirohiro716.database.Abs
     }
 
     /**
-     * 内部のデータベースオブジェクトを取得する.
+     * 内部のデータベースオブジェクトを取得する。
+     *
      * @return SQLite
      */
     @Override
@@ -73,7 +76,8 @@ public abstract class AbstractBindTableRows extends com.hirohiro716.database.Abs
     }
     
     /**
-     * レコードが編集中かどうかの判定メソッド. これはedit()メソッドから自動的に呼び出され編集するかの判定に使われる.
+     * レコードが編集中かどうかの判定メソッド. これはedit()メソッドから自動的に呼び出され編集するかの判定に使われる。
+     *
      * @param sqlite 分離レベルEXCLUSIVEでトランザクションが開始されたDatabase
      * @return 編集中かどうか
      * @throws SQLException 
@@ -81,21 +85,24 @@ public abstract class AbstractBindTableRows extends com.hirohiro716.database.Abs
     public abstract boolean isEditing(SQLite sqlite) throws SQLException;
     
     /**
-     * レコードを編集中に変更する. これはedit()メソッドから自動的に呼び出される.
+     * レコードを編集中に変更する. これはedit()メソッドから自動的に呼び出される。
+     *
      * @param sqlite 分離レベルEXCLUSIVEでトランザクションが開始されたDatabase
      * @throws SQLException 
      */
     protected abstract void updateToEditing(SQLite sqlite) throws SQLException;
     
     /**
-     * 編集中を解除する. これはclose()メソッドから自動的に呼び出される.
+     * 編集中を解除する. これはclose()メソッドから自動的に呼び出される。
+     *
      * @param sqlite 分離レベルEXCLUSIVEでトランザクションが開始されたDatabase
      * @throws SQLException
      */
     protected abstract void updateToEditingFinish(SQLite sqlite) throws SQLException;
     
     /**
-     * 編集中を解除してデータを閉じる.
+     * 編集中を解除してデータを閉じる。
+     *
      * @throws IOException
      */
     @Override

@@ -6,13 +6,15 @@ import com.hirohiro716.InterfaceProperty;
 import com.hirohiro716.database.AbstractBindTable;
 
 /**
- * レイアウト設定を保存するクラス.
+ * レイアウト設定を保存するクラス。
+ *
  * @author hiro
  */
 public class LayoutSetting implements Cloneable {
 
     /**
-     * 配列に格納する項目列挙型.
+     * 配列に格納する項目列挙型。
+     *
      * @author hiro
      */
     public enum Property implements InterfaceProperty {
@@ -64,14 +66,16 @@ public class LayoutSetting implements Cloneable {
     }
 
     /**
-     * コンストラクタ.
+     * コンストラクタ。
+     *
      */
     public LayoutSetting() {
         this.values = AbstractBindTable.createDefaultRow(Property.values());
     }
 
     /**
-     * コンストラクタで以前の設定を復元する.
+     * コンストラクタで以前の設定を復元する。
+     *
      * @param bytesString
      */
     public LayoutSetting(String bytesString) {
@@ -97,7 +101,8 @@ public class LayoutSetting implements Cloneable {
     private RudeArray values;
 
     /**
-     * データベースに保存するための文字列を取得する.
+     * データベースに保存するための文字列を取得する。
+     *
      * @return bytesString
      */
     public String generateSerializedString() {
@@ -111,7 +116,8 @@ public class LayoutSetting implements Cloneable {
     }
     
     /**
-     * 横方向の位置を取得する.
+     * 横方向の位置を取得する。
+     *
      * @return 横方向の位置
      */
     public double getLayoutX() {
@@ -124,7 +130,8 @@ public class LayoutSetting implements Cloneable {
     }
     
     /**
-     * 横方向の位置をセットする.
+     * 横方向の位置をセットする。
+     *
      * @param layoutX
      */
     public void setLayoutX(double layoutX) {
@@ -132,7 +139,8 @@ public class LayoutSetting implements Cloneable {
     }
 
     /**
-     * 縦方向の位置を取得する.
+     * 縦方向の位置を取得する。
+     *
      * @return 縦方向の位置
      */
     public double getLayoutY() {
@@ -145,7 +153,8 @@ public class LayoutSetting implements Cloneable {
     }
     
     /**
-     * 縦方向の位置をセットする.
+     * 縦方向の位置をセットする。
+     *
      * @param layoutY
      */
     public void setLayoutY(double layoutY) {
@@ -153,7 +162,8 @@ public class LayoutSetting implements Cloneable {
     }
 
     /**
-     * 幅を取得する.
+     * 幅を取得する。
+     *
      * @return 幅
      */
     public double getWidth() {
@@ -166,7 +176,8 @@ public class LayoutSetting implements Cloneable {
     }
     
     /**
-     * 幅をセットする.
+     * 幅をセットする。
+     *
      * @param width
      */
     public void setWidth(double width) {
@@ -174,7 +185,8 @@ public class LayoutSetting implements Cloneable {
     }
 
     /**
-     * 高さを取得する.
+     * 高さを取得する。
+     *
      * @return 高さ
      */
     public double getHeight() {
@@ -187,7 +199,8 @@ public class LayoutSetting implements Cloneable {
     }
     
     /**
-     * 高さをセットする.
+     * 高さをセットする。
+     *
      * @param height
      */
     public void setHeight(double height) {
@@ -195,7 +208,8 @@ public class LayoutSetting implements Cloneable {
     }
     
     /**
-     * 横方向の位置・縦方向の位置・幅・高さをセットする.
+     * 横方向の位置・縦方向の位置・幅・高さをセットする。
+     *
      * @param layoutX 横方向の位置
      * @param layoutY 縦方向の位置
      * @param width 幅
@@ -206,6 +220,4 @@ public class LayoutSetting implements Cloneable {
     	this.setLayoutY(layoutY);
     	this.setWidth(width);
     	this.setHeight(height);
-    }
-    
-}
+    }}

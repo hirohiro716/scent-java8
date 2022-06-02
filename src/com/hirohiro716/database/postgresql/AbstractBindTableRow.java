@@ -6,13 +6,15 @@ import com.hirohiro716.RudeArray;
 import com.hirohiro716.database.DataNotFoundException;
 
 /**
- * ORMのようなものを提供する抽象クラス.
+ * ORMのようなものを提供する抽象クラス。
+ *
  * @author hiro
  */
 public abstract class AbstractBindTableRow extends com.hirohiro716.database.AbstractBindTableRow {
 
     /**
-     * コンストラクタ.
+     * コンストラクタ。
+     *
      * @param postgreSQL
      */
     public AbstractBindTableRow(PostgreSQL postgreSQL) {

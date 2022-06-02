@@ -11,23 +11,27 @@ import com.hirohiro716.ArrayHelper;
 import com.hirohiro716.RudeArray;
 
 /**
- * SQLiteへのJDBC接続を補助するクラス.
+ * SQLiteへのJDBC接続を補助するクラス。
+ *
  * @author hiro
  */
 public class SQLite extends AbstractDatabase {
 
     /**
-     * SQLiteにはBoolean型が無いのでINTEGERで代用する際の有効を表す数値.
+     * SQLiteにはBoolean型が無いのでINTEGERで代用する際の有効を表す数値。
+     *
      */
     public static final int BOOLEAN_VALUE_ENABLED = 1;
     
     /**
-     * SQLiteにはBoolean型が無いのでINTEGERで代用する際の無効を表す数値.
+     * SQLiteにはBoolean型が無いのでINTEGERで代用する際の無効を表す数値。
+     *
      */
     public static final int BOOLEAN_VALUE_DISABLED = 0;
     
     /**
-     * SQLiteのトランザクション分離レベル.
+     * SQLiteのトランザクション分離レベル。
+     *
      * @author hiro
      */
     public enum IsolationLevel {
@@ -48,7 +52,8 @@ public class SQLite extends AbstractDatabase {
     private IsolationLevel isolationLevel = null;
 
     /**
-     * 開始されているトランザクションの分離レベルを取得する.
+     * 開始されているトランザクションの分離レベルを取得する。
+     *
      * @return トランザクションが開始されていなければnull
      */
     public IsolationLevel getIsolationLevel() {
@@ -56,7 +61,8 @@ public class SQLite extends AbstractDatabase {
     }
 
     /**
-     * データベースファイルを指定してコネクションを確立する.
+     * データベースファイルを指定してコネクションを確立する。
+     *
      * @param databaseLocation データベースファイル
      */
     @Override
@@ -70,7 +76,8 @@ public class SQLite extends AbstractDatabase {
     private String databaseLocation = null;
     
     /**
-     * connectメソッドで指定したデータベースファイル.
+     * connectメソッドで指定したデータベースファイル。
+     *
      * @return データベースファイル
      */
     public String getDatabaseLocation() {
@@ -78,7 +85,8 @@ public class SQLite extends AbstractDatabase {
     }
 
     /**
-     * テーブルが存在するか確認する.
+     * テーブルが存在するか確認する。
+     *
      * @param tableName テーブル名
      * @return 結果
      * @throws SQLException
@@ -145,8 +153,10 @@ public class SQLite extends AbstractDatabase {
     }
 
     /**
-     * トランザクションを開始する.
-     * @param isolationLevel 分離レベル.
+     * トランザクションを開始する。
+     *
+     * @param isolationLevel 分離レベル。
+     *
      * @throws SQLException
      */
     public void begin(IsolationLevel isolationLevel) throws SQLException {

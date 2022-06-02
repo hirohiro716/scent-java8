@@ -13,7 +13,8 @@ import com.hirohiro716.StringConverter;
 import com.hirohiro716.RudeArray;
 
 /**
- * WebRequestを処理するクラス.
+ * WebRequestを処理するクラス。
+ *
  * @author hiro
  */
 public class WEBRequest {
@@ -33,7 +34,8 @@ public class WEBRequest {
     private String charsetName = "UTF-8";
 
     /**
-     * 使用する文字コードを指定する.
+     * 使用する文字コードを指定する。
+     *
      * @param charsetName 初期値は "UTF-8"
      */
     public void setCharsetName(String charsetName) {
@@ -41,7 +43,8 @@ public class WEBRequest {
     }
 
     /**
-     * 使用する文字コードを取得する.
+     * 使用する文字コードを取得する。
+     *
      * @return charsetName
      */
     public String getCharsetName() {
@@ -52,7 +55,8 @@ public class WEBRequest {
     private RudeArray params = new RudeArray();
 
     /**
-     * パラメータをセットする.
+     * パラメータをセットする。
+     *
      * @param key キー
      * @param value 値
      */
@@ -61,7 +65,8 @@ public class WEBRequest {
     }
 
     /**
-     * パラメータを取得する.
+     * パラメータを取得する。
+     *
      * @param key キー
      * @return 値
      */
@@ -70,7 +75,8 @@ public class WEBRequest {
     }
 
     /**
-     * セットしてあるパラメータをURLに送信できる形にして取得する.
+     * セットしてあるパラメータをURLに送信できる形にして取得する。
+     *
      * @return URLパラメータ文字列
      */
     private String makeUrlParamsString() {
@@ -91,7 +97,8 @@ public class WEBRequest {
     }
 
     /**
-     * GET送信して結果を取得する.
+     * GET送信して結果を取得する。
+     *
      * @return body文字列
      * @throws IOException
      */
@@ -121,7 +128,8 @@ public class WEBRequest {
     }
 
     /**
-     * POST送信して結果を取得する.
+     * POST送信して結果を取得する。
+     *
      * @return body文字列
      * @throws IOException
      */

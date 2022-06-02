@@ -5,13 +5,15 @@ import java.sql.SQLException;
 import com.hirohiro716.RudeArray;
 
 /**
- * ORMのようなものを提供する抽象クラス.
+ * ORMのようなものを提供する抽象クラス。
+ *
  * @author hiro
  */
 public abstract class AbstractBindTableRow extends AbstractBindTable {
 
     /**
-     * コンストラクタ.
+     * コンストラクタ。
+     *
      * @param database 接続済みDatabase
      */
     public AbstractBindTableRow(AbstractDatabase database) {
@@ -22,7 +24,8 @@ public abstract class AbstractBindTableRow extends AbstractBindTable {
     private RudeArray row;
     
     /**
-     * 編集中レコードの連想配列を取得する.
+     * 編集中レコードの連想配列を取得する。
+     *
      * @return レコードの連想配列
      */
     public RudeArray getRow() {
@@ -30,7 +33,8 @@ public abstract class AbstractBindTableRow extends AbstractBindTable {
     }
     
     /**
-     * 連想配列を編集中のレコードとしてセットする.
+     * 連想配列を編集中のレコードとしてセットする。
+     *
      * @param row
      */
     public void setRow(RudeArray row) {
@@ -38,14 +42,16 @@ public abstract class AbstractBindTableRow extends AbstractBindTable {
     }
     
     /**
-     * 初期値が入力されたレコード用の連想配列を編集中のレコードとしてセットする.
+     * 初期値が入力されたレコード用の連想配列を編集中のレコードとしてセットする。
+     *
      */
     public void setDefaultRow() {
         this.row = this.createDefaultRow();
     }
     
     /**
-     * 保持している情報をテーブルに追加する.
+     * 保持している情報をテーブルに追加する。
+     *
      * @throws SQLException
      */
     public void insert() throws SQLException {
@@ -53,7 +59,8 @@ public abstract class AbstractBindTableRow extends AbstractBindTable {
     }
     
     /**
-     * レコードの情報を連想配列として取得して排他処理する.
+     * レコードの情報を連想配列として取得して排他処理する。
+     *
      * @return 編集されたレコードの連想配列
      * @throws SQLException 
      * @throws DataNotFoundException 
@@ -61,7 +68,8 @@ public abstract class AbstractBindTableRow extends AbstractBindTable {
     protected abstract RudeArray fetchEditRow() throws SQLException, DataNotFoundException;
     
     /**
-     * レコードの編集を開始する.
+     * レコードの編集を開始する。
+     *
      * @throws SQLException
      * @throws DataNotFoundException
      */
@@ -74,13 +82,15 @@ public abstract class AbstractBindTableRow extends AbstractBindTable {
     }
     
     /**
-     * 取得したレコードが削除済みかどうかの判定メソッド. これはedit(WhereSet)メソッドから自動的に呼び出され編集するかの判定に使われる.
+     * 取得したレコードが削除済みかどうかの判定メソッド. これはedit(WhereSet)メソッドから自動的に呼び出され編集するかの判定に使われる。
+     *
      * @return 削除済みかどうか
      */
     public abstract boolean isDeleted();
     
     /**
-     * 編集中のレコードを保持している連想配列で更新する.
+     * 編集中のレコードを保持している連想配列で更新する。
+     *
      * @throws SQLException
      * @throws DataNotFoundException
      */
@@ -97,7 +107,8 @@ public abstract class AbstractBindTableRow extends AbstractBindTable {
     }
     
     /**
-     * レコードを物理削除する.
+     * レコードを物理削除する。
+     *
      * @throws SQLException
      * @throws DataNotFoundException
      */
@@ -117,14 +128,16 @@ public abstract class AbstractBindTableRow extends AbstractBindTable {
     }
     
     /**
-     * 編集中のレコードを削除する.
+     * 編集中のレコードを削除する。
+     *
      * @throws SQLException
      * @throws DataNotFoundException
      */
     public abstract void delete() throws SQLException, DataNotFoundException;
 
     /**
-     * レコードが存在するか確認する.
+     * レコードが存在するか確認する。
+     *
      * @return 存在するかどうか
      * @throws SQLException
      */
@@ -148,6 +161,4 @@ public abstract class AbstractBindTableRow extends AbstractBindTable {
             this.setRow(oldRow);
         }
         return false;
-    }
-    
-}
+    }}

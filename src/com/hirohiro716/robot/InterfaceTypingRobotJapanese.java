@@ -3,14 +3,16 @@ package com.hirohiro716.robot;
 import java.util.LinkedHashMap;
 
 /**
- * 日本語用のキー入力機能のインターフェース.
+ * 日本語用のキー入力機能のインターフェース。
+ *
  * @author hiro
  * @param <T> KeyCodeの型
  */
 public interface InterfaceTypingRobotJapanese<T> {
 
     /**
-     * IMEモード.
+     * IMEモード。
+     *
      * @author hiro
      */
     public enum IMEMode {
@@ -40,7 +42,8 @@ public interface InterfaceTypingRobotJapanese<T> {
         private int value;
 
         /**
-         * 定数値を取得する.
+         * 定数値を取得する。
+         *
          * @return 定数を表す値
          */
         public int getValue() {
@@ -50,7 +53,8 @@ public interface InterfaceTypingRobotJapanese<T> {
         private String description;
 
         /**
-         * 定数の説明を取得する.
+         * 定数の説明を取得する。
+         *
          * @return 説明
          */
         public String getDescription() {
@@ -58,7 +62,8 @@ public interface InterfaceTypingRobotJapanese<T> {
         }
 
         /**
-         * 定数値から定数を取得する.
+         * 定数値から定数を取得する。
+         *
          * @param value
          * @return 定数
          */
@@ -72,7 +77,8 @@ public interface InterfaceTypingRobotJapanese<T> {
         }
 
         /**
-         * すべての定数の定数値と説明で構成された連想配列を取得する.
+         * すべての定数の定数値と説明で構成された連想配列を取得する。
+         *
          * @return 連想配列
          */
         public static LinkedHashMap<Integer, String> createLinkedHashMap() {
@@ -86,29 +92,34 @@ public interface InterfaceTypingRobotJapanese<T> {
     }
     
     /**
-     * キーを押して離す動作を実行する.
+     * キーを押して離す動作を実行する。
+     *
      * @param keyCodes
      */
     @SuppressWarnings("unchecked")
     public abstract void keyType(T... keyCodes);
     
     /**
-     * IMEをOFFにする.
+     * IMEをOFFにする。
+     *
      */
     public abstract void changeIMEOff();
     
     /**
-     * IMEをひらがなにする.
+     * IMEをひらがなにする。
+     *
      */
     public abstract void changeIMEHiragana();
     
     /**
-     * IMEをカタカナにする.
+     * IMEをカタカナにする。
+     *
      */
     public abstract void changeIMEKatakanaWide();
     
     /**
-     * IMEをｶﾀｶﾅにする.
+     * IMEをｶﾀｶﾅにする。
+     *
      */
     public abstract void changeIMEKatakanaNarrow();
     

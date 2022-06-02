@@ -7,7 +7,8 @@ import com.hirohiro716.StringConverter;
 import com.hirohiro716.database.AbstractDatabase;
 
 /**
- * MySQLへのJDBC接続を補助するクラス.
+ * MySQLへのJDBC接続を補助するクラス。
+ *
  * @author hiro
  */
 public class MySQL extends AbstractDatabase {
@@ -19,7 +20,8 @@ public class MySQL extends AbstractDatabase {
     }
 
     /**
-     * MySQLデータベースに接続する.
+     * MySQLデータベースに接続する。
+     *
      * @param server サーバー名(IP)
      * @param dbName データベース名
      * @param user ユーザー名
@@ -34,7 +36,8 @@ public class MySQL extends AbstractDatabase {
     }
 
     /**
-     * MySQLデータベースに接続する.
+     * MySQLデータベースに接続する。
+     *
      * @param server サーバー名(IP)
      * @param dbName データベース名
      * @param user ユーザー名

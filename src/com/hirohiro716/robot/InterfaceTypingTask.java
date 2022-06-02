@@ -3,84 +3,98 @@ package com.hirohiro716.robot;
 import java.util.Collection;
 
 /**
- * 日本語用のキー入力機能のインターフェース.
+ * 日本語用のキー入力機能のインターフェース。
+ *
  * @author hiro
  * @param <T> KeyCodeの型
  */
 public interface InterfaceTypingTask<T> {
     
     /**
-     * 定義情報のタスクの区切り文字.
+     * 定義情報のタスクの区切り文字。
+     *
      */
     public static final String DEFINITION_STRING_TASK_DELIMITER = " ";
 
     /**
-     * 定義情報のタイプと値の区切り文字.
+     * 定義情報のタイプと値の区切り文字。
+     *
      */
     public static final String DEFINITION_STRING_TYPE_AND_VALUE_DELIMITER = ":";
 
     /**
-     * 定義情報の複数値の区切り文字.
+     * 定義情報の複数値の区切り文字。
+     *
      */
     public static final String DEFINITION_STRING_VALUES_DELIMITER = ",";
     
     /**
-     * 現在の定義情報を文字列として出力する.
+     * 現在の定義情報を文字列として出力する。
+     *
      * @return 定義情報
      */
     public abstract String makeTaskDefinitionString();
     
     /**
-     * 定義情報を文字列から取り込む.
+     * 定義情報を文字列から取り込む。
+     *
      * @param taskDefinitionString 定義情報
      */
     public abstract void importFromTaskDefinitionString(String taskDefinitionString);
     
     /**
-     * セットされているタスク数を取得する.
+     * セットされているタスク数を取得する。
+     *
      * @return タスク数
      */
     public abstract int getNumberOfTasks();
     
     /**
-     * キーを入力するタスクを追加する.
+     * キーを入力するタスクを追加する。
+     *
      * @param keyCodes
      */
     public abstract void addKeyTypeTask(KeyCode... keyCodes);
 
     /**
-     * 待機するタスクを追加する.
+     * 待機するタスクを追加する。
+     *
      * @param milliseconds
      */
     public abstract void addSleepTask(long milliseconds);
     
     /**
-     * Task独自のKeyCodeから実際にタイピングに使用するKeyCodeを探す.
+     * Task独自のKeyCodeから実際にタイピングに使用するKeyCodeを探す。
+     *
      * @param keyCode Task独自のkeyCode
      * @return タイピングに使用するKeyCode
      */
     public abstract T findTypingKeyCode(KeyCode keyCode);
     
     /**
-     * タイピングに使用するKeyCodeからTask独自のKeyCodeを探す.
+     * タイピングに使用するKeyCodeからTask独自のKeyCodeを探す。
+     *
      * @param keyCode タイピングに使用するKeyCode
      * @return Task独自のKeyCode
      */
     public abstract KeyCode findTaskKeyCode(T keyCode);
     
     /**
-     * キーの入力を実行する.
+     * キーの入力を実行する。
+     *
      * @param keyCodes
      */
     public abstract void keyType(Collection<T> keyCodes);
     
     /**
-     * タスクを実行する.
+     * タスクを実行する。
+     *
      */
     public abstract void execute();
     
     /**
-     * KeyCodeの列挙型.
+     * KeyCodeの列挙型。
+     *
      * @author hiro
      */
     public enum KeyCode {
@@ -239,7 +253,8 @@ public interface InterfaceTypingTask<T> {
         ;
         
         /**
-         * 文字列からKeyCodeの取得を試みる.
+         * 文字列からKeyCodeの取得を試みる。
+         *
          * @param string 文字列 
          * @return KeyCode
          */
@@ -252,8 +267,6 @@ public interface InterfaceTypingTask<T> {
                 }
             }
             return KeyCode.UNDEFINED;
-        }
-        
-    }
+        }    }
 
 }

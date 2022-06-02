@@ -22,7 +22,8 @@ import com.hirohiro716.datetime.Datetime;
 import com.hirohiro716.RudeArray;
 
 /**
- * データベース処理の抽象クラス.
+ * データベース処理の抽象クラス。
+ *
  * @author hiro
  */
 public abstract class AbstractDatabase implements Closeable {
@@ -85,7 +86,8 @@ public abstract class AbstractDatabase implements Closeable {
     private Connection connection;
 
     /**
-     * JDBCコネクションを取得する.
+     * JDBCコネクションを取得する。
+     *
      * @return コネクション
      */
     public Connection getConnection() {
@@ -93,7 +95,8 @@ public abstract class AbstractDatabase implements Closeable {
     }
 
     /**
-     * JDBCコネクションをセットする.
+     * JDBCコネクションをセットする。
+     *
      * @param connection コネクション
      */
     public void setConnection(Connection connection) {
@@ -103,7 +106,8 @@ public abstract class AbstractDatabase implements Closeable {
     private int timeout = 0;
 
     /**
-     * タイムアウト(秒数)を取得する.
+     * タイムアウト(秒数)を取得する。
+     *
      * @return タイムアウト秒数
      */
     public int getStatementTimeout() {
@@ -111,7 +115,8 @@ public abstract class AbstractDatabase implements Closeable {
     }
 
     /**
-     * タイムアウト(秒数)を設定する.
+     * タイムアウト(秒数)を設定する。
+     *
      * @param timeout タイムアウト秒数
      */
     public void setStatementTimeout(int timeout) {
@@ -119,7 +124,8 @@ public abstract class AbstractDatabase implements Closeable {
     }
 
     /**
-     * 接続文字列を指定してコネクションを確立する.
+     * 接続文字列を指定してコネクションを確立する。
+     *
      * @param connectionString 接続文字列
      * @throws ClassNotFoundException
      * @throws SQLException
@@ -138,7 +144,8 @@ public abstract class AbstractDatabase implements Closeable {
     }
     
     /**
-     * コネクションが閉じられているかどうかを取得する.
+     * コネクションが閉じられているかどうかを取得する。
+     *
      * @return 結果
      * @throws SQLException
      */
@@ -147,7 +154,8 @@ public abstract class AbstractDatabase implements Closeable {
     }
 
     /**
-     * 更新系SQLを実行する.
+     * 更新系SQLを実行する。
+     *
      * @param sql 更新系SQL
      * @return 更新レコード数
      * @throws SQLException
@@ -160,7 +168,8 @@ public abstract class AbstractDatabase implements Closeable {
     }
 
     /**
-     * プリペアードステートメントで更新系SQLを実行する.
+     * プリペアードステートメントで更新系SQLを実行する。
+     *
      * @param sql 更新系SQL
      * @param params パラメータ
      * @return 更新レコード数
@@ -177,7 +186,8 @@ public abstract class AbstractDatabase implements Closeable {
     }
 
     /**
-     * プリペアードステートメントで更新系SQLを複数回実行する.
+     * プリペアードステートメントで更新系SQLを複数回実行する。
+     *
      * @param sql 更新系SQL
      * @param paramsArray パラメータの２次元配列
      * @return 更新レコード数
@@ -198,7 +208,8 @@ public abstract class AbstractDatabase implements Closeable {
     }
 
     /**
-     * プリペアードステートメントを内部で保持し何度も更新系SQLを実行する.
+     * プリペアードステートメントを内部で保持し何度も更新系SQLを実行する。
+     *
      * @author hiro
      */
     public class PreparedStatementEach implements Closeable {
@@ -208,7 +219,8 @@ public abstract class AbstractDatabase implements Closeable {
         private PreparedStatement statement;
 
         /**
-         * コンストラクタで更新系SQLを指定する.
+         * コンストラクタで更新系SQLを指定する。
+         *
          * @param sql 更新系SQL
          * @throws SQLException
          */
@@ -218,7 +230,8 @@ public abstract class AbstractDatabase implements Closeable {
         }
 
         /**
-         * コンストラクタで指定したSQLに対してパラメータのみを指定して更新を実行する.
+         * コンストラクタで指定したSQLに対してパラメータのみを指定して更新を実行する。
+         *
          * @param params パラメータ
          * @throws SQLException
          */
@@ -232,7 +245,8 @@ public abstract class AbstractDatabase implements Closeable {
         private int updateCount = 0;
 
         /**
-         * 今までに更新した行数を取得する.
+         * 今までに更新した行数を取得する。
+         *
          * @return 更新された行数
          */
         public int getUpdateCount() {
@@ -251,7 +265,8 @@ public abstract class AbstractDatabase implements Closeable {
     }
 
     /**
-     * SELECT結果の最初のレコード. 最初のフィールドの値を取得する.
+     * SELECT結果の最初のレコード. 最初のフィールドの値を取得する。
+     *
      * @param sql
      * @return 値
      * @throws SQLException
@@ -270,7 +285,8 @@ public abstract class AbstractDatabase implements Closeable {
     }
 
     /**
-     * プリペアードステートメントでSELECT結果の最初のレコード. 最初のフィールドの値を取得する.
+     * プリペアードステートメントでSELECT結果の最初のレコード. 最初のフィールドの値を取得する。
+     *
      * @param sql
      * @param params パラメータ
      * @return 値
@@ -299,7 +315,8 @@ public abstract class AbstractDatabase implements Closeable {
     }
 
     /**
-     * SELECT結果の最初のレコードを連想配列で取得する.
+     * SELECT結果の最初のレコードを連想配列で取得する。
+     *
      * @param sql
      * @return 連想配列
      * @throws SQLException
@@ -323,7 +340,8 @@ public abstract class AbstractDatabase implements Closeable {
     }
 
     /**
-     * プリペアードステートメントでSELECT結果の最初のレコードを連想配列で取得する.
+     * プリペアードステートメントでSELECT結果の最初のレコードを連想配列で取得する。
+     *
      * @param sql
      * @param params パラメータ
      * @return 連想配列
@@ -351,7 +369,8 @@ public abstract class AbstractDatabase implements Closeable {
     }
 
     /**
-     * SELECT結果のレコードを連想配列で取得する.
+     * SELECT結果のレコードを連想配列で取得する。
+     *
      * @param sql
      * @return 複数の連想配列
      * @throws SQLException
@@ -375,7 +394,8 @@ public abstract class AbstractDatabase implements Closeable {
     }
 
     /**
-     * プリペアードステートメントでSELECT結果のレコードを連想配列で取得する.
+     * プリペアードステートメントでSELECT結果のレコードを連想配列で取得する。
+     *
      * @param sql
      * @param params パラメータ
      * @return 複数の連想配列
@@ -403,7 +423,8 @@ public abstract class AbstractDatabase implements Closeable {
     }
     
     /**
-     * 検索に使用するオブジェクトをデータベースで使用できる適当な型にキャストする.
+     * 検索に使用するオブジェクトをデータベースで使用できる適当な型にキャストする。
+     *
      * @param value 元のオブジェクト
      * @return キャストしたオブジェクト
      */
@@ -421,7 +442,8 @@ public abstract class AbstractDatabase implements Closeable {
     }
 
     /**
-     * データベースから取得した値をjavaで使用する適当な型にキャストする.
+     * データベースから取得した値をjavaで使用する適当な型にキャストする。
+     *
      * @param value 元のオブジェクト
      * @return キャストしたオブジェクト
      */
@@ -442,7 +464,8 @@ public abstract class AbstractDatabase implements Closeable {
     }
 
     /**
-     * テーブルのレコード数を取得する.
+     * テーブルのレコード数を取得する。
+     *
      * @param tableName テーブル名
      * @return レコード数
      * @throws SQLException
@@ -453,7 +476,8 @@ public abstract class AbstractDatabase implements Closeable {
     }
 
     /**
-     * 連想配列の情報をテーブルに追加する.
+     * 連想配列の情報をテーブルに追加する。
+     *
      * @param values 連想配列
      * @param tableName テーブル名
      * @throws SQLException
@@ -477,7 +501,8 @@ public abstract class AbstractDatabase implements Closeable {
     }
 
     /**
-     * 抽出できたレコードをすべて連想配列の情報で更新する.
+     * 抽出できたレコードをすべて連想配列の情報で更新する。
+     *
      * @param values 連想配列
      * @param tableName テーブル名
      * @param whereSet 更新対象の抽出条件
@@ -517,7 +542,8 @@ public abstract class AbstractDatabase implements Closeable {
     }
 
     /**
-     * SELECTで抽出できたレコードをすべて連想配列の情報で更新する.
+     * SELECTで抽出できたレコードをすべて連想配列の情報で更新する。
+     *
      * @param values 連想配列
      * @param sql 更新対象を抽出するSQL
      * @throws SQLException
@@ -547,7 +573,8 @@ public abstract class AbstractDatabase implements Closeable {
     }
 
     /**
-     * SELECTで抽出できたレコードをすべて連想配列の情報で更新する.
+     * SELECTで抽出できたレコードをすべて連想配列の情報で更新する。
+     *
      * @param values 連想配列
      * @param sql 更新対象を抽出するSQL
      * @param params パラメータ
@@ -581,7 +608,8 @@ public abstract class AbstractDatabase implements Closeable {
     }
 
     /**
-     * ResultSetに適宜値を変換の上入力する.
+     * ResultSetに適宜値を変換の上入力する。
+     *
      * @param resultSet 対象ResultSet
      * @param columnIndex カラム番号(１から開始)
      * @param value 入力する値
@@ -781,7 +809,8 @@ public abstract class AbstractDatabase implements Closeable {
     }
 
     /**
-     * AutoCommitが設定されているかを取得する.
+     * AutoCommitが設定されているかを取得する。
+     *
      * @return 結果
      */
     public boolean isAutoCommit() {
@@ -793,7 +822,8 @@ public abstract class AbstractDatabase implements Closeable {
     }
 
     /**
-     * AutoCommitを設定する.
+     * AutoCommitを設定する。
+     *
      * @param isAutoCommit
      * @throws SQLException
      */
@@ -802,7 +832,8 @@ public abstract class AbstractDatabase implements Closeable {
     }
 
     /**
-     * トランザクションをコミットする.
+     * トランザクションをコミットする。
+     *
      * @throws SQLException
      */
     public void commit() throws SQLException {
@@ -810,7 +841,8 @@ public abstract class AbstractDatabase implements Closeable {
     }
 
     /**
-     * トランザクションをロールバックする.
+     * トランザクションをロールバックする。
+     *
      * @throws SQLException
      */
     public void rollback() throws SQLException {
@@ -818,7 +850,8 @@ public abstract class AbstractDatabase implements Closeable {
     }
 
     /**
-     * Integerをキー/Stringが値のHashMapに準じたSQLのCASE文を生成する.
+     * Integerをキー/Stringが値のHashMapに準じたSQLのCASE文を生成する。
+     *
      * @param hashMap 対象連想配列
      * @param columnName 対象カラム
      * @return CASE文
@@ -844,7 +877,8 @@ public abstract class AbstractDatabase implements Closeable {
     }
 
     /**
-     * Stringをキー/Stringが値のHashMapに準じたSQLのCASE文を生成する.
+     * Stringをキー/Stringが値のHashMapに準じたSQLのCASE文を生成する。
+     *
      * @param hashMap 対象連想配列
      * @param columnName 対象カラム
      * @return CASE文

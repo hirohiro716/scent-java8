@@ -49,7 +49,8 @@ public class Print {
     private String instanceMediaTray;
 
     /**
-     * プリンタ一覧を取得します.
+     * プリンタ一覧を取得します。
+     *
      * @return PrintService配列
      */
     public static PrintService[] fetchPrintServices() {
@@ -57,7 +58,8 @@ public class Print {
     }
 
     /**
-     * 印刷物を追加します.
+     * 印刷物を追加します。
+     *
      * @param printable Printableインターフェースを継承したクラスインスタンス
      */
     public void setPrintable(Printable printable) {
@@ -65,7 +67,8 @@ public class Print {
     }
 
     /**
-     * 印刷するプリンタを設定します.
+     * 印刷するプリンタを設定します。
+     *
      * @param printService 対象PrintService
      * @throws PrinterException 指定されたサービスが有効な印刷サービスではない場合
      */
@@ -74,7 +77,8 @@ public class Print {
     }
 
     /**
-     * 用紙向きを指定します.
+     * 用紙向きを指定します。
+     *
      * @param orientationRequested 向き定数
      */
     public void setPaperOrientation(OrientationRequested orientationRequested) {
@@ -83,7 +87,8 @@ public class Print {
     }
 
     /**
-     * プリンタのトレイを指定します.
+     * プリンタのトレイを指定します。
+     *
      * @param trayName
      */
     public void setMediaTray(String trayName) {
@@ -92,7 +97,8 @@ public class Print {
     }
 
     /**
-     * トレイを実際にセットします.
+     * トレイを実際にセットします。
+     *
      */
     private void setMediaTrayAttribute() {
         if (this.instanceMediaTray.length() > 0) {
@@ -111,7 +117,8 @@ public class Print {
     }
 
     /**
-     * 用紙サイズをミリメートルで指定します.
+     * 用紙サイズをミリメートルで指定します。
+     *
      * @param width 幅(mm)
      * @param height 高さ(mm)
      */
@@ -131,7 +138,8 @@ public class Print {
     }
 
     /**
-     * 用紙サイズをPaperSize列挙型から選択して指定します.
+     * 用紙サイズをPaperSize列挙型から選択して指定します。
+     *
      * @param sizeName
      */
     public void setPaperSize(MediaSizeName sizeName) {
@@ -142,7 +150,8 @@ public class Print {
     }
 
     /**
-     * 用紙に印刷させる範囲を設定します.
+     * 用紙に印刷させる範囲を設定します。
+     *
      * @param x 左開始位置
      * @param y 上開始位置
      * @param width 幅
@@ -154,7 +163,8 @@ public class Print {
     }
 
     /**
-     * 印刷ジョブ名を指定します.
+     * 印刷ジョブ名を指定します。
+     *
      * @param jobName ジョブ名
      */
     public void setJobName(String jobName) {
@@ -163,7 +173,8 @@ public class Print {
     }
 
     /**
-     * 印刷部数を指定します.
+     * 印刷部数を指定します。
+     *
      * @param copies コピー回数
      */
     public void setCopies(int copies) {
@@ -172,7 +183,8 @@ public class Print {
     }
 
     /**
-     * カラーかモノクロを指定します.
+     * カラーかモノクロを指定します。
+     *
      * @param isColor カラーかどうか
      */
     public void setColor(boolean isColor) {
@@ -184,7 +196,8 @@ public class Print {
     }
 
     /**
-     * 印刷ダイアログを表示して印刷設定をします.
+     * 印刷ダイアログを表示して印刷設定をします。
+     *
      * @return 結果
      */
     public boolean showPrintDialog() {
@@ -192,7 +205,8 @@ public class Print {
     }
 
     /**
-     * 印刷を実行します.
+     * 印刷を実行します。
+     *
      * @throws PrinterException 印刷システムのエラーが原因でジョブが停止した場合
      */
     public void print() throws PrinterException {
@@ -202,7 +216,8 @@ public class Print {
     }
 
     /**
-     * 印刷結果の画像データを保持したImageHelperインスタンスを取得します.
+     * 印刷結果の画像データを保持したImageHelperインスタンスを取得します。
+     *
      * @param zoomRate 拡大比率(1が等倍・0.5で半分)
      * @param fileExtension 画像タイプ
      * @return ImageHelperインスタンス

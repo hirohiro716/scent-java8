@@ -13,7 +13,8 @@ public class NW7Helper {
     private static HashMap<String, int[]> dataCharacters = null;
 
     /**
-     * それぞれの英数記号を表すバーコードキャラクタ印字パターンを取得する.
+     * それぞれの英数記号を表すバーコードキャラクタ印字パターンを取得する。
+     *
      * @return HashMap
      */
     public static HashMap<String, int[]> getDataCharacters() {
@@ -44,7 +45,8 @@ public class NW7Helper {
     }
 
     /**
-     * 7DRでチェックデジットを算出する.
+     * 7DRでチェックデジットを算出する。
+     *
      * @param barcode バーコード
      * @return チェックデジット
      */
@@ -54,7 +56,8 @@ public class NW7Helper {
     }
 
     /**
-     * 7DSRでチェックデジットを算出する.
+     * 7DSRでチェックデジットを算出する。
+     *
      * @param barcode バーコード
      * @return チェックデジット
      */

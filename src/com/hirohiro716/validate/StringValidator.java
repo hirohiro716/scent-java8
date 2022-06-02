@@ -9,7 +9,8 @@ import com.hirohiro716.datetime.Datetime;
 import com.hirohiro716.RudeArray;
 
 /**
- * 値をチェックするクラス.
+ * 値をチェックするクラス。
+ *
  * @author hiro
  */
 public class StringValidator {
@@ -57,14 +58,16 @@ public class StringValidator {
     }
 
     /**
-     * コンストラクタ.
+     * コンストラクタ。
+     *
      */
     public StringValidator() {
         super();
     }
 
     /**
-     * コンストラクタでエラーメッセージに使われるチェック対象の名前を指定する.
+     * コンストラクタでエラーメッセージに使われるチェック対象の名前を指定する。
+     *
      * @param targetName
      */
     public StringValidator(String targetName) {
@@ -74,7 +77,8 @@ public class StringValidator {
     private String targetName;
 
     /**
-     * エラーメッセージに使用されるチェック対象の名前を指定する.
+     * エラーメッセージに使用されるチェック対象の名前を指定する。
+     *
      * @param targetName
      */
     public void setTargetName(String targetName) {
@@ -82,28 +86,32 @@ public class StringValidator {
     }
 
     /**
-     * 文字列の空欄チェックを予約する.
+     * 文字列の空欄チェックを予約する。
+     *
      */
     public void addBlankCheck() {
         this.params.put(Pattern.BLANK, null);
     }
 
     /**
-     * 文字列の数値有効性チェックを予約する.
+     * 文字列の数値有効性チェックを予約する。
+     *
      */
     public void addIntegerCheck() {
         this.params.put(Pattern.INTEGER, null);
     }
 
     /**
-     * 文字列の少数値有効性チェックを予約する.
+     * 文字列の少数値有効性チェックを予約する。
+     *
      */
     public void addDecimalCheck() {
         this.params.put(Pattern.DECIMAL, null);
     }
 
     /**
-     * 文字列の文字数チェックを予約する.
+     * 文字列の文字数チェックを予約する。
+     *
      * @param length 決定文字数
      */
     public void addLengthCheck(int length) {
@@ -111,7 +119,8 @@ public class StringValidator {
     }
 
     /**
-     * 文字列の最大文字数チェックを予約する.
+     * 文字列の最大文字数チェックを予約する。
+     *
      * @param length 最大文字数
      */
     public void addMaxLengthCheck(int length) {
@@ -119,7 +128,8 @@ public class StringValidator {
     }
 
     /**
-     * 文字列の最小文字数チェックを予約する.
+     * 文字列の最小文字数チェックを予約する。
+     *
      * @param length 最小文字数
      */
     public void addMinLengthCheck(int length) {
@@ -127,14 +137,16 @@ public class StringValidator {
     }
 
     /**
-     * 数値のゼロチェックを予約する.
+     * 数値のゼロチェックを予約する。
+     *
      */
     public void addZeroCheck() {
         this.params.put(Pattern.ZERO, null);
     }
 
     /**
-     * 数値の最大値チェックを予約する.
+     * 数値の最大値チェックを予約する。
+     *
      * @param maxValue 最大値
      */
     public void addMaxValueCheck(double maxValue) {
@@ -142,7 +154,8 @@ public class StringValidator {
     }
 
     /**
-     * 数値の最小値チェックを予約する.
+     * 数値の最小値チェックを予約する。
+     *
      * @param minValue 最小値
      */
     public void addMinValueCheck(double minValue) {
@@ -150,21 +163,24 @@ public class StringValidator {
     }
 
     /**
-     * 日付形式チェックを予約する. java.util.Dateか日付として有効な文字列かをチェックする.
+     * 日付形式チェックを予約する. java.util.Dateか日付として有効な文字列かをチェックする。
+     *
      */
     public void addDatetimeCheck() {
         this.params.put(Pattern.DATETIME, null);
     }
 
     /**
-     * 文字列の電話番号有効性チェックを予約する.
+     * 文字列の電話番号有効性チェックを予約する。
+     *
      */
     public void addTelephoneNumberCheck() {
         this.params.put(Pattern.TELEPHONE_NUMBER, null);
     }
 
     /**
-     * 正規表現パターンチェックを予約する.
+     * 正規表現パターンチェックを予約する。
+     *
      * @param regex 正規表現
      */
     public void addRegexCheck(java.util.regex.Pattern regex) {
@@ -172,7 +188,8 @@ public class StringValidator {
     }
 
     /**
-     * 正規表現に一致する場合にエラーとするチェックを予約する.
+     * 正規表現に一致する場合にエラーとするチェックを予約する。
+     *
      * @param regex 正規表現
      */
     public void addRegexReverseCheck(java.util.regex.Pattern regex) {
@@ -180,7 +197,8 @@ public class StringValidator {
     }
 
     /**
-     * セットしたチェックパターンをすべて解除する.
+     * セットしたチェックパターンをすべて解除する。
+     *
      */
     public void clear() {
         this.params.clear();
@@ -213,7 +231,8 @@ public class StringValidator {
     }
 
     /**
-     * 値のチェックを実行します.
+     * 値のチェックを実行します。
+     *
      * @param target チェック対象
      * @throws ValidationException
      */
@@ -294,7 +313,8 @@ public class StringValidator {
     }
 
     /**
-     * 空欄かどうかをチェックする.
+     * 空欄かどうかをチェックする。
+     *
      * @param value チェック対象
      * @return 結果
      */
@@ -309,7 +329,8 @@ public class StringValidator {
      }
 
     /**
-     * 数値かどうかをチェックする.
+     * 数値かどうかをチェックする。
+     *
      * @param value チェック対象
      * @return 結果
      */
@@ -323,7 +344,8 @@ public class StringValidator {
     }
 
     /**
-     * 少数値かどうかをチェックする.
+     * 少数値かどうかをチェックする。
+     *
      * @param value チェック対象
      * @return 結果
      */
@@ -337,7 +359,8 @@ public class StringValidator {
     }
 
     /**
-     * 電話番号かどうかをチェックする.
+     * 電話番号かどうかをチェックする。
+     *
      * @param value チェック対象
      * @return 結果
      */

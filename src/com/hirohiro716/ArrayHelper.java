@@ -7,13 +7,15 @@ import java.util.Comparator;
 import java.util.List;
 
 /**
- * 配列操作に関するクラス.
+ * 配列操作に関するクラス。
+ *
  * @author hiro
  */
 public class ArrayHelper {
     
     /**
-     * 配列を結合する.
+     * 配列を結合する。
+     *
      * @param <T>
      * @param arrays 結合する配列
      * @return 結合された配列
@@ -30,7 +32,8 @@ public class ArrayHelper {
     }
     
     /**
-     * 配列をListに変換する.
+     * 配列をListに変換する。
+     *
      * @param <T> 型
      * @param array 配列
      * @return Listオブジェクト
@@ -40,7 +43,8 @@ public class ArrayHelper {
     }
     
     /**
-     * 数値の配列をソートする.
+     * 数値の配列をソートする。
+     *
      * @param <T> Numberを継承した数値型
      * @param array 数値の配列
      * @param isReverseOrder 降順かどうか
@@ -75,7 +79,8 @@ public class ArrayHelper {
     }
 
     /**
-     * 数値の配列を昇順でソートする.
+     * 数値の配列を昇順でソートする。
+     *
      * @param <T> Numberを継承した数値型
      * @param array 数値の配列
      */
@@ -84,7 +89,8 @@ public class ArrayHelper {
     }
     
     /**
-     * 配列中で最初に見つかった検索値に対するインデックスを取得する. 見つからなかった場合は-1を返す.
+     * 配列中で最初に見つかった検索値に対するインデックスを取得する. 見つからなかった場合は-1を返す。
+     *
      * @param <T> 
      * @param array 配列
      * @param searchValue 検索値
@@ -112,7 +118,8 @@ public class ArrayHelper {
     }
 
     /**
-     * 配列中で最後に見つかった検索値に対するインデックスを取得する. 見つからなかった場合は-1を返す.
+     * 配列中で最後に見つかった検索値に対するインデックスを取得する. 見つからなかった場合は-1を返す。
+     *
      * @param <T> 型
      * @param array 配列
      * @param searchValue 検索値
@@ -140,7 +147,8 @@ public class ArrayHelper {
     }
 
     /**
-     * 配列をすべて区切り文字で連結する.
+     * 配列をすべて区切り文字で連結する。
+     *
      * @param <T> 型
      * @param array 配列
      * @param delimiter 区切り文字
@@ -157,6 +165,4 @@ public class ArrayHelper {
             }
         }
         return stringBuilder.toString();
-    }
-    
-}
+    }}

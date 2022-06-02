@@ -15,7 +15,8 @@ import com.hirohiro716.RudeArray;
 import com.hirohiro716.datetime.Datetime;
 
 /**
- * Cookieを保持する抽象クラス.
+ * Cookieを保持する抽象クラス。
+ *
  * @author hiro
  */
 public abstract class AbstractCookieStore implements CookieStore {
@@ -25,7 +26,8 @@ public abstract class AbstractCookieStore implements CookieStore {
     private boolean isInitialized = false;
     
     /**
-     * 初回の永続化済みCookieを読み込む処理.
+     * 初回の永続化済みCookieを読み込む処理。
+     *
      */
     private void initialize() {
         if (this.isInitialized) {
@@ -51,7 +53,8 @@ public abstract class AbstractCookieStore implements CookieStore {
     }
 
     /**
-     * URIからdomainとpathの条件に該当するcookieを検索する.
+     * URIからdomainとpathの条件に該当するcookieを検索する。
+     *
      * @param uri
      * @return ArrayList<HashMap<String, HttpCookieWithDate>>
      */
@@ -159,7 +162,8 @@ public abstract class AbstractCookieStore implements CookieStore {
     }
     
     /**
-     * 永続化したCookieの情報だけを削除する.
+     * 永続化したCookieの情報だけを削除する。
+     *
      * @param uri URI
      * @param httpCookie 対象のCookie
      */
@@ -193,7 +197,8 @@ public abstract class AbstractCookieStore implements CookieStore {
     }
 
     /**
-     * Cookieをシリアライズして永続化する.
+     * Cookieをシリアライズして永続化する。
+     *
      * @param httpCookieWithDate
      * @throws Exception 
      */
@@ -214,7 +219,8 @@ public abstract class AbstractCookieStore implements CookieStore {
     }
     
     /**
-     * Cookieを永続化する.
+     * Cookieを永続化する。
+     *
      * @param domainAndPath ドメインとパス
      * @param serialized シリアライズしたcookieの情報
      * @throws Exception 
@@ -222,13 +228,15 @@ public abstract class AbstractCookieStore implements CookieStore {
     protected abstract void persistCookies(String domainAndPath, String serialized) throws Exception;
 
     /**
-     * 永続化したCookieの情報をすべて削除する.
+     * 永続化したCookieの情報をすべて削除する。
+     *
      * @throws Exception 
      */
     protected abstract void clearAllPersistedCookies() throws Exception;
 
     /**
-     * 永続化したCookieを読み込む.
+     * 永続化したCookieを読み込む。
+     *
      * @param domainAndPath ドメインとパス
      * @return シリアライズされたcookieの情報
      * @throws Exception 
@@ -236,20 +244,23 @@ public abstract class AbstractCookieStore implements CookieStore {
     protected abstract String loadPersistedCookies(String domainAndPath) throws Exception;
     
     /**
-     * 永続化したすべてのCookie情報を読み込む.
+     * 永続化したすべてのCookie情報を読み込む。
+     *
      * @return HashMap<String, String> 「ドメインとパス」がkeyで「シリアライズされたCookie情報」が値の連想配列
      * @throws Exception
      */
     protected abstract HashMap<String, String> loadAllPersistedCookies() throws Exception;
     
     /**
-     * HttpCookieと作成日を一緒に保持するクラス.
+     * HttpCookieと作成日を一緒に保持するクラス。
+     *
      * @author hiro
      */
     protected static class HttpCookieWithDate {
         
         /**
-         * コンストラクタ.
+         * コンストラクタ。
+         *
          * @param httpCookie Cookie
          * @param date 作成日
          */
@@ -261,7 +272,8 @@ public abstract class AbstractCookieStore implements CookieStore {
         private HttpCookie httpCookie;
         
         /**
-         * Cookieを取得する.
+         * Cookieを取得する。
+         *
          * @return HttpCookie
          */
         public HttpCookie getHttpCookie() {
@@ -271,7 +283,8 @@ public abstract class AbstractCookieStore implements CookieStore {
         private Date date;
         
         /**
-         * 作成日を取得する.
+         * 作成日を取得する。
+         *
          * @return Date
          */
         public Date getDate() {
@@ -279,7 +292,8 @@ public abstract class AbstractCookieStore implements CookieStore {
         }
         
         /**
-         * URIがCookieの条件を満たしているか確認する.
+         * URIがCookieの条件を満たしているか確認する。
+         *
          * @param uri
          * @return 結果
          */
@@ -308,7 +322,8 @@ public abstract class AbstractCookieStore implements CookieStore {
         }
         
         /**
-         * URIがCookieのポート番号条件を満たしているか確認する.
+         * URIがCookieのポート番号条件を満たしているか確認する。
+         *
          * @param uri
          * @return 結果
          */
@@ -342,7 +357,8 @@ public abstract class AbstractCookieStore implements CookieStore {
         }
         
         /**
-         * Cookieが有効期限内かを確認する.
+         * Cookieが有効期限内かを確認する。
+         *
          * @return 結果
          */
         public boolean isInExpirationDate() {
@@ -364,7 +380,8 @@ public abstract class AbstractCookieStore implements CookieStore {
         }
         
         /**
-         * シリアライズする.
+         * シリアライズする。
+         *
          * @return シリアライズしたbyte配列の文字列
          */
         public String serialize() {
@@ -392,7 +409,8 @@ public abstract class AbstractCookieStore implements CookieStore {
         }
         
         /**
-         * デシリアライズする.
+         * デシリアライズする。
+         *
          * @param serializedString シリアライズされているbyte配列の文字列
          * @return HttpCookieWithDate
          */
@@ -417,8 +435,4 @@ public abstract class AbstractCookieStore implements CookieStore {
                 exception.printStackTrace();
                 return null;
             }
-        }
-        
-    }
-    
-}
+        }    }}

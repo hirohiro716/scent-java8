@@ -14,20 +14,23 @@ import com.hirohiro716.ByteConverter;
 import com.hirohiro716.file.FileHelper.FileExtension;
 
 /**
- * 画像の処理を補助するクラスです.
+ * 画像の処理を補助するクラスです。
+ *
  * @author hiro
  */
 public class ImageConverter extends ByteConverter {
 
     /**
-     * コンストラクタ.
+     * コンストラクタ。
+     *
      */
     public ImageConverter() {
         super();
     }
 
     /**
-     * コンストラクタ.
+     * コンストラクタ。
+     *
      * @param image
      * @param fileExtension
      */
@@ -36,7 +39,8 @@ public class ImageConverter extends ByteConverter {
     }
 
     /**
-     * コンストラクタ.
+     * コンストラクタ。
+     *
      * @param file
      * @throws IOException 
      */
@@ -45,7 +49,8 @@ public class ImageConverter extends ByteConverter {
     }
 
     /**
-     * コンストラクタ.
+     * コンストラクタ。
+     *
      * @param fileLocation
      * @throws IOException 
      */
@@ -54,7 +59,8 @@ public class ImageConverter extends ByteConverter {
     }
 
     /**
-     * BufferedImageインスタンスをセットします.
+     * BufferedImageインスタンスをセットします。
+     *
      * @param bufferedImage BufferedImageインスタンス
      * @param fileExtension 拡張子
      * @throws IOException 書込み中にエラーが発生した場合
@@ -68,7 +74,8 @@ public class ImageConverter extends ByteConverter {
     }
 
     /**
-     * BufferedImageインスタンスをセットします.
+     * BufferedImageインスタンスをセットします。
+     *
      * @param bufferedImage BufferedImageインスタンス
      * @throws IOException 書込み中にエラーが発生した場合
      */
@@ -81,7 +88,8 @@ public class ImageConverter extends ByteConverter {
     }
 
     /**
-     * BufferedImageインスタンスを取得します.
+     * BufferedImageインスタンスを取得します。
+     *
      * @return インスタンス
      * @throws IOException 読込み中にエラーが発生した場合
      */
@@ -93,7 +101,8 @@ public class ImageConverter extends ByteConverter {
     }
 
     /**
-     * 画像ファイルを指定されたサイズにリサイズします.
+     * 画像ファイルを指定されたサイズにリサイズします。
+     *
      * @param width 幅
      * @param height 高さ
      * @param isExpansion 拡大リサイズをするかどうか
@@ -115,7 +124,8 @@ public class ImageConverter extends ByteConverter {
     }
 
     /**
-     * 画像ファイルを指定されたサイズにリサイズします.
+     * 画像ファイルを指定されたサイズにリサイズします。
+     *
      * @param longSide 高さまたは幅の長辺
      * @param isExpansion 拡大リサイズをするかどうか
      * @throws IOException 読込み中または書き込み中にエラーが発生した場合

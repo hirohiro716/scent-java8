@@ -23,7 +23,8 @@ import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
 /**
- * XMLファイルの作成をサポートします.
+ * XMLファイルの作成をサポートします。
+ *
  * @author hiro
  */
 public class XML {
@@ -33,7 +34,8 @@ public class XML {
     Document document;
 
     /**
-     * コンストラクタでorg.w3c.dom.Documentインスタンスを生成する.
+     * コンストラクタでorg.w3c.dom.Documentインスタンスを生成する。
+     *
      */
     public XML() {
         try {
@@ -46,7 +48,8 @@ public class XML {
     }
 
     /**
-     * org.w3c.dom.Documentインスタンスを取得する.
+     * org.w3c.dom.Documentインスタンスを取得する。
+     *
      * @return Document
      */
     public Document getDocument() {
@@ -54,7 +57,8 @@ public class XML {
     }
 
     /**
-     * 新しい要素を作成する.
+     * 新しい要素を作成する。
+     *
      * @param name 要素名
      * @return 作成した要素
      */
@@ -65,7 +69,8 @@ public class XML {
     }
 
     /**
-     * 新しい要素を作成する.
+     * 新しい要素を作成する。
+     *
      * @param name 要素名
      * @param parentNode 親要素
      * @return 作成した要素
@@ -77,7 +82,8 @@ public class XML {
     }
 
     /**
-     * 新しい要素を作成して値をセットする.
+     * 新しい要素を作成して値をセットする。
+     *
      * @param name 要素名
      * @param textContent 値
      * @return 作成した要素
@@ -90,7 +96,8 @@ public class XML {
     }
 
     /**
-     * 新しい要素を作成して値をセットする.
+     * 新しい要素を作成して値をセットする。
+     *
      * @param name 要素名
      * @param parentNode 親要素
      * @param textContent 値
@@ -104,7 +111,8 @@ public class XML {
     }
 
     /**
-     * 要素をID属性で検索する. 検索結果がない場合はnullを返す.
+     * 要素をID属性で検索する. 検索結果がない場合はnullを返す。
+     *
      * @param id
      * @return 要素
      */
@@ -113,7 +121,8 @@ public class XML {
     }
 
     /**
-     * 要素を名前で検索する.
+     * 要素を名前で検索する。
+     *
      * @param name 要素名
      * @return 要素
      */
@@ -126,7 +135,8 @@ public class XML {
     }
 
     /**
-     * 要素を名前で検索する.
+     * 要素を名前で検索する。
+     *
      * @param name 要素名
      * @return 要素リスト
      */
@@ -140,7 +150,8 @@ public class XML {
     }
 
     /**
-     * 要素を名前で検索する.
+     * 要素を名前で検索する。
+     *
      * @param name 要素名
      * @param parentNode 親要素
      * @return 要素
@@ -156,7 +167,8 @@ public class XML {
     }
 
     /**
-     * 要素を名前で検索する.
+     * 要素を名前で検索する。
+     *
      * @param name 要素名
      * @param parentNode 親要素
      * @return 要素リスト
@@ -173,7 +185,8 @@ public class XML {
     }
 
     /**
-     * XMLの内容から文字列を生成する.
+     * XMLの内容から文字列を生成する。
+     *
      * @return XML
      * @throws TransformerException
      */
@@ -189,7 +202,8 @@ public class XML {
     }
 
     /**
-     * XMLの内容から文字列を生成する.
+     * XMLの内容から文字列を生成する。
+     *
      * @param encoding 文字コード(UTF-8/Shift_JISなど)
      * @return XML
      * @throws TransformerException
@@ -206,7 +220,8 @@ public class XML {
     }
 
     /**
-     * XMLファイルを作成する.
+     * XMLファイルを作成する。
+     *
      * @param fileLocation 保存先
      * @param encoding 文字コード(UTF-8/Shift_JISなど)
      * @throws IOException
@@ -224,7 +239,8 @@ public class XML {
     }
 
     /**
-     * XMLの内容を取り込む.
+     * XMLの内容を取り込む。
+     *
      * @param source XML内容
      * @throws SAXException
      */
@@ -243,7 +259,8 @@ public class XML {
     }
 
     /**
-     * XMLの内容を取り込む.
+     * XMLの内容を取り込む。
+     *
      * @param source XML内容
      * @param encoding 文字コード(UTF-8/Shift_JISなど)
      * @throws IOException
@@ -254,7 +271,8 @@ public class XML {
     }
 
     /**
-     * XMLファイルを取り込む.
+     * XMLファイルを取り込む。
+     *
      * @param fileLocation 場所
      * @throws IOException
      * @throws SAXException
@@ -264,13 +282,12 @@ public class XML {
     }
 
     /**
-     * XMLファイルを取り込む.
+     * XMLファイルを取り込む。
+     *
      * @param file ファイル
      * @throws IOException
      * @throws SAXException 
      */
     public void importFromFile(File file) throws IOException, SAXException {
         this.document = this.builder.parse(file);
-    }
-    
-}
+    }}

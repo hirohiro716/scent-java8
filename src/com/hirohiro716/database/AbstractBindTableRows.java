@@ -7,13 +7,15 @@ import java.util.List;
 import com.hirohiro716.RudeArray;
 
 /**
- * ORMのようなものを提供する抽象クラス.
+ * ORMのようなものを提供する抽象クラス。
+ *
  * @author hiro
  */
 public abstract class AbstractBindTableRows extends AbstractBindTable {
     
     /**
-     * コンストラクタ.
+     * コンストラクタ。
+     *
      * @param database 接続済みDatabase
      */
     public AbstractBindTableRows(AbstractDatabase database) {
@@ -23,7 +25,8 @@ public abstract class AbstractBindTableRows extends AbstractBindTable {
     private List<RudeArray> rows = new ArrayList<>();
     
     /**
-     * 編集中の全レコードの連想配列を取得する.
+     * 編集中の全レコードの連想配列を取得する。
+     *
      * @return 全レコードの連想配列
      */
     public List<RudeArray> getRows() {
@@ -31,7 +34,8 @@ public abstract class AbstractBindTableRows extends AbstractBindTable {
     }
     
     /**
-     * 連想配列を編集中の全レコードとしてセットする.
+     * 連想配列を編集中の全レコードとしてセットする。
+     *
      * @param rows 全レコードの連想配列
      */
     public void setRows(List<RudeArray> rows) {
@@ -39,7 +43,8 @@ public abstract class AbstractBindTableRows extends AbstractBindTable {
     }
     
     /**
-     * 連想配列を編集中の全レコードとしてセットする.
+     * 連想配列を編集中の全レコードとしてセットする。
+     *
      * @param rows 全レコードの連想配列
      */
     public void setRows(RudeArray[] rows) {
@@ -50,7 +55,8 @@ public abstract class AbstractBindTableRows extends AbstractBindTable {
     }
     
     /**
-     * 連想配列を編集中のレコードとして追加する.
+     * 連想配列を編集中のレコードとして追加する。
+     *
      * @param row レコードの連想配列
      */
     public void addRow(RudeArray row) {
@@ -58,7 +64,8 @@ public abstract class AbstractBindTableRows extends AbstractBindTable {
     }
     
     /**
-     * 連想配列を編集中のレコード郡から取り除く.
+     * 連想配列を編集中のレコード郡から取り除く。
+     *
      * @param row 対象のレコード連想配列
      * @return 結果
      */
@@ -67,14 +74,16 @@ public abstract class AbstractBindTableRows extends AbstractBindTable {
     }
     
     /**
-     * 編集中の全レコードの連想配列をすべてクリアする.
+     * 編集中の全レコードの連想配列をすべてクリアする。
+     *
      */
     public void clearRows() {
         this.rows.clear();
     }
 
     /**
-     * 編集する全レコードの情報を連想配列として取得して排他処理する.
+     * 編集する全レコードの情報を連想配列として取得して排他処理する。
+     *
      * @param afterSQL ORDER句などのFROM句の後に入力するオプション
      * @return 編集された全レコードの連想配列
      * @throws SQLException 
@@ -82,7 +91,8 @@ public abstract class AbstractBindTableRows extends AbstractBindTable {
     protected abstract RudeArray[] fetchEditRows(String afterSQL) throws SQLException;
     
     /**
-     * 複数のレコードの編集を開始する.
+     * 複数のレコードの編集を開始する。
+     *
      * @param orderByColumns 並び替えを指定(ASC・DESCを含むカラム名)
      * @throws SQLException
      */
@@ -101,13 +111,15 @@ public abstract class AbstractBindTableRows extends AbstractBindTable {
     }
     
     /**
-     * 検索条件が空の状態の上書き(全レコード置き換え)を許可するかどうか.
+     * 検索条件が空の状態の上書き(全レコード置き換え)を許可するかどうか。
+     *
      * @return 許可する場合はtrue
      */
     public abstract boolean isPermittedSearchConditioEmptyUpdate();
     
     /**
-     * 編集している複数のレコードを保持している連想配列に置き換える.
+     * 編集している複数のレコードを保持している連想配列に置き換える。
+     *
      * @throws SQLException
      */
     public void update() throws SQLException {
@@ -131,7 +143,8 @@ public abstract class AbstractBindTableRows extends AbstractBindTable {
     }
 
     /**
-     * レコードが存在するか確認する.
+     * レコードが存在するか確認する。
+     *
      * @return 存在するかどうか
      * @throws SQLException
      */
@@ -155,6 +168,4 @@ public abstract class AbstractBindTableRows extends AbstractBindTable {
             throw new SQLException(exception);
         }
         return false;
-    }
-    
-}
+    }}
