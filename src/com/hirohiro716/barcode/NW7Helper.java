@@ -64,5 +64,4 @@ public class NW7Helper {
     public static String compute7DSR(String barcode) {
         return String.valueOf(7 - Integer.parseInt(compute7DR(barcode)));
     }
-
 }

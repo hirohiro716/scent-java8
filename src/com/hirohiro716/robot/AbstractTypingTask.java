@@ -203,5 +203,4 @@ public abstract class AbstractTypingTask<T> implements InterfaceTypingTask<T> {
         public long getMilliseconds() {
             return this.milliseconds;
         }
-
     }}

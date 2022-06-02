@@ -126,5 +126,4 @@ public abstract class AbstractBindTableRows extends com.hirohiro716.database.Abs
             throw new IOException(exception);
         }
     }
-
 }

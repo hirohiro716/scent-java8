@@ -185,5 +185,4 @@ public class SQLite extends AbstractDatabase {
     public boolean isAutoCommit() {
         return super.isAutoCommit();
     }
-
 }

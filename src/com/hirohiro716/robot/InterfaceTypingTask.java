@@ -268,5 +268,4 @@ public interface InterfaceTypingTask<T> {
             }
             return KeyCode.UNDEFINED;
         }    }
-
 }

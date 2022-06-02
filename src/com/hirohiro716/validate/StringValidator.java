@@ -54,7 +54,6 @@ public class StringValidator {
         public String getErrorMessage() {
             return this.errorMessage;
         }
-
     }
 
     /**
@@ -410,5 +409,4 @@ public class StringValidator {
         }
         return true;
     }
-
 }

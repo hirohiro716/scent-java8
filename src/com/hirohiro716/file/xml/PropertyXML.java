@@ -170,5 +170,4 @@ public class PropertyXML {
             this.properties.storeToXML(outputStream, this.comment);
         }
     }
-
 }

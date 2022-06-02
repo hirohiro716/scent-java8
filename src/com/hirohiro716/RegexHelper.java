@@ -121,7 +121,6 @@ public class RegexHelper {
         public Pattern getPattern() {
             return this.pattern;
         }
-
     }
 
     /**
@@ -206,5 +205,4 @@ public class RegexHelper {
         }
         return result.toString();
     }
-
 }

@@ -185,7 +185,6 @@ public class EmailTransmitter {
         protected PasswordAuthentication getPasswordAuthentication() {
             return new PasswordAuthentication(EmailTransmitter.this.user, EmailTransmitter.this.password);
         }
-
     }
     
     /**

@@ -80,5 +80,4 @@ public enum PageOrientation {
         }
         return hashMap;
     }
-
 }

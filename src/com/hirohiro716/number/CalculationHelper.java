@@ -36,5 +36,4 @@ public class CalculationHelper {
         }
         return sum;
     }
-
 }

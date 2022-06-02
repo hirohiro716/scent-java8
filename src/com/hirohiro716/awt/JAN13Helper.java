@@ -78,5 +78,4 @@ public class JAN13Helper extends com.hirohiro716.barcode.JAN13Helper {
         printX += (moduleOne * 2);
         graphics2d.fill(new Rectangle2D.Double(printX, y, moduleOne, height));
     }
-
 }

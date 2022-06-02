@@ -62,5 +62,4 @@ public class DataNotFoundException extends Exception {
     public DataNotFoundException(Throwable cause) {
         super(MESSAGE, cause);
     }
-
 }

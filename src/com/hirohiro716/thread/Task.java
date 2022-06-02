@@ -72,5 +72,4 @@ public class Task<T> {
     public T getResult() throws InterruptedException, ExecutionException {
         return this.task.get();
     }
-
 }

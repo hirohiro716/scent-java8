@@ -202,5 +202,4 @@ public class RobotJapanese extends Robot implements InterfaceTypingRobotJapanese
             }
         }
     }
-
 }

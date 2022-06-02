@@ -131,5 +131,4 @@ public abstract class AbstractBindXml {
     public void write(String name, String value) throws IOException {
         this.xmlHelper.write(name, value);
     }
-
 }

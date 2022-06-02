@@ -88,7 +88,6 @@ public interface InterfaceTypingRobotJapanese<T> {
             }
             return hashMap;
         }
-
     }
     
     /**

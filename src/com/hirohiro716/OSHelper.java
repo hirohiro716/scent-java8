@@ -32,5 +32,4 @@ public class OSHelper {
         }
         return OS.UNKNOWN;
     }
-
 }

@@ -219,5 +219,4 @@ public abstract class AbstractBindTable {
     public RudeArray[] search(String afterSQL, WhereSet... whereSetArray) throws SQLException {
         return this.search(StringConverter.join("SELECT * FROM ", this.getTableName()), afterSQL, whereSetArray);
     }
-
 }

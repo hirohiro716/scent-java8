@@ -35,5 +35,4 @@ public abstract class AbstractBindTableRow extends com.hirohiro716.database.Abst
         stringBuilder.append(" FOR UPDATE NOWAIT;");
         return this.getDatabase().fetchRow(stringBuilder.toString(), this.getWhereSet().buildParameters());
     }
-
 }

@@ -264,5 +264,4 @@ public class Print {
         imageHelper.applyBufferedImage(bufferedImage, fileExtension);
         return imageHelper;
     }
-
 }

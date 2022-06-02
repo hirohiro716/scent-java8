@@ -155,5 +155,4 @@ public class ImageConverter extends ByteConverter {
         }
         this.resize(width, height, isExpansion);
     }
-
 }

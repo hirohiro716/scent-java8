@@ -629,5 +629,4 @@ public class GraphicsHelper {
             lineOffset += valueHeight + lineMargin;
         }
     }
-
 }

@@ -698,7 +698,6 @@ public class RudeArray implements Cloneable, Serializable {
             }
             return 0;
         }
-
     }
 
     /**
@@ -734,7 +733,5 @@ public class RudeArray implements Cloneable, Serializable {
             }
             return 0;
         }
-
     }
-
 }

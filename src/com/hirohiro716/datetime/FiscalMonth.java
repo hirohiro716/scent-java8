@@ -86,7 +86,6 @@ public class FiscalMonth {
             }
             return null;
         }
-
     }
     
     private BaseDay baseDay = BaseDay.MONTHLY_DAYS_END;

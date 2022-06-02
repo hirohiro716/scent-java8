@@ -1850,5 +1850,4 @@ public class StringConverter {
         array.put("ッ", "ツ");
         return array;
     }
-
 }

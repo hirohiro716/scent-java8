@@ -46,5 +46,4 @@ public abstract class AbstractBindTableRows extends com.hirohiro716.database.Abs
         stringBuilder.append(";");
         return this.getDatabase().fetchRows(stringBuilder.toString(), this.getWhereSet().buildParameters());
     }
-
 }

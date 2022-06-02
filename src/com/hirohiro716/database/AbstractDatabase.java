@@ -261,7 +261,6 @@ public abstract class AbstractDatabase implements Closeable {
                 // nop
             }
         }
-
     }
 
     /**
@@ -902,5 +901,4 @@ public abstract class AbstractDatabase implements Closeable {
         builder.append("END");
         return builder.toString();
     }
-
 }

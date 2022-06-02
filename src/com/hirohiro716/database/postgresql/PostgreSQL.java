@@ -92,5 +92,4 @@ public class PostgreSQL extends AbstractDatabase {
             return null;
         }
     }
-
 }

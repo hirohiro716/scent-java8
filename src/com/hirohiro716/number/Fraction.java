@@ -124,5 +124,4 @@ public enum Fraction {
         }
         return hashMap;
     }
-
 }

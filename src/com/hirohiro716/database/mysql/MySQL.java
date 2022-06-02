@@ -51,5 +51,4 @@ public class MySQL extends AbstractDatabase {
         String connectionString = StringConverter.join("jdbc:mysql://", server, ":", port, "/", dbName, "?user=", user, "&password=", pass, "&characterEncoding=", characterEncoding);
         this.connect(connectionString);
     }
-
 }

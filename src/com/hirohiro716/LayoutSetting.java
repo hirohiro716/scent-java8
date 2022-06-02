@@ -62,7 +62,6 @@ public class LayoutSetting implements Cloneable {
         public int getMaxLength() {
             return this.maxLength;
         }
-
     }
 
     /**

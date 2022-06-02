@@ -80,7 +80,6 @@ public class WhereSet implements Cloneable {
         public String toString() {
             return this.string;
         }
-
     }
 
     private ArrayList<Where> wheres = new ArrayList<>();
@@ -526,7 +525,5 @@ public class WhereSet implements Cloneable {
             clone.setValues(cloneValues.toArray());
             return clone;
         }
-
     }
-
 }

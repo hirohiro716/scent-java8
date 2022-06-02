@@ -531,5 +531,4 @@ public class FileHelper {
     public static String readTextFile(File file) throws IOException {
         return readTextFile(file, Charset.defaultCharset());
     }
-
 }
