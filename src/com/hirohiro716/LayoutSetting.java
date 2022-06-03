@@ -9,6 +9,7 @@ import com.hirohiro716.database.AbstractBindTable;
  * レイアウト設定を保存するクラス。
  *
  * @author hiro
+ *
  */
 public class LayoutSetting implements Cloneable {
 

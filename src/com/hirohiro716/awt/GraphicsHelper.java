@@ -13,6 +13,7 @@ import static com.hirohiro716.StringConverter.*;
  * Graphicsを使用して描画する際に便利なメソッドを格納したクラスです。
  *
  * @author hiro
+ *
  */
 public class GraphicsHelper {
 

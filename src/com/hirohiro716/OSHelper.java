@@ -4,6 +4,7 @@ package com.hirohiro716;
  * OSに関する処理をするクラス。
  *
  * @author hiro
+ *
  */
 public class OSHelper {
 

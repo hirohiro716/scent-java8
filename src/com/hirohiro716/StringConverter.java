@@ -14,6 +14,7 @@ import com.hirohiro716.datetime.Datetime;
  * 値を変換するクラス。
  *
  * @author hiro
+ *
  */
 public class StringConverter {
 

@@ -10,6 +10,7 @@ import com.hirohiro716.datetime.Datetime.Span;
  * 締め日と締め日の間の期間のクラス。
  *
  * @author hiro
+ *
  */
 public class SpanOfCutoffDates {
     

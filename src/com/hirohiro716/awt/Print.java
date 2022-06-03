@@ -31,6 +31,7 @@ import com.hirohiro716.print.PrintHelper;
 /**
  * 印刷の補助をするクラス
  * @author hiro
+ *
  */
 public class Print {
 

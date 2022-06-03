@@ -16,6 +16,7 @@ import com.hirohiro716.RudeArray;
  * WebRequestを処理するクラス。
  *
  * @author hiro
+ *
  */
 public class WEBRequest {
 

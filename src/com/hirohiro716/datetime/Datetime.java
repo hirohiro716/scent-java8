@@ -10,6 +10,7 @@ import java.util.LinkedHashMap;
  * 日付関連を取り扱うクラス。
  *
  * @author hiro
+ *
  */
 public class Datetime {
     

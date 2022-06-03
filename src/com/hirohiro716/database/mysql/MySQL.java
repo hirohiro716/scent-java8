@@ -10,6 +10,7 @@ import com.hirohiro716.database.AbstractDatabase;
  * MySQLへのJDBC接続を補助するクラス。
  *
  * @author hiro
+ *
  */
 public class MySQL extends AbstractDatabase {
 

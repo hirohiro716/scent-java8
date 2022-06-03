@@ -5,6 +5,7 @@ import java.util.regex.Pattern;
 /**
  * 正規表現に関するメソッド
  * @author hiro
+ *
  */
 public class RegexHelper {
 

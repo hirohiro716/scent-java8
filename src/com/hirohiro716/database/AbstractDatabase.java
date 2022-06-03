@@ -25,6 +25,7 @@ import com.hirohiro716.RudeArray;
  * データベース処理の抽象クラス。
  *
  * @author hiro
+ *
  */
 public abstract class AbstractDatabase implements Closeable {
 

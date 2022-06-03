@@ -6,6 +6,7 @@ import static com.hirohiro716.StringConverter.*;
  * 例外を処理するための補助メソッドクラス。
  *
  * @author hiro
+ *
  */
 public class ExceptionHelper {
     

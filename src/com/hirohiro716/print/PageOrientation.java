@@ -6,6 +6,7 @@ import java.util.LinkedHashMap;
  * ページ向きの列挙型。
  *
  * @author hiro
+ *
  */
 public enum PageOrientation {
     /**

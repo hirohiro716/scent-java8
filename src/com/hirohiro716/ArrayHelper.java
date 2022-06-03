@@ -10,6 +10,7 @@ import java.util.List;
  * 配列操作に関するクラス。
  *
  * @author hiro
+ *
  */
 public class ArrayHelper {
     

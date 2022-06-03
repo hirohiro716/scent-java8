@@ -9,6 +9,7 @@ import java.util.LinkedHashMap;
 /**
  * 端数処理方法の定数
  * @author hiro
+ *
  */
 public enum Fraction {
     /**

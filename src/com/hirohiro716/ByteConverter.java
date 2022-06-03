@@ -17,6 +17,7 @@ import com.hirohiro716.file.FileHelper.FileExtension;
  * バイト操作を補助するクラス。
  *
  * @author hiro
+ *
  */
 public class ByteConverter {
 

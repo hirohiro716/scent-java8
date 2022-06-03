@@ -12,6 +12,7 @@ import com.hirohiro716.database.sqlite.SQLite.IsolationLevel;
  * ORMのようなものを提供する抽象クラス。
  *
  * @author hiro
+ *
  */
 public abstract class AbstractBindTableRow extends com.hirohiro716.database.AbstractBindTableRow implements Closeable {
     

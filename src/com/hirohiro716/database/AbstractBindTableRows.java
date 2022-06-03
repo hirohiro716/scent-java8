@@ -10,6 +10,7 @@ import com.hirohiro716.RudeArray;
  * ORMのようなものを提供する抽象クラス。
  *
  * @author hiro
+ *
  */
 public abstract class AbstractBindTableRows extends AbstractBindTable {
     

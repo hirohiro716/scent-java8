@@ -19,6 +19,7 @@ import com.hirohiro716.StringConverter;
  * JavaMail1.6.1を使用したE-mail送信を行うクラス。
  *
  * @author hiro
+ *
  */
 public class EmailTransmitter {
     

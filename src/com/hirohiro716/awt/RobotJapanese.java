@@ -13,6 +13,7 @@ import com.hirohiro716.robot.InterfaceTypingRobotJapanese;
  * AWTのRobotクラスに日本語用の機能を足したクラス。
  *
  * @author hiro
+ *
  */
 public class RobotJapanese extends Robot implements InterfaceTypingRobotJapanese<Integer> {
 

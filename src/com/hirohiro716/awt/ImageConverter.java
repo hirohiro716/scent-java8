@@ -17,6 +17,7 @@ import com.hirohiro716.file.FileHelper.FileExtension;
  * 画像の処理を補助するクラスです。
  *
  * @author hiro
+ *
  */
 public class ImageConverter extends ByteConverter {
 

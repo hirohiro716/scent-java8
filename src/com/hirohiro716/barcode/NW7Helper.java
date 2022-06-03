@@ -7,6 +7,7 @@ import com.hirohiro716.StringConverter;
 /**
  * NW7のチェックなど
  * @author hiro
+ *
  */
 public class NW7Helper {
 

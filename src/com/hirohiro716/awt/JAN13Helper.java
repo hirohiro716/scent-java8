@@ -9,6 +9,7 @@ import static com.hirohiro716.StringConverter.*;
  * java.awtでバーコードを生成するクラス。
  *
  * @author hiro
+ *
  */
 public class JAN13Helper extends com.hirohiro716.barcode.JAN13Helper {
 

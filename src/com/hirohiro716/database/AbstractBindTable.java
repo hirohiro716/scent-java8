@@ -11,6 +11,7 @@ import com.hirohiro716.InterfaceProperty;
  * ORMのようなものを提供する抽象クラス。
  *
  * @author hiro
+ *
  */
 public abstract class AbstractBindTable {
 

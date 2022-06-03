@@ -6,6 +6,7 @@ import java.util.ArrayList;
  * 印刷関連の静的関数を提供する。
  *
  * @author hiro
+ *
  */
 public class PrintHelper {
 

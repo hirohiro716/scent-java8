@@ -14,6 +14,7 @@ import com.hirohiro716.RudeArray;
  * SQLiteへのJDBC接続を補助するクラス。
  *
  * @author hiro
+ *
  */
 public class SQLite extends AbstractDatabase {
 

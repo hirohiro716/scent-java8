@@ -11,6 +11,7 @@ import com.hirohiro716.StringConverter;
  *
  * 
  * @author hiro
+ *
  */
 public class JSONObject {
     

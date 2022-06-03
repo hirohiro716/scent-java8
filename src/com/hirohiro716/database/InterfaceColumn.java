@@ -6,6 +6,7 @@ import com.hirohiro716.InterfaceProperty;
  * データベースカラムや設定名などの項目を表すインターフェース。
  *
  * @author hiro
+ *
  */
 public interface InterfaceColumn extends InterfaceProperty {
     

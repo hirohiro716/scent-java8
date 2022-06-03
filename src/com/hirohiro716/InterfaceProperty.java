@@ -4,6 +4,7 @@ package com.hirohiro716;
  * 設定項目などを表すインターフェース。
  *
  * @author hiro
+ *
  */
 public interface InterfaceProperty {
     

@@ -10,6 +10,7 @@ import com.hirohiro716.robot.AbstractTypingTask;
  * AWTで自動キー入力を行うクラス。
  *
  * @author hiro
+ *
  */
 public class TypingTask extends AbstractTypingTask<Integer> {
     

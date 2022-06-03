@@ -26,6 +26,7 @@ import org.xml.sax.SAXException;
  * XMLファイルの作成をサポートします。
  *
  * @author hiro
+ *
  */
 public class XML {
 

@@ -7,6 +7,7 @@ import java.util.Date;
  * Where文を作成するクラス。
  *
  * @author hiro
+ *
  */
 public class WhereSet implements Cloneable {
 

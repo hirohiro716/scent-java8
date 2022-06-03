@@ -13,6 +13,7 @@ import com.hirohiro716.RudeArray;
  * PostgreSQLへのJDBC接続を補助するクラス。
  *
  * @author hiro
+ *
  */
 public class PostgreSQL extends AbstractDatabase {
 

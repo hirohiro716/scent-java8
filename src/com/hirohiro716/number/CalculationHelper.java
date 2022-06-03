@@ -6,6 +6,7 @@ import com.hirohiro716.StringConverter;
  * 計算関数を格納するクラス。
  *
  * @author hiro
+ *
  */
 public class CalculationHelper {
 

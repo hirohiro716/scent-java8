@@ -12,6 +12,7 @@ import com.hirohiro716.RudeArray;
  * 値をチェックするクラス。
  *
  * @author hiro
+ *
  */
 public class StringValidator {
 

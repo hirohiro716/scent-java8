@@ -15,6 +15,7 @@ import com.google.zxing.qrcode.QRCodeWriter;
  *
  * 
  * @author hiro
+ *
  */
 public class QRCodeHelper {
     

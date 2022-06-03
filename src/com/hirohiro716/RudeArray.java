@@ -18,6 +18,7 @@ import com.hirohiro716.datetime.Datetime;
  * LinkedHashMapに雑な使い方ができるよう機能を追加したクラス。<br>
  * キーにはプリミティブ型かString型を指定します. 値はObject型。<br>
  * @author hiro
+ *
  */
 public class RudeArray implements Cloneable, Serializable {
 

@@ -18,6 +18,7 @@ import com.hirohiro716.datetime.Datetime;
  * Cookieを保持する抽象クラス。
  *
  * @author hiro
+ *
  */
 public abstract class AbstractCookieStore implements CookieStore {
     

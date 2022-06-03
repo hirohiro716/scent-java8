@@ -10,6 +10,7 @@ import com.hirohiro716.file.xml.PropertyXML;
  * XMLファイルにCookieを保持するクラス。
  *
  * @author hiro
+ *
  */
 public class XMLCookieStore extends AbstractCookieStore {
 

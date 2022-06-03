@@ -3,6 +3,7 @@ package com.hirohiro716.validate;
 /**
  * 値の検証に失敗した場合に発生する例外クラス
  * @author hiro
+ *
  */
 public class ValidationException extends Exception {
 

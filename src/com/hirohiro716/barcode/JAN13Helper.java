@@ -7,6 +7,7 @@ import com.hirohiro716.validate.ValidationException;
 /**
  * JAN13コードのチェックなど
  * @author hiro
+ *
  */
 public class JAN13Helper {
 

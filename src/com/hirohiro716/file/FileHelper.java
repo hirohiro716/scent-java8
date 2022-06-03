@@ -25,6 +25,7 @@ import static com.hirohiro716.file.FileHelper.FileExtension.*;
  * ファイル操作を補助します。
  *
  * @author hiro
+ *
  */
 public class FileHelper {
 
