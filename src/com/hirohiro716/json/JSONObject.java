@@ -28,7 +28,7 @@ public class JSONObject {
      * @param json
      */
     public JSONObject(String json) {
-        String temporary = json.trim();
+        String temporary = StringConverter.nullReplace(json, "").trim();
         if (temporary.length() == 0) {
             return;
         }
