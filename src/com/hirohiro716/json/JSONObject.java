@@ -38,7 +38,9 @@ public class JSONObject {
             break;
         default: // 配列|真偽値|数値|null
             Object value = this.parseValue(json);
-            this.jsonObject.add(value);
+            if (value != null) {
+                this.jsonObject.add(value);
+            }
             break;
         }
     }
