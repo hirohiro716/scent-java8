@@ -41,8 +41,10 @@ public class ExceptionHelper {
         message.append(LINE_SEPARATOR);
         if (exception.getMessage() != null && exception.getMessage().length() > 0) {
             message.append(exception.getClass().getName());
-            message.append(": ");
-            message.append(exception.getMessage());
+            if (message.indexOf(exception.getMessage()) == -1) {
+                message.append(": ");
+                message.append(exception.getMessage());
+            }
         } else {
             message.append(exception.getClass().getName());
         }
