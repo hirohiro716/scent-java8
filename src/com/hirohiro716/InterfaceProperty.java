@@ -36,5 +36,4 @@ public interface InterfaceProperty {
      * @return 最大文字数(-1は無制限を示す)
      */
     public abstract int getMaxLength();
-    
 }

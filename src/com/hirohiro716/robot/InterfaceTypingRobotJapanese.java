@@ -117,5 +117,4 @@ public interface InterfaceTypingRobotJapanese<T> {
      * IMEをｶﾀｶﾅにする。
      */
     public abstract void changeIMEKatakanaNarrow();
-    
 }

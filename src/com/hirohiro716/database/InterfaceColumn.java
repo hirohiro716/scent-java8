@@ -16,5 +16,4 @@ public interface InterfaceColumn extends InterfaceProperty {
      * @return 物理名
      */
     public abstract String getFullPhysicalName();
-    
 }
