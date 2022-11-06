@@ -12,7 +12,7 @@ import com.hirohiro716.database.AbstractBindTable;
  *
  */
 public class LayoutSetting implements Cloneable {
-
+    
     /**
      * 配列に格納する項目列挙型。
      *
