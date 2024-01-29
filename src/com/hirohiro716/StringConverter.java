@@ -17,7 +17,7 @@ import com.hirohiro716.datetime.Datetime;
  *
  */
 public class StringConverter {
-
+    
     /**
      * 環境ごとの改行文字を取得しておく
      */
